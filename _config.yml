@@ -1,0 +1,37 @@
+# Site settings
+email: 
+baseurl: ""
+paginate: 5
+paginate_path: "/blog/page-:num"
+google_analytics: 
+
+# SEO settings
+title: Jiwon Blog
+description: 
+url: ""
+twitter_username: 
+default_img: 
+
+# Profile settings
+name: Jiwon Oh
+profile_img: /assets/images/ade1.jpg
+profile: Jiwon Oh
+social:
+    github: https://github.com/jiwondh
+
+# Build settings
+include: ["_categories"]
+exclude: ["_screenshots", "Gemfile", "Gemfile.lock"]
+markdown: kramdown
+syntax-highlighting:
+    enabled : true
+    css: syntax.css
+permalink: /:year/:month/:day/:title/
+google-analytics:
+      id: "UA-90322354-1"
+# Sass
+sass:
+  style: compressed
+
+# Gems
+gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer]
