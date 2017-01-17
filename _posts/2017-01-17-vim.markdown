@@ -1,0 +1,17 @@
+---
+layout: post
+title: "[vim] 명령어"
+date: 2016-01-17
+categories:
+  - 기타
+description: vim 명령어
+image: /assets/images/fw1.jpg
+image-sm: /assets/images/fw2.jpg
+---
+
+## vi 에디터에서 encoding 전환하기
+
+예시로 utf-8로 encoding을 전환하여 저장하는 명령어입니다.
+	
+	:set fileencoding=utf-8
+	:w

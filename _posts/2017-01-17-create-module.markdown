@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Node.js] 사용자 정의 모듈 만들기"
-date: 2016-01-14
+date: 2016-01-17
 categories:
   - Node.js
 description: 사용자 정의 모듈 만들기
@@ -36,7 +36,7 @@ console.log(sum(1,2));
 
 ## 사용자 정의 모듈을 만들기
 
-새로운 **sum.js** 파일을 아래와 같이 만들어 줍니다.
+새로운 **`sum.js`** 파일을 아래와 같이 만들어 줍니다.
 
 {% highlight javascript linenos=table %}
 //./lib/sum.js
@@ -45,7 +45,7 @@ module.exports = function(a, b){
 };
 {% endhighlight %}
 
-**sum.js**파일을 아래와 같이 require해줍니다.
+**`sum.js`**파일을 아래와 같이 require해줍니다.
 
 {% highlight javascript linenos=table %}
 //module.js

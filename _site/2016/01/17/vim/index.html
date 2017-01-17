@@ -6,24 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Node.js 시작하기 | Jiwon Blog</title>
+  <title>[vim] 명령어 | Jiwon Blog</title>
   <meta name="author" content="Jiwon Oh">
   <meta name="description" content="">
-  <meta property="og:title" content="Node.js 시작하기 | Jiwon Blog">
-  <meta property="og:url" content="/2016/01/14/start/">
+  <meta property="og:title" content="[vim] 명령어 | Jiwon Blog">
+  <meta property="og:url" content="/2016/01/17/vim/">
   <meta property="og:site_name" content="Jiwon Blog">
-  <meta property="og:description" content="Node.js 세팅(Express, Jade, mysql)">
-  <meta property="og:image" content="/assets/images/ade1.jpg">
+  <meta property="og:description" content="vim 명령어">
+  <meta property="og:image" content="/assets/images/fw1.jpg">
   <meta property="og:type" content="blog">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:description" content="Node.js 세팅(Express, Jade, mysql)">
-  <meta name="twitter:title" content="Node.js 시작하기 | Jiwon Blog">
-  <meta name="twitter:url" content="/2016/01/14/start/">
+  <meta name="twitter:description" content="vim 명령어">
+  <meta name="twitter:title" content="[vim] 명령어 | Jiwon Blog">
+  <meta name="twitter:url" content="/2016/01/17/vim/">
   <meta name="twitter:site" content="Jiwon Blog">
   <meta name="twitter:creator" content="@">
   <meta name="twitter:domain" content="">
-  <meta property="twitter:image" content="/assets/images/ade1.jpg">
+  <meta property="twitter:image" content="/assets/images/fw1.jpg">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Lora|Space+Mono:700">
   <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejugothic.css">
@@ -39,7 +39,7 @@
 
 
   <link rel="alternate" type="application/rss+xml" title="Jiwon Blog" href="/feed.xml">
-  <link rel="canonical" href="/2016/01/14/start/">
+  <link rel="canonical" href="/2016/01/17/vim/">
 
   
   <script>
@@ -65,13 +65,13 @@
       <i class="fa fa-lg fa-arrow-left"></i>
       <span>Back to Posts</span>
     </a>
-    <figure class="absolute-bg mast__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
+    <figure class="absolute-bg mast__img" style="background-image: url('/assets/images/fw1.jpg');"></figure>
     <div class="mast__container">
-      <span><time datetime="2016-01-14T00:00:00+09:00" itemprop="datePublished">Jan 14, 2016</time></span>
-      <h1 itemprop="name headline">Node.js 시작하기</h1>
+      <span><time datetime="2016-01-17T00:00:00+09:00" itemprop="datePublished">Jan 17, 2016</time></span>
+      <h1 itemprop="name headline">[vim] 명령어</h1>
       
         <span>
-          Posted in Node.js
+          Posted in 기타
         </span>
       
       <span></span>
@@ -79,74 +79,12 @@
   </header>
 
   <section class="section-padding post" itemprop="articleBody">
-    <h2 id="nodejs-">Node.js 설치</h2>
-<p><br />
-<a href="https://nodejs.org/en/"><strong>Node.js 홈페이지</strong></a>에서 운영체제에 맞는 
-Node.js Installer 를 다운로드하고 실행하여 설치합니다.</p>
+    <h2 id="vi--encoding-">vi 에디터에서 encoding 전환하기</h2>
 
-<h2 id="npm">npm</h2>
-<p><br />
-npm은 Node.js를 설치하면 자동으로 설치됩니다.</p>
+<p>예시로 utf-8로 encoding을 전환하여 저장하는 명령어입니다.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>node -v   	
-</code></pre>
-</div>
-
-<p>위의 명령어를 입력하여 버전을 확인해보세요.<br />
-npm을 이용하여 모듈을 설치할 때에는 아래와 같은 명령어를 이용합니다.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>npm install 모듈이름 --save	//해당 패키지에만 모듈 적용
-npm install 모듈이름 -g		//전역으로 모듈을 적용
-</code></pre>
-</div>
-
-<p><strong><code class="highlighter-rouge">--save</code></strong>를 붙이면 package.json에 의존성이 기록되므로 일시적으로 
-설치하는 것이 아닐 시에 권장됩니다.</p>
-
-<h2 id="packagejson--">package.json 파일 생성</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>npm init
-</code></pre>
-</div>
-
-<h2 id="express-">Express 설치</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>npm install express --save
-</code></pre>
-</div>
-
-<h2 id="jade-">Jade 설치</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>npm install jade --save
-</code></pre>
-</div>
-
-<h2 id="body-parser-">body-parser 설치</h2>
-<p><br />
-express 4.0에서는 body parser 기능이 내장되어있지 않기 때문에
-따로 <a href="https://www.npmjs.com/package/body-parser"><strong>body-parser</strong></a>를 
-설치 해주도록 합니다.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>npm install body-parser --save
-</code></pre>
-</div>
-
-<h2 id="supervisor-">supervisor 설치</h2>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre>npm install supervisor -g
-supervisor app.js<span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p><strong><a href="https://www.npmjs.com/package/supervisor">supervisor</a></strong>를 설치해주면
-코드 변화를 감지하여 재실행 주기 때문에 코드를 수정시킬때마다 
-<strong><code class="highlighter-rouge">node app.js</code></strong>를 입력하여 재실행시킬 필요가 없습니다</p>
-
-<h2 id="mysql-">mysql 설치</h2>
-<p><br />
-mysql을 설치하는 방법은 여러가지가 있습니댜. 
-<a href="https://opentutorials.org/course/2136/12020"><strong>생활코딩-MySQL 소개 및 기본 사용법</strong></a>
-를 참고하여 mysql를 설치해보시고 기본적인 사용법도 익히시길 바랍니다.</p>
-
-<h2 id="node-mysql-">node-mysql 설치</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>npm install node-mysql --save
+<div class="highlighter-rouge"><pre class="highlight"><code>:set fileencoding=utf-8
+:w
 </code></pre>
 </div>
 
@@ -197,10 +135,10 @@ mysql을 설치하는 방법은 여러가지가 있습니댜.
 
 
   <section class="next">
-    <a class="next__link" href="/2016/01/14/mysql/" style="background-image: url('/assets/images/ade1.jpg');">
+    <a class="next__link" href="/2016/01/17/routes-seperate/" style="background-image: url('/assets/images/ade1.jpg');">
       <div class="next__container">
         <span>Read Next</span>
-        <h2>Node.js에서 Mysql 주요 쿼리문 이용하기</h2>
+        <h2>[Node.js] 라우터 분리하기</h2>
       </div>
     </a>
   </section>
