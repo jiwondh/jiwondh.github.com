@@ -30,6 +30,7 @@ syntax-highlighting:
 permalink: /:year/:month/:day/:title/
 google-analytics:
       id: "UA-90322354-1"
+url: https://jiwondh.github.io
 # Sass
 sass:
   style: compressed

@@ -1,66 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>/2016/01/17/vim/</loc>
-<lastmod>2016-01-17T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>/2016/01/17/routes-seperate/</loc>
-<lastmod>2016-01-17T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>/2016/01/17/create-module/</loc>
-<lastmod>2016-01-17T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>/2016/01/15/trouble-1/</loc>
-<lastmod>2016-01-15T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>/2016/01/15/sql-syntax/</loc>
-<lastmod>2016-01-15T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>/2016/01/14/start/</loc>
-<lastmod>2016-01-14T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>/2016/01/14/mysql/</loc>
-<lastmod>2016-01-14T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>/2016/01/14/jade-syntax/</loc>
-<lastmod>2016-01-14T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>/2016/01/13/new-post/</loc>
-<lastmod>2016-01-13T00:00:00+09:00</lastmod>
-</url>
-<url>
-<loc>/archive/</loc>
-</url>
-<url>
-<loc>/category/brunch/</loc>
-</url>
-<url>
-<loc>/</loc>
-</url>
-<url>
-<loc>/category/jade/</loc>
-</url>
-<url>
-<loc>/category/node-js/</loc>
-</url>
-<url>
-<loc>/category/sql/</loc>
-</url>
-<url>
-<loc>/category/%EA%B8%B0%ED%83%80/</loc>
-</url>
-<url>
-<loc>/category/troubleshooting/</loc>
-</url>
-<url>
-<loc>/blog/page-2/</loc>
-</url>
+	
+	<url>
+		<loc>/2016/01/17/vim/</loc>
+		
+		<lastmod>2016-01-17T00:00:00+09:00</lastmod>
+		
+
+		
+		<changefreq>weekly</changefreq>
+		
+
+		
+		<priority>0.5</priority>
+		
+
+	</url>
+	
+	<url>
+		<loc>/2016/01/17/routes-seperate/</loc>
+		
+		<lastmod>2016-01-17T00:00:00+09:00</lastmod>
+		
+
+		
+		<changefreq>weekly</changefreq>
+		
+
+		
+		<priority>0.5</priority>
+		
+
+	</url>
+	
+	<url>
+		<loc>/2016/01/17/create-module/</loc>
+		
+		<lastmod>2016-01-17T00:00:00+09:00</lastmod>
+		
+
+		
+		<changefreq>weekly</changefreq>
+		
+
+		
+		<priority>0.5</priority>
+		
+
+	</url>
+	
+	<url>
+		<loc>/2016/01/15/trouble-1/</loc>
+		
+		<lastmod>2016-01-15T00:00:00+09:00</lastmod>
+		
+
+		
+		<changefreq>weekly</changefreq>
+		
+
+		
+		<priority>0.5</priority>
+		
+
+	</url>
+	
+	<url>
+		<loc>/2016/01/15/sql-syntax/</loc>
+		
+		<lastmod>2016-01-15T00:00:00+09:00</lastmod>
+		
+
+		
+		<changefreq>weekly</changefreq>
+		
+
+		
+		<priority>0.5</priority>
+		
+
+	</url>
+	
+	<url>
+		<loc>/2016/01/14/start/</loc>
+		
+		<lastmod>2016-01-14T00:00:00+09:00</lastmod>
+		
+
+		
+		<changefreq>weekly</changefreq>
+		
+
+		
+		<priority>0.5</priority>
+		
+
+	</url>
+	
+	<url>
+		<loc>/2016/01/14/mysql/</loc>
+		
+		<lastmod>2016-01-14T00:00:00+09:00</lastmod>
+		
+
+		
+		<changefreq>weekly</changefreq>
+		
+
+		
+		<priority>0.5</priority>
+		
+
+	</url>
+	
+	<url>
+		<loc>/2016/01/14/jade-syntax/</loc>
+		
+		<lastmod>2016-01-14T00:00:00+09:00</lastmod>
+		
+
+		
+		<changefreq>weekly</changefreq>
+		
+
+		
+		<priority>0.5</priority>
+		
+
+	</url>
+	
+	<url>
+		<loc>/2016/01/13/new-post/</loc>
+		
+		<lastmod>2016-01-13T00:00:00+09:00</lastmod>
+		
+
+		
+		<changefreq>weekly</changefreq>
+		
+
+		
+		<priority>0.5</priority>
+		
+
+	</url>
+	
 </urlset>
