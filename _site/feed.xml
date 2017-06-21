@@ -5,174 +5,39 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 22 Jun 2017 01:14:43 +0900</pubDate>
-    <lastBuildDate>Thu, 22 Jun 2017 01:14:43 +0900</lastBuildDate>
+    <pubDate>Thu, 22 Jun 2017 02:27:08 +0900</pubDate>
+    <lastBuildDate>Thu, 22 Jun 2017 02:27:08 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>연습</title>
+        <title>[Node.js] Session</title>
         <description>
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;11장. 소켓 입출력 모델&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;⭐️ 학습 목표&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#overlapped-i-&quot; id=&quot;markdown-toc-overlapped-i-&quot;&gt;01. Overlapped 모델(I) 📌&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;⭐️ 학습 목표&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#asynchronous-io&quot; id=&quot;markdown-toc-asynchronous-io&quot;&gt;⭐️ 비동기 입출력 (Asynchronous I/O)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;⭐️ 입출력 방식에 따른 소켓 입출력 모델 분류&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#overlapped---&quot; id=&quot;markdown-toc-overlapped---&quot;&gt;⭐️ Overlapped 모델 사용 절차&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#overlapped--&quot; id=&quot;markdown-toc-overlapped--&quot;&gt;⭐️ Overlapped 모델의 종류&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-4&quot; id=&quot;markdown-toc-section-4&quot;&gt;⭐️ 입출력 함수&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#session&quot; id=&quot;markdown-toc-session&quot;&gt;Session&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#session-1&quot; id=&quot;markdown-toc-session-1&quot;&gt;Session이란&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#session--&quot; id=&quot;markdown-toc-session--&quot;&gt;Session의 동작 방식&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#express-session--&quot; id=&quot;markdown-toc-express-session--&quot;&gt;Express에 Session 패키지 설치&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#mysql-express-session-store-&quot; id=&quot;markdown-toc-mysql-express-session-store-&quot;&gt;Mysql을 Express의 Session store로 사용&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;사용 예&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;section&quot;&gt;11장. 소켓 입출력 모델&lt;/h1&gt;
+&lt;h1 id=&quot;session&quot;&gt;Session&lt;/h1&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;⭐️ 학습 목표&lt;/h3&gt;
+&lt;p&gt;자세한 내용은 &lt;a href=&quot;https://opentutorials.org/course/2136/12068&quot;&gt;생활코딩 Javascript(nodejs)&lt;/a&gt;강좌를 참고하세요.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Overlapped 소켓 입출력 모델의 두 가지 형태를 이해하고 활용한다.&lt;/li&gt;
-  &lt;li&gt;Completion Port 소켓 입출력 모델을 이해하고 활용한다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;overlapped-i-&quot;&gt;01. Overlapped 모델(I) 📌&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Overlapped모델은 10장에서 배운 소켓 입출력 모델(Select, WSAAsyncSelect, WSAEventSelect)과는 근본적으로 다른 &lt;strong&gt;입출력 방식&lt;/strong&gt; 으로 &lt;strong&gt;고성능&lt;/strong&gt; 을 제공&lt;/li&gt;
-  &lt;li&gt;크게 2종류의 구현 방법을 지원&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;⭐️ 학습 목표&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Overlapped 소켓 입출력 모델의 두 가지 형태를 이해하고 활용한다.&lt;/li&gt;
-  &lt;li&gt;안녕&lt;/li&gt;
-  &lt;li&gt;[그림 11-1] 동기 입출력
-&lt;img src=&quot;https://ws4.sinaimg.cn/large/006tKfTcgy1fgoq1nqngdj30u80f441x.jpg&quot; alt=&quot;D40F6240-BA26-4FFD-9F29-EFAFFFDFF359&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;[그림 11-2] 비동기 입출력
-&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fgoq2dve5ej30so0e6wi1.jpg&quot; alt=&quot;9A2614F0-5DD6-4FE5-9FAA-33FBA70595C0&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;asynchronous-io&quot;&gt;⭐️ 비동기 입출력 (Asynchronous I/O)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;중첩 입출력(overlapped I/O)&lt;/strong&gt; 라고도 부름&lt;/li&gt;
-  &lt;li&gt;응용 프로그램은 입출력 함수를 호출한 후 입출력 작업의 완료 여부와 무관하게 다른 작업을 진행할 수 있음&lt;/li&gt;
-  &lt;li&gt;입출력 작업이 끝나면 운영체제는 작업 완료를 응용 프로그램에 알려줌&lt;/li&gt;
-  &lt;li&gt;이때 응용 프로그램은 하던 작업ㅇ르 중단하고 입출력 결과를 처리하면 됨&lt;/li&gt;
-  &lt;li&gt;앞으로 배울 소켓 입출력 모델(Overlapped, Completion Port)은 모두 비동기 입출력 방식으로 소켓 입출력을 처리&lt;/li&gt;
-  &lt;li&gt;비동기 입출력 방식에서는 &lt;u&gt;입출력 완료를 운영체제가 알려준다는 개념&lt;/u&gt;이 반드시 필요하므로 &lt;strong&gt;비동기 통지&lt;/strong&gt; 도 사용한다고 볼 수 있음&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;11장에서 배울 소켓 입출력 모델(Overlapped, Completion Prot)은 비동기 입출력과 비동기 통지를 결합한 형태&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;⭐️ 입출력 방식에 따른 소켓 입출력 모델 분류&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;동기 입출력 + 비동기 통지
-    &lt;ul&gt;
-      &lt;li&gt;Select 모델&lt;/li&gt;
-      &lt;li&gt;WSAAsyncSelect모델&lt;/li&gt;
-      &lt;li&gt;WSAEventSelect모델&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;비동기 입출력 + 비동기 통지
-    &lt;ul&gt;
-      &lt;li&gt;Overlapped 모델&lt;/li&gt;
-      &lt;li&gt;Completion Port 모델&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;overlapped---&quot;&gt;⭐️ Overlapped 모델 사용 절차&lt;/h3&gt;
-
-&lt;p&gt;① 비동기 입출력을 지원하는 소켓 생성&lt;/p&gt;
-
-&lt;p&gt;② 비동기 입출력을 지원하는 소켓 함수 호출&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// Hello World
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello world&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;③ &lt;u&gt;운영체제가 입출력 작업 완료를 응용 프로그램에 알려주면(=비동기 통지)&lt;/u&gt;, 응용 프로그램은 입출력 결과를 처리&lt;/p&gt;
-
-&lt;h3 id=&quot;overlapped--&quot;&gt;⭐️ Overlapped 모델의 종류&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;운영체제의 &lt;strong&gt;비동기 통지&lt;/strong&gt; 방식에 따라 두 종류로 구분&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;종류&lt;/th&gt;
-      &lt;th&gt;설명&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Overlapped 모델(I)&lt;/td&gt;
-      &lt;td&gt;소켓  입출력 작업이 완료되면 운영체제는 응용 프로그램이 등록해둔 이벤트 객체를 신호  상태로 바꾼다. 응용 프로그램은 이벤트 객체를 관찰함으로써 입출력 작업 완료를 감지할 수 있다.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Overlapped 모델(II)&lt;/td&gt;
-      &lt;td&gt;소켓  입출력 작업이 완료되면 운영체제는 응용 프로그램이 등록해둔 함수를 자동으로 호출한다.  일반적으로 운영체제가 호출하는 응용 프로그램 함수를 콜백 함수라 하는데 특별히 Overlapped 모델에서는 완료 루틴이라 부른다.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;⭐️ 입출력 함수&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;소켓 응용 프로그램에서 Overlapped모델을 사용하는 주된 이유는 데이터를 보내고 받는 작업ㅇ르 효율적으로 처리하기 위해서임&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;WSASend)()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;WSARecv()&lt;/code&gt; 함수는 네 번째와 다섯 번째 인자를 제외하면 같음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int WSASend (
-   SOCKET s,
-   LPWSABUF lpBuffers,
-   DWORD dwBufferCount,
-   LPDWORD lpNumberOfBytesSent,
-   DWORD dwFlags,
-   LPWSAOVERLAPPED lpOverlapped,
-   LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
-) ;
-// 성공: 0, 실패: SOCKET_ERROR
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Wed, 21 Jun 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/06/21/ex/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/06/21/ex/</guid>
-        
-        
-        <category>Node.js</category>
-        
-      </item>
-    
-      <item>
-        <title>[Node.js] Session</title>
-        <description>&lt;p&gt;자세한 내용은 &lt;a href=&quot;https://opentutorials.org/course/2136/12068&quot;&gt;생활코딩 Javascript(nodejs)&lt;/a&gt;강좌를 참고하세요.&lt;/p&gt;
-
-&lt;h2 id=&quot;session&quot;&gt;Session이란&lt;/h2&gt;
+&lt;h2 id=&quot;session-1&quot;&gt;Session이란&lt;/h2&gt;
 
 &lt;p&gt;쿠키를 개선한 방식으로 쿠키보다 좀더 안전하게 방대한 데이터를 저장가능하게 합니다.&lt;br /&gt;
 즉, 사용자의 컴퓨터와 서버가 통신하는 과정에서 아이디나 비밀번호와 같은 중요한 정보가 오고 간다는 것은 굉장히 위험한 일이므로 이러한 문제를 개선하기 위해서 쿠키가 가지고 있는 기능과 서버쪽에서 데이터를 저장할 수 있는 공간을 잘 결합한 세션을 사용하는 것이 더 안전합니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;session--&quot;&gt;Session의 동작 방식&lt;/h2&gt;
 
-&lt;p&gt;사용자가 서버에 접속을 하면 서버는 클라이언트(사용자의 컴퓨터)에 데이터를 저장할 때 쿠키 
-방식과는 다르게 사용자의 &lt;strong&gt;식별자(id) 값&lt;/strong&gt;만을 저장합니다. 
-사용자의 컴퓨터에는 오직 식별자 값만 저장되어있고 해당 식별자 값에 해당하는 &lt;strong&gt;실제 데이터는 
-서버의 데이터베이스에 저장&lt;/strong&gt;되어있는 것입니다. 사용자가 서버에 접속하여 요청으로 식별자를 
+&lt;p&gt;사용자가 서버에 접속을 하면 서버는 클라이언트(사용자의 컴퓨터)에 데이터를 저장할 때 쿠키
+방식과는 다르게 사용자의 &lt;strong&gt;식별자(id) 값&lt;/strong&gt; 만을 저장합니다.
+사용자의 컴퓨터에는 오직 식별자 값만 저장되어있고 해당 식별자 값에 해당하는 &lt;strong&gt;실제 데이터는
+서버의 데이터베이스에 저장&lt;/strong&gt; 되어있는 것입니다. 사용자가 서버에 접속하여 요청으로 식별자를
 전송하면 그 식별자에 해당하는 실제 데이터를 서버의 데이터베이스에서 읽어와 사용할 수 있는 것 입니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;express-session--&quot;&gt;Express에 Session 패키지 설치&lt;/h2&gt;
@@ -181,19 +46,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;express&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;express&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;session&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;express-session&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 
@@ -205,8 +58,7 @@
 
 &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
 	&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Connected 3000 port!!!&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;		
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;mysql-express-session-store-&quot;&gt;Mysql을 Express의 Session store로 사용&lt;/h2&gt;
 
@@ -214,41 +66,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;express&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;express&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;session&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;express-session&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MySQLStore&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;express-mysql-session&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mysql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;mysql&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -282,46 +100,11 @@
 
 &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
 	&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Connected 3000 port!!!&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;		
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;사용 예&lt;/h2&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;//세션 저장 여부에 따라 로그인 결정&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//세션 저장 여부에 따라 로그인 결정&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;/&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;authId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 		&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;authId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;님 로그인되었습니다&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -355,8 +138,7 @@
 	&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
 		&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;redirect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;/&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 	&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
         <pubDate>Sun, 29 Jan 2017 00:00:00 +0900</pubDate>
@@ -1247,6 +1029,117 @@ mysql을 설치하는 방법은 여러가지가 있습니댜.
         
         
         <category>Jade</category>
+        
+      </item>
+    
+      <item>
+        <title>New</title>
+        <description>&lt;h1 id=&quot;my-name-is-ohjiwon&quot;&gt;My name is Ohjiwon&lt;/h1&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;hello!
+my name is ohjiwon
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;
+   &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;foo&#39;&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;code goes here&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.naver.com&quot;&gt;네이버&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;안녕하세요&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;this-is-an-h1&quot;&gt;This is an H1&lt;/h1&gt;
+
+&lt;h2 id=&quot;this-is-an-h2&quot;&gt;This is an H2&lt;/h2&gt;
+
+&lt;h1 id=&quot;this-is-an-h1-1&quot;&gt;This is an H1&lt;/h1&gt;
+
+&lt;h2 id=&quot;this-is-an-h2-1&quot;&gt;This is an H2&lt;/h2&gt;
+
+&lt;h6 id=&quot;this-is-an-h6&quot;&gt;This is an H6&lt;/h6&gt;
+
+&lt;h1 id=&quot;this-is-an-h1-2&quot;&gt;This is an H1&lt;/h1&gt;
+
+&lt;h2 id=&quot;this-is-an-h2-2&quot;&gt;This is an H2&lt;/h2&gt;
+
+&lt;h3 id=&quot;this-is-an-h3&quot;&gt;This is an H3&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is the first level of quoting.&lt;/p&gt;
+
+  &lt;blockquote&gt;
+    &lt;p&gt;This is nested blockquote.&lt;/p&gt;
+  &lt;/blockquote&gt;
+
+  &lt;p&gt;Back to the first level.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;this-is-a-header&quot;&gt;This is a header.&lt;/h2&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;This is the first list item.&lt;/li&gt;
+    &lt;li&gt;This is the second list item.&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;p&gt;Here’s some example code:&lt;/p&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;return shell_exec(&quot;echo $input | $markdown_script&quot;);
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Red&lt;/li&gt;
+  &lt;li&gt;Green&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Blue&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Red&lt;/li&gt;
+  &lt;li&gt;Green&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Blue&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Red&lt;/li&gt;
+  &lt;li&gt;Green&lt;/li&gt;
+  &lt;li&gt;Blue&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Bird&lt;/li&gt;
+  &lt;li&gt;McHale&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Parish&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Bird&lt;/li&gt;
+  &lt;li&gt;McHale&lt;/li&gt;
+  &lt;li&gt;Parish&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+viverra nec, fringilla in, laoreet vitae, risus.&lt;/li&gt;
+  &lt;li&gt;Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+Suspendisse id sem consectetuer libero luctus adipiscing.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 13 Jan 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/01/13/new-post/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/01/13/new-post/</guid>
+        
+        
+        <category>Troubleshooting</category>
         
       </item>
     

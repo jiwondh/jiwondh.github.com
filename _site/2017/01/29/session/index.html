@@ -81,19 +81,33 @@
   </header>
 
   <section class="section-padding post" itemprop="articleBody">
-    <p>자세한 내용은 <a href="https://opentutorials.org/course/2136/12068">생활코딩 Javascript(nodejs)</a>강좌를 참고하세요.</p>
+    
+<ul id="markdown-toc">
+  <li><a href="#session" id="markdown-toc-session">Session</a>    <ul>
+      <li><a href="#session-1" id="markdown-toc-session-1">Session이란</a></li>
+      <li><a href="#session--" id="markdown-toc-session--">Session의 동작 방식</a></li>
+      <li><a href="#express-session--" id="markdown-toc-express-session--">Express에 Session 패키지 설치</a></li>
+      <li><a href="#mysql-express-session-store-" id="markdown-toc-mysql-express-session-store-">Mysql을 Express의 Session store로 사용</a></li>
+      <li><a href="#section" id="markdown-toc-section">사용 예</a></li>
+    </ul>
+  </li>
+</ul>
 
-<h2 id="session">Session이란</h2>
+<h1 id="session">Session</h1>
+
+<p>자세한 내용은 <a href="https://opentutorials.org/course/2136/12068">생활코딩 Javascript(nodejs)</a>강좌를 참고하세요.</p>
+
+<h2 id="session-1">Session이란</h2>
 
 <p>쿠키를 개선한 방식으로 쿠키보다 좀더 안전하게 방대한 데이터를 저장가능하게 합니다.<br />
 즉, 사용자의 컴퓨터와 서버가 통신하는 과정에서 아이디나 비밀번호와 같은 중요한 정보가 오고 간다는 것은 굉장히 위험한 일이므로 이러한 문제를 개선하기 위해서 쿠키가 가지고 있는 기능과 서버쪽에서 데이터를 저장할 수 있는 공간을 잘 결합한 세션을 사용하는 것이 더 안전합니다.</p>
 
 <h2 id="session--">Session의 동작 방식</h2>
 
-<p>사용자가 서버에 접속을 하면 서버는 클라이언트(사용자의 컴퓨터)에 데이터를 저장할 때 쿠키 
-방식과는 다르게 사용자의 <strong>식별자(id) 값</strong>만을 저장합니다. 
-사용자의 컴퓨터에는 오직 식별자 값만 저장되어있고 해당 식별자 값에 해당하는 <strong>실제 데이터는 
-서버의 데이터베이스에 저장</strong>되어있는 것입니다. 사용자가 서버에 접속하여 요청으로 식별자를 
+<p>사용자가 서버에 접속을 하면 서버는 클라이언트(사용자의 컴퓨터)에 데이터를 저장할 때 쿠키
+방식과는 다르게 사용자의 <strong>식별자(id) 값</strong> 만을 저장합니다.
+사용자의 컴퓨터에는 오직 식별자 값만 저장되어있고 해당 식별자 값에 해당하는 <strong>실제 데이터는
+서버의 데이터베이스에 저장</strong> 되어있는 것입니다. 사용자가 서버에 접속하여 요청으로 식별자를
 전송하면 그 식별자에 해당하는 실제 데이터를 서버의 데이터베이스에서 읽어와 사용할 수 있는 것 입니다.</p>
 
 <h2 id="express-session--">Express에 Session 패키지 설치</h2>
@@ -102,19 +116,7 @@
 </code></pre>
 </div>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">session</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express-session'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
 
@@ -126,8 +128,7 @@
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
 	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Connected 3000 port!!!'</span><span class="p">);</span>		
-<span class="p">});</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">});</span></code></pre></figure>
 
 <h2 id="mysql-express-session-store-">Mysql을 Express의 Session store로 사용</h2>
 
@@ -135,41 +136,7 @@
 </code></pre>
 </div>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">session</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express-session'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">MySQLStore</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express-mysql-session'</span><span class="p">)(</span><span class="nx">session</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mysql'</span><span class="p">);</span>
@@ -203,46 +170,11 @@
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
 	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Connected 3000 port!!!'</span><span class="p">);</span>		
-<span class="p">});</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">});</span></code></pre></figure>
 
 <h2 id="section">사용 예</h2>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35</pre></td><td class="code"><pre><span class="c1">//세션 저장 여부에 따라 로그인 결정</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//세션 저장 여부에 따라 로그인 결정</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
 	<span class="k">if</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">authId</span><span class="p">)</span>
 		<span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">authId</span><span class="o">+</span><span class="s1">'님 로그인되었습니다'</span><span class="p">);</span>
@@ -276,8 +208,7 @@
 	<span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
 		<span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">'/'</span><span class="p">);</span>
 	<span class="p">});</span>
-<span class="p">});</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<span class="p">});</span></code></pre></figure>
 
 
   </section>

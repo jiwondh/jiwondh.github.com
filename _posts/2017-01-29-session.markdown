@@ -9,6 +9,13 @@ image: /assets/images/ade1.jpg
 image-sm: /assets/images/ade2.jpg
 ---
 
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}  
+
+# Session
+
 자세한 내용은 [생활코딩 Javascript(nodejs)](https://opentutorials.org/course/2136/12068)강좌를 참고하세요.
 
 ## Session이란
@@ -18,17 +25,17 @@ image-sm: /assets/images/ade2.jpg
 
 ## Session의 동작 방식
 
-사용자가 서버에 접속을 하면 서버는 클라이언트(사용자의 컴퓨터)에 데이터를 저장할 때 쿠키 
-방식과는 다르게 사용자의 **식별자(id) 값**만을 저장합니다. 
-사용자의 컴퓨터에는 오직 식별자 값만 저장되어있고 해당 식별자 값에 해당하는 **실제 데이터는 
-서버의 데이터베이스에 저장**되어있는 것입니다. 사용자가 서버에 접속하여 요청으로 식별자를 
+사용자가 서버에 접속을 하면 서버는 클라이언트(사용자의 컴퓨터)에 데이터를 저장할 때 쿠키
+방식과는 다르게 사용자의 **식별자(id) 값** 만을 저장합니다.
+사용자의 컴퓨터에는 오직 식별자 값만 저장되어있고 해당 식별자 값에 해당하는 **실제 데이터는
+서버의 데이터베이스에 저장** 되어있는 것입니다. 사용자가 서버에 접속하여 요청으로 식별자를
 전송하면 그 식별자에 해당하는 실제 데이터를 서버의 데이터베이스에서 읽어와 사용할 수 있는 것 입니다.
 
 ## Express에 Session 패키지 설치
 
 	npm install express-session --save
 
-{% highlight javascript linenos=table %}
+{% highlight javascript%}
 var express = require('express');
 var session = require('express-session');
 var app = express();
@@ -45,10 +52,10 @@ app.listen(3000, function(){
 {% endhighlight %}
 
 ## Mysql을 Express의 Session store로 사용
-	
+
 	npm install express-mysql-session --save
 
-{% highlight javascript linenos=table %}
+{% highlight javascript %}
 var express = require('express');
 var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
@@ -88,7 +95,7 @@ app.listen(3000, function(){
 
 ## 사용 예
 
-{% highlight javascript linenos=table %}
+{% highlight javascript %}
 //세션 저장 여부에 따라 로그인 결정
 app.get('/', function(req, res){
 	if(req.session.authId)
