@@ -18,7 +18,7 @@
     padding-left: 10em;
     padding-right: 10em;
   }
-  
+
   &__item {
     cursor: pointer;
 
@@ -67,7 +67,7 @@
 
 .preview {
   transition: background-color 0.2s ease-in-out;
-  
+
   &:nth-child(even) {
     background-color: $color-white;
   }
@@ -168,7 +168,7 @@
       &:after {
         opacity: 1;
       }
-      
+
       .card__more {
         box-shadow: inset 175px 0 0 0 $color-alpha;
         color: $color-white;
@@ -264,7 +264,7 @@
 
     & > *:not(:last-child) {
       margin-right: 1em;
-    }    
+    }
   }
 }
 
@@ -372,7 +372,7 @@
     width: 55%;
   }
 
-  h1, 
+  h1,
   h2 {
     line-height: 1.2;
   }
@@ -382,7 +382,7 @@
   }
 
   a {
-    border-bottom: 1px solid $color-alpha;
+    //border-bottom: 1px solid $color-alpha;
   }
 
   img {

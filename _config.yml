@@ -1,16 +1,16 @@
 # Site settings
-email: 
+email:
 baseurl: ""
 paginate: 5
 paginate_path: "/blog/page-:num"
-google_analytics: 
+google_analytics:
 
 # SEO settings
 title: Jiwon Blog
-description: 
+description:
 url: ""
-twitter_username: 
-default_img: 
+twitter_username:
+default_img:
 
 # Profile settings
 name: Jiwon Oh
@@ -22,11 +22,13 @@ social:
 # Build settings
 include: ["_categories"]
 exclude: ["_screenshots", "Gemfile", "Gemfile.lock"]
-markdown: kramdown
+markdown: redcarpet
+#highlighter: redcarpet
 encoding: utf-8
-syntax-highlighting:
-    enabled : true
-    css: syntax.css
+
+##syntax-highlighting:
+    ##enabled : true
+    ##css: syntax.css
 permalink: /:year/:month/:day/:title/
 google-analytics:
       id: "UA-90322354-1"
@@ -36,4 +38,4 @@ sass:
   style: compressed
 
 # Gems
-gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer]
+gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer, rouge, redcarpet]
