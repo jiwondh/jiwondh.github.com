@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sql 기본적인 문법 정리"
-date: 2016-01-15
+date: 2017-01-15
 categories:
   - SQL
 description: 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Node.js에서 Mysql 주요 쿼리문 이용하기"
-date: 2016-01-14
+date: 2017-01-14
 categories:
   - Node.js
 description: SELECT, INSERT, UPDATE, DELETE

@@ -6,24 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>[Node.js] res.send([body]) 인자값 자료형 에러 | Jiwon Blog</title>
+  <title>연습 | Jiwon Blog</title>
   <meta name="author" content="Jiwon Oh">
   <meta name="description" content="">
-  <meta property="og:title" content="[Node.js] res.send([body]) 인자값 자료형 에러 | Jiwon Blog">
-  <meta property="og:url" content="https://jiwondh.github.io/2017/01/15/trouble-1/">
+  <meta property="og:title" content="연습 | Jiwon Blog">
+  <meta property="og:url" content="https://jiwondh.github.io/2017/06/21/ex/">
   <meta property="og:site_name" content="Jiwon Blog">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="/assets/images/hk1.jpg">
+  <meta property="og:description" content="session">
+  <meta property="og:image" content="/assets/images/ade1.jpg">
   <meta property="og:type" content="blog">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:title" content="[Node.js] res.send([body]) 인자값 자료형 에러 | Jiwon Blog">
-  <meta name="twitter:url" content="https://jiwondh.github.io/2017/01/15/trouble-1/">
+  <meta name="twitter:description" content="session">
+  <meta name="twitter:title" content="연습 | Jiwon Blog">
+  <meta name="twitter:url" content="https://jiwondh.github.io/2017/06/21/ex/">
   <meta name="twitter:site" content="Jiwon Blog">
   <meta name="twitter:creator" content="@">
   <meta name="twitter:domain" content="https://jiwondh.github.io">
-  <meta property="twitter:image" content="/assets/images/hk1.jpg">
+  <meta property="twitter:image" content="/assets/images/ade1.jpg">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Lora|Space+Mono:700">
   <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejugothic.css">
@@ -39,7 +39,7 @@
 
 
   <link rel="alternate" type="application/rss+xml" title="Jiwon Blog" href="https://jiwondh.github.io/feed.xml">
-  <link rel="canonical" href="https://jiwondh.github.io/2017/01/15/trouble-1/">
+  <link rel="canonical" href="https://jiwondh.github.io/2017/06/21/ex/">
 
   
   <script>
@@ -65,13 +65,13 @@
       <i class="fa fa-lg fa-arrow-left"></i>
       <span>Back to Posts</span>
     </a>
-    <figure class="absolute-bg mast__img" style="background-image: url('/assets/images/hk1.jpg');"></figure>
+    <figure class="absolute-bg mast__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
     <div class="mast__container">
-      <span><time datetime="2017-01-15T00:00:00+09:00" itemprop="datePublished">Jan 15, 2017</time></span>
-      <h1 itemprop="name headline">[Node.js] res.send([body]) 인자값 자료형 에러</h1>
+      <span><time datetime="2017-06-21T00:00:00+09:00" itemprop="datePublished">Jun 21, 2017</time></span>
+      <h1 itemprop="name headline">연습</h1>
       
         <span>
-          Posted in Troubleshooting
+          Posted in Node.js
         </span>
       
       <span></span>
@@ -79,38 +79,23 @@
   </header>
 
   <section class="section-padding post" itemprop="articleBody">
-    <h2 id="section">코드 내용</h2>
+    <h1 id="section">11장. 소켓 입출력 모델</h1>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">sql</span> <span class="o">=</span> <span class="s1">'SELECT * FROM user WHERE name=?'</span><span class="p">;</span>
-<span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="p">[</span><span class="nx">writerName</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">fields</span><span class="p">){</span>
-	<span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">user</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">id</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-</div>
+<p>⭐️ 학습 목표</p>
 
-<h2 id="section-1">에러 내용</h2>
+<ul>
+  <li>Overlapped 소켓 입출력 모델의 두 가지 형태를 이해하고 활용한다.</li>
+  <li>Completion Port 소켓 입출력 모델을 이해하고 활용한다.</li>
+</ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>express deprecated res.send(status):    
-Use res.sendStatus(status) instead app.js:70:7
-</code></pre>
-</div>
+<ol>
+  <li>Overlapped 모델(I) 📌</li>
+</ol>
 
-<h2 id="section-2">원인</h2>
-<p><a href="http://expressjs.com/en/4x/api.html#res.send">Express api reference</a>에 의하면
-<strong><code class="highlighter-rouge">res.send([body])</code></strong>의 인자값으론 Buffer object, String, object, Array만 가능한데
-위의 코드에선 인자값으로 Integer 값이 들어갔기 대문에 오류 발생.</p>
-
-<h2 id="section-3">해결법</h2>
-
-<p><strong><code class="highlighter-rouge">toString()</code></strong>을 이용하여 해결 가능하다.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">sql</span> <span class="o">=</span> <span class="s1">'SELECT * FROM user WHERE name=?'</span><span class="p">;</span>
-<span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="p">[</span><span class="nx">writerName</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">fields</span><span class="p">){</span>
-	<span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">user</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">id</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
-<span class="p">});</span>
-</code></pre>
-</div>
-
+<ul>
+  <li>Overlapped모델은 10장에서 배운 소켓 입출력 모델(Select, WSAAsyncSelect, WSAEventSelect)과는 근본적으로 다른 입출력 방식으로 고성능을 제공</li>
+  <li>크게 2종류의 구현 방법을 지원</li>
+</ul>
 
   </section>
 
@@ -159,10 +144,10 @@ Use res.sendStatus(status) instead app.js:70:7
 
 
   <section class="next">
-    <a class="next__link" href="/2017/01/15/sql-syntax/" style="background-image: url('/assets/images/ch1.jpg');">
+    <a class="next__link" href="/2017/01/29/session/" style="background-image: url('/assets/images/ade1.jpg');">
       <div class="next__container">
         <span>Read Next</span>
-        <h2>Sql 기본적인 문법 정리</h2>
+        <h2>[Node.js] Session</h2>
       </div>
     </a>
   </section>

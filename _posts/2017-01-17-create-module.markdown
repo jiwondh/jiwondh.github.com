@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Node.js] 사용자 정의 모듈 만들기"
-date: 2016-01-17
+date: 2017-01-17
 categories:
   - Node.js
 description: 사용자 정의 모듈 만들기

@@ -1,0 +1,26 @@
+---
+
+layout: post
+title: "연습"
+date: 2017-06-21
+categories:
+
+- Node.js
+
+description: session
+image: /assets/images/ade1.jpg
+image-sm: /assets/images/ade2.jpg
+
+---
+
+# 11장. 소켓 입출력 모델
+
+⭐️ 학습 목표
+
+- Overlapped 소켓 입출력 모델의 두 가지 형태를 이해하고 활용한다.
+- Completion Port 소켓 입출력 모델을 이해하고 활용한다.
+
+01. Overlapped 모델(I) 📌
+
+- Overlapped모델은 10장에서 배운 소켓 입출력 모델(Select, WSAAsyncSelect, WSAEventSelect)과는 근본적으로 다른 입출력 방식으로 고성능을 제공
+- 크게 2종류의 구현 방법을 지원

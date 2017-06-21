@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Node.js] 라우터 분리하기"
-date: 2016-01-17
+date: 2017-01-17
 categories:
   - Node.js
 description: 라우터 분리하기

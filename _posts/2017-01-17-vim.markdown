@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[vim] 명령어"
-date: 2016-01-17
+date: 2017-01-17
 categories:
   - 기타
 description: vim 명령어

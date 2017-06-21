@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "jade 문법 정리"
-date: 2016-01-14
+date: 2017-01-14
 categories:
   - Jade
 description: jade
