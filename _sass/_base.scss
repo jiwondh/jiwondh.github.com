@@ -189,9 +189,10 @@ h1 {
   font-size: 2.25em;
   line-height: 1.2;
   margin-bottom: 30px;
-  border-bottom: 6px double #777777;
 }
-
+.post h1{
+	border-bottom: 6px double #777777;
+}
 h2 {
   padding-bottom: .3em;
   font-size: 1.75em;
