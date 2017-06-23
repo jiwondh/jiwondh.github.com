@@ -153,82 +153,84 @@
 
 <p><code class="highlighter-rouge">index.js</code>를 아래와 같이 작성해줍니다.</p>
 
-<pre><code class="language-Javascript">const {app, BrowserWindow} = require('electron')
-const path = require('path')
-const url = require('url')
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="p">{</span><span class="nx">app</span><span class="p">,</span> <span class="nx">BrowserWindow</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'electron'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'url'</span><span class="p">)</span>
 
-// 윈도우 객체를 전역에 유지합니다. 만약 이렇게 하지 않으면
-// 자바스크립트 GC가 일어날 때 창이 멋대로 닫혀버립니다.
-let win
+<span class="c1">// 윈도우 객체를 전역에 유지합니다. 만약 이렇게 하지 않으면</span>
+<span class="c1">// 자바스크립트 GC가 일어날 때 창이 멋대로 닫혀버립니다.</span>
+<span class="kd">let</span> <span class="nx">win</span>
 
-function createWindow () {
-  // 새로운 브라우저 창을 생성합니다.
-  win = new BrowserWindow({width: 800, height: 600})
+<span class="kd">function</span> <span class="nx">createWindow</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 새로운 브라우저 창을 생성합니다.</span>
+  <span class="nx">win</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BrowserWindow</span><span class="p">({</span><span class="na">width</span><span class="p">:</span> <span class="mi">800</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="mi">600</span><span class="p">})</span>
 
-  // 그리고 현재 디렉터리의 index.html을 로드합니다.
-  win.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  <span class="c1">// 그리고 현재 디렉터리의 index.html을 로드합니다.</span>
+  <span class="nx">win</span><span class="p">.</span><span class="nx">loadURL</span><span class="p">(</span><span class="nx">url</span><span class="p">.</span><span class="nx">format</span><span class="p">({</span>
+    <span class="na">pathname</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'index.html'</span><span class="p">),</span>
+    <span class="na">protocol</span><span class="p">:</span> <span class="s1">'file:'</span><span class="p">,</span>
+    <span class="na">slashes</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}))</span>
 
-  // 개발자 도구를 엽니다.
-  win.webContents.openDevTools()
+  <span class="c1">// 개발자 도구를 엽니다.</span>
+  <span class="nx">win</span><span class="p">.</span><span class="nx">webContents</span><span class="p">.</span><span class="nx">openDevTools</span><span class="p">()</span>
 
-  // 창이 닫히면 호출됩니다.
-  win.on('closed', () =&gt; {
-    // 윈도우 객체의 참조를 삭제합니다. 보통 멀티 윈도우 지원을 위해
-    // 윈도우 객체를 배열에 저장하는 경우가 있는데 이 경우
-    // 해당하는 모든 윈도우 객체의 참조를 삭제해 주어야 합니다.
-    win = null
-  })
-}
+  <span class="c1">// 창이 닫히면 호출됩니다.</span>
+  <span class="nx">win</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'closed'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 윈도우 객체의 참조를 삭제합니다. 보통 멀티 윈도우 지원을 위해</span>
+    <span class="c1">// 윈도우 객체를 배열에 저장하는 경우가 있는데 이 경우</span>
+    <span class="c1">// 해당하는 모든 윈도우 객체의 참조를 삭제해 주어야 합니다.</span>
+    <span class="nx">win</span> <span class="o">=</span> <span class="kc">null</span>
+  <span class="p">})</span>
+<span class="p">}</span>
 
-// 이 메서드는 Electron의 초기화가 끝나면 실행되며 브라우저
-// 윈도우를 생성할 수 있습니다. 몇몇 API는 이 이벤트 이후에만
-// 사용할 수 있습니다.
-app.on('ready', createWindow)
+<span class="c1">// 이 메서드는 Electron의 초기화가 끝나면 실행되며 브라우저</span>
+<span class="c1">// 윈도우를 생성할 수 있습니다. 몇몇 API는 이 이벤트 이후에만</span>
+<span class="c1">// 사용할 수 있습니다.</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'ready'</span><span class="p">,</span> <span class="nx">createWindow</span><span class="p">)</span>
 
-// 모든 창이 닫히면 애플리케이션 종료.
-app.on('window-all-closed', () =&gt; {
-  // macOS의 대부분의 애플리케이션은 유저가 Cmd + Q 커맨드로 확실하게
-  // 종료하기 전까지 메뉴바에 남아 계속 실행됩니다.
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
+<span class="c1">// 모든 창이 닫히면 애플리케이션 종료.</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'window-all-closed'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// macOS의 대부분의 애플리케이션은 유저가 Cmd + Q 커맨드로 확실하게</span>
+  <span class="c1">// 종료하기 전까지 메뉴바에 남아 계속 실행됩니다.</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">platform</span> <span class="o">!==</span> <span class="s1">'darwin'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">quit</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">})</span>
 
-app.on('activate', () =&gt; {
-  // macOS에선 보통 독 아이콘이 클릭되고 나서도
-  // 열린 윈도우가 없으면, 새로운 윈도우를 다시 만듭니다.
-  if (win === null) {
-    createWindow()
-  }
-})
+<span class="nx">app</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'activate'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// macOS에선 보통 독 아이콘이 클릭되고 나서도</span>
+  <span class="c1">// 열린 윈도우가 없으면, 새로운 윈도우를 다시 만듭니다.</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">win</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">createWindow</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">})</span>
 
-// 이 파일엔 제작할 애플리케이션에 특화된 메인 프로세스 코드를
-// 포함할 수 있습니다. 또한 파일을 분리하여 require하는 방법으로
-// 코드를 작성할 수도 있습니다.
+<span class="c1">// 이 파일엔 제작할 애플리케이션에 특화된 메인 프로세스 코드를</span>
+<span class="c1">// 포함할 수 있습니다. 또한 파일을 분리하여 require하는 방법으로</span>
+<span class="c1">// 코드를 작성할 수도 있습니다.</span>
 </code></pre>
+</div>
 
 <h3 id="indexhtml-"><code class="highlighter-rouge">index.html</code> 생성</h3>
 
 <p>사용자에게 보여줄 index.html 파일을 생성해주고 아래와 같이 작성해줍니다.</p>
 
-<pre><code class="language-Html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;헬로 월드!&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;헬로 월드!&lt;/h1&gt;
-    이 애플리케이션은 node &lt;script&gt;document.write(process.version)&lt;/script&gt;,
-    Chrome &lt;script&gt;document.write(process.versions.chrome)&lt;/script&gt;,
-    Electron &lt;script&gt;document.write(process.versions.electron)&lt;/script&gt;을 사용합니다.
-  &lt;/body&gt;
-&lt;/html&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>헬로 월드!<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>헬로 월드!<span class="nt">&lt;/h1&gt;</span>
+    이 애플리케이션은 node <span class="nt">&lt;script&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">version</span><span class="p">)</span><span class="nt">&lt;/script&gt;</span>,
+    Chrome <span class="nt">&lt;script&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">versions</span><span class="p">.</span><span class="nx">chrome</span><span class="p">)</span><span class="nt">&lt;/script&gt;</span>,
+    Electron <span class="nt">&lt;script&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">versions</span><span class="p">.</span><span class="nx">electron</span><span class="p">)</span><span class="nt">&lt;/script&gt;</span>을 사용합니다.
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </code></pre>
+</div>
 
 <h3 id="electron--">Electron 앱 실행</h3>
 
@@ -246,18 +248,18 @@ app.on('activate', () =&gt; {
 
 <p><code class="highlighter-rouge">package.json</code> 파일에서 아래와 같이 <code class="highlighter-rouge">"start" : "electron index.js"</code>를 추가하여 수정해주면 <code class="highlighter-rouge">npm start</code> 명령어로 앱을 실행할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
-  <span class="s2">"name"</span><span class="err">:</span> <span class="s2">"electrontutorial"</span><span class="p">,</span>
-  <span class="s2">"version"</span><span class="err">:</span> <span class="s2">"0.1.0"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="err">:</span> <span class="s2">"tutorial for electron"</span><span class="p">,</span>
-  <span class="s2">"main"</span><span class="err">:</span> <span class="s2">"index.js"</span><span class="p">,</span>
-  <span class="s2">"scripts"</span><span class="err">:</span> <span class="p">{</span>
-    <span class="s2">"start"</span> <span class="err">:</span> <span class="s2">"electron index.js"</span>
-  <span class="p">},</span>
-  <span class="s2">"author"</span><span class="err">:</span> <span class="s2">""</span><span class="p">,</span>
-  <span class="s2">"license"</span><span class="err">:</span> <span class="s2">"ISC"</span>
-<span class="p">}</span>
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electrontutorial"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial for electron"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"start"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"electron index.js"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
 
 <p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fgvnusyn05j31kw0itn06.jpg" alt="D0938782-4599-4BE1-B8AB-1B34F6AABC45" /></p>
