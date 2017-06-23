@@ -22,8 +22,8 @@ social:
 # Build settings
 include: ["_categories"]
 exclude: ["_screenshots", "Gemfile", "Gemfile.lock"]
-markdown: redcarpet
-#highlighter: redcarpet
+markdown: kramdown
+highlighter: rouge
 encoding: utf-8
 
 ##syntax-highlighting:
@@ -38,4 +38,4 @@ sass:
   style: compressed
 
 # Gems
-gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer, rouge, redcarpet]
+gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer, rouge]

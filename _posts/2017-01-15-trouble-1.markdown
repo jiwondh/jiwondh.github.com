@@ -4,10 +4,11 @@ title: "[Node.js] res.send([body]) 인자값 자료형 에러"
 date: 2017-01-15
 categories:
   - Troubleshooting
-description: 
+description:
 image: /assets/images/hk1.jpg
 image-sm: /assets/images/hk2.jpg
 ---
+
 ## 코드 내용
 
 ```javascript
@@ -28,7 +29,7 @@ Use res.sendStatus(status) instead app.js:70:7
 [Express api reference](http://expressjs.com/en/4x/api.html#res.send)에 의하면
 **`res.send([body])`**의 인자값으론 Buffer object, String, object, Array만 가능한데
 위의 코드에선 인자값으로 Integer 값이 들어갔기 대문에 오류 발생.
-	
+
 ## 해결법
 
 **`toString()`**을 이용하여 해결 가능하다.
@@ -39,4 +40,3 @@ conn.query(sql, [writerName], function(err, user, fields){
 	res.send(user[0].id.toString());
 });
 ```
-

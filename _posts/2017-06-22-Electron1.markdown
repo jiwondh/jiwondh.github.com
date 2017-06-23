@@ -1,0 +1,211 @@
+---
+layout: post
+title: "[Electron] Electron으로 데스크탑 앱 개발 시작하기"
+date: 2017-06-21
+categories:
+  - Electron
+description: Electron 시작하기
+image: /assets/images/ade1.jpg
+image-sm: /assets/images/ade2.jpg
+---
+
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}  
+
+# Electron으로 데스크탑 앱 개발 시작하기
+
+### NodeJS 설치
+
+NodeJS 홈페이지 에서 NodeJS를 설치해주세요.
+
+이미 설치되있으신 분은 아래부터 진행하시면 됩니다.
+
+### 프로젝트 폴더 생성
+
+프로젝트를 진행할 폴더를 하나 생성해주세요
+
+저는 /Users/ohjiwon/dev 경로에 /Users/ohjiwon/dev/ElectronPJ 폴더를 생성해주었어요.
+
+### `package.json` 파일 생성하기
+
+커맨드 창을 여시고 해당 경로로 이동해주세요.
+
+```
+cd dev/ElectronPJ/
+```
+
+해당 폴더에서 아래 명령어를 입력합니다.
+
+```
+npm init
+```
+
+명령어를 입력하면 세부사항 정보를 입력하는 질문창이 뜨는데요, 저는 아래와 같이 간단히 입력해주었습니다. `package.json`에 대한 자세한 사항은 [npm-package.json](https://docs.npmjs.com/files/package.json)을 참고해주세요!
+
+![AD4B715B-D16D-4591-880E-4541A19AB9A9](https://ws2.sinaimg.cn/large/006tNc79gy1fgvmbd1ld8j318u0q8tju.jpg)
+
+![0F2A046E-6BB2-4280-9072-E1AD9CB85F28](https://ws1.sinaimg.cn/large/006tNc79gy1fgvmbrwy1yj318o0f443a.jpg)
+
+### electron 설치
+
+electron을 `npm` 명령어로 설치해줍니다.
+
+```
+npm install electron -g
+```
+
+![CE4503F4-04CC-4040-9B4E-442AF91B8E39](https://ws4.sinaimg.cn/large/006tNc79gy1fgvnit8n8pj31900a0djq.jpg)
+
+### `index.js` 생성
+
+저는 코드 에디터로 Visual Studio Code를 사용하여 진행하도록 하겠습니다.
+
+코드 에디터에서 프로젝트 폴더를 열어 `index.js` 파일을 생성해주세요
+
+![AA2B14C6-3820-44F9-9912-88E0A65B389E](https://ws3.sinaimg.cn/large/006tNc79gy1fgvmk24izfj31kw0yuthr.jpg)
+
+아래 코드들은 Electron 문서 코드 중 [Quick-Start](https://electron.atom.io/docs/tutorial/quick-start/)에 해당하는 코드입니다.
+
+`index.js`를 아래와 같이 작성해줍니다.
+
+```Javascript
+const {app, BrowserWindow} = require('electron')
+const path = require('path')
+const url = require('url')
+
+// 윈도우 객체를 전역에 유지합니다. 만약 이렇게 하지 않으면
+// 자바스크립트 GC가 일어날 때 창이 멋대로 닫혀버립니다.
+let win
+
+function createWindow () {
+  // 새로운 브라우저 창을 생성합니다.
+  win = new BrowserWindow({width: 800, height: 600})
+
+  // 그리고 현재 디렉터리의 index.html을 로드합니다.
+  win.loadURL(url.format({
+    pathname: path.join(__dirname, 'index.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
+
+  // 개발자 도구를 엽니다.
+  win.webContents.openDevTools()
+
+  // 창이 닫히면 호출됩니다.
+  win.on('closed', () => {
+    // 윈도우 객체의 참조를 삭제합니다. 보통 멀티 윈도우 지원을 위해
+    // 윈도우 객체를 배열에 저장하는 경우가 있는데 이 경우
+    // 해당하는 모든 윈도우 객체의 참조를 삭제해 주어야 합니다.
+    win = null
+  })
+}
+
+// 이 메서드는 Electron의 초기화가 끝나면 실행되며 브라우저
+// 윈도우를 생성할 수 있습니다. 몇몇 API는 이 이벤트 이후에만
+// 사용할 수 있습니다.
+app.on('ready', createWindow)
+
+// 모든 창이 닫히면 애플리케이션 종료.
+app.on('window-all-closed', () => {
+  // macOS의 대부분의 애플리케이션은 유저가 Cmd + Q 커맨드로 확실하게
+  // 종료하기 전까지 메뉴바에 남아 계속 실행됩니다.
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
+
+app.on('activate', () => {
+  // macOS에선 보통 독 아이콘이 클릭되고 나서도
+  // 열린 윈도우가 없으면, 새로운 윈도우를 다시 만듭니다.
+  if (win === null) {
+    createWindow()
+  }
+})
+
+// 이 파일엔 제작할 애플리케이션에 특화된 메인 프로세스 코드를
+// 포함할 수 있습니다. 또한 파일을 분리하여 require하는 방법으로
+// 코드를 작성할 수도 있습니다.
+```
+
+### `index.html` 생성
+
+사용자에게 보여줄 index.html 파일을 생성해주고 아래와 같이 작성해줍니다.
+
+```Html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>헬로 월드!</title>
+  </head>
+  <body>
+    <h1>헬로 월드!</h1>
+    이 애플리케이션은 node <script>document.write(process.version)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    Electron <script>document.write(process.versions.electron)</script>을 사용합니다.
+  </body>
+</html>
+```
+
+### Electron 앱 실행
+
+```
+electron index.js
+```
+
+![C2DA4E2B-9AF4-46C0-896D-07904304FBDD](https://ws3.sinaimg.cn/large/006tNc79gy1fgvnuaaca9j31kw0iuq5f.jpg)
+
+프로젝트 폴더에서 위 명령어를 통해 Electron 앱을 실행하면 아래와 같은 창이 뜨게됩니다.
+
+![A45ED7AA-EBCF-4B68-9A32-70F499F0435E](https://ws2.sinaimg.cn/large/006tNc79gy1fgvnmisjglj318c0x244q.jpg)
+
+### `npm start`로 앱 실행하기
+
+`package.json` 파일에서 아래와 같이 `"start" : "electron index.js"`를 추가하여 수정해주면 `npm start` 명령어로 앱을 실행할 수 있습니다.
+
+```javascript
+{
+  "name": "electrontutorial",
+  "version": "0.1.0",
+  "description": "tutorial for electron",
+  "main": "index.js",
+  "scripts": {
+    "start" : "electron index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
+
+![D0938782-4599-4BE1-B8AB-1B34F6AABC45](https://ws3.sinaimg.cn/large/006tNc79gy1fgvnusyn05j31kw0itn06.jpg)
+
+## 마침
+
+지금까지 Electron을 이용해서 데스크탑 앱을 만들기위한 시작단계에 대한 튜토리얼이었습니다. 자세한 내용은 [Electron 사이트](https://electron.atom.io/)나 [Electron 한국 번역 문서](https://github.com/electron/electron/tree/master/docs-translations/ko-KR)를 참고하세요.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
