@@ -218,6 +218,14 @@ npm run package
 
 `app.asar`파일이 존재하므로 `app` 폴더를 삭제하여도 `ElectronPJ.app`은 정상 작동하게 되며 이로서 사용자는 앱의 소스코드에 접근하지 못하게 됩니다.
 
+## 앱 배포
+
+`ElectronPJ.app`을 실행하면(Linux에선 `ElectronPJ` Windows에선 `ElectronPJ.exe` 입니다) ElectronPJ 앱이 실행됩니다. 
+
+![A45ED7AA-EBCF-4B68-9A32-70F499F0435E](https://ws2.sinaimg.cn/large/006tNc79gy1fgvnmisjglj318c0x244q.jpg)
+
+최종 사용자에겐 이 ElectronPJ 폴더(`ElectronPJ.app`)를 배포하면 됩니다.
+
 ## 마침
 
 지금까지 [electron-packager](https://github.com/electron-userland/electron-packager)을 사용하여 앱을 패키징하는 방법을 소개하였습니다. 

@@ -5,8 +5,8 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 25 Jun 2017 03:29:46 +0900</pubDate>
-    <lastBuildDate>Sun, 25 Jun 2017 03:29:46 +0900</lastBuildDate>
+    <pubDate>Sun, 25 Jun 2017 03:37:37 +0900</pubDate>
+    <lastBuildDate>Sun, 25 Jun 2017 03:37:37 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -23,7 +23,8 @@
           &lt;li&gt;&lt;a href=&quot;#asar------&quot; id=&quot;markdown-toc-asar------&quot;&gt;asar 아카이브 포맷을 통한 코드 노출 방지&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;마침&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;앱 배포&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;마침&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -228,7 +229,15 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app.asar&lt;/code&gt;파일이 존재하므로 &lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt; 폴더를 삭제하여도 &lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ.app&lt;/code&gt;은 정상 작동하게 되며 이로서 사용자는 앱의 소스코드에 접근하지 못하게 됩니다.&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;마침&lt;/h2&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;앱 배포&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ.app&lt;/code&gt;을 실행하면(Linux에선 &lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ&lt;/code&gt; Windows에선 &lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ.exe&lt;/code&gt; 입니다) ElectronPJ 앱이 실행됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tNc79gy1fgvnmisjglj318c0x244q.jpg&quot; alt=&quot;A45ED7AA-EBCF-4B68-9A32-70F499F0435E&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;최종 사용자에겐 이 ElectronPJ 폴더(&lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ.app&lt;/code&gt;)를 배포하면 됩니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;마침&lt;/h2&gt;
 
 &lt;p&gt;지금까지 &lt;a href=&quot;https://github.com/electron-userland/electron-packager&quot;&gt;electron-packager&lt;/a&gt;을 사용하여 앱을 패키징하는 방법을 소개하였습니다.&lt;/p&gt;
 
