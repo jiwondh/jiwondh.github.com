@@ -1,0 +1,226 @@
+---
+layout: post
+title: "[Electron] Electron 데스크탑 앱 배포하기 (Packaging Applications)"
+date: 2017-06-23
+categories:
+  - Electron
+description: Electron 데스크탑 앱 배포하기 (Packaging Applications)
+image: /assets/images/ade1.jpg
+image-sm: /assets/images/ade2.jpg
+---
+
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}  
+
+# Electron 데스크탑 앱 배포하기 (Packaging Applications)
+
+Electron 데스크탑 앱을 일일이 수동으로 패키지로 만드는 대신, 서드 파티 패키징 툴을 사용하며 패키징을 자동화 시킬 수 있습니다. 저는 서드 파티 패키징 툴 중에서 [electron-packager](https://github.com/electron-userland/electron-packager)을 사용하여 앱을 패키징하는 방법을 소개하겠습니다.
+
+### electron을 devDependencies로 설치
+
+기존에 electron을 devDependencies로 설치하지 않으신 분들은 electron 프로젝트 폴더에서 아래 명령어를 입력해 `package.json` 파일에 버전이 명시되도록 해주세요.
+
+```
+npm install electron --save-dev 
+```
+
+### electron-packager을 devDependencies로 설치
+
+electron 프로젝트 폴더에서 아래 명령어로 electron-packager를 설치해줍니다.
+
+```
+npm install electron-packager --save-dev
+```
+
+### asar을 devDependencies로 설치
+
+electron 프로젝트 폴더에서 아래 명령어로 asar를 설치해줍니다
+
+```
+npm install asar --save-dev
+```
+
+
+
+그럼 아래와 같이 `package.json` 파일의 devDependencies항목에 버전이 명시됩니다.
+
+![1349AB1D-9A62-41FD-85E2-95F08EA6FAE1](https://ws2.sinaimg.cn/large/006tKfTcgy1fgwpabe6ydj31kw0od78d.jpg)
+
+## 앱 패키징
+
+### Electron 기본 아이콘으로 앱 패키징
+
+1.`package.json` 파일을 아래와 같이 수정해 주세요. (`scripts`의 `build` 부분 추가)
+
+```json
+{
+  "name": "electrontutorial",
+  "version": "0.1.0",
+  "description": "tutorial for electron",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js",
+    "build": "electron-packager . ElectronPJ"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "asar": "^0.13.0",
+    "electron": "^1.6.11",
+    "electron-packager": "^8.7.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
+```
+
+2.프로젝트 폴더 내에서 아래 명령어를 실행하세요.
+
+```
+npm run build
+```
+
+
+
+아이콘을 따로 지정해주지 않으면 기본 Electron 아이콘으로 앱 패키징이 되고 패키징된 폴더가 프로젝트 폴더내에 아래와 같이 생기게 됩니다. 예를 들어 저는 프로젝트 폴더 경로인 /Users/ohjiwon/dev/ElectronPJ 내에 /Users/ohjiwon/dev/ElectronPJ/ElectronPJ-darwin-x64와 같이 패키징 폴더가 생성되고 그 안에 `ElectronPJ.app`이 위치하게 됩니다.
+
+![B2B5BF2A-D031-4173-BE1D-22693A942007](https://ws2.sinaimg.cn/large/006tKfTcgy1fgwry9m3byj313w0gmaff.jpg)
+
+### 사용자 지정 아이콘으로 앱 패키징
+
+이전에 만들었던 ElectronPJ-darwin-x64 폴더를 상위 폴더인 프로젝트 폴더에서 아래 명령어로 삭제해주세요.
+
+```
+rm -rf ElectronPJ-darwin-x64
+```
+
+![25035F33-AB5A-4135-87C2-B73C6BA27247](https://ws3.sinaimg.cn/large/006tKfTcgy1fgwsd6c85ej31kw0i4gng.jpg)
+
+1.사용자 지정 아이콘으로 패키징을 하기 위해서 자신의 운영체제에 맞는 아이콘 파일을 프로젝트 폴더내에 저장해주세요. 
+
+   예를들어 저의 경우 프로젝트 폴더 경로인 /Users/ohjiwon/dev/ElectronPJ 내에 아이콘 파일인 `Icon.icns` 파일을 저장해주었어요.
+
+![676485BC-9CCE-4DAD-A305-1E71E8E523FD](https://ws4.sinaimg.cn/large/006tKfTcgy1fgwsfgbw2pj31400bsn1z.jpg)
+
+2.`package.json` 파일을 아래와 같이 수정해 줍니다. (`scripts`의 `build` 부분 수정)
+
+```json
+{
+  "name": "electrontutorial",
+  "version": "0.1.0",
+  "description": "tutorial for electron",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js",
+    "build": "electron-packager . ElectronPJ && cp Icon.icns ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/electron.icns"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "asar": "^0.13.0",
+    "electron": "^1.6.11",
+    "electron-packager": "^8.7.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
+```
+
+3.프로젝트 폴더 내에서 아래 명령어를 실행하세요.
+
+```
+npm run build
+```
+
+![15C48C9E-40F3-4088-B304-600B357B722A](https://ws3.sinaimg.cn/large/006tKfTcgy1fgwsdz1ifij31kw0ihjva.jpg)
+
+아이콘을 따로 지정해주었기 때문에 패키징된 폴더안에 `ElectronPJ.app`의 아이콘이 지정한 아이콘으로 바뀐 것을 알 수 있습니다. 
+
+![84E4FC1A-CD88-4A5A-A7A3-4064907BBEA2](https://ws3.sinaimg.cn/large/006tKfTcgy1fgwsg6dr3kj31480gaafn.jpg)
+
+이러한 방식으로 패키징을 하게되면 해당 앱을 다운 받은 사용자가 앱의 패키징 내용을 아래와 같은 방법으로 접근하여 코드를 임의로 수정할 수 있게 되고 수정된 코드가 `ElectronPJ.app에 반영되어버립니다.
+
+![62F0CDAD-0C22-4124-BC69-899538B07479](https://ws2.sinaimg.cn/large/006tKfTcgy1fgwtao6g5vj313s0g679z.jpg)
+
+![38523CC8-5E17-4300-A8C9-151E41B43985](https://ws3.sinaimg.cn/large/006tKfTcgy1fgwtavgusyj313s09640y.jpg)
+
+![88899AC7-527A-493E-9CB3-74BA4A46DB14](https://ws1.sinaimg.cn/large/006tKfTcgy1fgwtb8txh2j313q0f0dlc.jpg)
+
+![5B8FBB4A-F0F9-4473-8A42-EF17E7A609B3](https://ws3.sinaimg.cn/large/006tKfTcgy1fgwtbqibwvj313g18ge0r.jpg)
+
+![73FD2FAE-8BD9-4509-A464-D27B58E13ABF](https://ws2.sinaimg.cn/large/006tKfTcgy1fgwtc2iafej313w0asn1a.jpg)
+
+따라서 앱의 소스코드가 사용자에게 노출되는 것을 방지할 필요가 있습니다.
+
+### asar 아카이브 포맷을 통한 코드 노출 방지
+
+소스파일 전체를 복사해서 배포하는 것과는 별개로 [asar](https://github.com/electron/asar) 아카이브를 통해 애플리케이션의 소스 코드가 사용자에게 노출되는 것을 방지할 수 있습니다.
+
+`asar` 아카이브를 사용할 땐 단순히 `app` 폴더 대신에 애플리케이션을 패키징한 `app.asar` 파일로 대체하면됩니다. Electron은 자동으로 `app`폴더 대신 asar 아카이브를 기반으로 애플리케이션을 실행합니다.
+
+이전에 만들었던 ElectronPJ-darwin-x64 폴더를 상위 폴더인 프로젝트 폴더에서 아래 명령어로 삭제해주세요.
+
+```
+rm -rf ElectronPJ-darwin-x64
+```
+
+![25035F33-AB5A-4135-87C2-B73C6BA27247](https://ws3.sinaimg.cn/large/006tKfTcgy1fgwsd6c85ej31kw0i4gng.jpg)
+
+1.`package.json` 파일을 아래와 같이 수정해줍니다. (`scripts`의 `package` 부분 추가)
+
+```json
+{
+  "name": "electrontutorial",
+  "version": "0.1.0",
+  "description": "tutorial for electron",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js",
+    "package": "asar pack ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/app ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/app.asar",
+    "build": "electron-packager . ElectronPJ && cp Icon.icns ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/electron.icns"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "asar": "^0.13.0",
+    "electron": "^1.6.11",
+    "electron-packager": "^8.7.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
+```
+
+2.프로젝트 폴더 내에서 아래 명령어를 실행하세요.
+
+```
+npm run build
+```
+
+```
+npm run package
+```
+
+![16572C54-641F-4C26-AAE6-8C3170B064F6](https://ws3.sinaimg.cn/large/006tKfTcgy1fgwtp2406ij31kw0ikn25.jpg)
+
+그럼 아래와 같이 ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources 경로에 `app.asar` 파일이 생성된 것을 볼 수 있습니다.
+
+![CAAF46CF-998C-45B1-B433-53B5FD307780](https://ws2.sinaimg.cn/large/006tKfTcgy1fgwtqwnt29j313w0fy0ym.jpg)
+
+3.`app` 폴더를 삭제하세요.
+
+![CCE2C187-7D0A-4C04-9FE7-BA2D3CA5CEC7](https://ws1.sinaimg.cn/large/006tKfTcgy1fgwuewfnorj313u0a4784.jpg)
+
+`app.asar`파일이 존재하므로 `app` 폴더를 삭제하여도 `ElectronPJ.app`은 정상 작동하게 되며 이로서 사용자는 앱의 소스코드에 접근하지 못하게 됩니다.
+
+## 마침
+
+지금까지 [electron-packager](https://github.com/electron-userland/electron-packager)을 사용하여 앱을 패키징하는 방법을 소개하였습니다. 
+
+Electron 데스크탑 앱 배포에 관한 자세한 내용은 Electron 홈페이지의 [Application Distribution](https://electron.atom.io/docs/tutorial/application-distribution/)나 Electron 한국 번역 문서의 [애플리케이션 배포](https://github.com/electron/electron/tree/master/docs-translations/ko-KR)부분을 참고하세요.
+

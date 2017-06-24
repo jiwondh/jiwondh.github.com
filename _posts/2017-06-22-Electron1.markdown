@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Electron] Electron으로 데스크탑 앱 개발 시작하기"
-date: 2017-06-21
+date: 2017-06-22
 categories:
   - Electron
 description: Electron 시작하기
