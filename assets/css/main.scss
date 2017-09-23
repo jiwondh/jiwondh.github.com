@@ -25,3 +25,43 @@ pre.lineno{
 td.code{
     padding-left: 30px;
 }
+
+.post h1{
+    margin-top: 100px !important;
+}
+.post h2{
+    margin-top: 60px !important;
+}
+.post h3{
+    margin-top: 40px !important;
+}
+
+img {
+    box-shadow: none;
+    transition: box-shadow 0.5s;
+    transition:all 0.3s;
+}
+
+img:hover
+{
+    -webkit-box-shadow: 2px 3px 8px 3px rgba(214,210,214,1);
+    -moz-box-shadow: 2px 3px 8px 3px rgba(214,210,214,1);
+    box-shadow: 2px 3px 8px 3px rgba(214,210,214,1);
+    -webkit-transform: translate(-3px, -3px);
+    transform: translate(-3px, -3px);
+}
+
+code {
+    box-shadow: none;
+    transition: box-shadow 0.5s;
+    transition:all 0.3s;
+}
+
+code:hover
+{
+    -webkit-box-shadow: 2px 3px 8px 3px rgba(214,210,214,1);
+    -moz-box-shadow: 2px 3px 8px 3px rgba(214,210,214,1);
+    box-shadow: 2px 3px 8px 3px rgba(214,210,214,1);
+    -webkit-transform: translate(-3px, -3px);
+    transform: translate(-3px, -3px);
+}

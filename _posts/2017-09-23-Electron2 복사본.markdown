@@ -1,0 +1,77 @@
+---
+layout: post
+title: "[C++] 문자열 공백 포함 입력 받기"
+date: 2017-09-23
+categories:
+  - Algorithm
+description: 문자열 공백 포함 입력 받기
+image: /assets/images/ade1.jpg
+image-sm: /assets/images/ade2.jpg
+typora-copy-images-to: ipic
+---
+
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}  
+
+
+# [C++] 문자열 공백 포함 입력 받기
+
+## `cin.getline` 
+
+- 공백과 종료`null` 문자를 포함해서 `n`개의 문자를 `s`에 저장
+- `delim` 문자가 나타나면 입력 종료
+
+### 인자값
+
+- `s` : 문자열 배열 
+- `n` : `s`에 입력받을 최대 문자 수(종료 `null` 문자 포함)
+- `delim` : 해당 문자가 나타나면 입력받기를 종료
+
+### 예제
+
+{% highlight c++ %}
+
+# include <iostream>
+
+using namespace std;
+
+int main() {
+​	for (int i = 0; i < 3; i++) {
+​		char string[1000];
+​		cin.getline(string,1000,'\n');
+​		cout << string << endl;
+​	}
+}
+
+{% endhighlight %}
+
+### 실행 결과
+
+![1DCB99BA-30B5-4B96-8D65-FE047A49F9F2](https://ws3.sinaimg.cn/large/006tKfTcgy1fjtxennq63j30l60583z4.jpg)
+
+## `scanf("%[^\n]", str)`
+
+- `\n` 문자 입력받을 때까지 `str` 문자열에 저장
+- **for문**에서 사용 불가
+
+### 예제
+
+{% highlight c++ %}
+
+#include <iostream>
+using namespace std;
+
+int main() {
+​	char string[1000];
+​	scanf("%[^\n]", string);
+​	cout << string;
+}
+
+{% endhighlight %}
+
+### 실행 결과
+
+![AC4C782C-214E-4498-8257-D26A1D46C2EF](https://ws4.sinaimg.cn/large/006tKfTcgy1fjtxcykzxij30ks02cgln.jpg)
+

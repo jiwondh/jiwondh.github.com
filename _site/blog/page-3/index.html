@@ -63,6 +63,8 @@
       <section class="previews">
   <div>
     
+      <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
+    
       <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/fw1.jpg');"></figure>
     
       <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/hk1.jpg');"></figure>
@@ -83,6 +85,15 @@
 
     <div class="tab">
       <ul itemscope itemtype="http://schema.org/Blog">
+        
+          <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            <a class="preview__link" href="/2017/01/14/mysql/" itemprop="url">
+              <span class="preview__date" itemprop="datePublished" datetime="2017-01-14T00:00:00+09:00">Jan 14, 2017</span>
+              <h2 class="preview__header" itemprop="name">Node.js에서 Mysql 주요 쿼리문 이용하기</h2>
+			  <p class="preview__excerpt" itemprop="description">Node.js에서의 Mysql의 자세한 사용법은 github 페이지를 참고하세요. SELECT 1 2 3 4 5 6 7 8 9 10var sql = 'SELECT * FROM table'; conn.query(sql, function(err, rows, fields){ if(err){ console.log(err);...</p>
+              <span class="preview__more">Read More</span>
+            </a>
+          </li>
         
           <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
             <a class="preview__link" href="/2017/01/14/jade-syntax/" itemprop="url">
@@ -232,6 +243,24 @@
           <div class="card__container">
             <h2 class="card__header">Electron</h2>
             <p class="card__count">2 Posts</p>
+            <span class="card__more">View All</span>
+          </div>
+        </a>
+      </li>
+    
+      
+      <li class="card">
+        <a class="card__link" href="/category/algorithm/">
+          
+            <div class="card__img">
+              
+                <figure class="absolute-bg" style="background-image: url('/assets/images/ade2.jpg');"></figure>
+              
+            </div>
+          
+          <div class="card__container">
+            <h2 class="card__header">Algorithm</h2>
+            <p class="card__count">1 Posts</p>
             <span class="card__more">View All</span>
           </div>
         </a>
