@@ -1,0 +1,42 @@
+---
+layout: default
+page_title: Search
+permalink: /search/
+---
+<header class="section-padding--lg mast">
+    <a class="nav nav--white" href="{{ site.baseurl }}/">
+      <i class="fa fa-lg fa-arrow-left"></i>
+      <span>Back to Posts</span>
+    </a> 
+    <figure class="absolute-bg mast__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
+    <div class="mast__container">
+      <h1 itemprop="name headline">Search</h1>
+    </div>
+</header>
+
+<!— Html Elements for Search -->
+<div id="search-container">
+    <div class="container-1">
+      <span class="icon"><i class="fa fa-search"></i></span>
+      <input type="text" id="search-input" placeholder="Search...">
+  </div>
+    <ul id="results-container"></ul>
+</div>
+
+<!-- Script pointing to jekyll-search.js -->
+<script src="{{site.baseurl}}/dest/jekyll-search.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+      SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '{{ site.baseurl }}/search2.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 10,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+</script>
+

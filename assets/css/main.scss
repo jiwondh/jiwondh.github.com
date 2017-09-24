@@ -65,3 +65,58 @@ code:hover
     -webkit-transform: translate(-3px, -3px);
     transform: translate(-3px, -3px);
 }
+
+#search {
+    right: 2em !important;
+    left: unset;
+    span{
+        margin-right: 0.5em;
+    }
+}
+#search-container{
+    margin-top: 3em;
+    margin-bottom: 3em;
+    margin-left: 20%;
+    width: 60%;
+}
+
+.container-1{
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    #search-input{
+        width: 100%;
+        height: 50px;
+        margin-bottom: 3em;
+        background: rgba(158, 158, 158, 0.15);
+        border: none;
+        font-size: 10pt;
+        float: left;
+        color: #63717f;
+        padding-left: 45px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 30px;
+
+        -webkit-transition: background .55s ease;
+        -moz-transition: background .55s ease;
+        -ms-transition: background .55s ease;
+        -o-transition: background .55s ease;
+        transition: background .55s ease;
+    }
+    .icon{
+        position: absolute;
+        top: 50%;
+        margin-left: 17px;
+        margin-top: 11px;
+        z-index: 1;
+        color: #4f5b66;
+    }
+    #search-input:hover, #search-input:focus, #search-input:active{
+        outline:none;
+        background: rgba(205, 220, 57, 0.18);
+    }
+}
+#results-container{
+    list-style: none;
+}

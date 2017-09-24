@@ -68,6 +68,10 @@
       <i class="fa fa-lg fa-arrow-left"></i>
       <span>Back to Posts</span>
     </a> 
+    <a class="nav nav--white" id="search" href="/search">
+      <span>search</span>
+      <i class="fa fa-lg fa-search"></i>
+    </a>
     <figure class="absolute-bg mast__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
     <div class="mast__container">
       <span><time datetime="2017-01-17T00:00:00+09:00" itemprop="datePublished">Jan 17, 2017</time></span>
@@ -79,8 +83,11 @@
       
       <span></span>
     </div>
+    
   </header>
+
   <article class="post-content">
+
     <section class="section-padding post" itemprop="articleBody">
       
 <ul id="markdown-toc">
@@ -215,7 +222,7 @@
   })();
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>  
-<!--disqus coding end-->  
+  <!--disqus coding end-->  
   
 </article>
 
@@ -230,10 +237,40 @@
   </section>
 
 
+<!— Html Elements for Search -->
+<div id="search-container">
+    <div class="container-1">
+      <span class="icon"><i class="fa fa-search"></i></span>
+      <input type="text" id="search-input" placeholder="Search...">
+  </div>
+    <ul id="results-container"></ul>
+</div>
+
+<!-- Script pointing to jekyll-search.js -->
+<script src="/dest/jekyll-search.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+      SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search2.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 10,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+</script>
+
+
+
     </main>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script type="text/javascript" src="/assets/js/app.js"></script>
 
+
+  <body>
 
 </html>
