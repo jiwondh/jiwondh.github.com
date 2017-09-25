@@ -120,3 +120,7 @@ code:hover
 #results-container{
     list-style: none;
 }
+
+.md-fences, code, tt {
+    font-size: inherit !important;
+}
