@@ -5,9 +5,55 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Sep 2017 11:12:52 +0900</pubDate>
-    <lastBuildDate>Mon, 25 Sep 2017 11:12:52 +0900</lastBuildDate>
+    <pubDate>Tue, 26 Sep 2017 12:30:26 +0900</pubDate>
+    <lastBuildDate>Tue, 26 Sep 2017 12:30:26 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>[C++] 입력 개수 모를 때 입력 받기</title>
+        <description>
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#c------&quot; id=&quot;markdown-toc-c------&quot;&gt;[C++] 입력 개수 모를 때 입력 받기&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;예제&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;실행 결과&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;c------&quot;&gt;[C++] 입력 개수 모를 때 입력 받기&lt;/h1&gt;
+
+&lt;p&gt;입력 개수가 주어지지 않고 &lt;strong&gt;입력이 끝날 때까지 입력 받아야 될 때&lt;/strong&gt; 사용하시면 될 것 같아요~&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;예제&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;cp&quot;&gt;# include &amp;lt;iostream&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;	&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;		&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;		&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;&#39; &#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;end&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;실행 결과&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006tNc79gy1fjwsxg44r7j30l405o3yk.jpg&quot; alt=&quot;7429BE4B-EBD4-4009-8977-542414746931&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 23 Sep 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/09/23/scanf/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/09/23/scanf/</guid>
+        
+        
+        <category>Algorithm</category>
+        
+      </item>
     
       <item>
         <title>[C++] 문자열 공백 포함 입력 받기</title>
@@ -1233,88 +1279,6 @@ Use res.sendStatus(status) instead app.js:70:7
         
         
         <category>SQL</category>
-        
-      </item>
-    
-      <item>
-        <title>Node.js 시작하기</title>
-        <description>&lt;h2 id=&quot;nodejs-&quot;&gt;Node.js 설치&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;a href=&quot;https://nodejs.org/en/&quot;&gt;&lt;strong&gt;Node.js 홈페이지&lt;/strong&gt;&lt;/a&gt;에서 운영체제에 맞는 
-Node.js Installer 를 다운로드하고 실행하여 설치합니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;npm&quot;&gt;npm&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
-npm은 Node.js를 설치하면 자동으로 설치됩니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node -v   	
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;위의 명령어를 입력하여 버전을 확인해보세요.&lt;br /&gt;
-npm을 이용하여 모듈을 설치할 때에는 아래와 같은 명령어를 이용합니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install 모듈이름 --save	//해당 패키지에만 모듈 적용
-npm install 모듈이름 -g		//전역으로 모듈을 적용
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--save&lt;/code&gt;&lt;/strong&gt;를 붙이면 package.json에 의존성이 기록되므로 일시적으로 
-설치하는 것이 아닐 시에 권장됩니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;packagejson--&quot;&gt;package.json 파일 생성&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm init
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;express-&quot;&gt;Express 설치&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install express --save
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;jade-&quot;&gt;Jade 설치&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install jade --save
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;body-parser-&quot;&gt;body-parser 설치&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
-express 4.0에서는 body parser 기능이 내장되어있지 않기 때문에
-따로 &lt;a href=&quot;https://www.npmjs.com/package/body-parser&quot;&gt;&lt;strong&gt;body-parser&lt;/strong&gt;&lt;/a&gt;를 
-설치 해주도록 합니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install body-parser --save
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;supervisor-&quot;&gt;supervisor 설치&lt;/h2&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;npm install supervisor -g
-supervisor app.js&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.npmjs.com/package/supervisor&quot;&gt;supervisor&lt;/a&gt;&lt;/strong&gt;를 설치해주면
-코드 변화를 감지하여 재실행 주기 때문에 코드를 수정시킬때마다 
-&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;node app.js&lt;/code&gt;&lt;/strong&gt;를 입력하여 재실행시킬 필요가 없습니다&lt;/p&gt;
-
-&lt;h2 id=&quot;mysql-&quot;&gt;mysql 설치&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
-mysql을 설치하는 방법은 여러가지가 있습니댜. 
-&lt;a href=&quot;https://opentutorials.org/course/2136/12020&quot;&gt;&lt;strong&gt;생활코딩-MySQL 소개 및 기본 사용법&lt;/strong&gt;&lt;/a&gt;
-를 참고하여 mysql를 설치해보시고 기본적인 사용법도 익히시길 바랍니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;node-mysql-&quot;&gt;node-mysql 설치&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install node-mysql --save
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Sat, 14 Jan 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/01/14/start/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/01/14/start/</guid>
-        
-        
-        <category>Node.js</category>
         
       </item>
     
