@@ -5,9 +5,61 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Oct 2017 02:46:14 +0900</pubDate>
-    <lastBuildDate>Mon, 16 Oct 2017 02:46:14 +0900</lastBuildDate>
+    <pubDate>Mon, 16 Oct 2017 03:24:21 +0900</pubDate>
+    <lastBuildDate>Mon, 16 Oct 2017 03:24:21 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>[백준 BOJ] 1236 성 지키기</title>
+        <description>&lt;h1 id=&quot;boj-1236--&quot;&gt;[백준 BOJ] 1236 성 지키기&lt;/h1&gt;
+
+&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/1236&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;각 행과 열에 대해서 경비원의 수를 셉니다.&lt;/li&gt;
+  &lt;li&gt;경비원의 수가 &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;인 행의 수와 열의 수 중에서 &lt;strong&gt;최댓값&lt;/strong&gt;이 &lt;u&gt;경비원을 최소로 추가하는 개수&lt;/u&gt;입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;예제&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.... |0
+X... |1
+.... |0  =&amp;gt; 열 3 == 행 3 =&amp;gt; 3
+.... |0
+-----
+1000
+
+.... |0
+X... |1
+X... |1  =&amp;gt; 열 3 &amp;gt; 행 2 =&amp;gt; 3
+.... |0
+-----
+2000
+
+.... |0
+XX.. |2
+X... |1  =&amp;gt; 열 2 &amp;gt; 행 1 =&amp;gt; 2
+.X.. |1
+-----
+2200 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;코드&lt;/h2&gt;
+
+&lt;script src=&quot;https://gist.github.com/jiwondh/0c47b8fffc65bc91dc314d2924c3bce1.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_1236/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_1236/</guid>
+        
+        
+        <category>Algorithm Problem</category>
+        
+      </item>
     
       <item>
         <title>[백준 BOJ] 1193 분수찾기</title>
@@ -842,205 +894,6 @@
         <pubDate>Fri, 23 Jun 2017 00:00:00 +0900</pubDate>
         <link>https://jiwondh.github.io/2017/06/23/Electron2/</link>
         <guid isPermaLink="true">https://jiwondh.github.io/2017/06/23/Electron2/</guid>
-        
-        
-        <category>Electron</category>
-        
-      </item>
-    
-      <item>
-        <title>[Electron] Electron으로 데스크탑 앱 개발 시작하기</title>
-        <description>
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#electron----&quot; id=&quot;markdown-toc-electron----&quot;&gt;Electron으로 데스크탑 앱 개발 시작하기&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#nodejs-&quot; id=&quot;markdown-toc-nodejs-&quot;&gt;NodeJS 설치&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;프로젝트 폴더 생성&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#packagejson--&quot; id=&quot;markdown-toc-packagejson--&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; 파일 생성하기&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#electron-&quot; id=&quot;markdown-toc-electron-&quot;&gt;electron 설치&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#indexjs-&quot; id=&quot;markdown-toc-indexjs-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;index.js&lt;/code&gt; 생성&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#indexhtml-&quot; id=&quot;markdown-toc-indexhtml-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; 생성&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#electron--&quot; id=&quot;markdown-toc-electron--&quot;&gt;Electron 앱 실행&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#npm-start--&quot; id=&quot;markdown-toc-npm-start--&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt;로 앱 실행하기&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;마침&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;electron----&quot;&gt;Electron으로 데스크탑 앱 개발 시작하기&lt;/h1&gt;
-
-&lt;h3 id=&quot;nodejs-&quot;&gt;NodeJS 설치&lt;/h3&gt;
-
-&lt;p&gt;NodeJS 홈페이지 에서 NodeJS를 설치해주세요.&lt;/p&gt;
-
-&lt;p&gt;이미 설치되있으신 분은 아래부터 진행하시면 됩니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;프로젝트 폴더 생성&lt;/h3&gt;
-
-&lt;p&gt;프로젝트를 진행할 폴더를 하나 생성해주세요&lt;/p&gt;
-
-&lt;p&gt;저는 /Users/ohjiwon/dev 경로에 /Users/ohjiwon/dev/ElectronPJ 폴더를 생성해주었어요.&lt;/p&gt;
-
-&lt;h3 id=&quot;packagejson--&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; 파일 생성하기&lt;/h3&gt;
-
-&lt;p&gt;커맨드 창을 여시고 해당 경로로 이동해주세요.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd dev/ElectronPJ/
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;해당 폴더에서 아래 명령어를 입력합니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm init
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;명령어를 입력하면 세부사항 정보를 입력하는 질문창이 뜨는데요, 저는 아래와 같이 간단히 입력해주었습니다. &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt;에 대한 자세한 사항은 &lt;a href=&quot;https://docs.npmjs.com/files/package.json&quot;&gt;npm-package.json&lt;/a&gt;을 참고해주세요!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tNc79gy1fgvmbd1ld8j318u0q8tju.jpg&quot; alt=&quot;AD4B715B-D16D-4591-880E-4541A19AB9A9&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006tNc79gy1fgvmbrwy1yj318o0f443a.jpg&quot; alt=&quot;0F2A046E-6BB2-4280-9072-E1AD9CB85F28&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;electron-&quot;&gt;electron 설치&lt;/h3&gt;
-
-&lt;p&gt;electron을 &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 명령어로 설치해줍니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install electron -g
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006tNc79gy1fgvnit8n8pj31900a0djq.jpg&quot; alt=&quot;CE4503F4-04CC-4040-9B4E-442AF91B8E39&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;indexjs-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;index.js&lt;/code&gt; 생성&lt;/h3&gt;
-
-&lt;p&gt;저는 코드 에디터로 Visual Studio Code를 사용하여 진행하도록 하겠습니다.&lt;/p&gt;
-
-&lt;p&gt;코드 에디터에서 프로젝트 폴더를 열어 &lt;code class=&quot;highlighter-rouge&quot;&gt;index.js&lt;/code&gt; 파일을 생성해주세요&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tNc79gy1fgvmk24izfj31kw0yuthr.jpg&quot; alt=&quot;AA2B14C6-3820-44F9-9912-88E0A65B389E&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;아래 코드들은 Electron 문서 코드 중 &lt;a href=&quot;https://electron.atom.io/docs/tutorial/quick-start/&quot;&gt;Quick-Start&lt;/a&gt;에 해당하는 코드입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;index.js&lt;/code&gt;를 아래와 같이 작성해줍니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BrowserWindow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;electron&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;path&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;url&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 윈도우 객체를 전역에 유지합니다. 만약 이렇게 하지 않으면&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 자바스크립트 GC가 일어날 때 창이 멋대로 닫혀버립니다.&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;win&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createWindow&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 새로운 브라우저 창을 생성합니다.&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;win&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BrowserWindow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;800&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// 그리고 현재 디렉터리의 index.html을 로드합니다.&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;win&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loadURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;pathname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;index.html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;protocol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;file:&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;slashes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// 개발자 도구를 엽니다.&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;win&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;webContents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;openDevTools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// 창이 닫히면 호출됩니다.&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;win&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;closed&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 윈도우 객체의 참조를 삭제합니다. 보통 멀티 윈도우 지원을 위해&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 윈도우 객체를 배열에 저장하는 경우가 있는데 이 경우&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 해당하는 모든 윈도우 객체의 참조를 삭제해 주어야 합니다.&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;win&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 이 메서드는 Electron의 초기화가 끝나면 실행되며 브라우저&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 윈도우를 생성할 수 있습니다. 몇몇 API는 이 이벤트 이후에만&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 사용할 수 있습니다.&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;ready&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createWindow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 모든 창이 닫히면 애플리케이션 종료.&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;window-all-closed&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// macOS의 대부분의 애플리케이션은 유저가 Cmd + Q 커맨드로 확실하게&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 종료하기 전까지 메뉴바에 남아 계속 실행됩니다.&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;platform&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;darwin&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;quit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;activate&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// macOS에선 보통 독 아이콘이 클릭되고 나서도&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// 열린 윈도우가 없으면, 새로운 윈도우를 다시 만듭니다.&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;win&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;createWindow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 이 파일엔 제작할 애플리케이션에 특화된 메인 프로세스 코드를&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 포함할 수 있습니다. 또한 파일을 분리하여 require하는 방법으로&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 코드를 작성할 수도 있습니다.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;indexhtml-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; 생성&lt;/h3&gt;
-
-&lt;p&gt;사용자에게 보여줄 index.html 파일을 생성해주고 아래와 같이 작성해줍니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;헬로 월드!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;헬로 월드!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-    이 애플리케이션은 node &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;,
-    Chrome &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;versions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chrome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;,
-    Electron &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;versions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;electron&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;을 사용합니다.
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;electron--&quot;&gt;Electron 앱 실행&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;electron index.js
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tNc79gy1fgvnuaaca9j31kw0iuq5f.jpg&quot; alt=&quot;C2DA4E2B-9AF4-46C0-896D-07904304FBDD&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;프로젝트 폴더에서 위 명령어를 통해 Electron 앱을 실행하면 아래와 같은 창이 뜨게됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tNc79gy1fgvnmisjglj318c0x244q.jpg&quot; alt=&quot;A45ED7AA-EBCF-4B68-9A32-70F499F0435E&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;npm-start--&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt;로 앱 실행하기&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; 파일에서 아래와 같이 &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;start&quot; : &quot;electron index.js&quot;&lt;/code&gt;를 추가하여 수정해주면 &lt;code class=&quot;highlighter-rouge&quot;&gt;npm start&lt;/code&gt; 명령어로 앱을 실행할 수 있습니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;electrontutorial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0.1.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tutorial for electron&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;index.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;electron index.js&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;author&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;license&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ISC&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tNc79gy1fgvnusyn05j31kw0itn06.jpg&quot; alt=&quot;D0938782-4599-4BE1-B8AB-1B34F6AABC45&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;마침&lt;/h2&gt;
-
-&lt;p&gt;지금까지 Electron을 이용해서 데스크탑 앱을 만들기위한 시작단계에 대한 튜토리얼이었습니다. 자세한 내용은 &lt;a href=&quot;https://electron.atom.io/&quot;&gt;Electron 사이트&lt;/a&gt;나 &lt;a href=&quot;https://github.com/electron/electron/tree/master/docs-translations/ko-KR&quot;&gt;Electron 한국 번역 문서&lt;/a&gt;를 참고하세요.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 22 Jun 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/06/22/Electron1/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/06/22/Electron1/</guid>
         
         
         <category>Electron</category>

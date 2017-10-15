@@ -1,0 +1,62 @@
+---
+layout: post
+title: "[백준 BOJ] 1236 성 지키기"
+date: 2017-10-16
+categories:
+  - Algorithm Problem
+description: 
+image: /assets/images/ade1.jpg
+image-sm: /assets/images/ade2.jpg
+typora-copy-images-to: ipic
+---
+
+# [백준 BOJ] 1236 성 지키기
+
+문제로 이동할려면 [여기](https://www.acmicpc.net/problem/1236){: target="_blank" }를 클릭하세요.
+
+## 풀이
+
+- 각 행과 열에 대해서 경비원의 수를 셉니다.
+- 경비원의 수가 `0`인 행의 수와 열의 수 중에서 **최댓값**이 <u>경비원을 최소로 추가하는 개수</u>입니다.
+
+
+### 예제
+
+```
+.... |0
+X... |1
+.... |0  => 열 3 == 행 3 => 3
+.... |0
+-----
+1000
+
+.... |0
+X... |1
+X... |1  => 열 3 > 행 2 => 3
+.... |0
+-----
+2000
+
+.... |0
+XX.. |2
+X... |1  => 열 2 > 행 1 => 2
+.X.. |1
+-----
+2200 
+```
+
+
+
+## 코드  
+
+
+<script src="https://gist.github.com/jiwondh/0c47b8fffc65bc91dc314d2924c3bce1.js"></script>
+
+
+
+
+
+
+
+
+
