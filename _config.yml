@@ -40,4 +40,4 @@ sass:
   style: compressed
 
 # Gems
-gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer, rouge]
+gems: [jekyll-paginate, jekyll-gist, jekyll-sitemap, octopress-autoprefixer, rouge]

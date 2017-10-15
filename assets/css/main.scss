@@ -179,3 +179,19 @@ code:hover
         border-bottom: none;
     }
 }
+
+.gist-file{
+    table tr{
+        border-top: none;
+        td{
+            border : none;
+        }
+    }
+}
+
+.post-content{
+    table{
+        border-spacing: unset;
+        border-collapse: collapse;
+    }
+}

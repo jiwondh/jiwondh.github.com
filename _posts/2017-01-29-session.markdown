@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "[Node.js] Session"
+title: "[Node.js] Session(세션) 사용법"
 date: 2017-01-29
 categories:
   - Node.js
-description: session
+description: session의 개념과 동작 방식을 이해하고 session 패키지를 설치하여 사용해봅시다!
+tags: session, nodeJS, cookie
 image: /assets/images/ade1.jpg
 image-sm: /assets/images/ade2.jpg
 ---
