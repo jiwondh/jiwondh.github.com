@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "[BAEKJOON] 1076 저항"
+title: "[백준 BOJ] 1076 저항"
 date: 2017-10-15
 categories:
-  - Algorithm
+  - Algorithm Problem
 description: 
 image: /assets/images/ade1.jpg
 image-sm: /assets/images/ade2.jpg
 typora-copy-images-to: ipic
 ---
 
-# [BAEKJOON] 1076 저항
+# [백준 BOJ] 1076 저항
 
 문제로 이동할려면 [여기](https://www.acmicpc.net/problem/1076){: target="_blank" }를 클릭하세요.
 

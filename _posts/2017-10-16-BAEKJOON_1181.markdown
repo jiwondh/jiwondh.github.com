@@ -1,0 +1,35 @@
+---
+layout: post
+title: "[백준 BOJ] 1181 단어 정렬"
+date: 2017-10-16
+categories:
+  - Algorithm Problem
+description: 
+image: /assets/images/ade1.jpg
+image-sm: /assets/images/ade2.jpg
+typora-copy-images-to: ipic
+---
+
+# [백준 BOJ] 1181 단어 정렬
+
+문제로 이동할려면 [여기](https://www.acmicpc.net/problem/1181){: target="_blank" }를 클릭하세요.
+
+## 풀이
+
+- `STL set`을 이용해서 중복 없이 삽입하고 정렬합니다.
+- `pair ` 를 이용하여 문자열의 길이와 문자열을 삽입해주면 길이 우선으로 정렬 된 후 문자열의 사전순으로 정렬되게 됩니다.
+
+
+## 코드  
+
+
+<script src="https://gist.github.com/jiwondh/98f03f9c3a105d8d12068aae288d2902.js"></script>
+
+
+
+
+
+
+
+
+

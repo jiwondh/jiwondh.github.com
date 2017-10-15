@@ -1,0 +1,40 @@
+---
+layout: post
+title: "[백준 BOJ] 1193 분수찾기"
+date: 2017-10-16
+categories:
+  - Algorithm Problem
+description: 
+image: /assets/images/ade1.jpg
+image-sm: /assets/images/ade2.jpg
+typora-copy-images-to: ipic
+---
+
+# [백준 BOJ] 1193 분수찾기
+
+문제로 이동할려면 [여기](https://www.acmicpc.net/problem/1193){: target="_blank" }를 클릭하세요.
+
+## 풀이
+
+- 대각선을 기준으로 레벨을 정합니다.
+  -  `1/1`은 `1레벨` 
+  -  `2/1`, `1/2`은 `2레벨`
+  -  ...
+- 레벨의 누적합을 계산합니다.
+- 입력값과 누적합을 비교해 찾으려는 분수의 레벨을 구합니다.
+- 해당 레벨에서 몇번째인지는 입력값과 누적합의 차를 이용하여 구합니다.
+
+
+## 코드  
+
+
+<script src="https://gist.github.com/jiwondh/89a7b78b1b875296df176f492a00aca1.js"></script>
+
+
+
+
+
+
+
+
+
