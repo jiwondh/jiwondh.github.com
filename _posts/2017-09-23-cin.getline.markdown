@@ -31,25 +31,11 @@ typora-copy-images-to: ipic
 
 ### 예제
 
-{% highlight c++ %}
-
-# include <iostream>
-
-using namespace std;
-
-int main() {
-​	for (int i = 0; i < 3; i++) {
-​		char string[1000];
-​		cin.getline(string,1000,'\n');
-​		cout << string << endl;
-​	}
-}
-
-{% endhighlight %}
+<script src="https://gist.github.com/jiwondh/623d372110d5255ae5c3b23648331abb.js"></script>
 
 ### 실행 결과
 
-![1DCB99BA-30B5-4B96-8D65-FE047A49F9F2](https://ws3.sinaimg.cn/large/006tKfTcgy1fjtxennq63j30l60583z4.jpg)
+![3BD33863-25EF-488E-B8EB-B7A3310FD64B](https://farm5.staticflickr.com/4498/37450671950_9798fb0a74_o.png)
 
 ## `scanf("%[^\n]", str)`
 
@@ -58,20 +44,9 @@ int main() {
 
 ### 예제
 
-{% highlight c++ %}
-
-#include <iostream>
-using namespace std;
-
-int main() {
-​	char string[1000];
-​	scanf("%[^\n]", string);
-​	cout << string;
-}
-
-{% endhighlight %}
+<script src="https://gist.github.com/jiwondh/94ecc3672ad3a6dce9007154cd638bd1.js"></script>
 
 ### 실행 결과
 
-![AC4C782C-214E-4498-8257-D26A1D46C2EF](https://ws4.sinaimg.cn/large/006tKfTcgy1fjtxcykzxij30ks02cgln.jpg)
+![7A90CCC6-8B86-4B23-A0ED-2FBFAC0EDE24](https://farm5.staticflickr.com/4463/37708224091_890dc474c4_o.png)
 

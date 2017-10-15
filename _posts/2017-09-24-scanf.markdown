@@ -20,28 +20,10 @@ typora-copy-images-to: ipic
 
 입력 개수가 주어지지 않고 **입력이 끝날 때까지 입력 받아야 될 때** 사용하시면 될 것 같아요~
 
-### 예제
+### 코드
 
-{% highlight c++ %}
-
-# include <iostream>
-
-using namespace std;
-
-int main() {
-​	int n;
-
-​	do {
-​		cin >> n;
-​		cout << n << endl;
-​	} while (getc(stdin) == ' ');
-
-​	cout << "end";
-​	return 0;
-}
-
-{% endhighlight %}
+<script src="https://gist.github.com/jiwondh/be011dbd3bcc3e4cd43e1a17a0cd748b.js"></script>
 
 ### 실행 결과
 
-![7429BE4B-EBD4-4009-8977-542414746931](https://ws1.sinaimg.cn/large/006tNc79gy1fjwsxg44r7j30l405o3yk.jpg)
+![A5B92D71-6BC9-4F68-9E5F-BE7DBDB4D41B](https://farm5.staticflickr.com/4466/36997804914_4691cd2c7b_o.png)

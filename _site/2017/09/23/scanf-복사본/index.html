@@ -7,20 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>[C++] 문자열 공백 포함 입력 받기 | Jiwon Blog</title>
+  <title>[C++] 입력 개수 모를 때 입력 받기 | Jiwon Blog</title>
   <meta name="author" content="Jiwon Oh">
   <meta name="description" content="">
-  <meta property="og:title" content="[C++] 문자열 공백 포함 입력 받기 | Jiwon Blog">
-  <meta property="og:url" content="https://jiwondh.github.io/2017/09/23/cin.getline/">
+  <meta property="og:title" content="[C++] 입력 개수 모를 때 입력 받기 | Jiwon Blog">
+  <meta property="og:url" content="https://jiwondh.github.io/2017/09/23/scanf-%EB%B3%B5%EC%82%AC%EB%B3%B8/">
   <meta property="og:site_name" content="Jiwon Blog">
-  <meta property="og:description" content="문자열 공백 포함 입력 받기">
+  <meta property="og:description" content="입력 개수 모를 때 입력 받기">
   <meta property="og:image" content="/assets/images/ade1.jpg">
   <meta property="og:type" content="blog">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:description" content="문자열 공백 포함 입력 받기">
-  <meta name="twitter:title" content="[C++] 문자열 공백 포함 입력 받기 | Jiwon Blog">
-  <meta name="twitter:url" content="https://jiwondh.github.io/2017/09/23/cin.getline/">
+  <meta name="twitter:description" content="입력 개수 모를 때 입력 받기">
+  <meta name="twitter:title" content="[C++] 입력 개수 모를 때 입력 받기 | Jiwon Blog">
+  <meta name="twitter:url" content="https://jiwondh.github.io/2017/09/23/scanf-%EB%B3%B5%EC%82%AC%EB%B3%B8/">
   <meta name="twitter:site" content="Jiwon Blog">
   <meta name="twitter:creator" content="@">
   <meta name="twitter:domain" content="https://jiwondh.github.io">
@@ -40,7 +40,7 @@
 
 
   <link rel="alternate" type="application/rss+xml" title="Jiwon Blog" href="https://jiwondh.github.io/feed.xml">
-  <link rel="canonical" href="https://jiwondh.github.io/2017/09/23/cin.getline/">
+  <link rel="canonical" href="https://jiwondh.github.io/2017/09/23/scanf-%EB%B3%B5%EC%82%AC%EB%B3%B8/">
 
   
   <script>
@@ -75,7 +75,7 @@
     <figure class="absolute-bg mast__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
     <div class="mast__container">
       <span><time datetime="2017-09-23T00:00:00+09:00" itemprop="datePublished">Sep 23, 2017</time></span>
-      <h1 itemprop="name headline">[C++] 문자열 공백 포함 입력 받기</h1>
+      <h1 itemprop="name headline">[C++] 입력 개수 모를 때 입력 받기</h1>
       
         <span>
           Posted in Algorithm
@@ -91,62 +91,38 @@
     <section class="section-padding post" itemprop="articleBody">
       
 <ul id="markdown-toc">
-  <li><a href="#c-----" id="markdown-toc-c-----">[C++] 문자열 공백 포함 입력 받기</a>    <ul>
-      <li><a href="#cingetline" id="markdown-toc-cingetline"><code class="highlighter-rouge">cin.getline</code></a>        <ul>
-          <li><a href="#section" id="markdown-toc-section">인자값</a></li>
-          <li><a href="#section-1" id="markdown-toc-section-1">예제</a></li>
-          <li><a href="#section-2" id="markdown-toc-section-2">실행 결과</a></li>
-        </ul>
-      </li>
-      <li><a href="#scanfn-str" id="markdown-toc-scanfn-str"><code class="highlighter-rouge">scanf("%[^\n]", str)</code></a>        <ul>
-          <li><a href="#section-3" id="markdown-toc-section-3">예제</a></li>
-          <li><a href="#section-4" id="markdown-toc-section-4">실행 결과</a></li>
-        </ul>
-      </li>
+  <li><a href="#c------" id="markdown-toc-c------">[C++] 입력 개수 모를 때 입력 받기</a>    <ul>
+      <li><a href="#section" id="markdown-toc-section">예제</a></li>
+      <li><a href="#section-1" id="markdown-toc-section-1">실행 결과</a></li>
     </ul>
   </li>
 </ul>
 
-<h1 id="c-----">[C++] 문자열 공백 포함 입력 받기</h1>
+<h1 id="c------">[C++] 입력 개수 모를 때 입력 받기</h1>
 
-<h2 id="cingetline"><code class="highlighter-rouge">cin.getline</code></h2>
+<p>입력 개수가 주어지지 않고 <strong>입력이 끝날 때까지 입력 받아야 될 때</strong> 사용하시면 될 것 같아요~</p>
 
-<ul>
-  <li>공백과 종료<code class="highlighter-rouge">null</code> 문자를 포함해서 <code class="highlighter-rouge">n</code>개의 문자를 <code class="highlighter-rouge">s</code>에 저장</li>
-  <li><code class="highlighter-rouge">delim</code> 문자가 나타나면 입력 종료</li>
-</ul>
+<h3 id="section">예제</h3>
 
-<h3 id="section">인자값</h3>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp"># include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<ul>
-  <li><code class="highlighter-rouge">s</code> : 문자열 배열</li>
-  <li><code class="highlighter-rouge">n</code> : <code class="highlighter-rouge">s</code>에 입력받을 최대 문자 수(종료 <code class="highlighter-rouge">null</code> 문자 포함)</li>
-  <li><code class="highlighter-rouge">delim</code> : 해당 문자가 나타나면 입력받기를 종료</li>
-</ul>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="err">​</span>	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
 
-<h3 id="section-1">예제</h3>
+<span class="err">​</span>	<span class="k">do</span> <span class="p">{</span>
+<span class="err">​</span>		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+<span class="err">​</span>		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="err">​</span>	<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">getc</span><span class="p">(</span><span class="n">stdin</span><span class="p">)</span> <span class="o">==</span> <span class="sc">' '</span><span class="p">);</span>
 
-<script src="https://gist.github.com/jiwondh/623d372110d5255ae5c3b23648331abb.js"></script>
+<span class="err">​</span>	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"end"</span><span class="p">;</span>
+<span class="err">​</span>	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
-<h3 id="section-2">실행 결과</h3>
+<h3 id="section-1">실행 결과</h3>
 
-<p><img src="https://farm5.staticflickr.com/4498/37450671950_9798fb0a74_o.png" alt="3BD33863-25EF-488E-B8EB-B7A3310FD64B" /></p>
-
-<h2 id="scanfn-str"><code class="highlighter-rouge">scanf("%[^\n]", str)</code></h2>
-
-<ul>
-  <li><code class="highlighter-rouge">\n</code> 문자 입력받을 때까지 <code class="highlighter-rouge">str</code> 문자열에 저장</li>
-  <li><strong>for문</strong>에서 사용 불가</li>
-</ul>
-
-<h3 id="section-3">예제</h3>
-
-<script src="https://gist.github.com/jiwondh/94ecc3672ad3a6dce9007154cd638bd1.js"></script>
-
-<h3 id="section-4">실행 결과</h3>
-
-<p><img src="https://farm5.staticflickr.com/4463/37708224091_890dc474c4_o.png" alt="7A90CCC6-8B86-4B23-A0ED-2FBFAC0EDE24" /></p>
-
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fjwsxg44r7j30l405o3yk.jpg" alt="7429BE4B-EBD4-4009-8977-542414746931" /></p>
 
     </section>
   </article>
@@ -194,16 +170,12 @@
   
 </article>
 
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
 
   <section class="next">
-    <a class="next__link" href="/2017/06/23/Electron2/" style="background-image: url('/assets/images/ade1.jpg');">
+    <a class="next__link" href="/2017/09/23/cin.getline/" style="background-image: url('/assets/images/ade1.jpg');">
       <div class="next__container">
         <span>Read Next</span>
-        <h2>[Electron] Electron 데스크탑 앱 배포하기 (Packaging Applications)</h2>
+        <h2>[C++] 문자열 공백 포함 입력 받기</h2>
       </div>
     </a>
   </section>
