@@ -5,8 +5,8 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Oct 2017 17:07:57 +0900</pubDate>
-    <lastBuildDate>Mon, 16 Oct 2017 17:07:57 +0900</lastBuildDate>
+    <pubDate>Mon, 16 Oct 2017 23:52:01 +0900</pubDate>
+    <lastBuildDate>Mon, 16 Oct 2017 23:52:01 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -156,6 +156,34 @@
         <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
         <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_5585/</link>
         <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_5585/</guid>
+        
+        
+        <category>Algorithm Problem</category>
+        
+      </item>
+    
+      <item>
+        <title>[백준 BOJ] 1780 종이의 개수</title>
+        <description>&lt;h1 id=&quot;boj-1780--&quot;&gt;[백준 BOJ] 1780 종이의 개수&lt;/h1&gt;
+
+&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/1780&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;분할 정복&lt;/strong&gt; 문제이므로 &lt;code class=&quot;highlighter-rouge&quot;&gt;재귀&lt;/code&gt;를 이용해 풀 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;범위 내의 숫자들을 검사해서 같은 숫자들로 이루어져 있으면 해당 숫자를 카운트합니다.&lt;/li&gt;
+  &lt;li&gt;다른 숫자들로 이루어져 있으면 종이를 9등분 해서 재귀를 돌리는 것을 반복합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;코드&lt;/h2&gt;
+
+&lt;script src=&quot;https://gist.github.com/jiwondh/98ec554461bad000f5050fb5e61b6048.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_1780/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_1780/</guid>
         
         
         <category>Algorithm Problem</category>
@@ -395,6 +423,61 @@ X... |1  =&amp;gt; 열 2 &amp;gt; 행 1 =&amp;gt; 2
       </item>
     
       <item>
+        <title>[백준 BOJ] 1074 Z</title>
+        <description>&lt;h1 id=&quot;boj-1074-z&quot;&gt;[백준 BOJ] 1074 Z&lt;/h1&gt;
+
+&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/1074&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;분할 정복 문제&lt;/strong&gt; =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;재귀&lt;/code&gt;로 풀자!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;예제&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;N = 1
+0 1 
+2 3
+
+N = 2
+0	1	4	5
+2	3	6	7
+8	9	12	13
+10	11	14	15
+
+
+입력
+2 3 1
+- go(2, 3, 1)
+- 2*2 + go(1, 1, 1)
+- 2^2*2 + 2*1 + 1 = 8 + 2 + 1 = 7
+
+입력
+3 7 7 
+- go(3, 7, 7)
+- 2^4*3 + go(2, 3, 3)
+- 2^4*3 + 2^2*3 + go(1, 1, 1)
+- 2^4*3 + 2^2*3 + 2*1+1 = 48 + 12 + 3 = 63
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;코드&lt;/h2&gt;
+
+&lt;script src=&quot;https://gist.github.com/Baekjoon/cc617ea564eb1328913d.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_1074/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_1074/</guid>
+        
+        
+        <category>Algorithm Problem</category>
+        
+      </item>
+    
+      <item>
         <title>[Algorithm] 트리와 트리순회</title>
         <description>
 &lt;ul id=&quot;markdown-toc&quot;&gt;
@@ -536,265 +619,6 @@ X... |1  =&amp;gt; 열 2 &amp;gt; 행 1 =&amp;gt; 2
         
         
         <category>Algorithm</category>
-        
-      </item>
-    
-      <item>
-        <title>[Algorithm] 트리의 개념과 용어정리</title>
-        <description>
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#tree&quot; id=&quot;markdown-toc-tree&quot;&gt;트리(Tree)&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#tree-1&quot; id=&quot;markdown-toc-tree-1&quot;&gt;(1) 트리(Tree)&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;1) 개념&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;2) 용어&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;3) 트리의 기본적인 성질&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#binary-tree&quot; id=&quot;markdown-toc-binary-tree&quot;&gt;(2) 이진트리(Binary Tree)&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;1) 개념&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-4&quot; id=&quot;markdown-toc-section-4&quot;&gt;2) 이진 트리 종류&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-5&quot; id=&quot;markdown-toc-section-5&quot;&gt;3) 이진트리 특징&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;tree&quot;&gt;트리(Tree)&lt;/h1&gt;
-
-&lt;h2 id=&quot;tree-1&quot;&gt;(1) 트리(Tree)&lt;/h2&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;1) 개념&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;계층적인 구조를 표현
-    &lt;ul&gt;
-      &lt;li&gt;조직도&lt;/li&gt;
-      &lt;li&gt;디렉토리와 서브디렉토리 구조&lt;/li&gt;
-      &lt;li&gt;가계도&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;트리는 &lt;code class=&quot;highlighter-rouge&quot;&gt;노드(node)&lt;/code&gt;들과 노드들을 연결하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;링크(link)&lt;/code&gt;들로 구성됨&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;2) 용어&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;루트 노드&lt;/strong&gt;(root node) : 부모가 없는 노드. 트리는 하나의 루트 노드만을 가진다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;단말 노드&lt;/strong&gt;(leaf node) : 자식이 없는 노드이다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;내부(internal) 노드&lt;/strong&gt; : 리프 노드가 아닌 노드.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;링크(link)&lt;/strong&gt; : 노드를 연결하는 선 (edge, branch 라고도 부름).&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;형제&lt;/strong&gt;(sibling) : 같은 부모를 가지는 노드.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4482/36997131684_89ddd642cf_o.png&quot; alt=&quot;03B65E65-8752-4D4E-9E43-48CA9D04F85C&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;노드의 &lt;strong&gt;크기&lt;/strong&gt;(size) : 자신을 포함한 모든 자손 노드의 개수.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;C&lt;/code&gt;의 크기 : &lt;code class=&quot;highlighter-rouge&quot;&gt;6&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;노드의 &lt;strong&gt;깊이&lt;/strong&gt;(depth) : 루트에서 어떤 노드에 도달하기 위해 거쳐야 하는 간선의 수
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;D&lt;/code&gt;의 깊이 : &lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;L&lt;/code&gt;의 깊이 : &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;노드의 &lt;strong&gt;레벨&lt;/strong&gt;(level) : 트리의 특정 깊이를 가지는 노드의 집합
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;의 레벨 : &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;B&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;C&lt;/code&gt;의 레벨 : &lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;D&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;E&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;F&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;G&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;H&lt;/code&gt;의 레벨 : &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;노드의 &lt;strong&gt;차수&lt;/strong&gt;(degree) : 부(하위) 트리 갯수/간선수 (degree) = 각 노드가 지닌 가지의 수
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;의 차수 = &lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;B&lt;/code&gt;의 차수 = &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;C&lt;/code&gt;의 차수 = &lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;트리의 &lt;strong&gt;차수&lt;/strong&gt;(degree of tree) : 트리의 최대 차수
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;B&lt;/code&gt;가 최대 차수를 가짐 =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;트리의 &lt;strong&gt;높이&lt;/strong&gt;(height) : 루트 노드에서 가장 깊숙히 있는 노드의 깊이
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;3) 트리의 기본적인 성질&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;노드가 &lt;code class=&quot;highlighter-rouge&quot;&gt;N&lt;/code&gt;개인 트리는 항상 &lt;code class=&quot;highlighter-rouge&quot;&gt;N-1&lt;/code&gt;개의 링크(link)를 가진다&lt;/li&gt;
-  &lt;li&gt;트리에서, 루트에서 어떤 노드로 가는 경로는 유일하다. 또한 임의의 두 노드 간의 경로도 유일하다 (같은 노드를 두 번 이상 방문하지 않는 다는 조건 하에)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;binary-tree&quot;&gt;(2) 이진트리(Binary Tree)&lt;/h2&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;1) 개념&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;이진 트리에서 각 노드는 &lt;strong&gt;최대 2개의 자식&lt;/strong&gt;을 가진다.&lt;/li&gt;
-  &lt;li&gt;각각의 자식 노드는 자신이 부모의 왼쪽 자식인지 오른쪽 자식인지가 지정된다.
-    &lt;ul&gt;
-      &lt;li&gt;자식이 한 명인 경우에도 적용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4462/23854059978_8b32e6598c_o.png&quot; alt=&quot;5D78C6AA-63E2-44D9-8B5E-C6EAC820157A&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;2) 이진 트리 종류&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;포화 이진 트리&lt;/strong&gt;(full binary tree) : 모든 레벨에서 노드들이 모두 채워져 있는 트리&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;완전 이진트리(complete binary tree)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;마지막 레벨을 제외하고 노드가 모두 채워져 있는 트리
-        &lt;ul&gt;
-          &lt;li&gt;마지막 레벨도 다 채워져 있을 수도 있음&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;마지막 레벨도 오른쪽으로 연속된 몇개의 노드만 비어있을 수 있음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4456/23854064708_945beebd1a_o.png&quot; alt=&quot;880D3E9F-A9BC-4C3D-A4D5-B6041E311646&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-5&quot;&gt;3) 이진트리 특징&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;높이가 &lt;code class=&quot;highlighter-rouge&quot;&gt;h&lt;/code&gt;인 &lt;strong&gt;포화 이진 트리&lt;/strong&gt;(full binary tree)는 &lt;script type=&quot;math/tex&quot;&gt;2^h-1&lt;/script&gt;개의 노드를 가진다&lt;/li&gt;
-  &lt;li&gt;노드가 &lt;code class=&quot;highlighter-rouge&quot;&gt;N&lt;/code&gt;개인 &lt;strong&gt;포화&lt;/strong&gt;(full) 혹은 &lt;strong&gt;완전&lt;/strong&gt;(complete) 이진 트리의 &lt;em&gt;높이&lt;/em&gt;는 &lt;script type=&quot;math/tex&quot;&gt;O(logN)&lt;/script&gt;이다.&lt;/li&gt;
-  &lt;li&gt;노드가 &lt;code class=&quot;highlighter-rouge&quot;&gt;N&lt;/code&gt;개인 이진트리의 &lt;em&gt;높이&lt;/em&gt;는 최악의 경우 &lt;script type=&quot;math/tex&quot;&gt;O(N)&lt;/script&gt;이 될 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sun, 15 Oct 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/10/15/tree/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/15/tree/</guid>
-        
-        
-        <category>Algorithm</category>
-        
-      </item>
-    
-      <item>
-        <title>[C++] 데이터 형식 범위</title>
-        <description>&lt;h1 id=&quot;c---&quot;&gt;[C++] 데이터 형식 범위&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;MSDN 원문&lt;/strong&gt;으로 이동하려면 &lt;a href=&quot;https://msdn.microsoft.com/ko-kr/library/s3f49ktz.aspx&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;형식 이름&lt;/th&gt;
-      &lt;th&gt;바이트&lt;/th&gt;
-      &lt;th&gt;기타 이름&lt;/th&gt;
-      &lt;th&gt;값의 범위&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;signed&lt;/td&gt;
-      &lt;td&gt;–2,147,483,648 ~ 2,147,483,647&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;unsigned int&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;unsigned&lt;/td&gt;
-      &lt;td&gt;0 ~ 4,294,967,295&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bool&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;없음&lt;/td&gt;
-      &lt;td&gt;false 또는 true&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;char&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;없음&lt;/td&gt;
-      &lt;td&gt;–128~127(기본값) &lt;a href=&quot;https://msdn.microsoft.com/ko-kr/library/0d294k5z.aspx&quot;&gt;/J&lt;/a&gt;를 사용하여 컴파일된 경우 0~255&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;unsigned char&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;없음&lt;/td&gt;
-      &lt;td&gt;0 ~ 255&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;short&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;short int, signed short int&lt;/td&gt;
-      &lt;td&gt;–32,768 ~ 32,767&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;unsigned short&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;unsigned short int&lt;/td&gt;
-      &lt;td&gt;0 ~ 65,535&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;long&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;long int, signed long int&lt;/td&gt;
-      &lt;td&gt;–2,147,483,648 ~ 2,147,483,647&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;unsigned long&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;unsigned long int&lt;/td&gt;
-      &lt;td&gt;0 ~ 4,294,967,295&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;long long&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;8&lt;/td&gt;
-      &lt;td&gt;없음(그러나 __int64와 동일)&lt;/td&gt;
-      &lt;td&gt;–9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;unsigned long long&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;8&lt;/td&gt;
-      &lt;td&gt;없음(그러나 unsigned __int64와 동일)&lt;/td&gt;
-      &lt;td&gt;0 ~ 18,446,744,073,709,551,615&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;없음&lt;/td&gt;
-      &lt;td&gt;3.4E+/-38(7개의 자릿수)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;double&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;8&lt;/td&gt;
-      &lt;td&gt;없음&lt;/td&gt;
-      &lt;td&gt;1.7E+/-308(15개의 자릿수)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;long double&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;double과 동일&lt;/td&gt;
-      &lt;td&gt;없음&lt;/td&gt;
-      &lt;td&gt;double과 동일&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-</description>
-        <pubDate>Sun, 15 Oct 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/10/15/Data_Type_Ranges/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/15/Data_Type_Ranges/</guid>
-        
-        
-        <category>C++</category>
         
       </item>
     

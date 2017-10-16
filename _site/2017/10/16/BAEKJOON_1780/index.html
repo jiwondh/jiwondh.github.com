@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>[백준 BOJ] 1181 단어 정렬 | Jiwon Blog</title>
+  <title>[백준 BOJ] 1780 종이의 개수 | Jiwon Blog</title>
   <meta name="author" content="Jiwon Oh">
   <meta name="description" content="">
-  <meta property="og:title" content="[백준 BOJ] 1181 단어 정렬 | Jiwon Blog">
-  <meta property="og:url" content="https://jiwondh.github.io/2017/10/16/BAEKJOON_1181/">
+  <meta property="og:title" content="[백준 BOJ] 1780 종이의 개수 | Jiwon Blog">
+  <meta property="og:url" content="https://jiwondh.github.io/2017/10/16/BAEKJOON_1780/">
   <meta property="og:site_name" content="Jiwon Blog">
   <meta property="og:description" content="">
   <meta property="og:image" content="/assets/images/ade1.jpg">
@@ -19,8 +19,8 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:description" content="">
-  <meta name="twitter:title" content="[백준 BOJ] 1181 단어 정렬 | Jiwon Blog">
-  <meta name="twitter:url" content="https://jiwondh.github.io/2017/10/16/BAEKJOON_1181/">
+  <meta name="twitter:title" content="[백준 BOJ] 1780 종이의 개수 | Jiwon Blog">
+  <meta name="twitter:url" content="https://jiwondh.github.io/2017/10/16/BAEKJOON_1780/">
   <meta name="twitter:site" content="Jiwon Blog">
   <meta name="twitter:creator" content="@">
   <meta name="twitter:domain" content="https://jiwondh.github.io">
@@ -40,7 +40,7 @@
 
 
   <link rel="alternate" type="application/rss+xml" title="Jiwon Blog" href="https://jiwondh.github.io/feed.xml">
-  <link rel="canonical" href="https://jiwondh.github.io/2017/10/16/BAEKJOON_1181/">
+  <link rel="canonical" href="https://jiwondh.github.io/2017/10/16/BAEKJOON_1780/">
 
   
   <script>
@@ -75,7 +75,7 @@
     <figure class="absolute-bg mast__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
     <div class="mast__container">
       <span><time datetime="2017-10-16T00:00:00+09:00" itemprop="datePublished">Oct 16, 2017</time></span>
-      <h1 itemprop="name headline">[백준 BOJ] 1181 단어 정렬</h1>
+      <h1 itemprop="name headline">[백준 BOJ] 1780 종이의 개수</h1>
       
         <span>
           Posted in Algorithm Problem
@@ -89,20 +89,21 @@
   <article class="post-content">
 
     <section class="section-padding post" itemprop="articleBody">
-      <h1 id="boj-1181--">[백준 BOJ] 1181 단어 정렬</h1>
+      <h1 id="boj-1780--">[백준 BOJ] 1780 종이의 개수</h1>
 
-<p>문제로 이동할려면 <a href="https://www.acmicpc.net/problem/1181" target="_blank">여기</a>를 클릭하세요.</p>
+<p>문제로 이동할려면 <a href="https://www.acmicpc.net/problem/1780" target="_blank">여기</a>를 클릭하세요.</p>
 
 <h2 id="section">풀이</h2>
 
 <ul>
-  <li><code class="highlighter-rouge">STL set</code>을 이용해서 중복 없이 삽입하고 정렬합니다.</li>
-  <li><code class="highlighter-rouge">pair </code> 를 이용하여 문자열의 길이와 문자열을 삽입해주면 길이 우선으로 정렬 된 후 문자열의 사전순으로 정렬되게 됩니다.</li>
+  <li><strong>분할 정복</strong> 문제이므로 <code class="highlighter-rouge">재귀</code>를 이용해 풀 수 있습니다.</li>
+  <li>범위 내의 숫자들을 검사해서 같은 숫자들로 이루어져 있으면 해당 숫자를 카운트합니다.</li>
+  <li>다른 숫자들로 이루어져 있으면 종이를 9등분 해서 재귀를 돌리는 것을 반복합니다.</li>
 </ul>
 
 <h2 id="section-1">코드</h2>
 
-<script src="https://gist.github.com/jiwondh/98f03f9c3a105d8d12068aae288d2902.js"></script>
+<script src="https://gist.github.com/jiwondh/98ec554461bad000f5050fb5e61b6048.js"></script>
 
 
     </section>
@@ -157,10 +158,10 @@
 
 
   <section class="next">
-    <a class="next__link" href="/2017/10/16/BAEKJOON_1074/" style="background-image: url('/assets/images/ade1.jpg');">
+    <a class="next__link" href="/2017/10/16/BAEKJOON_1236/" style="background-image: url('/assets/images/ade1.jpg');">
       <div class="next__container">
         <span>Read Next</span>
-        <h2>[백준 BOJ] 1074 Z</h2>
+        <h2>[백준 BOJ] 1236 성 지키기</h2>
       </div>
     </a>
   </section>
