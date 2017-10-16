@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>[백준 BOJ] 1236 성 지키기 | Jiwon Blog</title>
+  <title>[백준 BOJ] 5988 홀수일까 짝수일까 | Jiwon Blog</title>
   <meta name="author" content="Jiwon Oh">
   <meta name="description" content="">
-  <meta property="og:title" content="[백준 BOJ] 1236 성 지키기 | Jiwon Blog">
-  <meta property="og:url" content="https://jiwondh.github.io/2017/10/16/BAEKJOON_1236/">
+  <meta property="og:title" content="[백준 BOJ] 5988 홀수일까 짝수일까 | Jiwon Blog">
+  <meta property="og:url" content="https://jiwondh.github.io/2017/10/16/BAEKJOON_5988/">
   <meta property="og:site_name" content="Jiwon Blog">
   <meta property="og:description" content="">
   <meta property="og:image" content="/assets/images/ade1.jpg">
@@ -19,8 +19,8 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:description" content="">
-  <meta name="twitter:title" content="[백준 BOJ] 1236 성 지키기 | Jiwon Blog">
-  <meta name="twitter:url" content="https://jiwondh.github.io/2017/10/16/BAEKJOON_1236/">
+  <meta name="twitter:title" content="[백준 BOJ] 5988 홀수일까 짝수일까 | Jiwon Blog">
+  <meta name="twitter:url" content="https://jiwondh.github.io/2017/10/16/BAEKJOON_5988/">
   <meta name="twitter:site" content="Jiwon Blog">
   <meta name="twitter:creator" content="@">
   <meta name="twitter:domain" content="https://jiwondh.github.io">
@@ -40,7 +40,7 @@
 
 
   <link rel="alternate" type="application/rss+xml" title="Jiwon Blog" href="https://jiwondh.github.io/feed.xml">
-  <link rel="canonical" href="https://jiwondh.github.io/2017/10/16/BAEKJOON_1236/">
+  <link rel="canonical" href="https://jiwondh.github.io/2017/10/16/BAEKJOON_5988/">
 
   
   <script>
@@ -75,7 +75,7 @@
     <figure class="absolute-bg mast__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
     <div class="mast__container">
       <span><time datetime="2017-10-16T00:00:00+09:00" itemprop="datePublished">Oct 16, 2017</time></span>
-      <h1 itemprop="name headline">[백준 BOJ] 1236 성 지키기</h1>
+      <h1 itemprop="name headline">[백준 BOJ] 5988 홀수일까 짝수일까</h1>
       
         <span>
           Posted in Algorithm Problem
@@ -89,45 +89,27 @@
   <article class="post-content">
 
     <section class="section-padding post" itemprop="articleBody">
-      <h1 id="boj-1236--">[백준 BOJ] 1236 성 지키기</h1>
+      <h1 id="boj-5988--">[백준 BOJ] 5988 홀수일까 짝수일까</h1>
 
-<p>문제로 이동할려면 <a href="https://www.acmicpc.net/problem/1236" target="_blank">여기</a>를 클릭하세요.</p>
+<p>문제로 이동할려면 <a href="https://www.acmicpc.net/problem/5988" target="_blank">여기</a>를 클릭하세요.</p>
 
 <h2 id="section">풀이</h2>
 
 <ul>
-  <li>각 행과 열에 대해서 경비원의 수를 셉니다.</li>
-  <li>경비원의 수가 <code class="highlighter-rouge">0</code>인 행의 수와 열의 수 중에서 <strong>최댓값</strong>이 <u>경비원을 최소로 추가하는 개수</u>입니다.</li>
+  <li>수의 범위가 매우 크기 때문에 수를 문자열로 입력받습니다.</li>
+  <li>마지막 자리수만 홀수인지 짝수인지 판별해주면 됩니다.</li>
 </ul>
 
 <h3 id="section-1">예제</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.... |0
-X... |1
-.... |0  =&gt; 열 3 == 행 3 =&gt; 3
-.... |0
------
-1000
-
-.... |0
-X... |1
-X... |1  =&gt; 열 3 &gt; 행 2 =&gt; 3
-.... |0
------
-2000
-
-.... |0
-XX.. |2
-X... |1  =&gt; 열 2 &gt; 행 1 =&gt; 2
-.X.. |1
------
-2200 
+<div class="highlighter-rouge"><pre class="highlight"><code>10,000,000,000,000,000,000,000,001 =&gt; 1 - 홀수
+12,345,678,901,234,567,890,123,456 =&gt; 6 - 짝수
 </code></pre>
 </div>
 
 <h2 id="section-2">코드</h2>
 
-<script src="https://gist.github.com/jiwondh/0c47b8fffc65bc91dc314d2924c3bce1.js"></script>
+<script src="https://gist.github.com/jiwondh/1bda04d19c3d67b5a34a3c7e44701e0d.js"></script>
 
 
     </section>
@@ -182,10 +164,10 @@ X... |1  =&gt; 열 2 &gt; 행 1 =&gt; 2
 
 
   <section class="next">
-    <a class="next__link" href="/2017/10/16/BAEKJOON_11947/" style="background-image: url('/assets/images/ade1.jpg');">
+    <a class="next__link" href="/2017/10/16/BAEKJOON_5585/" style="background-image: url('/assets/images/ade1.jpg');">
       <div class="next__container">
         <span>Read Next</span>
-        <h2>[백준 BOJ] 11947 이런반전이</h2>
+        <h2>[백준 BOJ] 5585 거스름돈</h2>
       </div>
     </a>
   </section>

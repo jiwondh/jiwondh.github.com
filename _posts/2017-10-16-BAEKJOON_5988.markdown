@@ -1,0 +1,42 @@
+---
+layout: post
+title: "[백준 BOJ] 5988 홀수일까 짝수일까"
+date: 2017-10-16
+categories:
+  - Algorithm Problem
+description: 
+image: /assets/images/ade1.jpg
+image-sm: /assets/images/ade2.jpg
+typora-copy-images-to: ipic
+---
+
+# [백준 BOJ] 5988 홀수일까 짝수일까
+
+문제로 이동할려면 [여기](https://www.acmicpc.net/problem/5988){: target="_blank" }를 클릭하세요.
+
+## 풀이
+
+- 수의 범위가 매우 크기 때문에 수를 문자열로 입력받습니다.
+- 마지막 자리수만 홀수인지 짝수인지 판별해주면 됩니다.
+
+
+### 예제
+
+```
+10,000,000,000,000,000,000,000,001 => 1 - 홀수
+12,345,678,901,234,567,890,123,456 => 6 - 짝수
+```
+
+## 코드  
+
+
+<script src="https://gist.github.com/jiwondh/1bda04d19c3d67b5a34a3c7e44701e0d.js"></script>
+
+
+
+
+
+
+
+
+

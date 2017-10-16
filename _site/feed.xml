@@ -5,9 +5,93 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Oct 2017 03:24:21 +0900</pubDate>
-    <lastBuildDate>Mon, 16 Oct 2017 03:24:21 +0900</lastBuildDate>
+    <pubDate>Mon, 16 Oct 2017 15:15:45 +0900</pubDate>
+    <lastBuildDate>Mon, 16 Oct 2017 15:15:45 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>[백준 BOJ] 5988 홀수일까 짝수일까</title>
+        <description>&lt;h1 id=&quot;boj-5988--&quot;&gt;[백준 BOJ] 5988 홀수일까 짝수일까&lt;/h1&gt;
+
+&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/5988&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;수의 범위가 매우 크기 때문에 수를 문자열로 입력받습니다.&lt;/li&gt;
+  &lt;li&gt;마지막 자리수만 홀수인지 짝수인지 판별해주면 됩니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;예제&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;10,000,000,000,000,000,000,000,001 =&amp;gt; 1 - 홀수
+12,345,678,901,234,567,890,123,456 =&amp;gt; 6 - 짝수
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;코드&lt;/h2&gt;
+
+&lt;script src=&quot;https://gist.github.com/jiwondh/1bda04d19c3d67b5a34a3c7e44701e0d.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_5988/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_5988/</guid>
+        
+        
+        <category>Algorithm Problem</category>
+        
+      </item>
+    
+      <item>
+        <title>[백준 BOJ] 5585 거스름돈</title>
+        <description>&lt;h1 id=&quot;boj-5585-&quot;&gt;[백준 BOJ] 5585 거스름돈&lt;/h1&gt;
+
+&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/5585&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1000원에서 입력된 돈을 빼주어 거스름돈을 구합니다.&lt;/li&gt;
+  &lt;li&gt;거스름돈에서 잔돈이 제일 큰 500부터 나눠줍니다.
+    &lt;ul&gt;
+      &lt;li&gt;500보다 작아 몫이 0이면 그 다음 작은 100원으로 잔돈을 줄여줍니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위를 반복하다 나머지가 0이 되면 남은 거스름돈이 없으므로 반복문을 탈출해줍니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;예제&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;입력 : 380
+거스름돈 : 1000 - 380 = 620
+
+반복문
+- 620 / 500 = 1
+  620 % 500 = 120
+- 120 / 500 = 0
+- 120 / 100 = 1
+  120 % 100 = 20
+- 20 / 100 = 0
+- 20 / 50 = 0
+- 20 / 10 = 2
+  20 % 10 = 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;코드&lt;/h2&gt;
+
+&lt;script src=&quot;https://gist.github.com/jiwondh/c89a0a218a0914df9914989542c384a0.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_5585/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_5585/</guid>
+        
+        
+        <category>Algorithm Problem</category>
+        
+      </item>
     
       <item>
         <title>[백준 BOJ] 1236 성 지키기</title>
@@ -55,6 +139,124 @@ X... |1  =&amp;gt; 열 2 &amp;gt; 행 1 =&amp;gt; 2
         <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
         <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_1236/</link>
         <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_1236/</guid>
+        
+        
+        <category>Algorithm Problem</category>
+        
+      </item>
+    
+      <item>
+        <title>[백준 BOJ] 11947 이런반전이</title>
+        <description>&lt;h1 id=&quot;boj-11947-&quot;&gt;[백준 BOJ] 11947 이런반전이&lt;/h1&gt;
+
+&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/11947&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1 이상 N 이하인 수들의 ‘사랑스러움’ 중 최댓값
+    &lt;ul&gt;
+      &lt;li&gt;N의 자릿수를 기준으로 해당 자릿수에서 중간값 이하이면 해당 값과 그 반전값의 곱&lt;/li&gt;
+      &lt;li&gt;중간값 이상이면 중간값과 그 반전 값의 곱&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt;을 &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;로 변환해주는 &lt;code class=&quot;highlighter-rouge&quot;&gt;stoi()&lt;/code&gt;를 사용하면 범위초과로 &lt;strong&gt;런타임 에러&lt;/strong&gt;가 날 수 있음 =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;stol()&lt;/code&gt;을 사용하자!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;예제&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;입력값이 77일 때 2자리 수의 중앙값인 49와 50의 곲이 최대값&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1X8=8
+2X7=14
+3X6=18
+4X5=20
+5X4=20
+6X3=18
+7X2=14
+8X1=8
+9X0=0
+10X89=890
+11X88=968
+12X87=1044
+13X86=1118
+14X85=1190
+15X84=1260
+16X83=1328
+17X82=1394
+18X81=1458
+19X80=1520
+20X79=1580
+21X78=1638
+22X77=1694
+23X76=1748
+24X75=1800
+25X74=1850
+26X73=1898
+27X72=1944
+28X71=1988
+29X70=2030
+30X69=2070
+31X68=2108
+32X67=2144
+33X66=2178
+34X65=2210
+35X64=2240
+36X63=2268
+37X62=2294
+38X61=2318
+39X60=2340
+40X59=2360
+41X58=2378
+42X57=2394
+43X56=2408
+44X55=2420
+45X54=2430
+46X53=2438
+47X52=2444
+48X51=2448
+49X50=2450  =&amp;gt; 최대값
+50X49=2450  =&amp;gt; 최대값
+51X48=2448
+52X47=2444
+53X46=2438
+54X45=2430
+55X44=2420
+56X43=2408
+57X42=2394
+58X41=2378
+59X40=2360
+60X39=2340
+61X38=2318
+62X37=2294
+63X36=2268
+64X35=2240
+65X34=2210
+66X33=2178
+67X32=2144
+68X31=2108
+69X30=2070
+70X29=2030
+71X28=1988
+72X27=1944
+73X26=1898
+74X25=1850
+75X24=1800
+76X23=1748
+77X22=1694
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;코드&lt;/h2&gt;
+
+&lt;script src=&quot;https://gist.github.com/jiwondh/b55a8b1951840bf9801863d7632e0de0.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_11947/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_11947/</guid>
         
         
         <category>Algorithm Problem</category>
@@ -551,352 +753,6 @@ X... |1  =&amp;gt; 열 2 &amp;gt; 행 1 =&amp;gt; 2
         
         
         <category>Algorithm Problem</category>
-        
-      </item>
-    
-      <item>
-        <title>[C++] 입력 개수 모를 때 입력 받기</title>
-        <description>
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#c------&quot; id=&quot;markdown-toc-c------&quot;&gt;[C++] 입력 개수 모를 때 입력 받기&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;코드&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;실행 결과&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;c------&quot;&gt;[C++] 입력 개수 모를 때 입력 받기&lt;/h1&gt;
-
-&lt;p&gt;입력 개수가 주어지지 않고 &lt;strong&gt;입력이 끝날 때까지 입력 받아야 될 때&lt;/strong&gt; 사용하시면 될 것 같아요~&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;코드&lt;/h3&gt;
-
-&lt;script src=&quot;https://gist.github.com/jiwondh/be011dbd3bcc3e4cd43e1a17a0cd748b.js&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;실행 결과&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4466/36997804914_4691cd2c7b_o.png&quot; alt=&quot;A5B92D71-6BC9-4F68-9E5F-BE7DBDB4D41B&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 23 Sep 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/09/23/scanf/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/09/23/scanf/</guid>
-        
-        
-        <category>Algorithm</category>
-        
-      </item>
-    
-      <item>
-        <title>[C++] 문자열 공백 포함 입력 받기</title>
-        <description>
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#c-----&quot; id=&quot;markdown-toc-c-----&quot;&gt;[C++] 문자열 공백 포함 입력 받기&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#cingetline&quot; id=&quot;markdown-toc-cingetline&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cin.getline&lt;/code&gt;&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;인자값&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;예제&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;실행 결과&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#scanfn-str&quot; id=&quot;markdown-toc-scanfn-str&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scanf(&quot;%[^\n]&quot;, str)&lt;/code&gt;&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;예제&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-4&quot; id=&quot;markdown-toc-section-4&quot;&gt;실행 결과&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;c-----&quot;&gt;[C++] 문자열 공백 포함 입력 받기&lt;/h1&gt;
-
-&lt;h2 id=&quot;cingetline&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cin.getline&lt;/code&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;공백과 종료&lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt; 문자를 포함해서 &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt;개의 문자를 &lt;code class=&quot;highlighter-rouge&quot;&gt;s&lt;/code&gt;에 저장&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;delim&lt;/code&gt; 문자가 나타나면 입력 종료&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;인자값&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;s&lt;/code&gt; : 문자열 배열&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt; : &lt;code class=&quot;highlighter-rouge&quot;&gt;s&lt;/code&gt;에 입력받을 최대 문자 수(종료 &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt; 문자 포함)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;delim&lt;/code&gt; : 해당 문자가 나타나면 입력받기를 종료&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;예제&lt;/h3&gt;
-
-&lt;script src=&quot;https://gist.github.com/jiwondh/623d372110d5255ae5c3b23648331abb.js&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;실행 결과&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4498/37450671950_9798fb0a74_o.png&quot; alt=&quot;3BD33863-25EF-488E-B8EB-B7A3310FD64B&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;scanfn-str&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scanf(&quot;%[^\n]&quot;, str)&lt;/code&gt;&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt; 문자 입력받을 때까지 &lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt; 문자열에 저장&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;for문&lt;/strong&gt;에서 사용 불가&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;예제&lt;/h3&gt;
-
-&lt;script src=&quot;https://gist.github.com/jiwondh/94ecc3672ad3a6dce9007154cd638bd1.js&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;실행 결과&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4463/37708224091_890dc474c4_o.png&quot; alt=&quot;7A90CCC6-8B86-4B23-A0ED-2FBFAC0EDE24&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 23 Sep 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/09/23/cin.getline/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/09/23/cin.getline/</guid>
-        
-        
-        <category>Algorithm</category>
-        
-      </item>
-    
-      <item>
-        <title>[Electron] Electron 데스크탑 앱 배포하기 (Packaging Applications)</title>
-        <description>
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#electron----packaging-applications&quot; id=&quot;markdown-toc-electron----packaging-applications&quot;&gt;Electron 데스크탑 앱 배포하기 (Packaging Applications)&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#electron-devdependencies-&quot; id=&quot;markdown-toc-electron-devdependencies-&quot;&gt;electron을 devDependencies로 설치&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#electron-packager-devdependencies-&quot; id=&quot;markdown-toc-electron-packager-devdependencies-&quot;&gt;electron-packager을 devDependencies로 설치&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#asar-devdependencies-&quot; id=&quot;markdown-toc-asar-devdependencies-&quot;&gt;asar을 devDependencies로 설치&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;앱 패키징&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#electron----&quot; id=&quot;markdown-toc-electron----&quot;&gt;Electron 기본 아이콘으로 앱 패키징&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;사용자 지정 아이콘으로 앱 패키징&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#asar------&quot; id=&quot;markdown-toc-asar------&quot;&gt;asar 아카이브 포맷을 통한 코드 노출 방지&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;앱 배포&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;마침&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;electron----packaging-applications&quot;&gt;Electron 데스크탑 앱 배포하기 (Packaging Applications)&lt;/h1&gt;
-
-&lt;p&gt;Electron 데스크탑 앱을 일일이 수동으로 패키지로 만드는 대신, 서드 파티 패키징 툴을 사용하며 패키징을 자동화 시킬 수 있습니다. 저는 서드 파티 패키징 툴 중에서 &lt;a href=&quot;https://github.com/electron-userland/electron-packager&quot;&gt;electron-packager&lt;/a&gt;을 사용하여 앱을 패키징하는 방법을 소개하겠습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;electron-devdependencies-&quot;&gt;electron을 devDependencies로 설치&lt;/h3&gt;
-
-&lt;p&gt;기존에 electron을 devDependencies로 설치하지 않으신 분들은 electron 프로젝트 폴더에서 아래 명령어를 입력해 &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; 파일에 버전이 명시되도록 해주세요.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install electron --save-dev 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;electron-packager-devdependencies-&quot;&gt;electron-packager을 devDependencies로 설치&lt;/h3&gt;
-
-&lt;p&gt;electron 프로젝트 폴더에서 아래 명령어로 electron-packager를 설치해줍니다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install electron-packager --save-dev
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;asar-devdependencies-&quot;&gt;asar을 devDependencies로 설치&lt;/h3&gt;
-
-&lt;p&gt;electron 프로젝트 폴더에서 아래 명령어로 asar를 설치해줍니다&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install asar --save-dev
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;그럼 아래와 같이 &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; 파일의 devDependencies항목에 버전이 명시됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fgwpabe6ydj31kw0od78d.jpg&quot; alt=&quot;1349AB1D-9A62-41FD-85E2-95F08EA6FAE1&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;앱 패키징&lt;/h2&gt;
-
-&lt;h3 id=&quot;electron----&quot;&gt;Electron 기본 아이콘으로 앱 패키징&lt;/h3&gt;
-
-&lt;p&gt;1.&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; 파일을 아래와 같이 수정해 주세요. (&lt;code class=&quot;highlighter-rouge&quot;&gt;scripts&lt;/code&gt;의 &lt;code class=&quot;highlighter-rouge&quot;&gt;build&lt;/code&gt; 부분 추가)&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;electrontutorial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0.1.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tutorial for electron&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;index.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;electron index.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;electron-packager . ElectronPJ&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;author&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;license&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ISC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;devDependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;asar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^0.13.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;electron&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^1.6.11&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;electron-packager&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^8.7.1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;dependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;jquery&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^3.2.1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;2.프로젝트 폴더 내에서 아래 명령어를 실행하세요.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm run build
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;아이콘을 따로 지정해주지 않으면 기본 Electron 아이콘으로 앱 패키징이 되고 패키징된 폴더가 프로젝트 폴더내에 아래와 같이 생기게 됩니다. 예를 들어 저는 프로젝트 폴더 경로인 /Users/ohjiwon/dev/ElectronPJ 내에 /Users/ohjiwon/dev/ElectronPJ/ElectronPJ-darwin-x64와 같이 패키징 폴더가 생성되고 그 안에 &lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ.app&lt;/code&gt;이 위치하게 됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fgwry9m3byj313w0gmaff.jpg&quot; alt=&quot;B2B5BF2A-D031-4173-BE1D-22693A942007&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;사용자 지정 아이콘으로 앱 패키징&lt;/h3&gt;
-
-&lt;p&gt;이전에 만들었던 ElectronPJ-darwin-x64 폴더를 상위 폴더인 프로젝트 폴더에서 아래 명령어로 삭제해주세요.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rm -rf ElectronPJ-darwin-x64
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fgwsd6c85ej31kw0i4gng.jpg&quot; alt=&quot;25035F33-AB5A-4135-87C2-B73C6BA27247&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;1.사용자 지정 아이콘으로 패키징을 하기 위해서 자신의 운영체제에 맞는 아이콘 파일을 프로젝트 폴더내에 저장해주세요.&lt;/p&gt;
-
-&lt;p&gt;예를들어 저의 경우 프로젝트 폴더 경로인 /Users/ohjiwon/dev/ElectronPJ 내에 아이콘 파일인 &lt;code class=&quot;highlighter-rouge&quot;&gt;Icon.icns&lt;/code&gt; 파일을 저장해주었어요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006tKfTcgy1fgwsfgbw2pj31400bsn1z.jpg&quot; alt=&quot;676485BC-9CCE-4DAD-A305-1E71E8E523FD&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;2.&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; 파일을 아래와 같이 수정해 줍니다. (&lt;code class=&quot;highlighter-rouge&quot;&gt;scripts&lt;/code&gt;의 &lt;code class=&quot;highlighter-rouge&quot;&gt;build&lt;/code&gt; 부분 수정)&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;electrontutorial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0.1.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tutorial for electron&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;index.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;electron index.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;electron-packager . ElectronPJ &amp;amp;&amp;amp; cp Icon.icns ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/electron.icns&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;author&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;license&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ISC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;devDependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;asar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^0.13.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;electron&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^1.6.11&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;electron-packager&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^8.7.1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;dependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;jquery&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^3.2.1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;3.프로젝트 폴더 내에서 아래 명령어를 실행하세요.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm run build
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fgwsdz1ifij31kw0ihjva.jpg&quot; alt=&quot;15C48C9E-40F3-4088-B304-600B357B722A&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;아이콘을 따로 지정해주었기 때문에 패키징된 폴더안에 &lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ.app&lt;/code&gt;의 아이콘이 지정한 아이콘으로 바뀐 것을 알 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fgwsg6dr3kj31480gaafn.jpg&quot; alt=&quot;84E4FC1A-CD88-4A5A-A7A3-4064907BBEA2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이러한 방식으로 패키징을 하게되면 해당 앱을 다운 받은 사용자가 앱의 패키징 내용을 아래와 같은 방법으로 접근하여 코드를 임의로 수정할 수 있게 되고 수정된 코드가 &lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ.app&lt;/code&gt;에 반영되어버립니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fgwtao6g5vj313s0g679z.jpg&quot; alt=&quot;62F0CDAD-0C22-4124-BC69-899538B07479&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fgwtavgusyj313s09640y.jpg&quot; alt=&quot;38523CC8-5E17-4300-A8C9-151E41B43985&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006tKfTcgy1fgwtb8txh2j313q0f0dlc.jpg&quot; alt=&quot;88899AC7-527A-493E-9CB3-74BA4A46DB14&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fgwtbqibwvj313g18ge0r.jpg&quot; alt=&quot;5B8FBB4A-F0F9-4473-8A42-EF17E7A609B3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fgwtc2iafej313w0asn1a.jpg&quot; alt=&quot;73FD2FAE-8BD9-4509-A464-D27B58E13ABF&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;따라서 앱의 소스코드가 사용자에게 노출되는 것을 방지할 필요가 있습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;asar------&quot;&gt;asar 아카이브 포맷을 통한 코드 노출 방지&lt;/h3&gt;
-
-&lt;p&gt;소스파일 전체를 복사해서 배포하는 것과는 별개로 &lt;a href=&quot;https://github.com/electron/asar&quot;&gt;asar&lt;/a&gt; 아카이브를 통해 애플리케이션의 소스 코드가 사용자에게 노출되는 것을 방지할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;asar&lt;/code&gt; 아카이브를 사용할 땐 단순히 &lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt; 폴더 대신에 애플리케이션을 패키징한 &lt;code class=&quot;highlighter-rouge&quot;&gt;app.asar&lt;/code&gt; 파일로 대체하면됩니다. Electron은 자동으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt;폴더 대신 asar 아카이브를 기반으로 애플리케이션을 실행합니다.&lt;/p&gt;
-
-&lt;p&gt;이전에 만들었던 ElectronPJ-darwin-x64 폴더를 상위 폴더인 프로젝트 폴더에서 아래 명령어로 삭제해주세요.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rm -rf ElectronPJ-darwin-x64
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fgwsd6c85ej31kw0i4gng.jpg&quot; alt=&quot;25035F33-AB5A-4135-87C2-B73C6BA27247&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;1.&lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; 파일을 아래와 같이 수정해줍니다. (&lt;code class=&quot;highlighter-rouge&quot;&gt;scripts&lt;/code&gt;의 &lt;code class=&quot;highlighter-rouge&quot;&gt;package&lt;/code&gt; 부분 추가)&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;electrontutorial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0.1.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tutorial for electron&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;index.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;electron index.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;package&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;asar pack ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/app ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/app.asar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;electron-packager . ElectronPJ &amp;amp;&amp;amp; cp Icon.icns ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/electron.icns&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;author&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;license&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ISC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;devDependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;asar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^0.13.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;electron&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^1.6.11&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;electron-packager&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^8.7.1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;dependencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;jquery&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;^3.2.1&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;2.프로젝트 폴더 내에서 아래 명령어를 실행하세요.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm run build
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm run package
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fgwtp2406ij31kw0ikn25.jpg&quot; alt=&quot;16572C54-641F-4C26-AAE6-8C3170B064F6&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;그럼 아래와 같이 ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources 경로에 &lt;code class=&quot;highlighter-rouge&quot;&gt;app.asar&lt;/code&gt; 파일이 생성된 것을 볼 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fgwtqwnt29j313w0fy0ym.jpg&quot; alt=&quot;CAAF46CF-998C-45B1-B433-53B5FD307780&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;3.&lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt; 폴더를 삭제하세요.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006tKfTcgy1fgwuewfnorj313u0a4784.jpg&quot; alt=&quot;CCE2C187-7D0A-4C04-9FE7-BA2D3CA5CEC7&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app.asar&lt;/code&gt;파일이 존재하므로 &lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt; 폴더를 삭제하여도 &lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ.app&lt;/code&gt;은 정상 작동하게 되며 이로서 사용자는 앱의 소스코드에 접근하지 못하게 됩니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;앱 배포&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ.app&lt;/code&gt;을 실행하면(Linux에선 &lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ&lt;/code&gt; Windows에선 &lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ.exe&lt;/code&gt; 입니다) ElectronPJ 앱이 실행됩니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tNc79gy1fgvnmisjglj318c0x244q.jpg&quot; alt=&quot;A45ED7AA-EBCF-4B68-9A32-70F499F0435E&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;최종 사용자에겐 이 ElectronPJ 폴더(&lt;code class=&quot;highlighter-rouge&quot;&gt;ElectronPJ.app&lt;/code&gt;)를 배포하면 됩니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;마침&lt;/h2&gt;
-
-&lt;p&gt;지금까지 &lt;a href=&quot;https://github.com/electron-userland/electron-packager&quot;&gt;electron-packager&lt;/a&gt;을 사용하여 앱을 패키징하는 방법을 소개하였습니다.&lt;/p&gt;
-
-&lt;p&gt;Electron 데스크탑 앱 배포에 관한 자세한 내용은 Electron 홈페이지의 &lt;a href=&quot;https://electron.atom.io/docs/tutorial/application-distribution/&quot;&gt;Application Distribution&lt;/a&gt;나 Electron 한국 번역 문서의 &lt;a href=&quot;https://github.com/electron/electron/tree/master/docs-translations/ko-KR&quot;&gt;애플리케이션 배포&lt;/a&gt;부분을 참고하세요.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 23 Jun 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/06/23/Electron2/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/06/23/Electron2/</guid>
-        
-        
-        <category>Electron</category>
         
       </item>
     
