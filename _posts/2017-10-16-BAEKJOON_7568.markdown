@@ -1,0 +1,72 @@
+---
+layout: post
+title: "[백준 BOJ] 7568 덩치"
+date: 2017-10-16
+categories:
+  - Algorithm Problem
+description: 
+image: /assets/images/ade1.jpg
+image-sm: /assets/images/ade2.jpg
+typora-copy-images-to: ipic
+---
+
+# [백준 BOJ] 7568 덩치
+
+문제로 이동할려면 [여기](https://www.acmicpc.net/problem/7568){: target="_blank" }를 클릭하세요.
+
+## 문제
+
+- A 와 B의 덩치가 각각 `(x,y)`, `(p,q)`라고 할 때 `x>p` 그리고 `y>q` 이라면 우리는 A의 덩치가 B의 덩치보다 **"더 크다"**고 말함
+- 서로 다른 덩치끼리 크기를 정할 수 없는 경우도 있음.
+- N명의 집단에서 각 사람의 **덩치 등수**는 <u>자신보다 더 "큰 덩치"의 사람의 수</u>로 정해진다
+
+
+## 풀이
+
+- 입력으로 들어온 키와 몸무게를 `pair`로 `vector`에 저장해준다.
+- 입력과 동시에 `map`에 `key`값으로 키와 몸무게 `pair`를, `value`값으로 0을 초기화해준다.
+- `vector`를 오름차순으로 `sort`해준다.
+  - `<algorithm>` 헤더를 꼭 추가해주자! => 빼먹으면 **컴파일 에러**
+  - 원인을 모르는 컴파일 에러가 난다면 [여기](https://www.acmicpc.net/blog/view/52){: target="_blank" }를 참고하세요!
+- 반복문으로 자신보다 뒤에 있는사람들에 대해(정렬하였으므로) 검사하여 덩치가 클 사람을 계산해주고 이를 `map`을 이용해 접근하여 `value`에 저장해 준다.
+
+### 예제
+
+```
+- A : (56, 177), B : (45, 165)
+  56>45 and 177>165 => A>B
+  
+- C : (45, 181), D : (55,173)
+  45<55 and 181>173 => 덩치로 비교 불가능X
+
+입력
+
+5
+55 185
+58 183
+88 186
+60 175
+46 155
+
+정렬 후
+
+46 155 - 5 //뒤에 4명이 나보다 덩치가 큼
+55 185 - 2
+58 183 - 2
+60 175 - 2
+88 186 - 1
+```
+
+## 코드  
+
+
+<script src="https://gist.github.com/jiwondh/ceac6e505879fbee71d63a02a97e080c.js"></script>
+
+
+
+
+
+
+
+
+

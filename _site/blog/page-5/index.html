@@ -64,6 +64,8 @@
       <section class="previews">
   <div>
     
+      <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/ch1.jpg');"></figure>
+    
       <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
     
       <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
@@ -88,6 +90,15 @@
 
     <div class="tab">
       <ul itemscope itemtype="http://schema.org/Blog">
+        
+          <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            <a class="preview__link" href="/2017/01/15/sql-syntax/" itemprop="url">
+              <span class="preview__date" itemprop="datePublished" datetime="2017-01-15T00:00:00+09:00">Jan 15, 2017</span>
+              <h2 class="preview__header" itemprop="name">Sql 기본적인 문법 정리</h2>
+			  <p class="preview__excerpt" itemprop="description">테이블 생성 CREATE TABLE student ( id INTEGER, name TEXT, age INTEGER ); 위와 같이 테이블을 생성하면 아래와 같은 스키마가 형성됩니다. id INTEGER name TEXT age INTEGER 삽입 INSERT INTO...</p>
+              <span class="preview__more">Read More</span>
+            </a>
+          </li>
         
           <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
             <a class="preview__link" href="/2017/01/14/start/" itemprop="url">
@@ -290,7 +301,7 @@
           
           <div class="card__container">
             <h2 class="card__header">Algorithm Problem</h2>
-            <p class="card__count">7 Posts</p>
+            <p class="card__count">8 Posts</p>
             <span class="card__more">View All</span>
           </div>
         </a>
