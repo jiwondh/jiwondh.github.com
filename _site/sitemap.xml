@@ -2,6 +2,38 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	
 	<url>
+		<loc>https://jiwondh.github.io/2017/10/17/BAEKJOON_2169/</loc>
+		
+		<lastmod>2017-10-17T00:00:00+09:00</lastmod>
+		
+
+		
+		<changefreq>weekly</changefreq>
+		
+
+		
+		<priority>0.5</priority>
+		
+
+	</url>
+	
+	<url>
+		<loc>https://jiwondh.github.io/2017/10/17/BAEKJOON_1149/</loc>
+		
+		<lastmod>2017-10-17T00:00:00+09:00</lastmod>
+		
+
+		
+		<changefreq>weekly</changefreq>
+		
+
+		
+		<priority>0.5</priority>
+		
+
+	</url>
+	
+	<url>
 		<loc>https://jiwondh.github.io/2017/10/16/BAEKJOON_7568/</loc>
 		
 		<lastmod>2017-10-16T00:00:00+09:00</lastmod>

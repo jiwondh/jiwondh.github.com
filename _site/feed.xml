@@ -5,9 +5,84 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Oct 2017 23:52:01 +0900</pubDate>
-    <lastBuildDate>Mon, 16 Oct 2017 23:52:01 +0900</lastBuildDate>
+    <pubDate>Tue, 17 Oct 2017 12:34:53 +0900</pubDate>
+    <lastBuildDate>Tue, 17 Oct 2017 12:34:53 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>[백준 BOJ] 2169 로봇 조종하기</title>
+        <description>&lt;h1 id=&quot;boj-2169--&quot;&gt;[백준 BOJ] 2169 로봇 조종하기&lt;/h1&gt;
+
+&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/2169&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;처음에는 &lt;code class=&quot;highlighter-rouge&quot;&gt;DFS&lt;/code&gt;를 이용한 재귀로 풀었더니 &lt;code class=&quot;highlighter-rouge&quot;&gt;런타임에러&lt;/code&gt;가 떴습니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;메모이제이션&lt;/code&gt;을 해주고 &lt;code class=&quot;highlighter-rouge&quot;&gt;DP&lt;/code&gt;를 이용한 재귀로 다시 풀었더니 통과되었습니다.&lt;/li&gt;
+  &lt;li&gt;DP로 풀 때 인자값에 &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;direction&lt;/code&gt;을 넣어주고 아래와 같이 경우를 나눠주었습니다.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;LEFT&lt;/code&gt; =&amp;gt; 다음에는 &lt;code class=&quot;highlighter-rouge&quot;&gt;RIGHT&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;DOWN&lt;/code&gt;만 가능&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RIGHT&lt;/code&gt; =&amp;gt; 다음에는 &lt;code class=&quot;highlighter-rouge&quot;&gt;LEFT&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;DOWN&lt;/code&gt;만 가능&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DOWN&lt;/code&gt; =&amp;gt; 다음에는 &lt;code class=&quot;highlighter-rouge&quot;&gt;LEFT&lt;/code&gt;,  &lt;code class=&quot;highlighter-rouge&quot;&gt;RIGHT&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;DOWN&lt;/code&gt; 모두 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;코드&lt;/h2&gt;
+
+&lt;script src=&quot;https://gist.github.com/jiwondh/7491266e90619c85dc9b61268ea7914f.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Tue, 17 Oct 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/10/17/BAEKJOON_2169/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/17/BAEKJOON_2169/</guid>
+        
+        
+        <category>Algorithm Problem</category>
+        
+      </item>
+    
+      <item>
+        <title>[백준 BOJ] 1149 RGB거리</title>
+        <description>&lt;h1 id=&quot;boj-1149-rgb&quot;&gt;[백준 BOJ] 1149 RGB거리&lt;/h1&gt;
+
+&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/1149&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DP&lt;/code&gt;를 자신의 색깔이 아닌 다른 두 색깔을 재귀호출하고 그 중 작은 값을 리턴하는 방식으로 구현합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cache&lt;/code&gt; 배열을 이용해 &lt;code class=&quot;highlighter-rouge&quot;&gt;메모이제이션&lt;/code&gt;을 해줘 시간초과를 방지해줍니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;예제&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;입력
+
+3
+26 40 83
+49 60 57
+13 89 99
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4504/37687197156_fb561b6649_o.png&quot; alt=&quot;노트북&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;코드&lt;/h2&gt;
+
+&lt;script src=&quot;https://gist.github.com/jiwondh/0b2c04339661571c2b0501c0b650ecff.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Tue, 17 Oct 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/10/17/BAEKJOON_1149/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/17/BAEKJOON_1149/</guid>
+        
+        
+        <category>Algorithm Problem</category>
+        
+      </item>
     
       <item>
         <title>[백준 BOJ] 7568 덩치</title>
@@ -419,206 +494,6 @@ X... |1  =&amp;gt; 열 2 &amp;gt; 행 1 =&amp;gt; 2
         
         
         <category>Algorithm Problem</category>
-        
-      </item>
-    
-      <item>
-        <title>[백준 BOJ] 1074 Z</title>
-        <description>&lt;h1 id=&quot;boj-1074-z&quot;&gt;[백준 BOJ] 1074 Z&lt;/h1&gt;
-
-&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/1074&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;분할 정복 문제&lt;/strong&gt; =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;재귀&lt;/code&gt;로 풀자!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;예제&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;N = 1
-0 1 
-2 3
-
-N = 2
-0	1	4	5
-2	3	6	7
-8	9	12	13
-10	11	14	15
-
-
-입력
-2 3 1
-- go(2, 3, 1)
-- 2*2 + go(1, 1, 1)
-- 2^2*2 + 2*1 + 1 = 8 + 2 + 1 = 7
-
-입력
-3 7 7 
-- go(3, 7, 7)
-- 2^4*3 + go(2, 3, 3)
-- 2^4*3 + 2^2*3 + go(1, 1, 1)
-- 2^4*3 + 2^2*3 + 2*1+1 = 48 + 12 + 3 = 63
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;코드&lt;/h2&gt;
-
-&lt;script src=&quot;https://gist.github.com/Baekjoon/cc617ea564eb1328913d.js&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_1074/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_1074/</guid>
-        
-        
-        <category>Algorithm Problem</category>
-        
-      </item>
-    
-      <item>
-        <title>[Algorithm] 트리와 트리순회</title>
-        <description>
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#traversal&quot; id=&quot;markdown-toc-traversal&quot;&gt;이진트리의 순회(traversal)&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;순회를 위한 작업 3가지&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;순회 종류 4가지 (노드 방문 순서에 따라)&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#preorder-traversal&quot; id=&quot;markdown-toc-preorder-traversal&quot;&gt;① 전위 순회 (Preorder Traversal)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#inorder-traversal&quot; id=&quot;markdown-toc-inorder-traversal&quot;&gt;② 중위 순회 (Inorder Traversal)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#postorder-traversal&quot; id=&quot;markdown-toc-postorder-traversal&quot;&gt;③ 후위 순회 (Postorder Traversal)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#level-order-traversal&quot; id=&quot;markdown-toc-level-order-traversal&quot;&gt;③ 레벨 오더 순회(level-order Traversal)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;❗️문제&lt;/a&gt;            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;답&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;traversal&quot;&gt;이진트리의 순회(traversal)&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;순회 : 이진 트리의 모든 노드를 방문하는 일&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;순회를 위한 작업 3가지&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;D&lt;/code&gt;&lt;/strong&gt; : 현재 노드를 방문하여 &lt;strong&gt;데이터&lt;/strong&gt;를 읽는 작업&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;L&lt;/code&gt;&lt;/strong&gt; : 현재 노드의 &lt;strong&gt;==왼쪽== 서브트리&lt;/strong&gt;로 이동하는 작업&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;R&lt;/code&gt;&lt;/strong&gt; : 현재 노드의 &lt;strong&gt;==오른쪽== 서브트리&lt;/strong&gt;로 이동하는 작업&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;순회 종류 4가지 (노드 방문 순서에 따라)&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;전위 순회 (Preorder Traversal)&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;중위 순회 (Inorder Traversal)&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;후위 순회 (Postorder Traversal)&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;레벨 오더 순회(level-order Traversal)&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;preorder-traversal&quot;&gt;① 전위 순회 (Preorder Traversal)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;현재 노드를 방문하여 &lt;strong&gt;데이터&lt;/strong&gt;를 읽는 작업 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;D&lt;/code&gt;&lt;/strong&gt; 을 &lt;em&gt;가장 먼저&lt;/em&gt; 수행하여 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DLR&lt;/code&gt;&lt;/strong&gt; 의 순서로 순회하는 방법&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4471/36997203284_83c0782bbc_o.png&quot; alt=&quot;5933062B-210F-42B2-9598-48A93C29E100&quot; /&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vb&quot; data-lang=&quot;vb&quot;&gt;&lt;span class=&quot;n&quot;&gt;PREORDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TREE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WALK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NIL&lt;/span&gt;
-  	&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;D&lt;/span&gt;
-  	&lt;span class=&quot;n&quot;&gt;PREORDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TREE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WALK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;
-  	&lt;span class=&quot;n&quot;&gt;PREORDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TREE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WALK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;inorder-traversal&quot;&gt;② 중위 순회 (Inorder Traversal)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;현재 노드를 방문하여 &lt;strong&gt;데이터&lt;/strong&gt;를 읽는 작업 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;D&lt;/code&gt;&lt;/strong&gt; 을 &lt;code class=&quot;highlighter-rouge&quot;&gt;L&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;R&lt;/code&gt;의 사이에 수행하여 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;LDR&lt;/code&gt;&lt;/strong&gt; 의 순서로 순회하는 방법&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4490/36997208484_0a685c7771_o.png&quot; alt=&quot;C879F19B-4D48-4E1A-B758-DA221FF7DEC6&quot; /&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vb&quot; data-lang=&quot;vb&quot;&gt;&lt;span class=&quot;n&quot;&gt;INORDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TREE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WALK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NIL&lt;/span&gt;
-  	&lt;span class=&quot;n&quot;&gt;INORDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TREE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WALK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;
-  	&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;D&lt;/span&gt;
-  	&lt;span class=&quot;n&quot;&gt;INORDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TREE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WALK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;postorder-traversal&quot;&gt;③ 후위 순회 (Postorder Traversal)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;현재 노드를 방문하여 &lt;strong&gt;데이터&lt;/strong&gt;를 읽는 작업 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;D&lt;/code&gt;&lt;/strong&gt; 을 &lt;em&gt;가장 나중에&lt;/em&gt; 수행하여 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;LRD&lt;/code&gt;&lt;/strong&gt; 의 순서로 순회하는 방법&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4445/36997213604_d6b2faa386_o.png&quot; alt=&quot;94A0694C-FC49-438C-9E7B-4C065871A231&quot; /&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vb&quot; data-lang=&quot;vb&quot;&gt;&lt;span class=&quot;n&quot;&gt;POSTORDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TREE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WALK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NIL&lt;/span&gt;
-  	&lt;span class=&quot;n&quot;&gt;PREORDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TREE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WALK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;
-  	&lt;span class=&quot;n&quot;&gt;PREORDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TREE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;WALK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;
-  	&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;D&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;level-order-traversal&quot;&gt;③ 레벨 오더 순회(level-order Traversal)&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;레벨 순으로 방문, 동일 레벨에서는 왼쪽에서 오른쪽 순서로&lt;/li&gt;
-  &lt;li&gt;큐(queue)를 이용하여 구현&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4489/36997217194_110aa6c398_o.png&quot; alt=&quot;4A70D534-5BF2-41A7-9034-C4A042DB978B&quot; /&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vb&quot; data-lang=&quot;vb&quot;&gt;&lt;span class=&quot;n&quot;&gt;LEVEL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ORDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TREE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TRAVERSAL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;visit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;Q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;	&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Q&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Q&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do&lt;/span&gt;
-   		&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dequeue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;    	&lt;span class=&quot;n&quot;&gt;visit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;children&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;​&lt;/span&gt;    	&lt;span class=&quot;n&quot;&gt;enqueue&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;childrenn&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;into&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Q&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;❗️문제&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;전위, 중위, 후위, 레벨 오더 순회 경로 구하기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4453/37658441246_056ca3ddd8_o.png&quot; alt=&quot;F6EE0838-0312-4738-AF51-12C893B731BE&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-3&quot;&gt;답&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;전위 순회 (Preorder Traversal)
-    &lt;ul&gt;
-      &lt;li&gt;A - B - D - H - I - E - J - K - C - F - L - G&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;중위 순회 (Inorder Traversal)
-    &lt;ul&gt;
-      &lt;li&gt;H - D - I - B - J - E - K - A - L - F - C - G&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;후위 순회 (Postorder Traversal)
-    &lt;ul&gt;
-      &lt;li&gt;H - I - D - J - K - E - B - L - F - G - C - A&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;레벨 오더 순회(level-order Traversal)
-    &lt;ul&gt;
-      &lt;li&gt;A - B - C - D - E - F - G - H - I - J - K - L&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 15 Oct 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/10/15/tree_traversal/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/15/tree_traversal/</guid>
-        
-        
-        <category>Algorithm</category>
         
       </item>
     
