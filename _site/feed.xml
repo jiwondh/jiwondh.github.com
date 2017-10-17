@@ -5,8 +5,8 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Oct 2017 16:29:14 +0900</pubDate>
-    <lastBuildDate>Tue, 17 Oct 2017 16:29:14 +0900</lastBuildDate>
+    <pubDate>Tue, 17 Oct 2017 19:59:39 +0900</pubDate>
+    <lastBuildDate>Tue, 17 Oct 2017 19:59:39 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -64,8 +64,8 @@
 
 </description>
         <pubDate>Tue, 17 Oct 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/10/17/BAEKJOON_2169-%EB%B3%B5%EC%82%AC%EB%B3%B8/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/17/BAEKJOON_2169-%EB%B3%B5%EC%82%AC%EB%B3%B8/</guid>
+        <link>https://jiwondh.github.io/2017/10/17/BAEKJOON_14502/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/17/BAEKJOON_14502/</guid>
         
         
         <category>Algorithm Problem</category>
@@ -97,6 +97,44 @@
         <pubDate>Tue, 17 Oct 2017 00:00:00 +0900</pubDate>
         <link>https://jiwondh.github.io/2017/10/17/BAEKJOON_1446/</link>
         <guid isPermaLink="true">https://jiwondh.github.io/2017/10/17/BAEKJOON_1446/</guid>
+        
+        
+        <category>Algorithm Problem</category>
+        
+      </item>
+    
+      <item>
+        <title>[백준 BOJ] 12100 2048</title>
+        <description>&lt;h1 id=&quot;boj-12100-2048-&quot;&gt;[백준 BOJ] 12100 2048 게임&lt;/h1&gt;
+
+&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/12100&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;먼저 2048 게임에서 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;이동&lt;/code&gt;기능&lt;/strong&gt;을 완벽히 구현하는 것이 첫 번째 과제입니다. 이동 기능이 완벽히 구현되면 &lt;u&gt;최대 5번 이동시켜 가장 큰 블럭을 찾는 것&lt;/u&gt;은 &lt;code class=&quot;highlighter-rouge&quot;&gt;재귀&lt;/code&gt;를 이용해 간단하게 해결할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;왼쪽, 오른쪽, 위, 아래 이동은 범위만 약간 다를 뿐 같은 맥락으로 풀 수 있습니다. 왼쪽을 예시로 들어보겠습니다.
+    &lt;ul&gt;
+      &lt;li&gt;새로운 숫자들을 저장할 &lt;code class=&quot;highlighter-rouge&quot;&gt;newBoard&lt;/code&gt;벡터를 선언해줍니다.&lt;/li&gt;
+      &lt;li&gt;각 행에 대해서 왼쪽 부터 검색을 합니다.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cnt&lt;/code&gt;를 &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;으로 초기화 합니다.&lt;/li&gt;
+      &lt;li&gt;숫자는 한번에 &lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;개 씩 합쳐지므로 &lt;code class=&quot;highlighter-rouge&quot;&gt;first&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;second&lt;/code&gt; 변수를 만들어 비교를 시작합니다.&lt;/li&gt;
+      &lt;li&gt;두 변수가 같을 때는 &lt;code class=&quot;highlighter-rouge&quot;&gt;newBoard[행][cnt]&lt;/code&gt;에 변수의 2배 값을 삽입해주고 &lt;code class=&quot;highlighter-rouge&quot;&gt;cnt&lt;/code&gt;를 증가시킵니다.&lt;/li&gt;
+      &lt;li&gt;다를 때는 &lt;code class=&quot;highlighter-rouge&quot;&gt;first&lt;/code&gt;만 삽입해주고 &lt;code class=&quot;highlighter-rouge&quot;&gt;first&lt;/code&gt;에 &lt;code class=&quot;highlighter-rouge&quot;&gt;second&lt;/code&gt;값을 옮긴 다음 비교를 반복합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위의 설명 이외에 가장자리 예외처리에 주의해야합니다.&lt;/li&gt;
+  &lt;li&gt;재귀함수를 구현할 때는 함수가 종료하기 전에 &lt;strong&gt;배열이 복구&lt;/strong&gt; 되어야 한다는 점을 꼭 주의하세요!(&lt;code class=&quot;highlighter-rouge&quot;&gt;203&lt;/code&gt;행 참고)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;코드&lt;/h2&gt;
+
+&lt;script src=&quot;https://gist.github.com/jiwondh/60f156280f07de9635384140a0c4baf5.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Tue, 17 Oct 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/10/17/BAEKJOON_12100/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/17/BAEKJOON_12100/</guid>
         
         
         <category>Algorithm Problem</category>
@@ -371,124 +409,6 @@ X... |1  =&amp;gt; 열 2 &amp;gt; 행 1 =&amp;gt; 2
         <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
         <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_1236/</link>
         <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_1236/</guid>
-        
-        
-        <category>Algorithm Problem</category>
-        
-      </item>
-    
-      <item>
-        <title>[백준 BOJ] 11947 이런반전이</title>
-        <description>&lt;h1 id=&quot;boj-11947-&quot;&gt;[백준 BOJ] 11947 이런반전이&lt;/h1&gt;
-
-&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/11947&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;1 이상 N 이하인 수들의 ‘사랑스러움’ 중 최댓값
-    &lt;ul&gt;
-      &lt;li&gt;N의 자릿수를 기준으로 해당 자릿수에서 중간값 이하이면 해당 값과 그 반전값의 곱&lt;/li&gt;
-      &lt;li&gt;중간값 이상이면 중간값과 그 반전 값의 곱&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt;을 &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;로 변환해주는 &lt;code class=&quot;highlighter-rouge&quot;&gt;stoi()&lt;/code&gt;를 사용하면 범위초과로 &lt;strong&gt;런타임 에러&lt;/strong&gt;가 날 수 있음 =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;stol()&lt;/code&gt;을 사용하자!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;예제&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;입력값이 77일 때 2자리 수의 중앙값인 49와 50의 곲이 최대값&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1X8=8
-2X7=14
-3X6=18
-4X5=20
-5X4=20
-6X3=18
-7X2=14
-8X1=8
-9X0=0
-10X89=890
-11X88=968
-12X87=1044
-13X86=1118
-14X85=1190
-15X84=1260
-16X83=1328
-17X82=1394
-18X81=1458
-19X80=1520
-20X79=1580
-21X78=1638
-22X77=1694
-23X76=1748
-24X75=1800
-25X74=1850
-26X73=1898
-27X72=1944
-28X71=1988
-29X70=2030
-30X69=2070
-31X68=2108
-32X67=2144
-33X66=2178
-34X65=2210
-35X64=2240
-36X63=2268
-37X62=2294
-38X61=2318
-39X60=2340
-40X59=2360
-41X58=2378
-42X57=2394
-43X56=2408
-44X55=2420
-45X54=2430
-46X53=2438
-47X52=2444
-48X51=2448
-49X50=2450  =&amp;gt; 최대값
-50X49=2450  =&amp;gt; 최대값
-51X48=2448
-52X47=2444
-53X46=2438
-54X45=2430
-55X44=2420
-56X43=2408
-57X42=2394
-58X41=2378
-59X40=2360
-60X39=2340
-61X38=2318
-62X37=2294
-63X36=2268
-64X35=2240
-65X34=2210
-66X33=2178
-67X32=2144
-68X31=2108
-69X30=2070
-70X29=2030
-71X28=1988
-72X27=1944
-73X26=1898
-74X25=1850
-75X24=1800
-76X23=1748
-77X22=1694
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;코드&lt;/h2&gt;
-
-&lt;script src=&quot;https://gist.github.com/jiwondh/b55a8b1951840bf9801863d7632e0de0.js&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_11947/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_11947/</guid>
         
         
         <category>Algorithm Problem</category>
