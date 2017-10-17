@@ -5,8 +5,8 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Oct 2017 13:42:11 +0900</pubDate>
-    <lastBuildDate>Tue, 17 Oct 2017 13:42:11 +0900</lastBuildDate>
+    <pubDate>Tue, 17 Oct 2017 16:29:14 +0900</pubDate>
+    <lastBuildDate>Tue, 17 Oct 2017 16:29:14 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -37,6 +37,35 @@
         <pubDate>Tue, 17 Oct 2017 00:00:00 +0900</pubDate>
         <link>https://jiwondh.github.io/2017/10/17/BAEKJOON_2169/</link>
         <guid isPermaLink="true">https://jiwondh.github.io/2017/10/17/BAEKJOON_2169/</guid>
+        
+        
+        <category>Algorithm Problem</category>
+        
+      </item>
+    
+      <item>
+        <title>[백준 BOJ] 14502 연구소</title>
+        <description>&lt;h1 id=&quot;boj-14502-&quot;&gt;[백준 BOJ] 14502 연구소&lt;/h1&gt;
+
+&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/14502&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;연구소 정보를 입력받을 때 바이러스(&lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;)이면 큐에 위치를 삽입해줍니다.&lt;/li&gt;
+  &lt;li&gt;비어있는 공간(&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;)이면 벡터에 삽입해 줍니다.&lt;/li&gt;
+  &lt;li&gt;큐에 삽입되어 있는 모든 바이러스에 대해 BFS를 돌리는 함수를 만들어줍니다.&lt;/li&gt;
+  &lt;li&gt;벡터에 삽입되어 있는 빈 공간에 대하여 3개를 뽑아 1로 만들어 주고 이를 BFS로 돌려 최종적으로 빈 공간의 개수를 세어 리턴해줍니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;코드&lt;/h2&gt;
+
+&lt;script src=&quot;https://gist.github.com/jiwondh/2ceedff4fe9bc635a5bdb609e6863dd2.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Tue, 17 Oct 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/10/17/BAEKJOON_2169-%EB%B3%B5%EC%82%AC%EB%B3%B8/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/17/BAEKJOON_2169-%EB%B3%B5%EC%82%AC%EB%B3%B8/</guid>
         
         
         <category>Algorithm Problem</category>
@@ -460,41 +489,6 @@ X... |1  =&amp;gt; 열 2 &amp;gt; 행 1 =&amp;gt; 2
         <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
         <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_11947/</link>
         <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_11947/</guid>
-        
-        
-        <category>Algorithm Problem</category>
-        
-      </item>
-    
-      <item>
-        <title>[백준 BOJ] 1193 분수찾기</title>
-        <description>&lt;h1 id=&quot;boj-1193-&quot;&gt;[백준 BOJ] 1193 분수찾기&lt;/h1&gt;
-
-&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/1193&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;대각선을 기준으로 레벨을 정합니다.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1/1&lt;/code&gt;은 &lt;code class=&quot;highlighter-rouge&quot;&gt;1레벨&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2/1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;1/2&lt;/code&gt;은 &lt;code class=&quot;highlighter-rouge&quot;&gt;2레벨&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;…&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;레벨의 누적합을 계산합니다.&lt;/li&gt;
-  &lt;li&gt;입력값과 누적합을 비교해 찾으려는 분수의 레벨을 구합니다.&lt;/li&gt;
-  &lt;li&gt;해당 레벨에서 몇번째인지는 입력값과 누적합의 차를 이용하여 구합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;코드&lt;/h2&gt;
-
-&lt;script src=&quot;https://gist.github.com/jiwondh/89a7b78b1b875296df176f492a00aca1.js&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_1193/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_1193/</guid>
         
         
         <category>Algorithm Problem</category>
