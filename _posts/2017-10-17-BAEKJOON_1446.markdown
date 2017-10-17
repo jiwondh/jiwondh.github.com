@@ -1,0 +1,39 @@
+---
+layout: post
+title: "[백준 BOJ] 1446 지름길"
+date: 2017-10-17
+categories:
+  - Algorithm Problem
+description: 
+image: /assets/images/ade1.jpg
+image-sm: /assets/images/ade2.jpg
+typora-copy-images-to: ipic
+---
+
+# [백준 BOJ] 1446 지름길
+
+문제로 이동할려면 [여기](https://www.acmicpc.net/problem/1446){: target="_blank" }를 클릭하세요.
+
+## 풀이
+
+- `재귀`를 이용해서 풀어주었습니다.
+
+
+- 지름길의 `from`을 기준으로 이차원 배열 `road`에 `to`와 `distance`를 삽입해 줍니다.
+- 재귀 함수 `find()`에서 현재 지점을 `from`으로 하는 지름길이 있는지 `road`배열을 조회해서 있으면 해당 지점으로 현재 지점을 바꾼 재귀함수를 호출해줍니다.
+- 재귀 함수의 리턴값을 비교해서 최소값을 리턴해줍니다.
+
+
+## 코드  
+
+
+<script src="https://gist.github.com/jiwondh/2dfa532b1cd9b87be2fce7a459761460.js"></script>
+
+
+
+
+
+
+
+
+

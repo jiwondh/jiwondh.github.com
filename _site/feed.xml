@@ -5,8 +5,8 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Oct 2017 12:34:53 +0900</pubDate>
-    <lastBuildDate>Tue, 17 Oct 2017 12:34:53 +0900</lastBuildDate>
+    <pubDate>Tue, 17 Oct 2017 13:42:11 +0900</pubDate>
+    <lastBuildDate>Tue, 17 Oct 2017 13:42:11 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -37,6 +37,37 @@
         <pubDate>Tue, 17 Oct 2017 00:00:00 +0900</pubDate>
         <link>https://jiwondh.github.io/2017/10/17/BAEKJOON_2169/</link>
         <guid isPermaLink="true">https://jiwondh.github.io/2017/10/17/BAEKJOON_2169/</guid>
+        
+        
+        <category>Algorithm Problem</category>
+        
+      </item>
+    
+      <item>
+        <title>[백준 BOJ] 1446 지름길</title>
+        <description>&lt;h1 id=&quot;boj-1446-&quot;&gt;[백준 BOJ] 1446 지름길&lt;/h1&gt;
+
+&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/1446&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;재귀&lt;/code&gt;를 이용해서 풀어주었습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;지름길의 &lt;code class=&quot;highlighter-rouge&quot;&gt;from&lt;/code&gt;을 기준으로 이차원 배열 &lt;code class=&quot;highlighter-rouge&quot;&gt;road&lt;/code&gt;에 &lt;code class=&quot;highlighter-rouge&quot;&gt;to&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;distance&lt;/code&gt;를 삽입해 줍니다.&lt;/li&gt;
+  &lt;li&gt;재귀 함수 &lt;code class=&quot;highlighter-rouge&quot;&gt;find()&lt;/code&gt;에서 현재 지점을 &lt;code class=&quot;highlighter-rouge&quot;&gt;from&lt;/code&gt;으로 하는 지름길이 있는지 &lt;code class=&quot;highlighter-rouge&quot;&gt;road&lt;/code&gt;배열을 조회해서 있으면 해당 지점으로 현재 지점을 바꾼 재귀함수를 호출해줍니다.&lt;/li&gt;
+  &lt;li&gt;재귀 함수의 리턴값을 비교해서 최소값을 리턴해줍니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;코드&lt;/h2&gt;
+
+&lt;script src=&quot;https://gist.github.com/jiwondh/2dfa532b1cd9b87be2fce7a459761460.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Tue, 17 Oct 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/10/17/BAEKJOON_1446/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/17/BAEKJOON_1446/</guid>
         
         
         <category>Algorithm Problem</category>
@@ -464,33 +495,6 @@ X... |1  =&amp;gt; 열 2 &amp;gt; 행 1 =&amp;gt; 2
         <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
         <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_1193/</link>
         <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_1193/</guid>
-        
-        
-        <category>Algorithm Problem</category>
-        
-      </item>
-    
-      <item>
-        <title>[백준 BOJ] 1181 단어 정렬</title>
-        <description>&lt;h1 id=&quot;boj-1181--&quot;&gt;[백준 BOJ] 1181 단어 정렬&lt;/h1&gt;
-
-&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/1181&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;STL set&lt;/code&gt;을 이용해서 중복 없이 삽입하고 정렬합니다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pair &lt;/code&gt; 를 이용하여 문자열의 길이와 문자열을 삽입해주면 길이 우선으로 정렬 된 후 문자열의 사전순으로 정렬되게 됩니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;코드&lt;/h2&gt;
-
-&lt;script src=&quot;https://gist.github.com/jiwondh/98f03f9c3a105d8d12068aae288d2902.js&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_1181/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_1181/</guid>
         
         
         <category>Algorithm Problem</category>
