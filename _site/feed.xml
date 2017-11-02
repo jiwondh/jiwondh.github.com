@@ -5,9 +5,716 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Oct 2017 19:59:39 +0900</pubDate>
-    <lastBuildDate>Tue, 17 Oct 2017 19:59:39 +0900</lastBuildDate>
+    <pubDate>Thu, 02 Nov 2017 12:27:40 +0900</pubDate>
+    <lastBuildDate>Thu, 02 Nov 2017 12:27:40 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>[OS] 프로세스 스케쥴링 종류</title>
+        <description>
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;프로세스 스케쥴링&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#priority-scheduling&quot; id=&quot;markdown-toc-priority-scheduling&quot;&gt;⭐️ 우선순위 스케쥴링(priority scheduling)&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;1. 개요&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;2. 예시&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;3. 문제점 및 개선&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-4&quot; id=&quot;markdown-toc-section-4&quot;&gt;4.  참고&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#fcfs--&quot; id=&quot;markdown-toc-fcfs--&quot;&gt;⭐️ FCFS 스케쥴링 (선입선처리)&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-5&quot; id=&quot;markdown-toc-section-5&quot;&gt;1. 개요&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-6&quot; id=&quot;markdown-toc-section-6&quot;&gt;2. 예시 1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-7&quot; id=&quot;markdown-toc-section-7&quot;&gt;3. 예시 2&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-8&quot; id=&quot;markdown-toc-section-8&quot;&gt;4. 참고&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#sjf----&quot; id=&quot;markdown-toc-sjf----&quot;&gt;⭐️ SJF 스케쥴링 (최단 작업 우선)&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-9&quot; id=&quot;markdown-toc-section-9&quot;&gt;1. 개요&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-10&quot; id=&quot;markdown-toc-section-10&quot;&gt;2. 예시 1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-11&quot; id=&quot;markdown-toc-section-11&quot;&gt;3. 예시 2&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-12&quot; id=&quot;markdown-toc-section-12&quot;&gt;4. 문제점 및 개선&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-13&quot; id=&quot;markdown-toc-section-13&quot;&gt;5. 참고&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#rr---&quot; id=&quot;markdown-toc-rr---&quot;&gt;⭐️ RR 스케쥴링 (라운드 로빈)&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-14&quot; id=&quot;markdown-toc-section-14&quot;&gt;1. 개요&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-15&quot; id=&quot;markdown-toc-section-15&quot;&gt;2. 예시 1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-16&quot; id=&quot;markdown-toc-section-16&quot;&gt;3. 예시 2&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-17&quot; id=&quot;markdown-toc-section-17&quot;&gt;6. 참고&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#srt---&quot; id=&quot;markdown-toc-srt---&quot;&gt;⭐️ SRT 스케쥴링 (최단 잔여시간)&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-18&quot; id=&quot;markdown-toc-section-18&quot;&gt;1. 개요&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-19&quot; id=&quot;markdown-toc-section-19&quot;&gt;2. 예시&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-20&quot; id=&quot;markdown-toc-section-20&quot;&gt;4. 참고&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-21&quot; id=&quot;markdown-toc-section-21&quot;&gt;❗️ 비선점 스케줄링, 선점 스케줄링&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-22&quot; id=&quot;markdown-toc-section-22&quot;&gt;1. 스케줄링 시점&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#non-preemptive-scheduling&quot; id=&quot;markdown-toc-non-preemptive-scheduling&quot;&gt;2. 비선점 스케줄링(non-preemptive scheduling)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#preemptive-scheduling&quot; id=&quot;markdown-toc-preemptive-scheduling&quot;&gt;3. 선점 스케줄링(preemptive scheduling)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#section-23&quot; id=&quot;markdown-toc-section-23&quot;&gt;4. 참고&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-24&quot; id=&quot;markdown-toc-section-24&quot;&gt;주석&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;프로세스 스케쥴링&lt;/h1&gt;
+
+&lt;h2 id=&quot;priority-scheduling&quot;&gt;⭐️ 우선순위 스케쥴링(priority scheduling)&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;1. 개요&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;우선순위가 높은 프로세스에 CPU를 우선 할당하는 스케줄링 방식&lt;/li&gt;
+  &lt;li&gt;우선순위가 같으면 &lt;a href=&quot;#fcfs--&quot;&gt;FCFS 스케줄링&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;우선순위는 내부적/외부적 조건에 따라 정의될 수 있음
+    &lt;ul&gt;
+      &lt;li&gt;시간 제한, 메모리 요구량, 열린 파일의 수, 프로세스의 중요성, 자원사용 비용 등&lt;/li&gt;
+      &lt;li&gt;예를 들어 &lt;a href=&quot;#sjf----&quot;&gt;SJF 스케줄링&lt;/a&gt;은 버스트 시간이 짧을수록 우선순위를 높게 책정하는 경우라 할 수 있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#section-23&quot;&gt;선점형, 비선점형&lt;/a&gt; 모두 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;2. 예시&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;프로세스&lt;/th&gt;
+      &lt;th&gt;버스트 시간&lt;/th&gt;
+      &lt;th&gt;우선순위&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/th&gt;
+      &lt;th&gt;턴어라운드 시간&lt;/th&gt;
+      &lt;th&gt;대기 시간&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P1&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P3&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;16&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P4&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;19&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P5&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;평균&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;8.2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006tNbRwgy1fkfgy0mr4mj30nc03mwei.jpg&quot; alt=&quot;E6D080E0-435F-47EC-8339-180E5F9BF1B2&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;평균 대기 시간 = ( 6 + 0 + 16 + 18 + 1 ) / 5 = 8.2&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;3. 문제점 및 개선&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;무기한 봉쇄&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; 발생 가능&lt;/li&gt;
+  &lt;li&gt;노화(aging)에 따라 우선순위를 높여주면 해결 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;4.  참고&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zetawiki.com/wiki/%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81&quot; target=&quot;_blank&quot;&gt;제타위키 - 우선순위 스케쥴링&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fcfs--&quot;&gt;⭐️ FCFS 스케쥴링 (선입선처리)&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;1. 개요&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;First-Come, First-Served scheduling&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;FSCS scheduling, FIFO scheduling&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;FCFS 스케줄링, 선입선처리 스케줄링, 선입선출 스케줄링&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가장 단순한 스케줄링&lt;/li&gt;
+  &lt;li&gt;CPU 요청 순서대로 할당&lt;/li&gt;
+  &lt;li&gt;먼저 사용신청을 한 프로세스부터 차례로 CPU를 할당함&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#non-preemptive-scheduling&quot;&gt;&lt;strong&gt;비선점&lt;/strong&gt; 스케줄링&lt;/a&gt; 중 한가지&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;2. 예시 1&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;P1, P2, P3 순으로 요청&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;프로세스&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;버스트 시간&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;대기 시간&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;턴어라운드 시간&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P1&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;24&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;24&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P2&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;24&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;27&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;27&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;30&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;평균&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;-&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;17&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;27&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fkh0guh266j30r203gq2x.jpg&quot; alt=&quot;A69DDE74-AB02-40D8-8AB9-216D58D1197A&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;평균 대기 시간 = ( 0 + 24 + 27 ) / 3 = 17&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-7&quot;&gt;3. 예시 2&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;P2, P3, P1 순으로 요청&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;프로세스&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;버스트 시간&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;대기 시간&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;턴어라운드 시간&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P2&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;6&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P1&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;24&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;6&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;30&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;평균&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;-&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;17&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;27&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006tKfTcgy1fkh0ss36z8j30qy03mq2x.jpg&quot; alt=&quot;3C4C36BC-F672-4D9A-AE19-609CFD349678&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;평균 대기 시간 = ( 6 + 0 + 3 ) / 3 = 3&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-8&quot;&gt;4. 참고&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zetawiki.com/wiki/FCFS_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81&quot; target=&quot;_blank&quot;&gt;제타위키 - FCFS 스케쥴링&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sjf----&quot;&gt;⭐️ SJF 스케쥴링 (최단 작업 우선)&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-9&quot;&gt;1. 개요&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;shortest-job-first scheduling; SJF scheduling&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;최단 작업 우선 스케줄링; SJF 스케줄링, SJF 알고리즘&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;버스트 시간이 짧은 프로세스부터 CPU 할당&lt;/li&gt;
+  &lt;li&gt;버스트 시간이 짧은 것을 우선 처리하는 스케줄링 방식&lt;/li&gt;
+  &lt;li&gt;버스트 시간이 짧을수록 우선순위를 높게 책정하는 &lt;a href=&quot;#header-c9&quot;&gt;우선순위 스케줄링&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;버스트 시간이 같으면 &lt;a href=&quot;#header-c98&quot;&gt;FCFS 스케줄링&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;#header-c436&quot;&gt;비선점형&lt;/a&gt;, &lt;a href=&quot;#header-c456&quot;&gt;선점형&lt;/a&gt; 모두 가능&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-10&quot;&gt;2. 예시 1&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;프로세스&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;버스트 시간&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;턴어라운드 시간&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;대기 시간&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P1&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;6&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;9&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P2&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;24&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;16&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;7&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;16&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;9&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P4&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;평균&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;-&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;13&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;7&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcgy1fkh13a7g22j30lm03ojre.jpg&quot; alt=&quot;749D984C-85A1-4819-A9E4-79353E9A34C9&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;평균 대기 시간 = ( 3 + 16 + 9 + 0 ) / 4 = 7&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-11&quot;&gt;3. 예시 2&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;프로세스&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;도착 시간&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;버스트 시간&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;턴어라운드 시간&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;대기 시간&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P1&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P2&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;11&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;7&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;2&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;9&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;24&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;15&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P4&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;14&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;9&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;평균&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;-&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;-&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;14.25&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;7.75&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006tKfTcgy1fkh10rvdkkj30ng03gglm.jpg&quot; alt=&quot;B35BE223-CB85-44DB-A0B6-4F9A3C98B5E8&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;평균 대기 시간 = ( 0 + 7 + 15 + 9 ) / 4 = 7.75&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-12&quot;&gt;4. 문제점 및 개선&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;최적이긴 하지만 CPU 버스트 시간을 미리 알 수가 없음&lt;/li&gt;
+  &lt;li&gt;따라서 다음 버스트 시간이 이전 버스트 시간과 비슷할 것이라고 예측하여 적용&lt;/li&gt;
+  &lt;li&gt;다음 버스트 시간 = 이전 버스트 시간들의 &lt;a href=&quot;https://zetawiki.com/wiki/%EC%A7%80%EC%88%98_%ED%8F%89%EA%B7%A0&quot; target=&quot;_blank&quot;&gt;지수 평균&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-13&quot;&gt;5. 참고&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zetawiki.com/wiki/SJF_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81&quot; target=&quot;_blank&quot;&gt;제타위키 - SJF 스케쥴링&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;rr---&quot;&gt;⭐️ RR 스케쥴링 (라운드 로빈)&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-14&quot;&gt;1. 개요&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;round-robin scheduling; RR scheduling&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;라운드로빈 스케줄링; RR 스케줄링; RR 알고리즘&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#preemptive-scheduling&quot;&gt;선점형 스케줄링&lt;/a&gt;의 하나&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zetawiki.com/wiki/%EC%8B%9C%EB%B6%84%ED%95%A0_%EC%8B%9C%EC%8A%A4%ED%85%9C&quot; target=&quot;_blank&quot;&gt;시분할 시스템&lt;/a&gt;을 위해 설계됨&lt;/li&gt;
+  &lt;li&gt;시간 할당량(time quantum) 단위로 CPU를 할당
+    &lt;ul&gt;
+      &lt;li&gt;일반적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;10&lt;/code&gt; ~ &lt;code class=&quot;highlighter-rouge&quot;&gt;100ms&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;알고리즘의 성능은 시간 할당량의 크기에 좌우됨
+    &lt;ul&gt;
+      &lt;li&gt;시간할당량이 매우 크면 &lt;a href=&quot;#header-c93&quot;&gt;FCFS 스케줄링&lt;/a&gt;과 같아짐&lt;/li&gt;
+      &lt;li&gt;시간할당량이 매우 작으면 프로세서 공유와 같아짐&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-15&quot;&gt;2. 예시 1&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시간할당량 = 4ms&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;프로세스&lt;/th&gt;
+      &lt;th&gt;버스트 시간&lt;/th&gt;
+      &lt;th&gt;턴어라운드 시간&lt;/th&gt;
+      &lt;th&gt;대기 시간&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P1&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P3&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;평균&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+      &lt;td&gt;15.67&lt;/td&gt;
+      &lt;td&gt;5.67&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006tKfTcgy1fkh2cbaf5ej30qy03o0ss.jpg&quot; alt=&quot;83D64680-EFDD-451B-9B35-6DE64CF88994&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;평균 대기 시간 = ( 6 + 4 + 7 ) / 3 = 5.67&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-16&quot;&gt;3. 예시 2&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시간할당량 = 3ms&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;프로세스&lt;/th&gt;
+      &lt;th&gt;도착 시간&lt;/th&gt;
+      &lt;th&gt;버스트 시간&lt;/th&gt;
+      &lt;th&gt;턴어라운드 시간&lt;/th&gt;
+      &lt;th&gt;대기 시간&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;14&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P3&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;20&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P4&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;17&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;평균&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+      &lt;td&gt;14&lt;/td&gt;
+      &lt;td&gt;8.5&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006tKfTcgy1fkh2d34x85j30ka03ot90.jpg&quot; alt=&quot;97291568-876B-4182-B7EE-35A36BB72D0B&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;평균 대기 시간 = ( 9 + 2 + 12 + 11 ) / 4 = 8.5&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-17&quot;&gt;6. 참고&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zetawiki.com/wiki/RR_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81&quot; target=&quot;_blank&quot;&gt;제타위키 - RR 스케쥴링&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;srt---&quot;&gt;⭐️ SRT 스케쥴링 (최단 잔여시간)&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-18&quot;&gt;1. 개요&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;shortest remaining time first scheduling; SRTF scheduling, shortest remaining time; SRT&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;최단잔여시간 우선 스케줄링; SRTF 스케줄링; SRT 스케줄링&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;#preemptive-scheduling&quot;&gt;선점형&lt;/a&gt; &lt;a href=&quot;#sjf----&quot;&gt;SJF 스케줄링&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;진행 중인 프로세스가 있어도 Sleep&lt;/strong&gt;시키고 &lt;code class=&quot;highlighter-rouge&quot;&gt;최단 잔여시간 프로세스&lt;/code&gt;에 우선권 부여&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-19&quot;&gt;2. 예시&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프로세스 4개의 도착시각과 버스트시간이 주어질 경우…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;프로세스&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;도착시각&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;버스트 시간&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;종료시각&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;턴어라운드 시간&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;대기 시간&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P1&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;00:00&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;8&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;00:17&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;17&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;9&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P2&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;00:01&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;00:05&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;4&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P3&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;00:02&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;9&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;00:26&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;24&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;15&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;P4&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;00:03&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;00:10&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;7&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;2&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;평균&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;-&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;-&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;-&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;13&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;6.5&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fkh18zea4hj30nk03o0sy.jpg&quot; alt=&quot;F7425703-DC7C-4DF7-8067-9AC3245B14D9&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;평균 대기 시간 = ( 9 + 0 + 15 + 2 ) / 4 = 6.5&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-20&quot;&gt;4. 참고&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zetawiki.com/wiki/SRT_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81&quot; target=&quot;_blank&quot;&gt;제타위키 - SRT 스케쥴링&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-21&quot;&gt;❗️ 비선점 스케줄링, 선점 스케줄링&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-22&quot;&gt;1. 스케줄링 시점&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스케줄링은 다음과 같이 프로세스 상태가 전환될 때 발생함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;strong&gt;수행 → 대기 (예: I/O 요청, 자식프로세스 종료 대기 등)&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;수행 → 준비 (예: 인터럽트 발생)&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;대기 → 준비 (예: I/O 완료)&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;수행 → 종료&lt;/strong&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1, 4번은 프로세스가 스스로 CPU를 놓아주는 시점&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;non-preemptive-scheduling&quot;&gt;2. 비선점 스케줄링(non-preemptive scheduling)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;OS가 CPU 사용권을 선점하지 않음&lt;/li&gt;
+  &lt;li&gt;프로세스에게 자율적으로 반납하도록 하는 방식&lt;/li&gt;
+  &lt;li&gt;OS가 정책에 따라 적당한 프로세스에게 CPU를 빌려주되 반납은 자율적으로 하도록 함&lt;/li&gt;
+  &lt;li&gt;실행 중인 프로세스가 CPU를 스스로 반납하기 전까지 OS가 사용권을 가져올 수 없는 스케줄링 방식&lt;/li&gt;
+  &lt;li&gt;스케줄링 시점 1, 4번(프로세스 스스로 반납시)에서만 스케줄링 가능&lt;/li&gt;
+  &lt;li&gt;예: &lt;a href=&quot;#fcfs--&quot;&gt;FCFS 스케줄링&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;preemptive-scheduling&quot;&gt;3. 선점 스케줄링(preemptive scheduling)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;OS가 CPU 사용권을 선점함&lt;/li&gt;
+  &lt;li&gt;OS가 적당한 프로세스에게 CPU를 빌려주고, 필요시에는 사용중이라도 회수함&lt;/li&gt;
+  &lt;li&gt;필요시 OS가 실행 중인 프로세스로부터 CPU 사용권을 가져올 수 있는 스케줄링 방식&lt;/li&gt;
+  &lt;li&gt;스케줄링 시점 1, 2, 3, 4번 모두에서 스케줄링 가능&lt;/li&gt;
+  &lt;li&gt;예: &lt;a href=&quot;#rr---&quot;&gt;RR 스케줄링&lt;/a&gt;, &lt;a href=&quot;#srt---&quot;&gt;SRT 스케쥴링&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-23&quot;&gt;4. 참고&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Preemption_(computing)&quot;&gt;http://en.wikipedia.org/wiki/Preemption_(computing)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Scheduling_(computing)&quot;&gt;http://en.wikipedia.org/wiki/Scheduling_(computing)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Nonpreemptive_multitasking&quot;&gt;http://en.wikipedia.org/wiki/Nonpreemptive_multitasking&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-24&quot;&gt;주석&lt;/h2&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;여기서는 숫자가 작을수록 우선순위가 높음. 반대로 표현하는 경우도 있음 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;자원이 부족한 상태에서 우선순위가 높은 프로세스가 계속 들어와서 우선순위가 낮은 프로세스가 계속 수행되지 못하는 현상 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;n개의 프로세스가 있다면 1/n 속도로 수행됨 (단, 문맥교환 시간은 무시된다고 가정할 때) &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 02 Nov 2017 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2017/11/02/process-scheduling/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2017/11/02/process-scheduling/</guid>
+        
+        
+        <category>OS</category>
+        
+      </item>
     
       <item>
         <title>[백준 BOJ] 2169 로봇 조종하기</title>
@@ -357,58 +1064,6 @@
         <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
         <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_1780/</link>
         <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_1780/</guid>
-        
-        
-        <category>Algorithm Problem</category>
-        
-      </item>
-    
-      <item>
-        <title>[백준 BOJ] 1236 성 지키기</title>
-        <description>&lt;h1 id=&quot;boj-1236--&quot;&gt;[백준 BOJ] 1236 성 지키기&lt;/h1&gt;
-
-&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/1236&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;각 행과 열에 대해서 경비원의 수를 셉니다.&lt;/li&gt;
-  &lt;li&gt;경비원의 수가 &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;인 행의 수와 열의 수 중에서 &lt;strong&gt;최댓값&lt;/strong&gt;이 &lt;u&gt;경비원을 최소로 추가하는 개수&lt;/u&gt;입니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;예제&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.... |0
-X... |1
-.... |0  =&amp;gt; 열 3 == 행 3 =&amp;gt; 3
-.... |0
------
-1000
-
-.... |0
-X... |1
-X... |1  =&amp;gt; 열 3 &amp;gt; 행 2 =&amp;gt; 3
-.... |0
------
-2000
-
-.... |0
-XX.. |2
-X... |1  =&amp;gt; 열 2 &amp;gt; 행 1 =&amp;gt; 2
-.X.. |1
------
-2200 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;코드&lt;/h2&gt;
-
-&lt;script src=&quot;https://gist.github.com/jiwondh/0c47b8fffc65bc91dc314d2924c3bce1.js&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_1236/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_1236/</guid>
         
         
         <category>Algorithm Problem</category>

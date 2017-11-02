@@ -10,11 +10,11 @@ image-sm: /assets/images/fw2.jpg
 ---
 
 ## jade
-jade에 관한 자세한 문법은 [Jade Language Reference](http://jadelang.net/reference/)를 참고하세요.
+jade에 관한 자세한 문법은 [Jade Language Reference](http://jadelang.net/reference/){: target="_blank" }를 참고하세요.
 
 ## 조건문(conditionals)
 
-{% highlight jade linenos=table %}
+```jade
 - var user = { description: 'foo bar baz' }
 - var authorised = false
 #user
@@ -29,27 +29,26 @@ jade에 관한 자세한 문법은 [Jade Language Reference](http://jadelang.net
 	else
 		h1 Description
 		p.description User has no description
-{% endhighlight %}
+```
 
-### >> 결과
+### 결과
 
-{% highlight html linenos=table %}
+```html
 <div id="user">
 	<h2>Description</h2>
 	<p class="description">foo bar baz</p>
 </div>
-{% endhighlight %}
+```
 
-### 부정문
+## 부정문
 
-{% highlight jade linenos=table %}
+```Jade
 unless user.isAnonymous
 	You're logged in as #{user.name}
-{% endhighlight %}
+```
 
-
-{% highlight jade linenos=table %}
+```Jade
 if !user.isAnonymous
 	p You're logged in as #{user.name}
-{% endhighlight %}
+```
 

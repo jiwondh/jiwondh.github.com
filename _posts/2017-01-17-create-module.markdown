@@ -25,10 +25,10 @@ image-sm: /assets/images/ade2.jpg
 
 ``` javascript
 //module.js
-var sum=function(a, b){
+var sum = function(a, b){
 	return a+b;
 }
-console.log(sum(1,2));
+console.log(sum(1, 2));
 ```
 
 ### 실행 결과
@@ -55,7 +55,7 @@ module.exports = function(a, b){
 ``` javascript
 //module.js
 var sum = require('./lib/sum.js');
-console.log(sum(1,2));
+console.log(sum(1, 2));
 ```
 
 ## 여러 개의 함수를 가진 모듈 만들기
@@ -66,7 +66,7 @@ module.exports.sum = function(a, b){
 	return a+b;
 };
 module.exports.avg = function(a, b){
-	reutnr (a+b)/2;
+	return (a+b)/2;
 };
 ```
 
