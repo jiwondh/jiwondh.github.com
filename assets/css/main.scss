@@ -57,14 +57,7 @@ code {
     transition:all 0.3s;
 }
 
-code:hover
-{
-    -webkit-box-shadow: 2px 3px 8px 3px rgba(214,210,214,1);
-    -moz-box-shadow: 2px 3px 8px 3px rgba(214,210,214,1);
-    box-shadow: 2px 3px 8px 3px rgba(214,210,214,1);
-    -webkit-transform: translate(-3px, -3px);
-    transform: translate(-3px, -3px);
-}
+
 
 #search {
     right: 2em !important;

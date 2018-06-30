@@ -272,7 +272,7 @@ image-sm: /assets/images/fw2.jpg
 - [http://en.wikipedia.org/wiki/Scheduling_(computing)](http://en.wikipedia.org/wiki/Scheduling_(computing))
 - [http://en.wikipedia.org/wiki/Nonpreemptive_multitasking](http://en.wikipedia.org/wiki/Nonpreemptive_multitasking)
 
-## 주석
+## 각주
 
 [^1]: 여기서는 숫자가 작을수록 우선순위가 높음. 반대로 표현하는 경우도 있음
 [^2]: 자원이 부족한 상태에서 우선순위가 높은 프로세스가 계속 들어와서 우선순위가 낮은 프로세스가 계속 수행되지 못하는 현상
