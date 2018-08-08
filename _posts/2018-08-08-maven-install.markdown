@@ -31,7 +31,7 @@ image-sm: /assets/images/fw2.jpg
 
 ### 2. 적절한 위치에 압축 풀기
 
-- 저는 `C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4 ` 경로로 압축을 풀어주었습니다.
+- 저는 `C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4` 경로로 압축을 풀어주었습니다.
 
 ![압축해제](https://c1.staticflickr.com/1/930/43199405244_7139a60bec_b.jpg)
 
@@ -39,7 +39,7 @@ image-sm: /assets/images/fw2.jpg
 
 ### 3. 환경 변수 설정
 
-- `제어판 > 시스템 > 고급 시스템 설정 `에 들어가 `환경 변수`를 클릭하세요.
+- `제어판 > 시스템 > 고급 시스템 설정`에 들어가 `환경 변수`를 클릭하세요.
 
 ![고급시스템설정](https://farm1.staticflickr.com/932/43917762251_8c299236d2_o.png)
 
@@ -49,7 +49,7 @@ image-sm: /assets/images/fw2.jpg
 
 - `새로 만들기`를 클릭하고 새 시스템 변수를 입력하세요.
   - `변수 이름` :  `MAVEN_HOME`
-  - `변수 값` : 압축 해제한 경로 (ex.  `C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4`)
+  - `변수 값` : 압축 해제한 경로 (ex. `C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4`)
 
 ![새 시스템 변수](https://farm1.staticflickr.com/929/43014988235_7c2c2c5457_o.png)
 
