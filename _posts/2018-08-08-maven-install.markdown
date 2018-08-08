@@ -45,7 +45,7 @@ image-sm: /assets/images/fw2.jpg
 
 - `새로 만들기`를 클릭하세요.
 
-![새로만들기](https://farm1.staticflickr.com/933/42108740770_29594c13ed_o.png)
+![새로만들기](https://farm2.staticflickr.com/1791/42110701850_b0459fa1a3_n.jpg)
 
 - `변수 이름` :  `MAVEN_HOME`
 - `변수 값` : 압축 해제한 경로
