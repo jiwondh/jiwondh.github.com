@@ -19,13 +19,15 @@ image-sm: /assets/images/fw2.jpg
 
 - JDK 설치 (1.7 이상) 
 
+<br>
+
 ### 1. 메이븐 다운로드
 
 - [여기](https://maven.apache.org/download.cgi#){: target="_blank" } 에서 최신 버전의 메이븐(zip파일)을 다운로드 해주세요.
 
 ![메이븐 다운로드 페이지](https://farm2.staticflickr.com/1818/30047344308_2c077270c9_b.jpg)
 
-
+<br>
 
 ### 2. 적절한 위치에 압축 풀기
 
@@ -33,7 +35,7 @@ image-sm: /assets/images/fw2.jpg
 
 ![압축해제](https://c1.staticflickr.com/1/930/43199405244_7139a60bec_b.jpg)
 
-
+<br>
 
 ### 3. 환경 변수 설정
 
@@ -47,8 +49,7 @@ image-sm: /assets/images/fw2.jpg
 
 - `새로 만들기`를 클릭하고 새 시스템 변수를 입력하세요.
   - `변수 이름` :  `MAVEN_HOME`
-  -  `변수 값` : 압축 해제한 경로
-    - ex.  `C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4 `
+  - `변수 값` : 압축 해제한 경로 (ex.  `C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4`)
 
 ![새 시스템 변수](https://farm1.staticflickr.com/929/43014988235_7c2c2c5457_o.png)
 
@@ -62,7 +63,7 @@ image-sm: /assets/images/fw2.jpg
 
 ![변수 편집](https://farm1.staticflickr.com/940/43201735214_09c182a23b_o.png)
 
-
+<br>
 
 ### 3. 메이븐 설치 확인
 
