@@ -48,8 +48,8 @@ image-sm: /assets/images/fw2.jpg
 ![새로만들기](https://farm1.staticflickr.com/933/42108740770_29594c13ed_o.png)
 
 - `변수 이름` :  `MAVEN_HOME`
--  `변수 값` : 압축 해제한 경로
-  -   저는 위에서 압축 해제한 경로인  `C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4 `로 지정하였습니다.
+- `변수 값` : 압축 해제한 경로
+  - 저는 위에서 압축 해제한 경로인  `C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4 `로 지정하였습니다.
 
 ![새 시스템 변수](https://farm1.staticflickr.com/859/42108928570_925e1128c3_o.png)
 
