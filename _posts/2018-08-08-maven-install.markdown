@@ -43,36 +43,31 @@ image-sm: /assets/images/fw2.jpg
 
 
 
-- `새로 만들기`를 클릭하세요.
+<br>
 
-![새로만들기](https://farm1.staticflickr.com/932/43871355112_e58d111c8e_o.png)
+- `새로 만들기`를 클릭하고 새 시스템 변수를 입력하세요.
+  - `변수 이름` :  `MAVEN_HOME`
+  -  `변수 값` : 압축 해제한 경로
+    - ex.  `C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4 `
 
-- `변수 이름` :  `MAVEN_HOME`
-- `변수 값` : 압축 해제한 경로
-  - 저는 위에서 압축 해제한 경로인  `C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4 `로 지정하였습니다.
+![새 시스템 변수](https://farm1.staticflickr.com/929/43014988235_7c2c2c5457_o.png)
 
-![새 시스템 변수](https://farm1.staticflickr.com/859/42108928570_925e1128c3_o.png)
+
+
+<br>
 
 - 시스템 변수 목록에서 `Path`를 찾아 클릭하고 `편집`을 눌러주세요.
 
-![편집](https://farm1.staticflickr.com/940/43870952962_bd39ce8d8a_o.png)
-
-
-
 - `변수 값`  맨 앞 부분에 `%MAVEN_HOME%\bin;`을 추가합니다.
 
-![변수 편집](https://farm2.staticflickr.com/1818/43919381771_9fd60d6ce0_o.png)
+![변수 편집](https://farm1.staticflickr.com/940/43201735214_09c182a23b_o.png)
 
-- `확인`을 눌러주세요.
 
-![확인](https://farm2.staticflickr.com/1799/43919382531_eed557f1cc_o.png)
 
 ### 3. 메이븐 설치 확인
 
 - `cmd` 창을 켜주세요. (기존에 cmd 창이 켜져있었다면 끄고 다시 키세요.)
 
-![cmd창](https://farm2.staticflickr.com/1817/43201296224_c528fafc87_o.png)
-
 - `mvn -version` 명령어를 입력했을 때 아래와 같이 뜨면 설치성공
 
-![mvn -v](https://farm2.staticflickr.com/1780/30050262978_d46ee99b70_o.png)
+![mvn -v](https://farm1.staticflickr.com/850/43015300125_0339a1d807_o.png)
