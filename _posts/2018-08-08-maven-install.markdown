@@ -58,7 +58,6 @@ image-sm: /assets/images/fw2.jpg
 <br>
 
 - 시스템 변수 목록에서 `Path`를 찾아 클릭하고 `편집`을 눌러주세요.
-
 - `변수 값`  맨 앞 부분에 `%MAVEN_HOME%\bin;`을 추가합니다.
 
 ![변수 편집](https://farm1.staticflickr.com/940/43201735214_09c182a23b_o.png)
@@ -68,7 +67,6 @@ image-sm: /assets/images/fw2.jpg
 ### 3. 메이븐 설치 확인
 
 - `cmd` 창을 켜주세요. (기존에 cmd 창이 켜져있었다면 끄고 다시 키세요.)
-
 - `mvn -version` 명령어를 입력했을 때 아래와 같이 뜨면 설치성공
 
 ![mvn -v](https://farm1.staticflickr.com/850/43015300125_0339a1d807_o.png)
