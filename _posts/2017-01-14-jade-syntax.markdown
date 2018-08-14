@@ -10,7 +10,7 @@ image-sm: /assets/images/fw2.jpg
 ---
 
 ## jade
-jade에 관한 자세한 문법은 [Jade Language Reference](http://jadelang.net/reference/){: target="_blank" }를 참고하세요.
+jade에 관한 자세한 문법은 [Jade Language Reference](http://jade-lang.com/){: target="_blank" }를 참고하세요.
 
 ## 조건문(conditionals)
 
