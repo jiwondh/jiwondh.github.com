@@ -50,7 +50,7 @@ UPDATE student
 SET age=22
 WHERE id=1;
 
-SELECT * FROM celebs;
+SELECT * FROM student;
 ```
 
 | id | name | age|
