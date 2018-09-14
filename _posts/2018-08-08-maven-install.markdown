@@ -51,7 +51,7 @@ image-sm: /assets/images/fw2.jpg
   - `변수 이름` :  `MAVEN_HOME`
   - `변수 값` : 압축 해제한 경로 (ex. `C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4`)
 
-![새 시스템 변수](https://farm1.staticflickr.com/929/43014988235_7c2c2c5457_o.png)
+![새 시스템 변수](https://farm1.staticflickr.com/929/43014988235_7c2c2c5457_o.png) 
 
 
 
