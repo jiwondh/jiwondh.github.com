@@ -53,8 +53,19 @@
     ga('send', 'pageview');
 
   </script>
-
-
+  <script type="text/javascript" src="/assets/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/bigfoot.min.js"></script>
+  <script type="text/javascript">
+        var bigfoot = $.bigfoot(
+				{
+					actionOriginalFN: "ignore",
+					positionContent: "false",
+					allowMultipleFN: "true",
+					activateOnHover: "true", 
+					deleteOnUnhover: "true"        
+				}
+		);
+  </script>
 </head>
 
 
@@ -90,6 +101,15 @@
 
     <div class="tab">
       <ul itemscope itemtype="http://schema.org/Blog">
+        
+          <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            <a class="preview__link" href="/2017/10/16/BAEKJOON_1074/" itemprop="url">
+              <span class="preview__date" itemprop="datePublished" datetime="2017-10-16T00:00:00+09:00">Oct 16, 2017</span>
+              <h2 class="preview__header" itemprop="name">[백준 BOJ] 1074 Z</h2>
+			  <p class="preview__excerpt" itemprop="description">[백준 BOJ] 1074 Z 문제로 이동할려면 여기를 클릭하세요. 풀이 분할 정복 문제 =&gt; 재귀로 풀자! 예제 N = 1 0 1 2 3 N = 2 0 1 4 5...</p>
+              <span class="preview__more">Read More</span>
+            </a>
+          </li>
         
           <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
             <a class="preview__link" href="/2017/10/15/tree_traversal/" itemprop="url">
@@ -138,15 +158,6 @@
 
 
 </p>
-              <span class="preview__more">Read More</span>
-            </a>
-          </li>
-        
-          <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-            <a class="preview__link" href="/2017/09/23/scanf/" itemprop="url">
-              <span class="preview__date" itemprop="datePublished" datetime="2017-09-23T00:00:00+09:00">Sep 23, 2017</span>
-              <h2 class="preview__header" itemprop="name">[C++] 입력 개수 모를 때 입력 받기</h2>
-			  <p class="preview__excerpt" itemprop="description">[C++] 입력 개수 모를 때 입력 받기 코드 실행 결과 [C++] 입력 개수 모를 때 입력 받기 입력 개수가 주어지지 않고 입력이 끝날 때까지 입력 받아야 될 때 사용하시면 될...</p>
               <span class="preview__more">Read More</span>
             </a>
           </li>
@@ -354,6 +365,24 @@
           
           <div class="card__container">
             <h2 class="card__header">OS</h2>
+            <p class="card__count">1 Posts</p>
+            <span class="card__more">View All</span>
+          </div>
+        </a>
+      </li>
+    
+      
+      <li class="card">
+        <a class="card__link" href="/category/spring/">
+          
+            <div class="card__img">
+              
+                <figure class="absolute-bg" style="background-image: url('/assets/images/fw2.jpg');"></figure>
+              
+            </div>
+          
+          <div class="card__container">
+            <h2 class="card__header">Spring</h2>
             <p class="card__count">1 Posts</p>
             <span class="card__more">View All</span>
           </div>

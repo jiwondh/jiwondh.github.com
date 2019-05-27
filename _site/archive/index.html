@@ -53,8 +53,19 @@
     ga('send', 'pageview');
 
   </script>
-
-
+  <script type="text/javascript" src="/assets/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/bigfoot.min.js"></script>
+  <script type="text/javascript">
+        var bigfoot = $.bigfoot(
+				{
+					actionOriginalFN: "ignore",
+					positionContent: "false",
+					allowMultipleFN: "true",
+					activateOnHover: "true", 
+					deleteOnUnhover: "true"        
+				}
+		);
+  </script>
 </head>
 
 
@@ -70,6 +81,26 @@
     <span>Archive</span>
   </header>
   <div class="section-padding archives__container">
+    
+      <article class="card" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+        <a class="card__link" href="/2018/08/08/maven-install/" itemprop="url">
+          <div class="card__img">
+            
+              <figure class="absolute-bg wow" style="background-image: url('/assets/images/fw2.jpg');"></figure>
+            
+          </div>
+          <div class="card__container">
+            <h2 class="card__header" itemprop="name">[Spring] 메이븐(Maven) 설치하기 (Windows)</h2>
+            <p class="card__count" itemprop="datePublished" datetime="2018-08-08T00:00:00+09:00">
+              Aug 8, 2018
+              
+                in Spring
+              
+            </p>
+            <span class="card__more">Read Post</span>
+          </div>
+        </a>
+      </article>
     
       <article class="card" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
         <a class="card__link" href="/2017/11/02/process-scheduling/" itemprop="url">

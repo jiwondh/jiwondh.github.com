@@ -53,8 +53,19 @@
     ga('send', 'pageview');
 
   </script>
-
-
+  <script type="text/javascript" src="/assets/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/bigfoot.min.js"></script>
+  <script type="text/javascript">
+        var bigfoot = $.bigfoot(
+				{
+					actionOriginalFN: "ignore",
+					positionContent: "false",
+					allowMultipleFN: "true",
+					activateOnHover: "true", 
+					deleteOnUnhover: "true"        
+				}
+		);
+  </script>
 </head>
 
 
@@ -93,89 +104,59 @@
 
 <h2 id="select">SELECT</h2>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10</pre></td><td class="code"><pre><span class="n">var</span> <span class="k">sql</span> <span class="o">=</span> <span class="s1">'SELECT * FROM table'</span><span class="p">;</span>
-<span class="n">conn</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="k">sql</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="k">rows</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span><span class="err">{</span>
-	<span class="n">if</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="err">{</span>
-		<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
-	<span class="err">}</span> <span class="k">else</span> <span class="err">{</span>
-		<span class="k">for</span><span class="p">(</span><span class="n">var</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="k">rows</span><span class="p">.</span><span class="k">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="err">{</span>
-			<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="k">rows</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">name</span><span class="p">);</span>
-		<span class="err">}</span>
-	<span class="err">}</span>
-<span class="err">}</span><span class="p">);</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="s1">'SELECT * FROM table'</span><span class="p">;</span>
+<span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">rows</span><span class="p">,</span> <span class="nx">fields</span><span class="p">){</span>
+	<span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">rows</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+			<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rows</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+</div>
 
 <h2 id="insert">INSERT</h2>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9</pre></td><td class="code"><pre><span class="n">var</span> <span class="k">sql</span> <span class="o">=</span> <span class="s1">'INSERT INTO table (name, email, age) VALUES(?, ?, ?)'</span><span class="p">;</span>
-<span class="n">var</span> <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Jiwon'</span><span class="p">,</span> <span class="s1">'jiwon@mail.com'</span><span class="p">,</span> <span class="s1">'23'</span><span class="p">];</span>
-<span class="n">conn</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="k">sql</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="k">rows</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span><span class="err">{</span>
-	<span class="n">if</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="err">{</span>
-		<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
-	<span class="err">}</span> <span class="k">else</span> <span class="err">{</span>
-		<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="k">rows</span><span class="p">.</span><span class="n">insertId</span><span class="p">);</span>
-	<span class="err">}</span>
-<span class="err">}</span><span class="p">);</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="s1">'INSERT INTO table (name, email, age) VALUES(?, ?, ?)'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Jiwon'</span><span class="p">,</span> <span class="s1">'jiwon@mail.com'</span><span class="p">,</span> <span class="s1">'23'</span><span class="p">];</span>
+<span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">rows</span><span class="p">,</span> <span class="nx">fields</span><span class="p">){</span>
+	<span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rows</span><span class="p">.</span><span class="nx">insertId</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+</div>
 
 <h2 id="update">UPDATE</h2>
 
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9</pre></td><td class="code"><pre><span class="n">var</span> <span class="k">sql</span> <span class="o">=</span> <span class="s1">'UPDATE table SET name=?, age=? WHERE id=?'</span><span class="p">;</span>
-<span class="n">var</span> <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Eunji'</span><span class="p">,</span> <span class="s1">'25'</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
-<span class="n">conn</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="k">sql</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="k">rows</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span><span class="err">{</span>
-	<span class="n">if</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="err">{</span>
-		<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
-	<span class="err">}</span> <span class="k">else</span> <span class="err">{</span>
-		<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="k">rows</span><span class="p">);</span>
-	<span class="err">}</span>
-<span class="err">}</span><span class="p">);</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="s1">'UPDATE table SET name=?, age=? WHERE id=?'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Eunji'</span><span class="p">,</span> <span class="s1">'25'</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
+<span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">rows</span><span class="p">,</span> <span class="nx">fields</span><span class="p">){</span>
+	<span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rows</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+</div>
 
 <h2 id="delete">DELETE</h2>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9</pre></td><td class="code"><pre><span class="n">var</span> <span class="k">sql</span> <span class="o">=</span> <span class="s1">'DELETE FROM topic WHERE id=?'</span><span class="p">;</span>
-<span class="n">var</span> <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-<span class="n">conn</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="k">sql</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="k">rows</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span><span class="err">{</span>
-	<span class="n">if</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="err">{</span>
-		<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
-	<span class="err">}</span> <span class="k">else</span> <span class="err">{</span>
-		<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="k">rows</span><span class="p">);</span>
-	<span class="err">}</span>
-<span class="err">}</span><span class="p">);</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="s1">'DELETE FROM topic WHERE id=?'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">rows</span><span class="p">,</span> <span class="nx">fields</span><span class="p">){</span>
+	<span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rows</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+</div>
 
 
     </section>

@@ -53,8 +53,19 @@
     ga('send', 'pageview');
 
   </script>
-
-
+  <script type="text/javascript" src="/assets/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/bigfoot.min.js"></script>
+  <script type="text/javascript">
+        var bigfoot = $.bigfoot(
+				{
+					actionOriginalFN: "ignore",
+					positionContent: "false",
+					allowMultipleFN: "true",
+					activateOnHover: "true", 
+					deleteOnUnhover: "true"        
+				}
+		);
+  </script>
 </head>
 
 
@@ -63,6 +74,8 @@
     <main>
       <section class="previews">
   <div>
+    
+      <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
     
       <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
     
@@ -86,10 +99,19 @@
       <ul itemscope itemtype="http://schema.org/Blog">
         
           <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            <a class="preview__link" href="/2017/01/14/start/" itemprop="url">
+              <span class="preview__date" itemprop="datePublished" datetime="2017-01-14T00:00:00+09:00">Jan 14, 2017</span>
+              <h2 class="preview__header" itemprop="name">Node.js 시작하기</h2>
+			  <p class="preview__excerpt" itemprop="description">Node.js 설치 Node.js 홈페이지에서 운영체제에 맞는 Node.js Installer 를 다운로드하고 실행하여 설치합니다. npm npm은 Node.js를 설치하면 자동으로 설치됩니다. node -v 위의 명령어를 입력하여 버전을 확인해보세요. npm을 이용하여 모듈을 설치할 때에는...</p>
+              <span class="preview__more">Read More</span>
+            </a>
+          </li>
+        
+          <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
             <a class="preview__link" href="/2017/01/14/mysql/" itemprop="url">
               <span class="preview__date" itemprop="datePublished" datetime="2017-01-14T00:00:00+09:00">Jan 14, 2017</span>
               <h2 class="preview__header" itemprop="name">Node.js에서 Mysql 주요 쿼리문 이용하기</h2>
-			  <p class="preview__excerpt" itemprop="description">Node.js에서의 Mysql의 자세한 사용법은 github 페이지를 참고하세요. SELECT 1 2 3 4 5 6 7 8 9 10var sql = 'SELECT * FROM table'; conn.query(sql, function(err, rows, fields){ if(err){ console.log(err);...</p>
+			  <p class="preview__excerpt" itemprop="description">Node.js에서의 Mysql의 자세한 사용법은 github 페이지를 참고하세요. SELECT var sql = 'SELECT * FROM table'; conn.query(sql, function(err, rows, fields){ if(err){ console.log(err); } else { for(var i=0; i&lt;rows.length; i++){ console.log(rows[i].name); }...</p>
               <span class="preview__more">Read More</span>
             </a>
           </li>
@@ -304,6 +326,24 @@
           
           <div class="card__container">
             <h2 class="card__header">OS</h2>
+            <p class="card__count">1 Posts</p>
+            <span class="card__more">View All</span>
+          </div>
+        </a>
+      </li>
+    
+      
+      <li class="card">
+        <a class="card__link" href="/category/spring/">
+          
+            <div class="card__img">
+              
+                <figure class="absolute-bg" style="background-image: url('/assets/images/fw2.jpg');"></figure>
+              
+            </div>
+          
+          <div class="card__container">
+            <h2 class="card__header">Spring</h2>
             <p class="card__count">1 Posts</p>
             <span class="card__more">View All</span>
           </div>

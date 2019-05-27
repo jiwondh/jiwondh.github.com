@@ -53,8 +53,19 @@
     ga('send', 'pageview');
 
   </script>
-
-
+  <script type="text/javascript" src="/assets/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/bigfoot.min.js"></script>
+  <script type="text/javascript">
+        var bigfoot = $.bigfoot(
+				{
+					actionOriginalFN: "ignore",
+					positionContent: "false",
+					allowMultipleFN: "true",
+					activateOnHover: "true", 
+					deleteOnUnhover: "true"        
+				}
+		);
+  </script>
 </head>
 
 
@@ -66,7 +77,7 @@
     
       <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/fw1.jpg');"></figure>
     
-      <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
+      <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/fw1.jpg');"></figure>
     
       <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
     
@@ -90,6 +101,15 @@
 
     <div class="tab">
       <ul itemscope itemtype="http://schema.org/Blog">
+        
+          <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            <a class="preview__link" href="/2018/08/08/maven-install/" itemprop="url">
+              <span class="preview__date" itemprop="datePublished" datetime="2018-08-08T00:00:00+09:00">Aug 8, 2018</span>
+              <h2 class="preview__header" itemprop="name">[Spring] 메이븐(Maven) 설치하기 (Windows)</h2>
+			  <p class="preview__excerpt" itemprop="description">메이븐(Maven) 설치하기 (Windows) 사전 준비 1. 메이븐 다운로드 2. 적절한 위치에 압축 풀기 3. 환경 변수 설정 3. 메이븐 설치 확인 메이븐(Maven) 설치하기 (Windows) 사전 준비 JDK 설치 (1.7 이상)...</p>
+              <span class="preview__more">Read More</span>
+            </a>
+          </li>
         
           <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
             <a class="preview__link" href="/2017/11/02/process-scheduling/" itemprop="url">
@@ -123,15 +143,6 @@
               <span class="preview__date" itemprop="datePublished" datetime="2017-10-17T00:00:00+09:00">Oct 17, 2017</span>
               <h2 class="preview__header" itemprop="name">[백준 BOJ] 1446 지름길</h2>
 			  <p class="preview__excerpt" itemprop="description">[백준 BOJ] 1446 지름길 문제로 이동할려면 여기를 클릭하세요. 풀이 재귀를 이용해서 풀어주었습니다. 지름길의 from을 기준으로 이차원 배열 road에 to와 distance를 삽입해 줍니다. 재귀 함수 find()에서 현재 지점을 from으로 하는 지름길이...</p>
-              <span class="preview__more">Read More</span>
-            </a>
-          </li>
-        
-          <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-            <a class="preview__link" href="/2017/10/17/BAEKJOON_12100/" itemprop="url">
-              <span class="preview__date" itemprop="datePublished" datetime="2017-10-17T00:00:00+09:00">Oct 17, 2017</span>
-              <h2 class="preview__header" itemprop="name">[백준 BOJ] 12100 2048</h2>
-			  <p class="preview__excerpt" itemprop="description">[백준 BOJ] 12100 2048 게임 문제로 이동할려면 여기를 클릭하세요. 풀이 먼저 2048 게임에서 이동기능을 완벽히 구현하는 것이 첫 번째 과제입니다. 이동 기능이 완벽히 구현되면 최대 5번 이동시켜 가장 큰 블럭을...</p>
               <span class="preview__more">Read More</span>
             </a>
           </li>
@@ -337,6 +348,24 @@
           
           <div class="card__container">
             <h2 class="card__header">OS</h2>
+            <p class="card__count">1 Posts</p>
+            <span class="card__more">View All</span>
+          </div>
+        </a>
+      </li>
+    
+      
+      <li class="card">
+        <a class="card__link" href="/category/spring/">
+          
+            <div class="card__img">
+              
+                <figure class="absolute-bg" style="background-image: url('/assets/images/fw2.jpg');"></figure>
+              
+            </div>
+          
+          <div class="card__container">
+            <h2 class="card__header">Spring</h2>
             <p class="card__count">1 Posts</p>
             <span class="card__more">View All</span>
           </div>

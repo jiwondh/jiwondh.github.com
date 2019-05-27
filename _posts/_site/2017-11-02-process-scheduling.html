@@ -1,0 +1,695 @@
+
+<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">프로세스 스케쥴링</a>    <ul>
+      <li><a href="#priority-scheduling" id="markdown-toc-priority-scheduling">⭐️ 우선순위 스케쥴링(priority scheduling)</a>        <ul>
+          <li><a href="#section-1" id="markdown-toc-section-1">1. 개요</a></li>
+          <li><a href="#section-2" id="markdown-toc-section-2">2. 예시</a></li>
+          <li><a href="#section-3" id="markdown-toc-section-3">3. 문제점 및 개선</a></li>
+          <li><a href="#section-4" id="markdown-toc-section-4">4.  참고</a></li>
+        </ul>
+      </li>
+      <li><a href="#fcfs--" id="markdown-toc-fcfs--">⭐️ FCFS 스케쥴링 (선입선처리)</a>        <ul>
+          <li><a href="#section-5" id="markdown-toc-section-5">1. 개요</a></li>
+          <li><a href="#section-6" id="markdown-toc-section-6">2. 예시 1</a></li>
+          <li><a href="#section-7" id="markdown-toc-section-7">3. 예시 2</a></li>
+          <li><a href="#section-8" id="markdown-toc-section-8">4. 참고</a></li>
+        </ul>
+      </li>
+      <li><a href="#sjf----" id="markdown-toc-sjf----">⭐️ SJF 스케쥴링 (최단 작업 우선)</a>        <ul>
+          <li><a href="#section-9" id="markdown-toc-section-9">1. 개요</a></li>
+          <li><a href="#section-10" id="markdown-toc-section-10">2. 예시 1</a></li>
+          <li><a href="#section-11" id="markdown-toc-section-11">3. 예시 2</a></li>
+          <li><a href="#section-12" id="markdown-toc-section-12">4. 문제점 및 개선</a></li>
+          <li><a href="#section-13" id="markdown-toc-section-13">5. 참고</a></li>
+        </ul>
+      </li>
+      <li><a href="#rr---" id="markdown-toc-rr---">⭐️ RR 스케쥴링 (라운드 로빈)</a>        <ul>
+          <li><a href="#section-14" id="markdown-toc-section-14">1. 개요</a></li>
+          <li><a href="#section-15" id="markdown-toc-section-15">2. 예시 1</a></li>
+          <li><a href="#section-16" id="markdown-toc-section-16">3. 예시 2</a></li>
+          <li><a href="#section-17" id="markdown-toc-section-17">6. 참고</a></li>
+        </ul>
+      </li>
+      <li><a href="#srt---" id="markdown-toc-srt---">⭐️ SRT 스케쥴링 (최단 잔여시간)</a>        <ul>
+          <li><a href="#section-18" id="markdown-toc-section-18">1. 개요</a></li>
+          <li><a href="#section-19" id="markdown-toc-section-19">2. 예시</a></li>
+          <li><a href="#section-20" id="markdown-toc-section-20">4. 참고</a></li>
+        </ul>
+      </li>
+      <li><a href="#section-21" id="markdown-toc-section-21">❗️ 비선점 스케줄링, 선점 스케줄링</a>        <ul>
+          <li><a href="#section-22" id="markdown-toc-section-22">1. 스케줄링 시점</a></li>
+          <li><a href="#non-preemptive-scheduling" id="markdown-toc-non-preemptive-scheduling">2. 비선점 스케줄링(non-preemptive scheduling)</a></li>
+          <li><a href="#preemptive-scheduling" id="markdown-toc-preemptive-scheduling">3. 선점 스케줄링(preemptive scheduling)</a></li>
+          <li><a href="#section-23" id="markdown-toc-section-23">4. 참고</a></li>
+        </ul>
+      </li>
+      <li><a href="#section-24" id="markdown-toc-section-24">각주</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="section">프로세스 스케쥴링</h1>
+
+<h2 id="priority-scheduling">⭐️ 우선순위 스케쥴링(priority scheduling)</h2>
+
+<h3 id="section-1">1. 개요</h3>
+
+<ul>
+  <li>우선순위가 높은 프로세스에 CPU를 우선 할당하는 스케줄링 방식</li>
+  <li>우선순위가 같으면 <a href="#fcfs--">FCFS 스케줄링</a></li>
+  <li>우선순위는 내부적/외부적 조건에 따라 정의될 수 있음
+    <ul>
+      <li>시간 제한, 메모리 요구량, 열린 파일의 수, 프로세스의 중요성, 자원사용 비용 등</li>
+      <li>예를 들어 <a href="#sjf----">SJF 스케줄링</a>은 버스트 시간이 짧을수록 우선순위를 높게 책정하는 경우라 할 수 있음</li>
+    </ul>
+  </li>
+  <li><a href="#section-23">선점형, 비선점형</a> 모두 가능</li>
+</ul>
+
+<h3 id="section-2">2. 예시</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>프로세스</th>
+      <th>버스트 시간</th>
+      <th>우선순위<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></th>
+      <th>턴어라운드 시간</th>
+      <th>대기 시간</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>P1</td>
+      <td>10</td>
+      <td>3</td>
+      <td>16</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>P2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>P3</td>
+      <td>2</td>
+      <td>4</td>
+      <td>18</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>P4</td>
+      <td>1</td>
+      <td>5</td>
+      <td>19</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>P5</td>
+      <td>5</td>
+      <td>2</td>
+      <td>6</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>평균</td>
+      <td>-</td>
+      <td>-</td>
+      <td>12</td>
+      <td>8.2</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fkfgy0mr4mj30nc03mwei.jpg" alt="E6D080E0-435F-47EC-8339-180E5F9BF1B2" /></p>
+
+<ul>
+  <li><strong>평균 대기 시간 = ( 6 + 0 + 16 + 18 + 1 ) / 5 = 8.2</strong></li>
+</ul>
+
+<h3 id="section-3">3. 문제점 및 개선</h3>
+
+<ul>
+  <li>무기한 봉쇄<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> 발생 가능</li>
+  <li>노화(aging)에 따라 우선순위를 높여주면 해결 가능</li>
+</ul>
+
+<h3 id="section-4">4.  참고</h3>
+
+<ul>
+  <li><a href="https://zetawiki.com/wiki/%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81" target="_blank">제타위키 - 우선순위 스케쥴링</a></li>
+</ul>
+
+<h2 id="fcfs--">⭐️ FCFS 스케쥴링 (선입선처리)</h2>
+
+<h3 id="section-5">1. 개요</h3>
+
+<p><strong>First-Come, First-Served scheduling</strong></p>
+
+<p><strong>FSCS scheduling, FIFO scheduling</strong></p>
+
+<p><strong>FCFS 스케줄링, 선입선처리 스케줄링, 선입선출 스케줄링</strong></p>
+
+<ul>
+  <li>가장 단순한 스케줄링</li>
+  <li>CPU 요청 순서대로 할당</li>
+  <li>먼저 사용신청을 한 프로세스부터 차례로 CPU를 할당함</li>
+  <li><a href="#non-preemptive-scheduling"><strong>비선점</strong> 스케줄링</a> 중 한가지</li>
+</ul>
+
+<h3 id="section-6">2. 예시 1</h3>
+
+<ul>
+  <li>P1, P2, P3 순으로 요청</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>프로세스</strong></th>
+      <th><strong>버스트 시간</strong></th>
+      <th><strong>대기 시간</strong></th>
+      <th><strong>턴어라운드 시간</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>P1</strong></td>
+      <td><strong>24</strong></td>
+      <td><strong>0</strong></td>
+      <td><strong>24</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P2</strong></td>
+      <td><strong>3</strong></td>
+      <td><strong>24</strong></td>
+      <td><strong>27</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P3</strong></td>
+      <td><strong>3</strong></td>
+      <td><strong>27</strong></td>
+      <td><strong>30</strong></td>
+    </tr>
+    <tr>
+      <td><strong>평균</strong></td>
+      <td><strong>-</strong></td>
+      <td><strong>17</strong></td>
+      <td><strong>27</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fkh0guh266j30r203gq2x.jpg" alt="A69DDE74-AB02-40D8-8AB9-216D58D1197A" /></p>
+
+<ul>
+  <li><strong>평균 대기 시간 = ( 0 + 24 + 27 ) / 3 = 17</strong></li>
+</ul>
+
+<h3 id="section-7">3. 예시 2</h3>
+
+<ul>
+  <li>P2, P3, P1 순으로 요청</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>프로세스</strong></th>
+      <th><strong>버스트 시간</strong></th>
+      <th><strong>대기 시간</strong></th>
+      <th><strong>턴어라운드 시간</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>P2</strong></td>
+      <td><strong>3</strong></td>
+      <td><strong>0</strong></td>
+      <td><strong>3</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P3</strong></td>
+      <td><strong>3</strong></td>
+      <td><strong>3</strong></td>
+      <td><strong>6</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P1</strong></td>
+      <td><strong>24</strong></td>
+      <td><strong>6</strong></td>
+      <td><strong>30</strong></td>
+    </tr>
+    <tr>
+      <td><strong>평균</strong></td>
+      <td><strong>-</strong></td>
+      <td><strong>17</strong></td>
+      <td><strong>27</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fkh0ss36z8j30qy03mq2x.jpg" alt="3C4C36BC-F672-4D9A-AE19-609CFD349678" /></p>
+
+<ul>
+  <li><strong>평균 대기 시간 = ( 6 + 0 + 3 ) / 3 = 3</strong></li>
+</ul>
+
+<h3 id="section-8">4. 참고</h3>
+
+<ul>
+  <li><a href="https://zetawiki.com/wiki/FCFS_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81" target="_blank">제타위키 - FCFS 스케쥴링</a></li>
+</ul>
+
+<h2 id="sjf----">⭐️ SJF 스케쥴링 (최단 작업 우선)</h2>
+
+<h3 id="section-9">1. 개요</h3>
+
+<p><strong>shortest-job-first scheduling; SJF scheduling</strong></p>
+
+<p><strong>최단 작업 우선 스케줄링; SJF 스케줄링, SJF 알고리즘</strong></p>
+
+<ul>
+  <li>버스트 시간이 짧은 프로세스부터 CPU 할당</li>
+  <li>버스트 시간이 짧은 것을 우선 처리하는 스케줄링 방식</li>
+  <li>버스트 시간이 짧을수록 우선순위를 높게 책정하는 <a href="#header-c9">우선순위 스케줄링</a></li>
+  <li>버스트 시간이 같으면 <a href="#header-c98">FCFS 스케줄링</a></li>
+  <li><strong><a href="#header-c436">비선점형</a>, <a href="#header-c456">선점형</a> 모두 가능</strong></li>
+</ul>
+
+<h3 id="section-10">2. 예시 1</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>프로세스</strong></th>
+      <th><strong>버스트 시간</strong></th>
+      <th><strong>턴어라운드 시간</strong></th>
+      <th><strong>대기 시간</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>P1</strong></td>
+      <td><strong>6</strong></td>
+      <td><strong>9</strong></td>
+      <td><strong>3</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P2</strong></td>
+      <td><strong>8</strong></td>
+      <td><strong>24</strong></td>
+      <td><strong>16</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P3</strong></td>
+      <td><strong>7</strong></td>
+      <td><strong>16</strong></td>
+      <td><strong>9</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P4</strong></td>
+      <td><strong>3</strong></td>
+      <td><strong>3</strong></td>
+      <td><strong>0</strong></td>
+    </tr>
+    <tr>
+      <td><strong>평균</strong></td>
+      <td><strong>-</strong></td>
+      <td><strong>13</strong></td>
+      <td><strong>7</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fkh13a7g22j30lm03ojre.jpg" alt="749D984C-85A1-4819-A9E4-79353E9A34C9" /></p>
+
+<ul>
+  <li><strong>평균 대기 시간 = ( 3 + 16 + 9 + 0 ) / 4 = 7</strong></li>
+</ul>
+
+<h3 id="section-11">3. 예시 2</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>프로세스</strong></th>
+      <th><strong>도착 시간</strong></th>
+      <th><strong>버스트 시간</strong></th>
+      <th><strong>턴어라운드 시간</strong></th>
+      <th><strong>대기 시간</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>P1</strong></td>
+      <td><strong>0</strong></td>
+      <td><strong>8</strong></td>
+      <td><strong>8</strong></td>
+      <td><strong>0</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P2</strong></td>
+      <td><strong>1</strong></td>
+      <td><strong>4</strong></td>
+      <td><strong>11</strong></td>
+      <td><strong>7</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P3</strong></td>
+      <td><strong>2</strong></td>
+      <td><strong>9</strong></td>
+      <td><strong>24</strong></td>
+      <td><strong>15</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P4</strong></td>
+      <td><strong>3</strong></td>
+      <td><strong>5</strong></td>
+      <td><strong>14</strong></td>
+      <td><strong>9</strong></td>
+    </tr>
+    <tr>
+      <td><strong>평균</strong></td>
+      <td><strong>-</strong></td>
+      <td><strong>-</strong></td>
+      <td><strong>14.25</strong></td>
+      <td><strong>7.75</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fkh10rvdkkj30ng03gglm.jpg" alt="B35BE223-CB85-44DB-A0B6-4F9A3C98B5E8" /></p>
+
+<ul>
+  <li><strong>평균 대기 시간 = ( 0 + 7 + 15 + 9 ) / 4 = 7.75</strong></li>
+</ul>
+
+<h3 id="section-12">4. 문제점 및 개선</h3>
+
+<ul>
+  <li>최적이긴 하지만 CPU 버스트 시간을 미리 알 수가 없음</li>
+  <li>따라서 다음 버스트 시간이 이전 버스트 시간과 비슷할 것이라고 예측하여 적용</li>
+  <li>다음 버스트 시간 = 이전 버스트 시간들의 <a href="https://zetawiki.com/wiki/%EC%A7%80%EC%88%98_%ED%8F%89%EA%B7%A0" target="_blank">지수 평균</a></li>
+</ul>
+
+<h3 id="section-13">5. 참고</h3>
+
+<ul>
+  <li><a href="https://zetawiki.com/wiki/SJF_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81" target="_blank">제타위키 - SJF 스케쥴링</a></li>
+</ul>
+
+<h2 id="rr---">⭐️ RR 스케쥴링 (라운드 로빈)</h2>
+
+<h3 id="section-14">1. 개요</h3>
+
+<p><strong>round-robin scheduling; RR scheduling</strong></p>
+
+<p><strong>라운드로빈 스케줄링; RR 스케줄링; RR 알고리즘</strong></p>
+
+<ul>
+  <li><a href="#preemptive-scheduling">선점형 스케줄링</a>의 하나</li>
+  <li><a href="https://zetawiki.com/wiki/%EC%8B%9C%EB%B6%84%ED%95%A0_%EC%8B%9C%EC%8A%A4%ED%85%9C" target="_blank">시분할 시스템</a>을 위해 설계됨</li>
+  <li>시간 할당량(time quantum) 단위로 CPU를 할당
+    <ul>
+      <li>일반적으로 <code class="highlighter-rouge">10</code> ~ <code class="highlighter-rouge">100ms</code></li>
+    </ul>
+  </li>
+  <li>알고리즘의 성능은 시간 할당량의 크기에 좌우됨
+    <ul>
+      <li>시간할당량이 매우 크면 <a href="#header-c93">FCFS 스케줄링</a>과 같아짐</li>
+      <li>시간할당량이 매우 작으면 프로세서 공유와 같아짐<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-15">2. 예시 1</h3>
+
+<ul>
+  <li>시간할당량 = 4ms</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>프로세스</th>
+      <th>버스트 시간</th>
+      <th>턴어라운드 시간</th>
+      <th>대기 시간</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>P1</td>
+      <td>24</td>
+      <td>30</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>P2</td>
+      <td>3</td>
+      <td>7</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>P3</td>
+      <td>3</td>
+      <td>10</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>평균</td>
+      <td>-</td>
+      <td>15.67</td>
+      <td>5.67</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fkh2cbaf5ej30qy03o0ss.jpg" alt="83D64680-EFDD-451B-9B35-6DE64CF88994" /></p>
+
+<ul>
+  <li><strong>평균 대기 시간 = ( 6 + 4 + 7 ) / 3 = 5.67</strong></li>
+</ul>
+
+<h3 id="section-16">3. 예시 2</h3>
+
+<ul>
+  <li>시간할당량 = 3ms</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>프로세스</th>
+      <th>도착 시간</th>
+      <th>버스트 시간</th>
+      <th>턴어라운드 시간</th>
+      <th>대기 시간</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>P1</td>
+      <td>0</td>
+      <td>5</td>
+      <td>14</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>P2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>P3</td>
+      <td>2</td>
+      <td>8</td>
+      <td>20</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>P4</td>
+      <td>3</td>
+      <td>6</td>
+      <td>17</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>평균</td>
+      <td>-</td>
+      <td>-</td>
+      <td>14</td>
+      <td>8.5</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fkh2d34x85j30ka03ot90.jpg" alt="97291568-876B-4182-B7EE-35A36BB72D0B" /></p>
+
+<ul>
+  <li><strong>평균 대기 시간 = ( 9 + 2 + 12 + 11 ) / 4 = 8.5</strong></li>
+</ul>
+
+<h3 id="section-17">6. 참고</h3>
+
+<ul>
+  <li><a href="https://zetawiki.com/wiki/RR_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81" target="_blank">제타위키 - RR 스케쥴링</a></li>
+</ul>
+
+<h2 id="srt---">⭐️ SRT 스케쥴링 (최단 잔여시간)</h2>
+
+<h3 id="section-18">1. 개요</h3>
+
+<p><strong>shortest remaining time first scheduling; SRTF scheduling, shortest remaining time; SRT</strong></p>
+
+<p><strong>최단잔여시간 우선 스케줄링; SRTF 스케줄링; SRT 스케줄링</strong></p>
+
+<ul>
+  <li><strong><a href="#preemptive-scheduling">선점형</a> <a href="#sjf----">SJF 스케줄링</a></strong></li>
+  <li><strong>진행 중인 프로세스가 있어도 Sleep</strong>시키고 <code class="highlighter-rouge">최단 잔여시간 프로세스</code>에 우선권 부여</li>
+</ul>
+
+<h3 id="section-19">2. 예시</h3>
+
+<ul>
+  <li>프로세스 4개의 도착시각과 버스트시간이 주어질 경우…</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>프로세스</strong></th>
+      <th><strong>도착시각</strong></th>
+      <th><strong>버스트 시간</strong></th>
+      <th><strong>종료시각</strong></th>
+      <th><strong>턴어라운드 시간</strong></th>
+      <th><strong>대기 시간</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>P1</strong></td>
+      <td><strong>00:00</strong></td>
+      <td><strong>8</strong></td>
+      <td><strong>00:17</strong></td>
+      <td><strong>17</strong></td>
+      <td><strong>9</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P2</strong></td>
+      <td><strong>00:01</strong></td>
+      <td><strong>4</strong></td>
+      <td><strong>00:05</strong></td>
+      <td><strong>4</strong></td>
+      <td><strong>0</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P3</strong></td>
+      <td><strong>00:02</strong></td>
+      <td><strong>9</strong></td>
+      <td><strong>00:26</strong></td>
+      <td><strong>24</strong></td>
+      <td><strong>15</strong></td>
+    </tr>
+    <tr>
+      <td><strong>P4</strong></td>
+      <td><strong>00:03</strong></td>
+      <td><strong>5</strong></td>
+      <td><strong>00:10</strong></td>
+      <td><strong>7</strong></td>
+      <td><strong>2</strong></td>
+    </tr>
+    <tr>
+      <td><strong>평균</strong></td>
+      <td><strong>-</strong></td>
+      <td><strong>-</strong></td>
+      <td><strong>-</strong></td>
+      <td><strong>13</strong></td>
+      <td><strong>6.5</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fkh18zea4hj30nk03o0sy.jpg" alt="F7425703-DC7C-4DF7-8067-9AC3245B14D9" /></p>
+
+<ul>
+  <li><strong>평균 대기 시간 = ( 9 + 0 + 15 + 2 ) / 4 = 6.5</strong></li>
+</ul>
+
+<h3 id="section-20">4. 참고</h3>
+
+<ul>
+  <li><a href="https://zetawiki.com/wiki/SRT_%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81" target="_blank">제타위키 - SRT 스케쥴링</a></li>
+</ul>
+
+<h2 id="section-21">❗️ 비선점 스케줄링, 선점 스케줄링</h2>
+
+<h3 id="section-22">1. 스케줄링 시점</h3>
+
+<ul>
+  <li>스케줄링은 다음과 같이 프로세스 상태가 전환될 때 발생함</li>
+</ul>
+
+<blockquote>
+  <ol>
+    <li><strong>수행 → 대기 (예: I/O 요청, 자식프로세스 종료 대기 등)</strong></li>
+    <li><strong>수행 → 준비 (예: 인터럽트 발생)</strong></li>
+    <li><strong>대기 → 준비 (예: I/O 완료)</strong></li>
+    <li><strong>수행 → 종료</strong></li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>1, 4번은 프로세스가 스스로 CPU를 놓아주는 시점</li>
+</ul>
+
+<h3 id="non-preemptive-scheduling">2. 비선점 스케줄링(non-preemptive scheduling)</h3>
+
+<ul>
+  <li>OS가 CPU 사용권을 선점하지 않음</li>
+  <li>프로세스에게 자율적으로 반납하도록 하는 방식</li>
+  <li>OS가 정책에 따라 적당한 프로세스에게 CPU를 빌려주되 반납은 자율적으로 하도록 함</li>
+  <li>실행 중인 프로세스가 CPU를 스스로 반납하기 전까지 OS가 사용권을 가져올 수 없는 스케줄링 방식</li>
+  <li>스케줄링 시점 1, 4번(프로세스 스스로 반납시)에서만 스케줄링 가능</li>
+  <li>예: <a href="#fcfs--">FCFS 스케줄링</a></li>
+</ul>
+
+<h3 id="preemptive-scheduling">3. 선점 스케줄링(preemptive scheduling)</h3>
+
+<ul>
+  <li>OS가 CPU 사용권을 선점함</li>
+  <li>OS가 적당한 프로세스에게 CPU를 빌려주고, 필요시에는 사용중이라도 회수함</li>
+  <li>필요시 OS가 실행 중인 프로세스로부터 CPU 사용권을 가져올 수 있는 스케줄링 방식</li>
+  <li>스케줄링 시점 1, 2, 3, 4번 모두에서 스케줄링 가능</li>
+  <li>예: <a href="#rr---">RR 스케줄링</a>, <a href="#srt---">SRT 스케쥴링</a></li>
+</ul>
+
+<h3 id="section-23">4. 참고</h3>
+
+<ul>
+  <li><a href="http://en.wikipedia.org/wiki/Preemption_(computing)">http://en.wikipedia.org/wiki/Preemption_(computing)</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Scheduling_(computing)">http://en.wikipedia.org/wiki/Scheduling_(computing)</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Nonpreemptive_multitasking">http://en.wikipedia.org/wiki/Nonpreemptive_multitasking</a></li>
+</ul>
+
+<h2 id="section-24">각주</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>여기서는 숫자가 작을수록 우선순위가 높음. 반대로 표현하는 경우도 있음 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>자원이 부족한 상태에서 우선순위가 높은 프로세스가 계속 들어와서 우선순위가 낮은 프로세스가 계속 수행되지 못하는 현상 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>n개의 프로세스가 있다면 1/n 속도로 수행됨 (단, 문맥교환 시간은 무시된다고 가정할 때) <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>

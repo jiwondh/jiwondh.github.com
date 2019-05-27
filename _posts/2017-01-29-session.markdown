@@ -34,7 +34,9 @@ image-sm: /assets/images/ade2.jpg
 
 ## Express에 Session 패키지 설치
 
-	npm install express-session --save
+```c
+npm install express-session --save
+```
 
 {% highlight javascript%}
 var express = require('express');
@@ -42,19 +44,21 @@ var session = require('express-session');
 var app = express();
 
 app.use(session({
-	secret: '12sdfwerwersdfserwerwef', //keboard cat (랜덤한 값)
-	resave: false,
-	saveUninitialized: true
+​	secret: '12sdfwerwersdfserwerwef', //keboard cat (랜덤한 값)
+​	resave: false,
+​	saveUninitialized: true
 }));
 
 app.listen(3000, function(){
-	console.log('Connected 3000 port!!!');		
+​	console.log('Connected 3000 port!!!');		
 });
 {% endhighlight %}
 
 ## Mysql을 Express의 Session store로 사용
 
-	npm install express-mysql-session --save
+```c
+npm install express-mysql-session --save
+```
 
 {% highlight javascript %}
 var express = require('express');
@@ -62,10 +66,10 @@ var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
 var mysql = require('mysql');
 var conn = mysql.createConnection({
-	host     : 'localhost',
-	user     : 'root',
-	password : 'password',
-	database : 'test'
+​	host     : 'localhost',
+​	user     : 'root',
+​	password : 'password',
+​	database : 'test'
 });
 conn.connect();
 
@@ -74,23 +78,23 @@ var bodyParser = require('body-parser');
 var app = express();
 
 var options = {
-	host	: 'localhost',
-	port	: 3306,
-	user	: 'root',
-	password: 'password',		//데이터베이스 접근 비밀번호
-	database: 'test'		//데이터베이스의 이름
+​	host	: 'localhost',
+​	port	: 3306,
+​	user	: 'root',
+​	password: 'password',		//데이터베이스 접근 비밀번호
+​	database: 'test'		//데이터베이스의 이름
 };
 var sessionStore = new MySQLStore(options);
 
 app.use(session({
-	secret: '12sdfwerwersdfserwerwef', //keboard cat (랜덤한 값)
-	resave: false,
-	saveUninitialized: true,
-	store: sessionStore
+​	secret: '12sdfwerwersdfserwerwef', //keboard cat (랜덤한 값)
+​	resave: false,
+​	saveUninitialized: true,
+​	store: sessionStore
 }));
 
 app.listen(3000, function(){
-	console.log('Connected 3000 port!!!');		
+​	console.log('Connected 3000 port!!!');		
 });
 {% endhighlight %}
 
@@ -99,37 +103,37 @@ app.listen(3000, function(){
 {% highlight javascript %}
 //세션 저장 여부에 따라 로그인 결정
 app.get('/', function(req, res){
-	if(req.session.authId)
-		res.send(authId+'님 로그인되었습니다');
-	else
-		res.send('로그인하세요!');
+​	if(req.session.authId)
+​		res.send(authId+'님 로그인되었습니다');
+​	else
+​		res.send('로그인하세요!');
 });
 
 // 유저가 가입하면 사용자 아이디를 세션데이터로 저장하여 자동 로그인
 app.post('/auth/register', function(req, res){
-	var user={
-		AuthId: req.body.authId,
-		Password: req.body.password
-	};
-	var sql = 'INSERT INTO users SET ?';
-	conn.query(sql, user, function(err, results){
-		if(err){
-			console.log(err);
-		}else{
-			//사용자 아이디를 세션 데이터로 저장
-			req.session.authId = req.body.authId;
-			req.session.save(function(){
-				res.redirect('/');		
-			});
-		}		
-	})
+​	var user={
+​		AuthId: req.body.authId,
+​		Password: req.body.password
+​	};
+​	var sql = 'INSERT INTO users SET ?';
+​	conn.query(sql, user, function(err, results){
+​		if(err){
+​			console.log(err);
+​		}else{
+​			//사용자 아이디를 세션 데이터로 저장
+​			req.session.authId = req.body.authId;
+​			req.session.save(function(){
+​				res.redirect('/');		
+​			});
+​		}		
+​	})
 });
 
 //유저의 세션데이터를 삭제하여 로그아웃
 app.get('/logout', function(req, res){
-	delete req.session.authId;
-	req.session.save(function(){
-		res.redirect('/');
-	});
+​	delete req.session.authId;
+​	req.session.save(function(){
+​		res.redirect('/');
+​	});
 });
 {% endhighlight %}

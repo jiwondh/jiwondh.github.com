@@ -13,7 +13,7 @@ Node.js에서의 Mysql의 자세한 사용법은 [github 페이지](https://gith
 
 ## SELECT
 
-{% highlight sql linenos=table %}
+```javascript
 var sql = 'SELECT * FROM table';
 conn.query(sql, function(err, rows, fields){
 	if(err){
@@ -24,12 +24,12 @@ conn.query(sql, function(err, rows, fields){
 		}
 	}
 });
-{% endhighlight %}
+```
 
 
 ## INSERT
 
-{% highlight sql linenos=table %}
+```javascript
 var sql = 'INSERT INTO table (name, email, age) VALUES(?, ?, ?)';
 var params = ['Jiwon', 'jiwon@mail.com', '23'];
 conn.query(sql, params, function(err, rows, fields){
@@ -39,11 +39,11 @@ conn.query(sql, params, function(err, rows, fields){
 		console.log(rows.insertId);
 	}
 });
-{% endhighlight %}
+```
 
 ## UPDATE
 
-{% highlight sql linenos=table %}
+```javascript
 var sql = 'UPDATE table SET name=?, age=? WHERE id=?';
 var params = ['Eunji', '25', 1];
 conn.query(sql, params, function(err, rows, fields){
@@ -53,10 +53,10 @@ conn.query(sql, params, function(err, rows, fields){
 		console.log(rows);
 	}
 });
-{% endhighlight %}
+```
 
 ## DELETE
-{% highlight sql linenos=table %}
+```javascript
 var sql = 'DELETE FROM topic WHERE id=?';
 var params = [1];
 conn.query(sql, params, function(err, rows, fields){
@@ -66,5 +66,7 @@ conn.query(sql, params, function(err, rows, fields){
 		console.log(rows);
 	}
 });
-{% endhighlight %}
+```
+
+
 

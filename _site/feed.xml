@@ -5,9 +5,103 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 Jun 2018 20:43:29 +0900</pubDate>
-    <lastBuildDate>Sat, 30 Jun 2018 20:43:29 +0900</lastBuildDate>
+    <pubDate>Mon, 27 May 2019 22:52:34 +0900</pubDate>
+    <lastBuildDate>Mon, 27 May 2019 22:52:34 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>[Spring] 메이븐(Maven) 설치하기 (Windows)</title>
+        <description>
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#maven--windows&quot; id=&quot;markdown-toc-maven--windows&quot;&gt;메이븐(Maven) 설치하기 (Windows)&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;사전 준비&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;1. 메이븐 다운로드&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;2. 적절한 위치에 압축 풀기&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;3. 환경 변수 설정&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-4&quot; id=&quot;markdown-toc-section-4&quot;&gt;3. 메이븐 설치 확인&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;maven--windows&quot;&gt;메이븐(Maven) 설치하기 (Windows)&lt;/h1&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;사전 준비&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JDK 설치 (1.7 이상)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;1. 메이븐 다운로드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://maven.apache.org/download.cgi#&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt; 에서 최신 버전의 메이븐(zip파일)을 다운로드 해주세요.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1818/30047344308_2c077270c9_b.jpg&quot; alt=&quot;메이븐 다운로드 페이지&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;2. 적절한 위치에 압축 풀기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;저는 &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4&lt;/code&gt; 경로로 압축을 풀어주었습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/1/930/43199405244_7139a60bec_b.jpg&quot; alt=&quot;압축해제&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;3. 환경 변수 설정&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;제어판 &amp;gt; 시스템 &amp;gt; 고급 시스템 설정&lt;/code&gt;에 들어가 &lt;code class=&quot;highlighter-rouge&quot;&gt;환경 변수&lt;/code&gt;를 클릭하세요.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm1.staticflickr.com/932/43917762251_8c299236d2_o.png&quot; alt=&quot;고급시스템설정&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;새로 만들기&lt;/code&gt;를 클릭하고 새 시스템 변수를 입력하세요.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;변수 이름&lt;/code&gt; :  &lt;code class=&quot;highlighter-rouge&quot;&gt;MAVEN_HOME&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;변수 값&lt;/code&gt; : 압축 해제한 경로 (ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4&lt;/code&gt;)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm1.staticflickr.com/929/43014988235_7c2c2c5457_o.png&quot; alt=&quot;새 시스템 변수&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시스템 변수 목록에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;Path&lt;/code&gt;를 찾아 클릭하고 &lt;code class=&quot;highlighter-rouge&quot;&gt;편집&lt;/code&gt;을 눌러주세요.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;변수 값&lt;/code&gt;  맨 앞 부분에 &lt;code class=&quot;highlighter-rouge&quot;&gt;%MAVEN_HOME%\bin;&lt;/code&gt;을 추가합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm1.staticflickr.com/940/43201735214_09c182a23b_o.png&quot; alt=&quot;변수 편집&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;3. 메이븐 설치 확인&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cmd&lt;/code&gt; 창을 켜주세요. (기존에 cmd 창이 켜져있었다면 끄고 다시 키세요.)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mvn -version&lt;/code&gt; 명령어를 입력했을 때 아래와 같이 뜨면 설치 성공&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm1.staticflickr.com/850/43015300125_0339a1d807_o.png&quot; alt=&quot;mvn -v&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 08 Aug 2018 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2018/08/08/maven-install/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2018/08/08/maven-install/</guid>
+        
+        
+        <category>Spring</category>
+        
+      </item>
     
       <item>
         <title>[OS] 프로세스 스케쥴링 종류</title>
@@ -1036,34 +1130,6 @@
         <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
         <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_5585/</link>
         <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_5585/</guid>
-        
-        
-        <category>Algorithm Problem</category>
-        
-      </item>
-    
-      <item>
-        <title>[백준 BOJ] 1780 종이의 개수</title>
-        <description>&lt;h1 id=&quot;boj-1780--&quot;&gt;[백준 BOJ] 1780 종이의 개수&lt;/h1&gt;
-
-&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/1780&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;분할 정복&lt;/strong&gt; 문제이므로 &lt;code class=&quot;highlighter-rouge&quot;&gt;재귀&lt;/code&gt;를 이용해 풀 수 있습니다.&lt;/li&gt;
-  &lt;li&gt;범위 내의 숫자들을 검사해서 같은 숫자들로 이루어져 있으면 해당 숫자를 카운트합니다.&lt;/li&gt;
-  &lt;li&gt;다른 숫자들로 이루어져 있으면 종이를 9등분 해서 재귀를 돌리는 것을 반복합니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;코드&lt;/h2&gt;
-
-&lt;script src=&quot;https://gist.github.com/jiwondh/98ec554461bad000f5050fb5e61b6048.js&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_1780/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_1780/</guid>
         
         
         <category>Algorithm Problem</category>
