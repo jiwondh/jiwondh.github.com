@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[Spring] 메이븐(Maven) 설치하기 (Windows) | Jiwon Blog</title>
+  <meta name="author" content="Jiwon Oh">
+  <meta name="description" content="">
+  <meta property="og:title" content="[Spring] 메이븐(Maven) 설치하기 (Windows) | Jiwon Blog">
+  <meta property="og:url" content="https://jiwondh.github.io/2018/08/08/maven-install/">
+  <meta property="og:site_name" content="Jiwon Blog">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="/assets/images/fw1.jpg">
+  <meta property="og:type" content="blog">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:title" content="[Spring] 메이븐(Maven) 설치하기 (Windows) | Jiwon Blog">
+  <meta name="twitter:url" content="https://jiwondh.github.io/2018/08/08/maven-install/">
+  <meta name="twitter:site" content="Jiwon Blog">
+  <meta name="twitter:creator" content="@">
+  <meta name="twitter:domain" content="https://jiwondh.github.io">
+  <meta property="twitter:image" content="/assets/images/fw1.jpg">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Lora|Space+Mono:700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejugothic.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <link rel="stylesheet" href="/assets/css/disqus.css">
+  <link rel="stylesheet" href="https://yandex.st/highlightjs/7.5/styles/default.min.css">
+  <script src="https://yandex.st/highlightjs/7.5/highlight.min.js"></script>
+
+
+  <link rel="alternate" type="application/rss+xml" title="Jiwon Blog" href="https://jiwondh.github.io/feed.xml">
+  <link rel="canonical" href="https://jiwondh.github.io/2018/08/08/maven-install/">
+
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90322354-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <script type="text/javascript" src="/assets/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/bigfoot.min.js"></script>
+  <script type="text/javascript">
+        var bigfoot = $.bigfoot(
+				{
+					actionOriginalFN: "ignore",
+					positionContent: "false",
+					allowMultipleFN: "true",
+					activateOnHover: "true", 
+					deleteOnUnhover: "true"        
+				}
+		);
+  </script>
+</head>
+
+
+  <body>
+
+    <main>
+      <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="section-padding--lg mast">
+    <a class="nav nav--white" href="/">
+      <i class="fa fa-lg fa-arrow-left"></i>
+      <span>Back to Posts</span>
+    </a> 
+    <a class="nav nav--white" id="search" href="/search">
+      <span>search</span>
+      <i class="fa fa-lg fa-search"></i>
+    </a>
+    <figure class="absolute-bg mast__img" style="background-image: url('/assets/images/fw1.jpg');"></figure>
+    <div class="mast__container">
+      <span><time datetime="2018-08-08T00:00:00+09:00" itemprop="datePublished">Aug 8, 2018</time></span>
+      <h1 itemprop="name headline">[Spring] 메이븐(Maven) 설치하기 (Windows)</h1>
+      
+        <span>
+          Posted in Spring
+        </span>
+      
+      <span></span>
+    </div>
+    
+  </header>
+
+  <article class="post-content">
+
+    <section class="section-padding post" itemprop="articleBody">
+      
+<ul id="markdown-toc">
+  <li><a href="#maven--windows" id="markdown-toc-maven--windows">메이븐(Maven) 설치하기 (Windows)</a>    <ul>
+      <li><a href="#section" id="markdown-toc-section">사전 준비</a></li>
+      <li><a href="#section-1" id="markdown-toc-section-1">1. 메이븐 다운로드</a></li>
+      <li><a href="#section-2" id="markdown-toc-section-2">2. 적절한 위치에 압축 풀기</a></li>
+      <li><a href="#section-3" id="markdown-toc-section-3">3. 환경 변수 설정</a></li>
+      <li><a href="#section-4" id="markdown-toc-section-4">3. 메이븐 설치 확인</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="maven--windows">메이븐(Maven) 설치하기 (Windows)</h1>
+
+<h3 id="section">사전 준비</h3>
+
+<ul>
+  <li>JDK 설치 (1.7 이상)</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="section-1">1. 메이븐 다운로드</h3>
+
+<ul>
+  <li><a href="https://maven.apache.org/download.cgi#" target="_blank">여기</a> 에서 최신 버전의 메이븐(zip파일)을 다운로드 해주세요.</li>
+</ul>
+
+<p><img src="https://farm2.staticflickr.com/1818/30047344308_2c077270c9_b.jpg" alt="메이븐 다운로드 페이지" /></p>
+
+<p><br /></p>
+
+<h3 id="section-2">2. 적절한 위치에 압축 풀기</h3>
+
+<ul>
+  <li>저는 <code class="highlighter-rouge">C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4</code> 경로로 압축을 풀어주었습니다.</li>
+</ul>
+
+<p><img src="https://c1.staticflickr.com/1/930/43199405244_7139a60bec_b.jpg" alt="압축해제" /></p>
+
+<p><br /></p>
+
+<h3 id="section-3">3. 환경 변수 설정</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">제어판 &gt; 시스템 &gt; 고급 시스템 설정</code>에 들어가 <code class="highlighter-rouge">환경 변수</code>를 클릭하세요.</li>
+</ul>
+
+<p><img src="https://farm1.staticflickr.com/932/43917762251_8c299236d2_o.png" alt="고급시스템설정" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">새로 만들기</code>를 클릭하고 새 시스템 변수를 입력하세요.
+    <ul>
+      <li><code class="highlighter-rouge">변수 이름</code> :  <code class="highlighter-rouge">MAVEN_HOME</code></li>
+      <li><code class="highlighter-rouge">변수 값</code> : 압축 해제한 경로 (ex. <code class="highlighter-rouge">C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4</code>)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://farm1.staticflickr.com/929/43014988235_7c2c2c5457_o.png" alt="새 시스템 변수" /></p>
+
+<p><br /></p>
+
+<ul>
+  <li>시스템 변수 목록에서 <code class="highlighter-rouge">Path</code>를 찾아 클릭하고 <code class="highlighter-rouge">편집</code>을 눌러주세요.</li>
+  <li><code class="highlighter-rouge">변수 값</code>  맨 앞 부분에 <code class="highlighter-rouge">%MAVEN_HOME%\bin;</code>을 추가합니다.</li>
+</ul>
+
+<p><img src="https://farm1.staticflickr.com/940/43201735214_09c182a23b_o.png" alt="변수 편집" /></p>
+
+<p><br /></p>
+
+<h3 id="section-4">3. 메이븐 설치 확인</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">cmd</code> 창을 켜주세요. (기존에 cmd 창이 켜져있었다면 끄고 다시 키세요.)</li>
+  <li><code class="highlighter-rouge">mvn -version</code> 명령어를 입력했을 때 아래와 같이 뜨면 설치 성공</li>
+</ul>
+
+<p><img src="https://farm1.staticflickr.com/850/43015300125_0339a1d807_o.png" alt="mvn -v" /></p>
+
+    </section>
+  </article>
+
+  <section class="profile">
+    <div class="profile__card">
+      <div class="profile__img">
+        <figure class="absolute-bg" style="background-image: url('/assets/images/ade1.jpg');"></figure>
+      </div>
+      <div class="profile__container">
+        <p>Jiwon Oh</p>
+        
+          <ul class="profile__social">
+            
+            
+              <li><a class="fa fa-lg fa-github" href="https://github.com/jiwondh" target="_blank"></a></li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </section>
+<!--disqus coding start-->
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = '//jiwondh.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>  
+  <!--disqus coding end-->  
+  
+</article>
+
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  <section class="next">
+    <a class="next__link" href="/2017/11/02/process-scheduling/" style="background-image: url('/assets/images/fw1.jpg');">
+      <div class="next__container">
+        <span>Read Next</span>
+        <h2>[OS] 프로세스 스케쥴링 종류</h2>
+      </div>
+    </a>
+  </section>
+
+
+<!— Html Elements for Search -->
+<div id="search-container2" >
+    <div class="container-1">
+      <span class="icon"><i class="fa fa-search"></i></span>
+      <input type="text" id="search-input" placeholder="Search...">
+  </div>
+    <ul id="results-container"></ul>
+</div>
+
+<!-- Script pointing to jekyll-search.js -->
+<script src="/dest/jekyll-search.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+      SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search2.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 10,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+</script>
+
+
+
+    </main>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+
+
+  <body>
+
+</html>

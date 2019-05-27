@@ -406,6 +406,9 @@
   max-width: $mq-md;
   margin: 0 auto;
   padding-bottom: 4em;
+  ul {
+    list-style: none;
+  }
 
   @media (min-width: $mq-lg) {
     width: 55%;

@@ -19,6 +19,8 @@ CREATE TABLE student (
 );
 ```
 
+
+
 위와 같이 테이블을 생성하면 아래와 같은 스키마가 형성됩니다.
 
 | id    | INTEGER	|
@@ -40,7 +42,7 @@ SELECT * FROM student;
 
 | id | name | age|
 | :---: | :---: | :---: |
-| 1 | Jane | 20 | 
+| 1 | Jane | 20 |
 | 2 | Ami | 21 |
 
 ## 변경
@@ -55,7 +57,7 @@ SELECT * FROM student;
 
 | id | name | age|
 | :---: | :---: | :---: |
-| 1 | Jane | 22 | 
+| 1 | Jane | 22 |
 | 2 | Ami | 21|
 
 ## colume 추가

@@ -53,8 +53,19 @@
     ga('send', 'pageview');
 
   </script>
-
-
+  <script type="text/javascript" src="/assets/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/bigfoot.min.js"></script>
+  <script type="text/javascript">
+        var bigfoot = $.bigfoot(
+				{
+					actionOriginalFN: "ignore",
+					positionContent: "false",
+					allowMultipleFN: "true",
+					activateOnHover: "true", 
+					deleteOnUnhover: "true"        
+				}
+		);
+  </script>
 </head>
 
 
@@ -92,6 +103,15 @@
       <ul itemscope itemtype="http://schema.org/Blog">
         
           <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            <a class="preview__link" href="/2017/10/17/BAEKJOON_12100/" itemprop="url">
+              <span class="preview__date" itemprop="datePublished" datetime="2017-10-17T00:00:00+09:00">Oct 17, 2017</span>
+              <h2 class="preview__header" itemprop="name">[백준 BOJ] 12100 2048</h2>
+			  <p class="preview__excerpt" itemprop="description">[백준 BOJ] 12100 2048 게임 문제로 이동할려면 여기를 클릭하세요. 풀이 먼저 2048 게임에서 이동기능을 완벽히 구현하는 것이 첫 번째 과제입니다. 이동 기능이 완벽히 구현되면 최대 5번 이동시켜 가장 큰 블럭을...</p>
+              <span class="preview__more">Read More</span>
+            </a>
+          </li>
+        
+          <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
             <a class="preview__link" href="/2017/10/17/BAEKJOON_1149/" itemprop="url">
               <span class="preview__date" itemprop="datePublished" datetime="2017-10-17T00:00:00+09:00">Oct 17, 2017</span>
               <h2 class="preview__header" itemprop="name">[백준 BOJ] 1149 RGB거리</h2>
@@ -123,15 +143,6 @@
               <span class="preview__date" itemprop="datePublished" datetime="2017-10-16T00:00:00+09:00">Oct 16, 2017</span>
               <h2 class="preview__header" itemprop="name">[백준 BOJ] 5585 거스름돈</h2>
 			  <p class="preview__excerpt" itemprop="description">[백준 BOJ] 5585 거스름돈 문제로 이동할려면 여기를 클릭하세요. 풀이 1000원에서 입력된 돈을 빼주어 거스름돈을 구합니다. 거스름돈에서 잔돈이 제일 큰 500부터 나눠줍니다. 500보다 작아 몫이 0이면 그 다음 작은 100원으로 잔돈을...</p>
-              <span class="preview__more">Read More</span>
-            </a>
-          </li>
-        
-          <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-            <a class="preview__link" href="/2017/10/16/BAEKJOON_1780/" itemprop="url">
-              <span class="preview__date" itemprop="datePublished" datetime="2017-10-16T00:00:00+09:00">Oct 16, 2017</span>
-              <h2 class="preview__header" itemprop="name">[백준 BOJ] 1780 종이의 개수</h2>
-			  <p class="preview__excerpt" itemprop="description">[백준 BOJ] 1780 종이의 개수 문제로 이동할려면 여기를 클릭하세요. 풀이 분할 정복 문제이므로 재귀를 이용해 풀 수 있습니다. 범위 내의 숫자들을 검사해서 같은 숫자들로 이루어져 있으면 해당 숫자를 카운트합니다. 다른...</p>
               <span class="preview__more">Read More</span>
             </a>
           </li>
@@ -339,6 +350,24 @@
           
           <div class="card__container">
             <h2 class="card__header">OS</h2>
+            <p class="card__count">1 Posts</p>
+            <span class="card__more">View All</span>
+          </div>
+        </a>
+      </li>
+    
+      
+      <li class="card">
+        <a class="card__link" href="/category/spring/">
+          
+            <div class="card__img">
+              
+                <figure class="absolute-bg" style="background-image: url('/assets/images/fw2.jpg');"></figure>
+              
+            </div>
+          
+          <div class="card__container">
+            <h2 class="card__header">Spring</h2>
             <p class="card__count">1 Posts</p>
             <span class="card__more">View All</span>
           </div>

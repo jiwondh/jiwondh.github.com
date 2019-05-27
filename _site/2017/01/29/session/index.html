@@ -53,8 +53,19 @@
     ga('send', 'pageview');
 
   </script>
-
-
+  <script type="text/javascript" src="/assets/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/bigfoot.min.js"></script>
+  <script type="text/javascript">
+        var bigfoot = $.bigfoot(
+				{
+					actionOriginalFN: "ignore",
+					positionContent: "false",
+					allowMultipleFN: "true",
+					activateOnHover: "true", 
+					deleteOnUnhover: "true"        
+				}
+		);
+  </script>
 </head>
 
 
@@ -120,7 +131,7 @@
 
 <h2 id="express-session--">Express에 Session 패키지 설치</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>npm install express-session --save
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">npm</span> <span class="n">install</span> <span class="n">express</span><span class="o">-</span><span class="n">session</span> <span class="o">--</span><span class="n">save</span>
 </code></pre>
 </div>
 
@@ -129,18 +140,18 @@
 <span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">session</span><span class="p">({</span>
-	<span class="na">secret</span><span class="p">:</span> <span class="s1">'12sdfwerwersdfserwerwef'</span><span class="p">,</span> <span class="c1">//keboard cat (랜덤한 값)</span>
-	<span class="na">resave</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-	<span class="na">saveUninitialized</span><span class="p">:</span> <span class="kc">true</span>
+<span class="err">​</span>	<span class="na">secret</span><span class="p">:</span> <span class="s1">'12sdfwerwersdfserwerwef'</span><span class="p">,</span> <span class="c1">//keboard cat (랜덤한 값)</span>
+<span class="err">​</span>	<span class="na">resave</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="err">​</span>	<span class="na">saveUninitialized</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">}));</span>
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Connected 3000 port!!!'</span><span class="p">);</span>		
+<span class="err">​</span>	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Connected 3000 port!!!'</span><span class="p">);</span>		
 <span class="p">});</span></code></pre></figure>
 
 <h2 id="mysql-express-session-store-">Mysql을 Express의 Session store로 사용</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>npm install express-mysql-session --save
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">npm</span> <span class="n">install</span> <span class="n">express</span><span class="o">-</span><span class="n">mysql</span><span class="o">-</span><span class="n">session</span> <span class="o">--</span><span class="n">save</span>
 </code></pre>
 </div>
 
@@ -149,10 +160,10 @@
 <span class="kd">var</span> <span class="nx">MySQLStore</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express-mysql-session'</span><span class="p">)(</span><span class="nx">session</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mysql'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">conn</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
-	<span class="na">host</span>     <span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
-	<span class="na">user</span>     <span class="p">:</span> <span class="s1">'root'</span><span class="p">,</span>
-	<span class="na">password</span> <span class="p">:</span> <span class="s1">'password'</span><span class="p">,</span>
-	<span class="na">database</span> <span class="p">:</span> <span class="s1">'test'</span>
+<span class="err">​</span>	<span class="na">host</span>     <span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
+<span class="err">​</span>	<span class="na">user</span>     <span class="p">:</span> <span class="s1">'root'</span><span class="p">,</span>
+<span class="err">​</span>	<span class="na">password</span> <span class="p">:</span> <span class="s1">'password'</span><span class="p">,</span>
+<span class="err">​</span>	<span class="na">database</span> <span class="p">:</span> <span class="s1">'test'</span>
 <span class="p">});</span>
 <span class="nx">conn</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>
 
@@ -161,61 +172,61 @@
 <span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
 
 <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-	<span class="na">host</span>	<span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
-	<span class="na">port</span>	<span class="p">:</span> <span class="mi">3306</span><span class="p">,</span>
-	<span class="na">user</span>	<span class="p">:</span> <span class="s1">'root'</span><span class="p">,</span>
-	<span class="na">password</span><span class="p">:</span> <span class="s1">'password'</span><span class="p">,</span>		<span class="c1">//데이터베이스 접근 비밀번호</span>
-	<span class="na">database</span><span class="p">:</span> <span class="s1">'test'</span>		<span class="c1">//데이터베이스의 이름</span>
+<span class="err">​</span>	<span class="na">host</span>	<span class="p">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
+<span class="err">​</span>	<span class="na">port</span>	<span class="p">:</span> <span class="mi">3306</span><span class="p">,</span>
+<span class="err">​</span>	<span class="na">user</span>	<span class="p">:</span> <span class="s1">'root'</span><span class="p">,</span>
+<span class="err">​</span>	<span class="na">password</span><span class="p">:</span> <span class="s1">'password'</span><span class="p">,</span>		<span class="c1">//데이터베이스 접근 비밀번호</span>
+<span class="err">​</span>	<span class="na">database</span><span class="p">:</span> <span class="s1">'test'</span>		<span class="c1">//데이터베이스의 이름</span>
 <span class="p">};</span>
 <span class="kd">var</span> <span class="nx">sessionStore</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MySQLStore</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">session</span><span class="p">({</span>
-	<span class="na">secret</span><span class="p">:</span> <span class="s1">'12sdfwerwersdfserwerwef'</span><span class="p">,</span> <span class="c1">//keboard cat (랜덤한 값)</span>
-	<span class="na">resave</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-	<span class="na">saveUninitialized</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-	<span class="na">store</span><span class="p">:</span> <span class="nx">sessionStore</span>
+<span class="err">​</span>	<span class="na">secret</span><span class="p">:</span> <span class="s1">'12sdfwerwersdfserwerwef'</span><span class="p">,</span> <span class="c1">//keboard cat (랜덤한 값)</span>
+<span class="err">​</span>	<span class="na">resave</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="err">​</span>	<span class="na">saveUninitialized</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="err">​</span>	<span class="na">store</span><span class="p">:</span> <span class="nx">sessionStore</span>
 <span class="p">}));</span>
 
 <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Connected 3000 port!!!'</span><span class="p">);</span>		
+<span class="err">​</span>	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Connected 3000 port!!!'</span><span class="p">);</span>		
 <span class="p">});</span></code></pre></figure>
 
 <h2 id="section">사용 예</h2>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//세션 저장 여부에 따라 로그인 결정</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-	<span class="k">if</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">authId</span><span class="p">)</span>
-		<span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">authId</span><span class="o">+</span><span class="s1">'님 로그인되었습니다'</span><span class="p">);</span>
-	<span class="k">else</span>
-		<span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">'로그인하세요!'</span><span class="p">);</span>
+<span class="err">​</span>	<span class="k">if</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">authId</span><span class="p">)</span>
+<span class="err">​</span>		<span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">authId</span><span class="o">+</span><span class="s1">'님 로그인되었습니다'</span><span class="p">);</span>
+<span class="err">​</span>	<span class="k">else</span>
+<span class="err">​</span>		<span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">'로그인하세요!'</span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="c1">// 유저가 가입하면 사용자 아이디를 세션데이터로 저장하여 자동 로그인</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'/auth/register'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-	<span class="kd">var</span> <span class="nx">user</span><span class="o">=</span><span class="p">{</span>
-		<span class="na">AuthId</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">authId</span><span class="p">,</span>
-		<span class="na">Password</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">password</span>
-	<span class="p">};</span>
-	<span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="s1">'INSERT INTO users SET ?'</span><span class="p">;</span>
-	<span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">){</span>
-		<span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
-			<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-		<span class="p">}</span><span class="k">else</span><span class="p">{</span>
-			<span class="c1">//사용자 아이디를 세션 데이터로 저장</span>
-			<span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">authId</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">authId</span><span class="p">;</span>
-			<span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-				<span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">'/'</span><span class="p">);</span>		
-			<span class="p">});</span>
-		<span class="p">}</span>		
-	<span class="p">})</span>
+<span class="err">​</span>	<span class="kd">var</span> <span class="nx">user</span><span class="o">=</span><span class="p">{</span>
+<span class="err">​</span>		<span class="na">AuthId</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">authId</span><span class="p">,</span>
+<span class="err">​</span>		<span class="na">Password</span><span class="p">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">password</span>
+<span class="err">​</span>	<span class="p">};</span>
+<span class="err">​</span>	<span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="s1">'INSERT INTO users SET ?'</span><span class="p">;</span>
+<span class="err">​</span>	<span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">){</span>
+<span class="err">​</span>		<span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+<span class="err">​</span>			<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="err">​</span>		<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="err">​</span>			<span class="c1">//사용자 아이디를 세션 데이터로 저장</span>
+<span class="err">​</span>			<span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">authId</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">authId</span><span class="p">;</span>
+<span class="err">​</span>			<span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<span class="err">​</span>				<span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">'/'</span><span class="p">);</span>		
+<span class="err">​</span>			<span class="p">});</span>
+<span class="err">​</span>		<span class="p">}</span>		
+<span class="err">​</span>	<span class="p">})</span>
 <span class="p">});</span>
 
 <span class="c1">//유저의 세션데이터를 삭제하여 로그아웃</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/logout'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
-	<span class="k">delete</span> <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">authId</span><span class="p">;</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-		<span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">'/'</span><span class="p">);</span>
-	<span class="p">});</span>
+<span class="err">​</span>	<span class="k">delete</span> <span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">authId</span><span class="p">;</span>
+<span class="err">​</span>	<span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<span class="err">​</span>		<span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">'/'</span><span class="p">);</span>
+<span class="err">​</span>	<span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
 
 

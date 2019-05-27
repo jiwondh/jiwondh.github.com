@@ -59,6 +59,17 @@
     ga('send', 'pageview');
 
   </script>
-
-
+  <script type="text/javascript" src="{{ '/assets/js/jquery-3.3.1.min.js' | prepend: site.baseurl }}"></script>
+  <script type="text/javascript" src="{{ '/assets/js/plugins/bigfoot.min.js' | prepend: site.baseurl }}"></script>
+  <script type="text/javascript">
+        var bigfoot = $.bigfoot(
+				{
+					actionOriginalFN: "ignore",
+					positionContent: "false",
+					allowMultipleFN: "true",
+					activateOnHover: "true", 
+					deleteOnUnhover: "true"        
+				}
+		);
+  </script>
 </head>
