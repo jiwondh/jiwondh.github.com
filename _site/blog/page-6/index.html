@@ -75,6 +75,8 @@
       <section class="previews">
   <div>
     
+      <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
+    
       <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/fw1.jpg');"></figure>
     
       <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
@@ -82,8 +84,6 @@
       <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
     
       <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/hk1.jpg');"></figure>
-    
-      <figure class="absolute-bg preview__img" style="background-image: url('/assets/images/ch1.jpg');"></figure>
     
     <div class="previews__container">
       <span>Welcome to</span>
@@ -101,6 +101,15 @@
 
     <div class="tab">
       <ul itemscope itemtype="http://schema.org/Blog">
+        
+          <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+            <a class="preview__link" href="/2017/01/29/session/" itemprop="url">
+              <span class="preview__date" itemprop="datePublished" datetime="2017-01-29T00:00:00+09:00">Jan 29, 2017</span>
+              <h2 class="preview__header" itemprop="name">[Node.js] Session(세션) 사용법</h2>
+			  <p class="preview__excerpt" itemprop="description">Session Session이란 Session의 동작 방식 Express에 Session 패키지 설치 Mysql을 Express의 Session store로 사용 사용 예 Session 자세한 내용은 생활코딩 Javascript(nodejs)강좌를 참고하세요. Session이란 쿠키를 개선한 방식으로 쿠키보다 좀더 안전하게 방대한...</p>
+              <span class="preview__more">Read More</span>
+            </a>
+          </li>
         
           <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
             <a class="preview__link" href="/2017/01/17/vim/" itemprop="url">
@@ -142,15 +151,6 @@
               <span class="preview__date" itemprop="datePublished" datetime="2017-01-15T00:00:00+09:00">Jan 15, 2017</span>
               <h2 class="preview__header" itemprop="name">[Node.js] res.send([body]) 인자값 자료형 에러</h2>
 			  <p class="preview__excerpt" itemprop="description">코드 내용 sql = 'SELECT * FROM user WHERE name=?'; conn.query(sql, [writerName], function(err, user, fields){ res.send(user[0].id); }); 에러 내용 express deprecated res.send(status): Use res.sendStatus(status) instead app.js:70:7 원인 Express api reference에...</p>
-              <span class="preview__more">Read More</span>
-            </a>
-          </li>
-        
-          <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-            <a class="preview__link" href="/2017/01/15/sql-syntax/" itemprop="url">
-              <span class="preview__date" itemprop="datePublished" datetime="2017-01-15T00:00:00+09:00">Jan 15, 2017</span>
-              <h2 class="preview__header" itemprop="name">Sql 기본적인 문법 정리</h2>
-			  <p class="preview__excerpt" itemprop="description">테이블 생성 CREATE TABLE student ( id INTEGER, name TEXT, age INTEGER ); 위와 같이 테이블을 생성하면 아래와 같은 스키마가 형성됩니다. id INTEGER name TEXT age INTEGER 삽입 INSERT INTO...</p>
               <span class="preview__more">Read More</span>
             </a>
           </li>
@@ -376,6 +376,24 @@
           
           <div class="card__container">
             <h2 class="card__header">Spring</h2>
+            <p class="card__count">1 Posts</p>
+            <span class="card__more">View All</span>
+          </div>
+        </a>
+      </li>
+    
+      
+      <li class="card">
+        <a class="card__link" href="/category/kotlin/">
+          
+            <div class="card__img">
+              
+                <figure class="absolute-bg" style="background-image: url('/assets/images/fw2.jpg');"></figure>
+              
+            </div>
+          
+          <div class="card__container">
+            <h2 class="card__header">Kotlin</h2>
             <p class="card__count">1 Posts</p>
             <span class="card__more">View All</span>
           </div>

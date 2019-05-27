@@ -5,9 +5,246 @@
     <description></description>
     <link>https://jiwondh.github.io/</link>
     <atom:link href="https://jiwondh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 May 2019 22:52:34 +0900</pubDate>
-    <lastBuildDate>Mon, 27 May 2019 22:52:34 +0900</lastBuildDate>
+    <pubDate>Mon, 27 May 2019 23:24:37 +0900</pubDate>
+    <lastBuildDate>Mon, 27 May 2019 23:24:37 +0900</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>[Kotlin] 클래스(Class)와 생성자(Constructor)</title>
+        <description>
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#kotlin--&quot; id=&quot;markdown-toc-kotlin--&quot;&gt;Kotlin 클래스와 생성자&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;클래스&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#class-&quot; id=&quot;markdown-toc-class-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt; 키워드&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#kotlin---1&quot; id=&quot;markdown-toc-kotlin---1&quot;&gt;Kotlin 클래스 생성하기&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;생성자&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#constructor--&quot; id=&quot;markdown-toc-constructor--&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;constructor&lt;/code&gt;  키워드&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#primary-constructor&quot; id=&quot;markdown-toc-primary-constructor&quot;&gt;기본 생성자(primary constructor)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#init-&quot; id=&quot;markdown-toc-init-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;init&lt;/code&gt; 키워드&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#secondary-constructors&quot; id=&quot;markdown-toc-secondary-constructors&quot;&gt;보조 생성자(Secondary Constructors)&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;kotlin--&quot;&gt;Kotlin 클래스와 생성자&lt;/h1&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;클래스&lt;/h2&gt;
+
+&lt;h3 id=&quot;class-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt; 키워드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Kotlin 클래스는 &lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt; 키워드를 사용하여 선언합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;클래스 선언부&lt;/strong&gt;는 아래와 같이 구성됩니다.
+    &lt;ul&gt;
+      &lt;li&gt;클래스 &lt;u&gt;이름&lt;/u&gt;&lt;/li&gt;
+      &lt;li&gt;클래스 &lt;u&gt;헤더&lt;/u&gt;(클래스 타입 파라미터 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;T&amp;gt;&lt;/code&gt;, 기본 생성자 &lt;code class=&quot;highlighter-rouge&quot;&gt;constructor&lt;/code&gt; 등),&lt;/li&gt;
+      &lt;li&gt;중괄호&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;로 둘러 싸인 클래스 &lt;u&gt;바디&lt;/u&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;클래스 헤더와 바디는 optional이므로, 바디가 없다면 중괄호 &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;를 생략할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Empty&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;kotlin---1&quot;&gt;Kotlin 클래스 생성하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Intellij 상단 메뉴에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;[File] - [New] - [Kotlin File/Class]&lt;/code&gt; 클릭합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7839/31601763357_23d5d95572_o.png&quot; alt=&quot;image-20190101001008678&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[Class]&lt;/code&gt; 를 선택하고 생성합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://farm5.staticflickr.com/4806/45628599865_4421e59c85_o.png&quot; alt=&quot;image-20190101001942313&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Person.kt&lt;/code&gt; 파일이 생성됩니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Person.kt&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;생성자&lt;/h2&gt;
+
+&lt;h3 id=&quot;constructor--&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;constructor&lt;/code&gt;  키워드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Java와 비교&lt;/strong&gt;  - Java는 생성자를 클래스 내부에 선언해야합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Person.java&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;firstName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Kotlin은 &lt;code class=&quot;highlighter-rouge&quot;&gt;constructor&lt;/code&gt; 키워드를 사용하여 생성자를 &lt;strong&gt;클래스 선언부(기본 생성자)&lt;/strong&gt;나 &lt;strong&gt;클래스 내부(보조 생성자)&lt;/strong&gt;에 선언할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Person.kt - 기본 생성자&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;firstName:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;primary-constructor&quot;&gt;기본 생성자(primary constructor)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본 생성자는 클래스 &lt;u&gt;헤더&lt;/u&gt;의 한 부분으로, 클래스 이름 뒤(타입 파라미터 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;T&amp;gt;&lt;/code&gt; 가 있다면 그 뒤)에 위치합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;firstName:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본 생성자에 &lt;strong&gt;애노테이션(annotations)&lt;/strong&gt;&lt;sup id=&quot;fnref:annotation&quot;&gt;&lt;a href=&quot;#fn:annotation&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;이나 &lt;strong&gt;접근 제한자(visibility modifiers)&lt;/strong&gt;&lt;sup id=&quot;fnref:visibility_modifiers&quot;&gt;&lt;a href=&quot;#fn:visibility_modifiers&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;가 없다면 &lt;code class=&quot;highlighter-rouge&quot;&gt;constructor&lt;/code&gt; 키워드를 생략할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Person.kt - constructor 키워드 생략 가능&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;firstName:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Customer.kt - constructor 키워드 생략 불가능&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Customer&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;@Inject&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본 생성자의 파라미터는 클래스 바디에 선언된 &lt;strong&gt;프로퍼티 초기화&lt;/strong&gt;에도 사용할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Customer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 프로퍼티 customerKey 초기화에 name 파리미터 사용&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customerKey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toUpperCase&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;코틀린은 &lt;u&gt;기본 생성자에서 프로퍼티를 선언하고 초기화&lt;/u&gt;하는 간결한 구문을 제공합니다. &lt;br /&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; 와  &lt;code class=&quot;highlighter-rouge&quot;&gt;val&lt;/code&gt; &lt;sup id=&quot;fnref:Defining_variables&quot;&gt;&lt;a href=&quot;#fn:Defining_variables&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;firstName:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;lastName:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;age:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;init-&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;init&lt;/code&gt; 키워드&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;코틀린에서는 &lt;strong&gt;기본 생성자&lt;/strong&gt;가 클래스 선언부에 위치하므로 바디를 가질 수 없는 구조입니다.&lt;/li&gt;
+  &lt;li&gt;대신, &lt;code class=&quot;highlighter-rouge&quot;&gt;init{}&lt;/code&gt; 함수 안에 초기화 코드를 작성하여 기본 생성자의 인자값을 처리할 수 있습니다.&lt;/li&gt;
+  &lt;li&gt;인스턴스가 초기화되는 동안, &lt;code class=&quot;highlighter-rouge&quot;&gt;init{}&lt;/code&gt; 함수는 프로퍼티 초기화와 함께 &lt;strong&gt;클래스 바디에 선언된 순서&lt;/strong&gt;대로 실행됩니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;InitOrderDemo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;firstProperty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;First property: $name&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;also&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;First initializer block that prints ${name}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;secondProperty&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Second property: ${name.length}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;also&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Second initializer block that prints ${name.length}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;실행결과&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;First&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;property:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;First&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;initializer&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;that&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;prints&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Second&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;property:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Second&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;initializer&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;that&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;prints&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;secondary-constructors&quot;&gt;보조 생성자(Secondary Constructors)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;클래스 바디 내부에 보조생성자를 생성할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;parent:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;클래스에 &lt;u&gt;기본 생성자가 있으면&lt;/u&gt;,  각 보조 생성자는 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; 키워드&lt;/strong&gt;를 사용하여 &lt;strong&gt;직접 기본생성자&lt;/strong&gt;에게, 또는 &lt;strong&gt;다른 보조 생성자를 통해 간접적으로 기본생성자&lt;/strong&gt;에게 위임을 해야합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; 키워드&lt;/strong&gt;는 &lt;u&gt;기본 생성자의 속성을 상속받아 처리&lt;/u&gt;되는 형식입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;name:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;parent:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;parent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:annotation&quot;&gt;
+      &lt;p&gt;코드에 메타데이터를 붙이는 방법 (ex. &lt;code class=&quot;highlighter-rouge&quot;&gt;@Inject&lt;/code&gt;) &lt;br /&gt; &lt;a href=&quot;https://kotlinlang.org/docs/reference/annotations.html&quot; target=&quot;_blank&quot;&gt;Kotlin Reference - Annotations&lt;/a&gt; &lt;a href=&quot;#fnref:annotation&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:visibility_modifiers&quot;&gt;
+      &lt;p&gt;코틀린에는 4개의 접근 제한자가 있습니다 &lt;br /&gt; (ex.  &lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt; ,  &lt;code class=&quot;highlighter-rouge&quot;&gt;protected&lt;/code&gt; ,  &lt;code class=&quot;highlighter-rouge&quot;&gt;internal&lt;/code&gt; ,  &lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt; ) &lt;br /&gt; &lt;a href=&quot;https://kotlinlang.org/docs/reference/visibility-modifiers.html&quot; target=&quot;_blank&quot;&gt;Kotlin Reference - Visibility Modifiers&lt;/a&gt; &lt;a href=&quot;#fnref:visibility_modifiers&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:Defining_variables&quot;&gt;
+      &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; :  수정이 가능한 변수&lt;br /&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;val&lt;/code&gt; : 수정이 불가능한 변수 &lt;br /&gt;&lt;a href=&quot;https://kotlinlang.org/docs/reference/basic-syntax.html#defining-variables&quot; target=&quot;_blank&quot;&gt;Kotlin Reference - Defining variables&lt;/a&gt; &lt;a href=&quot;#fnref:Defining_variables&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 31 Dec 2018 00:00:00 +0900</pubDate>
+        <link>https://jiwondh.github.io/2018/12/31/kotlin_classes/</link>
+        <guid isPermaLink="true">https://jiwondh.github.io/2018/12/31/kotlin_classes/</guid>
+        
+        
+        <category>Kotlin</category>
+        
+      </item>
     
       <item>
         <title>[Spring] 메이븐(Maven) 설치하기 (Windows)</title>
@@ -1080,56 +1317,6 @@
         <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
         <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_5988/</link>
         <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_5988/</guid>
-        
-        
-        <category>Algorithm Problem</category>
-        
-      </item>
-    
-      <item>
-        <title>[백준 BOJ] 5585 거스름돈</title>
-        <description>&lt;h1 id=&quot;boj-5585-&quot;&gt;[백준 BOJ] 5585 거스름돈&lt;/h1&gt;
-
-&lt;p&gt;문제로 이동할려면 &lt;a href=&quot;https://www.acmicpc.net/problem/5585&quot; target=&quot;_blank&quot;&gt;여기&lt;/a&gt;를 클릭하세요.&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;풀이&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;1000원에서 입력된 돈을 빼주어 거스름돈을 구합니다.&lt;/li&gt;
-  &lt;li&gt;거스름돈에서 잔돈이 제일 큰 500부터 나눠줍니다.
-    &lt;ul&gt;
-      &lt;li&gt;500보다 작아 몫이 0이면 그 다음 작은 100원으로 잔돈을 줄여줍니다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;위를 반복하다 나머지가 0이 되면 남은 거스름돈이 없으므로 반복문을 탈출해줍니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;예제&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;입력 : 380
-거스름돈 : 1000 - 380 = 620
-
-반복문
-- 620 / 500 = 1
-  620 % 500 = 120
-- 120 / 500 = 0
-- 120 / 100 = 1
-  120 % 100 = 20
-- 20 / 100 = 0
-- 20 / 50 = 0
-- 20 / 10 = 2
-  20 % 10 = 0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;코드&lt;/h2&gt;
-
-&lt;script src=&quot;https://gist.github.com/jiwondh/c89a0a218a0914df9914989542c384a0.js&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Mon, 16 Oct 2017 00:00:00 +0900</pubDate>
-        <link>https://jiwondh.github.io/2017/10/16/BAEKJOON_5585/</link>
-        <guid isPermaLink="true">https://jiwondh.github.io/2017/10/16/BAEKJOON_5585/</guid>
         
         
         <category>Algorithm Problem</category>
