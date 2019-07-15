@@ -111,100 +111,94 @@
     <section class="section-padding post" itemprop="articleBody">
       
 <ul id="markdown-toc">
-  <li><a href="#electron----packaging-applications" id="markdown-toc-electron----packaging-applications">Electron 데스크탑 앱 배포하기 (Packaging Applications)</a>    <ul>
-      <li><a href="#electron-devdependencies-" id="markdown-toc-electron-devdependencies-">electron을 devDependencies로 설치</a></li>
-      <li><a href="#electron-packager-devdependencies-" id="markdown-toc-electron-packager-devdependencies-">electron-packager을 devDependencies로 설치</a></li>
-      <li><a href="#asar-devdependencies-" id="markdown-toc-asar-devdependencies-">asar을 devDependencies로 설치</a></li>
-      <li><a href="#section" id="markdown-toc-section">앱 패키징</a>        <ul>
-          <li><a href="#electron----" id="markdown-toc-electron----">Electron 기본 아이콘으로 앱 패키징</a></li>
-          <li><a href="#section-1" id="markdown-toc-section-1">사용자 지정 아이콘으로 앱 패키징</a></li>
-          <li><a href="#asar------" id="markdown-toc-asar------">asar 아카이브 포맷을 통한 코드 노출 방지</a></li>
+  <li><a href="#electron-데스크탑-앱-배포하기-packaging-applications" id="markdown-toc-electron-데스크탑-앱-배포하기-packaging-applications">Electron 데스크탑 앱 배포하기 (Packaging Applications)</a>    <ul>
+      <li><a href="#electron을-devdependencies로-설치" id="markdown-toc-electron을-devdependencies로-설치">electron을 devDependencies로 설치</a></li>
+      <li><a href="#electron-packager을-devdependencies로-설치" id="markdown-toc-electron-packager을-devdependencies로-설치">electron-packager을 devDependencies로 설치</a></li>
+      <li><a href="#asar을-devdependencies로-설치" id="markdown-toc-asar을-devdependencies로-설치">asar을 devDependencies로 설치</a></li>
+      <li><a href="#앱-패키징" id="markdown-toc-앱-패키징">앱 패키징</a>        <ul>
+          <li><a href="#electron-기본-아이콘으로-앱-패키징" id="markdown-toc-electron-기본-아이콘으로-앱-패키징">Electron 기본 아이콘으로 앱 패키징</a></li>
+          <li><a href="#사용자-지정-아이콘으로-앱-패키징" id="markdown-toc-사용자-지정-아이콘으로-앱-패키징">사용자 지정 아이콘으로 앱 패키징</a></li>
+          <li><a href="#asar-아카이브-포맷을-통한-코드-노출-방지" id="markdown-toc-asar-아카이브-포맷을-통한-코드-노출-방지">asar 아카이브 포맷을 통한 코드 노출 방지</a></li>
         </ul>
       </li>
-      <li><a href="#section-2" id="markdown-toc-section-2">앱 배포</a></li>
-      <li><a href="#section-3" id="markdown-toc-section-3">마침</a></li>
+      <li><a href="#앱-배포" id="markdown-toc-앱-배포">앱 배포</a></li>
+      <li><a href="#마침" id="markdown-toc-마침">마침</a></li>
     </ul>
   </li>
 </ul>
 
-<h1 id="electron----packaging-applications">Electron 데스크탑 앱 배포하기 (Packaging Applications)</h1>
+<h1 id="electron-데스크탑-앱-배포하기-packaging-applications">Electron 데스크탑 앱 배포하기 (Packaging Applications)</h1>
 
 <p>Electron 데스크탑 앱을 일일이 수동으로 패키지로 만드는 대신, 서드 파티 패키징 툴을 사용하며 패키징을 자동화 시킬 수 있습니다. 저는 서드 파티 패키징 툴 중에서 <a href="https://github.com/electron-userland/electron-packager">electron-packager</a>을 사용하여 앱을 패키징하는 방법을 소개하겠습니다.</p>
 
-<h3 id="electron-devdependencies-">electron을 devDependencies로 설치</h3>
+<h3 id="electron을-devdependencies로-설치">electron을 devDependencies로 설치</h3>
 
 <p>기존에 electron을 devDependencies로 설치하지 않으신 분들은 electron 프로젝트 폴더에서 아래 명령어를 입력해 <code class="highlighter-rouge">package.json</code> 파일에 버전이 명시되도록 해주세요.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>npm install electron --save-dev 
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install electron --save-dev 
+</code></pre></div></div>
 
-<h3 id="electron-packager-devdependencies-">electron-packager을 devDependencies로 설치</h3>
+<h3 id="electron-packager을-devdependencies로-설치">electron-packager을 devDependencies로 설치</h3>
 
 <p>electron 프로젝트 폴더에서 아래 명령어로 electron-packager를 설치해줍니다.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>npm install electron-packager --save-dev
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install electron-packager --save-dev
+</code></pre></div></div>
 
-<h3 id="asar-devdependencies-">asar을 devDependencies로 설치</h3>
+<h3 id="asar을-devdependencies로-설치">asar을 devDependencies로 설치</h3>
 
 <p>electron 프로젝트 폴더에서 아래 명령어로 asar를 설치해줍니다</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>npm install asar --save-dev
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install asar --save-dev
+</code></pre></div></div>
 
 <p>그럼 아래와 같이 <code class="highlighter-rouge">package.json</code> 파일의 devDependencies항목에 버전이 명시됩니다.</p>
 
 <p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fgwpabe6ydj31kw0od78d.jpg" alt="1349AB1D-9A62-41FD-85E2-95F08EA6FAE1" /></p>
 
-<h2 id="section">앱 패키징</h2>
+<h2 id="앱-패키징">앱 패키징</h2>
 
-<h3 id="electron----">Electron 기본 아이콘으로 앱 패키징</h3>
+<h3 id="electron-기본-아이콘으로-앱-패키징">Electron 기본 아이콘으로 앱 패키징</h3>
 
 <p>1.<code class="highlighter-rouge">package.json</code> 파일을 아래와 같이 수정해 주세요. (<code class="highlighter-rouge">scripts</code>의 <code class="highlighter-rouge">build</code> 부분 추가)</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electrontutorial"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial for electron"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electron index.js"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electron-packager . ElectronPJ"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electrontutorial"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial for electron"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electron index.js"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electron-packager . ElectronPJ"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"asar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.13.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"electron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.6.11"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"electron-packager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.7.1"</span><span class="w">
+  </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"asar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.13.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"electron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.6.11"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"electron-packager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.7.1"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"jquery"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.2.1"</span><span class="w">
+  </span><span class="s2">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jquery"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.2.1"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>2.프로젝트 폴더 내에서 아래 명령어를 실행하세요.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>npm run build
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run build
+</code></pre></div></div>
 
 <p>아이콘을 따로 지정해주지 않으면 기본 Electron 아이콘으로 앱 패키징이 되고 패키징된 폴더가 프로젝트 폴더내에 아래와 같이 생기게 됩니다. 예를 들어 저는 프로젝트 폴더 경로인 /Users/ohjiwon/dev/ElectronPJ 내에 /Users/ohjiwon/dev/ElectronPJ/ElectronPJ-darwin-x64와 같이 패키징 폴더가 생성되고 그 안에 <code class="highlighter-rouge">ElectronPJ.app</code>이 위치하게 됩니다.</p>
 
 <p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fgwry9m3byj313w0gmaff.jpg" alt="B2B5BF2A-D031-4173-BE1D-22693A942007" /></p>
 
-<h3 id="section-1">사용자 지정 아이콘으로 앱 패키징</h3>
+<h3 id="사용자-지정-아이콘으로-앱-패키징">사용자 지정 아이콘으로 앱 패키징</h3>
 
 <p>이전에 만들었던 ElectronPJ-darwin-x64 폴더를 상위 폴더인 프로젝트 폴더에서 아래 명령어로 삭제해주세요.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>rm -rf ElectronPJ-darwin-x64
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf ElectronPJ-darwin-x64
+</code></pre></div></div>
 
 <p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fgwsd6c85ej31kw0i4gng.jpg" alt="25035F33-AB5A-4135-87C2-B73C6BA27247" /></p>
 
@@ -216,34 +210,32 @@
 
 <p>2.<code class="highlighter-rouge">package.json</code> 파일을 아래와 같이 수정해 줍니다. (<code class="highlighter-rouge">scripts</code>의 <code class="highlighter-rouge">build</code> 부분 수정)</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electrontutorial"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial for electron"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electron index.js"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electron-packager . ElectronPJ &amp;&amp; cp Icon.icns ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/electron.icns"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electrontutorial"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial for electron"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electron index.js"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electron-packager . ElectronPJ &amp;&amp; cp Icon.icns ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/electron.icns"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"asar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.13.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"electron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.6.11"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"electron-packager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.7.1"</span><span class="w">
+  </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"asar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.13.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"electron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.6.11"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"electron-packager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.7.1"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"jquery"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.2.1"</span><span class="w">
+  </span><span class="s2">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jquery"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.2.1"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>3.프로젝트 폴더 내에서 아래 명령어를 실행하세요.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>npm run build
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run build
+</code></pre></div></div>
 
 <p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fgwsdz1ifij31kw0ihjva.jpg" alt="15C48C9E-40F3-4088-B304-600B357B722A" /></p>
 
@@ -265,7 +257,7 @@
 
 <p>따라서 앱의 소스코드가 사용자에게 노출되는 것을 방지할 필요가 있습니다.</p>
 
-<h3 id="asar------">asar 아카이브 포맷을 통한 코드 노출 방지</h3>
+<h3 id="asar-아카이브-포맷을-통한-코드-노출-방지">asar 아카이브 포맷을 통한 코드 노출 방지</h3>
 
 <p>소스파일 전체를 복사해서 배포하는 것과는 별개로 <a href="https://github.com/electron/asar">asar</a> 아카이브를 통해 애플리케이션의 소스 코드가 사용자에게 노출되는 것을 방지할 수 있습니다.</p>
 
@@ -273,47 +265,43 @@
 
 <p>이전에 만들었던 ElectronPJ-darwin-x64 폴더를 상위 폴더인 프로젝트 폴더에서 아래 명령어로 삭제해주세요.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>rm -rf ElectronPJ-darwin-x64
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf ElectronPJ-darwin-x64
+</code></pre></div></div>
 
 <p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fgwsd6c85ej31kw0i4gng.jpg" alt="25035F33-AB5A-4135-87C2-B73C6BA27247" /></p>
 
 <p>1.<code class="highlighter-rouge">package.json</code> 파일을 아래와 같이 수정해줍니다. (<code class="highlighter-rouge">scripts</code>의 <code class="highlighter-rouge">package</code> 부분 추가)</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electrontutorial"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial for electron"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electron index.js"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"package"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asar pack ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/app ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/app.asar"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electron-packager . ElectronPJ &amp;&amp; cp Icon.icns ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/electron.icns"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electrontutorial"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial for electron"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electron index.js"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"package"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asar pack ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/app ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/app.asar"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electron-packager . ElectronPJ &amp;&amp; cp Icon.icns ElectronPJ-darwin-x64/ElectronPJ.app/Contents/Resources/electron.icns"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"asar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.13.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"electron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.6.11"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"electron-packager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.7.1"</span><span class="w">
+  </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"asar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.13.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"electron"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.6.11"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"electron-packager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^8.7.1"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"jquery"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.2.1"</span><span class="w">
+  </span><span class="s2">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"jquery"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^3.2.1"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>2.프로젝트 폴더 내에서 아래 명령어를 실행하세요.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>npm run build
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run build
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>npm run package
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run package
+</code></pre></div></div>
 
 <p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fgwtp2406ij31kw0ikn25.jpg" alt="16572C54-641F-4C26-AAE6-8C3170B064F6" /></p>
 
@@ -327,7 +315,7 @@
 
 <p><code class="highlighter-rouge">app.asar</code>파일이 존재하므로 <code class="highlighter-rouge">app</code> 폴더를 삭제하여도 <code class="highlighter-rouge">ElectronPJ.app</code>은 정상 작동하게 되며 이로서 사용자는 앱의 소스코드에 접근하지 못하게 됩니다.</p>
 
-<h2 id="section-2">앱 배포</h2>
+<h2 id="앱-배포">앱 배포</h2>
 
 <p><code class="highlighter-rouge">ElectronPJ.app</code>을 실행하면(Linux에선 <code class="highlighter-rouge">ElectronPJ</code> Windows에선 <code class="highlighter-rouge">ElectronPJ.exe</code> 입니다) ElectronPJ 앱이 실행됩니다.</p>
 
@@ -335,7 +323,7 @@
 
 <p>최종 사용자에겐 이 ElectronPJ 폴더(<code class="highlighter-rouge">ElectronPJ.app</code>)를 배포하면 됩니다.</p>
 
-<h2 id="section-3">마침</h2>
+<h2 id="마침">마침</h2>
 
 <p>지금까지 <a href="https://github.com/electron-userland/electron-packager">electron-packager</a>을 사용하여 앱을 패키징하는 방법을 소개하였습니다.</p>
 

@@ -113,7 +113,7 @@
 
 <h2 id="select">SELECT</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="s1">'SELECT * FROM table'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">SELECT * FROM table</span><span class="dl">'</span><span class="p">;</span>
 <span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">rows</span><span class="p">,</span> <span class="nx">fields</span><span class="p">){</span>
 	<span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
 		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
@@ -123,13 +123,12 @@
 		<span class="p">}</span>
 	<span class="p">}</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="insert">INSERT</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="s1">'INSERT INTO table (name, email, age) VALUES(?, ?, ?)'</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Jiwon'</span><span class="p">,</span> <span class="s1">'jiwon@mail.com'</span><span class="p">,</span> <span class="s1">'23'</span><span class="p">];</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">INSERT INTO table (name, email, age) VALUES(?, ?, ?)</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Jiwon</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">jiwon@mail.com</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">23</span><span class="dl">'</span><span class="p">];</span>
 <span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">rows</span><span class="p">,</span> <span class="nx">fields</span><span class="p">){</span>
 	<span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
 		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
@@ -137,13 +136,12 @@
 		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rows</span><span class="p">.</span><span class="nx">insertId</span><span class="p">);</span>
 	<span class="p">}</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="update">UPDATE</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="s1">'UPDATE table SET name=?, age=? WHERE id=?'</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Eunji'</span><span class="p">,</span> <span class="s1">'25'</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">UPDATE table SET name=?, age=? WHERE id=?</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Eunji</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">25</span><span class="dl">'</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
 <span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">rows</span><span class="p">,</span> <span class="nx">fields</span><span class="p">){</span>
 	<span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
 		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
@@ -151,11 +149,10 @@
 		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rows</span><span class="p">);</span>
 	<span class="p">}</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="delete">DELETE</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="s1">'DELETE FROM topic WHERE id=?'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sql</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">DELETE FROM topic WHERE id=?</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
 <span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">rows</span><span class="p">,</span> <span class="nx">fields</span><span class="p">){</span>
 	<span class="k">if</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
@@ -164,8 +161,7 @@
 		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rows</span><span class="p">);</span>
 	<span class="p">}</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
     </section>

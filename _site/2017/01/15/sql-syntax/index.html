@@ -109,15 +109,14 @@
   <article class="post-content">
 
     <section class="section-padding post" itemprop="articleBody">
-      <h2 id="section">테이블 생성</h2>
+      <h2 id="테이블-생성">테이블 생성</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">student</span> <span class="p">(</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">student</span> <span class="p">(</span>
 	<span class="n">id</span> <span class="n">INTEGER</span><span class="p">,</span> 
 	<span class="n">name</span> <span class="n">TEXT</span><span class="p">,</span>
 	<span class="n">age</span> <span class="n">INTEGER</span>
 <span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>위와 같이 테이블을 생성하면 아래와 같은 스키마가 형성됩니다.</p>
 
@@ -138,18 +137,16 @@
   </tbody>
 </table>
 
-<h2 id="section-1">삽입</h2>
+<h2 id="삽입">삽입</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">student</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'Jane'</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">student</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'Jane'</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
 <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">student</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'Ami'</span><span class="p">,</span> <span class="mi">21</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h2 id="section-2">조회</h2>
+<h2 id="조회">조회</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">student</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">student</span><span class="p">;</span>
+</code></pre></div></div>
 
 <table>
   <thead>
@@ -173,15 +170,14 @@
   </tbody>
 </table>
 
-<h2 id="section-3">변경</h2>
+<h2 id="변경">변경</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="n">student</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="n">student</span>
 <span class="k">SET</span> <span class="n">age</span><span class="o">=</span><span class="mi">22</span>
 <span class="k">WHERE</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
 
 <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">student</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <table>
   <thead>
@@ -205,14 +201,13 @@
   </tbody>
 </table>
 
-<h2 id="colume-">colume 추가</h2>
+<h2 id="colume-추가">colume 추가</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">student</span> <span class="k">ADD</span> <span class="k">COLUMN</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">student</span> <span class="k">ADD</span> <span class="k">COLUMN</span>
 <span class="n">major</span> <span class="n">TEXT</span><span class="p">;</span>
 
 <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">student</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <table>
   <thead>
@@ -239,13 +234,12 @@
   </tbody>
 </table>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="n">student</span> 
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="n">student</span> 
 <span class="k">SET</span> <span class="n">major</span><span class="o">=</span><span class="s1">'Computer engineering'</span>
 <span class="k">WHERE</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
 
 <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">student</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <table>
   <thead>
@@ -272,13 +266,12 @@
   </tbody>
 </table>
 
-<h2 id="section-4">삭제</h2>
+<h2 id="삭제">삭제</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">student</span> <span class="k">WHERE</span> <span class="n">major</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">;</span>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">student</span> <span class="k">WHERE</span> <span class="n">major</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">;</span>
 
 <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">student</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <table>
   <thead>
