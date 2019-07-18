@@ -1,4 +1,4 @@
-er-agent: *
+user-agent: *
 Allow: /
 
 Sitemap: https://jiwondh.github.io/sitemap.xml
