@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Jul 2019 20:28:38 +0900</pubDate>
-    <lastBuildDate>Sat, 20 Jul 2019 20:28:38 +0900</lastBuildDate>
+    <pubDate>Sat, 20 Jul 2019 20:44:19 +0900</pubDate>
+    <lastBuildDate>Sat, 20 Jul 2019 20:44:19 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -107,6 +107,13 @@
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;script async=&quot;&quot; src=&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block; text-align:center;&quot; data-ad-layout=&quot;in-article&quot; data-ad-format=&quot;fluid&quot; data-ad-client=&quot;ca-pub-8753021586186085&quot; data-ad-slot=&quot;8878745802&quot;&gt;
+&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;&lt;/p&gt;
 &lt;h3 id=&quot;기본-생성자primary-constructor&quot;&gt;기본 생성자(primary constructor)&lt;/h3&gt;
 
 &lt;ul&gt;

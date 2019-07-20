@@ -79,6 +79,17 @@ class Person constructor(firstName: String) {
 }
 ```
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-8753021586186085"
+     data-ad-slot="8878745802">
+</ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 ### 기본 생성자(primary constructor)
 
 - 기본 생성자는 클래스 <u>헤더</u>의 한 부분으로, 클래스 이름 뒤(타입 파라미터 `<T>` 가 있다면 그 뒤)에 위치합니다.
