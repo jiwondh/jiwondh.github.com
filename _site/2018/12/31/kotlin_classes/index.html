@@ -104,14 +104,14 @@
 <ul id="markdown-toc">
   <li><a href="#kotlin-클래스와-생성자" id="markdown-toc-kotlin-클래스와-생성자">Kotlin 클래스와 생성자</a>    <ul>
       <li><a href="#클래스" id="markdown-toc-클래스">클래스</a>        <ul>
-          <li><a href="#class-키워드" id="markdown-toc-class-키워드"><code class="highlighter-rouge">class</code> 키워드</a></li>
+          <li><a href="#class-키워드" id="markdown-toc-class-키워드"><code class="language-plaintext highlighter-rouge">class</code> 키워드</a></li>
           <li><a href="#kotlin-클래스-생성하기" id="markdown-toc-kotlin-클래스-생성하기">Kotlin 클래스 생성하기</a></li>
         </ul>
       </li>
       <li><a href="#생성자" id="markdown-toc-생성자">생성자</a>        <ul>
-          <li><a href="#constructor--키워드" id="markdown-toc-constructor--키워드"><code class="highlighter-rouge">constructor</code>  키워드</a></li>
+          <li><a href="#constructor--키워드" id="markdown-toc-constructor--키워드"><code class="language-plaintext highlighter-rouge">constructor</code>  키워드</a></li>
           <li><a href="#기본-생성자primary-constructor" id="markdown-toc-기본-생성자primary-constructor">기본 생성자(primary constructor)</a></li>
-          <li><a href="#init-키워드" id="markdown-toc-init-키워드"><code class="highlighter-rouge">init</code> 키워드</a></li>
+          <li><a href="#init-키워드" id="markdown-toc-init-키워드"><code class="language-plaintext highlighter-rouge">init</code> 키워드</a></li>
           <li><a href="#보조-생성자secondary-constructors" id="markdown-toc-보조-생성자secondary-constructors">보조 생성자(Secondary Constructors)</a></li>
         </ul>
       </li>
@@ -123,10 +123,10 @@
 
 <h2 id="클래스">클래스</h2>
 
-<h3 id="class-키워드"><code class="highlighter-rouge">class</code> 키워드</h3>
+<h3 id="class-키워드"><code class="language-plaintext highlighter-rouge">class</code> 키워드</h3>
 
 <ul>
-  <li>Kotlin 클래스는 <code class="highlighter-rouge">class</code> 키워드를 사용하여 선언합니다.</li>
+  <li>Kotlin 클래스는 <code class="language-plaintext highlighter-rouge">class</code> 키워드를 사용하여 선언합니다.</li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
@@ -136,11 +136,11 @@
   <li><strong>클래스 선언부</strong>는 아래와 같이 구성됩니다.
     <ul>
       <li>클래스 <u>이름</u></li>
-      <li>클래스 <u>헤더</u>(클래스 타입 파라미터 <code class="highlighter-rouge">&lt;T&gt;</code>, 기본 생성자 <code class="highlighter-rouge">constructor</code> 등),</li>
-      <li>중괄호<code class="highlighter-rouge">{ }</code>로 둘러 싸인 클래스 <u>바디</u></li>
+      <li>클래스 <u>헤더</u>(클래스 타입 파라미터 <code class="language-plaintext highlighter-rouge">&lt;T&gt;</code>, 기본 생성자 <code class="language-plaintext highlighter-rouge">constructor</code> 등),</li>
+      <li>중괄호<code class="language-plaintext highlighter-rouge">{ }</code>로 둘러 싸인 클래스 <u>바디</u></li>
     </ul>
   </li>
-  <li>클래스 헤더와 바디는 optional이므로, 바디가 없다면 중괄호 <code class="highlighter-rouge">{ }</code>를 생략할 수 있습니다.</li>
+  <li>클래스 헤더와 바디는 optional이므로, 바디가 없다면 중괄호 <code class="language-plaintext highlighter-rouge">{ }</code>를 생략할 수 있습니다.</li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Empty</span>
@@ -149,19 +149,19 @@
 <h3 id="kotlin-클래스-생성하기">Kotlin 클래스 생성하기</h3>
 
 <ul>
-  <li>Intellij 상단 메뉴에서 <code class="highlighter-rouge">[File] - [New] - [Kotlin File/Class]</code> 클릭합니다.</li>
+  <li>Intellij 상단 메뉴에서 <code class="language-plaintext highlighter-rouge">[File] - [New] - [Kotlin File/Class]</code> 클릭합니다.</li>
 </ul>
 
 <p><img src="https://farm8.staticflickr.com/7839/31601763357_23d5d95572_o.png" alt="image-20190101001008678" /></p>
 
 <ul>
-  <li><code class="highlighter-rouge">[Class]</code> 를 선택하고 생성합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">[Class]</code> 를 선택하고 생성합니다.</li>
 </ul>
 
 <p><img src="https://farm5.staticflickr.com/4806/45628599865_4421e59c85_o.png" alt="image-20190101001942313" /></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Person.kt</code> 파일이 생성됩니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Person.kt</code> 파일이 생성됩니다.</li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Person.kt</span>
@@ -172,7 +172,7 @@
 
 <h2 id="생성자">생성자</h2>
 
-<h3 id="constructor--키워드"><code class="highlighter-rouge">constructor</code>  키워드</h3>
+<h3 id="constructor--키워드"><code class="language-plaintext highlighter-rouge">constructor</code>  키워드</h3>
 
 <ul>
   <li><strong>Java와 비교</strong>  - Java는 생성자를 클래스 내부에 선언해야합니다.</li>
@@ -187,7 +187,7 @@
 </code></pre></div></div>
 
 <ul>
-  <li>Kotlin은 <code class="highlighter-rouge">constructor</code> 키워드를 사용하여 생성자를 <strong>클래스 선언부(기본 생성자)</strong>나 <strong>클래스 내부(보조 생성자)</strong>에 선언할 수 있습니다.</li>
+  <li>Kotlin은 <code class="language-plaintext highlighter-rouge">constructor</code> 키워드를 사용하여 생성자를 <strong>클래스 선언부(기본 생성자)</strong>나 <strong>클래스 내부(보조 생성자)</strong>에 선언할 수 있습니다.</li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Person.kt - 기본 생성자</span>
@@ -206,14 +206,14 @@
 <h3 id="기본-생성자primary-constructor">기본 생성자(primary constructor)</h3>
 
 <ul>
-  <li>기본 생성자는 클래스 <u>헤더</u>의 한 부분으로, 클래스 이름 뒤(타입 파라미터 <code class="highlighter-rouge">&lt;T&gt;</code> 가 있다면 그 뒤)에 위치합니다.</li>
+  <li>기본 생성자는 클래스 <u>헤더</u>의 한 부분으로, 클래스 이름 뒤(타입 파라미터 <code class="language-plaintext highlighter-rouge">&lt;T&gt;</code> 가 있다면 그 뒤)에 위치합니다.</li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Person</span> <span class="nf">constructor</span><span class="o">(</span><span class="nl">firstName:</span> <span class="nc">String</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
 </code></pre></div></div>
 
 <ul>
-  <li>기본 생성자에 <strong>애노테이션(annotations)</strong><sup id="fnref:annotation"><a href="#fn:annotation" class="footnote">1</a></sup>이나 <strong>접근 제한자(visibility modifiers)</strong><sup id="fnref:visibility_modifiers"><a href="#fn:visibility_modifiers" class="footnote">2</a></sup>가 없다면 <code class="highlighter-rouge">constructor</code> 키워드를 생략할 수 있습니다.</li>
+  <li>기본 생성자에 <strong>애노테이션(annotations)</strong><sup id="fnref:annotation" role="doc-noteref"><a href="#fn:annotation" class="footnote">1</a></sup>이나 <strong>접근 제한자(visibility modifiers)</strong><sup id="fnref:visibility_modifiers" role="doc-noteref"><a href="#fn:visibility_modifiers" class="footnote">2</a></sup>가 없다면 <code class="language-plaintext highlighter-rouge">constructor</code> 키워드를 생략할 수 있습니다.</li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Person.kt - constructor 키워드 생략 가능</span>
@@ -239,7 +239,7 @@
 </code></pre></div></div>
 
 <ul>
-  <li>코틀린은 <u>기본 생성자에서 프로퍼티를 선언하고 초기화</u>하는 간결한 구문을 제공합니다. <br /> (<code class="highlighter-rouge">var</code> 와  <code class="highlighter-rouge">val</code> <sup id="fnref:Defining_variables"><a href="#fn:Defining_variables" class="footnote">3</a></sup>)</li>
+  <li>코틀린은 <u>기본 생성자에서 프로퍼티를 선언하고 초기화</u>하는 간결한 구문을 제공합니다. <br /> (<code class="language-plaintext highlighter-rouge">var</code> 와  <code class="language-plaintext highlighter-rouge">val</code> <sup id="fnref:Defining_variables" role="doc-noteref"><a href="#fn:Defining_variables" class="footnote">3</a></sup>)</li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nf">Person</span><span class="o">(</span><span class="n">val</span> <span class="nl">firstName:</span> <span class="nc">String</span><span class="o">,</span> <span class="n">val</span> <span class="nl">lastName:</span> <span class="nc">String</span><span class="o">,</span> <span class="kt">var</span> <span class="nl">age:</span> <span class="nc">Int</span><span class="o">)</span> <span class="o">{</span> 
@@ -247,12 +247,12 @@
 <span class="o">}</span>
 </code></pre></div></div>
 
-<h3 id="init-키워드"><code class="highlighter-rouge">init</code> 키워드</h3>
+<h3 id="init-키워드"><code class="language-plaintext highlighter-rouge">init</code> 키워드</h3>
 
 <ul>
   <li>코틀린에서는 <strong>기본 생성자</strong>가 클래스 선언부에 위치하므로 바디를 가질 수 없는 구조입니다.</li>
-  <li>대신, <code class="highlighter-rouge">init{}</code> 함수 안에 초기화 코드를 작성하여 기본 생성자의 인자값을 처리할 수 있습니다.</li>
-  <li>인스턴스가 초기화되는 동안, <code class="highlighter-rouge">init{}</code> 함수는 프로퍼티 초기화와 함께 <strong>클래스 바디에 선언된 순서</strong>대로 실행됩니다.</li>
+  <li>대신, <code class="language-plaintext highlighter-rouge">init{}</code> 함수 안에 초기화 코드를 작성하여 기본 생성자의 인자값을 처리할 수 있습니다.</li>
+  <li>인스턴스가 초기화되는 동안, <code class="language-plaintext highlighter-rouge">init{}</code> 함수는 프로퍼티 초기화와 함께 <strong>클래스 바디에 선언된 순서</strong>대로 실행됩니다.</li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nf">InitOrderDemo</span><span class="o">(</span><span class="nl">name:</span> <span class="nc">String</span><span class="o">)</span> <span class="o">{</span>
@@ -272,9 +272,9 @@
 
 <p><strong>실행결과</strong></p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">First</span><span class="w"> </span><span class="err">property</span><span class="p">:</span><span class="w"> </span><span class="err">hello</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">First</span><span class="w"> </span><span class="err">property:</span><span class="w"> </span><span class="err">hello</span><span class="w">
 </span><span class="err">First</span><span class="w"> </span><span class="err">initializer</span><span class="w"> </span><span class="err">block</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">prints</span><span class="w"> </span><span class="err">hello</span><span class="w">
-</span><span class="err">Second</span><span class="w"> </span><span class="err">property</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span><span class="err">Second</span><span class="w"> </span><span class="err">property:</span><span class="w"> </span><span class="mi">5</span><span class="w">
 </span><span class="err">Second</span><span class="w"> </span><span class="err">initializer</span><span class="w"> </span><span class="err">block</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">prints</span><span class="w"> </span><span class="mi">5</span><span class="w">
 </span></code></pre></div></div>
 
@@ -292,8 +292,8 @@
 </code></pre></div></div>
 
 <ul>
-  <li>클래스에 <u>기본 생성자가 있으면</u>,  각 보조 생성자는 <strong><code class="highlighter-rouge">this</code> 키워드</strong>를 사용하여 <strong>직접 기본생성자</strong>에게, 또는 <strong>다른 보조 생성자를 통해 간접적으로 기본생성자</strong>에게 위임을 해야합니다.</li>
-  <li><strong><code class="highlighter-rouge">this</code> 키워드</strong>는 <u>기본 생성자의 속성을 상속받아 처리</u>되는 형식입니다.</li>
+  <li>클래스에 <u>기본 생성자가 있으면</u>,  각 보조 생성자는 <strong><code class="language-plaintext highlighter-rouge">this</code> 키워드</strong>를 사용하여 <strong>직접 기본생성자</strong>에게, 또는 <strong>다른 보조 생성자를 통해 간접적으로 기본생성자</strong>에게 위임을 해야합니다.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">this</code> 키워드</strong>는 <u>기본 생성자의 속성을 상속받아 처리</u>되는 형식입니다.</li>
 </ul>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nf">Person</span><span class="o">(</span><span class="n">val</span> <span class="nl">name:</span> <span class="nc">String</span><span class="o">)</span> <span class="o">{</span>
@@ -305,16 +305,16 @@
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:annotation">
-      <p>코드에 메타데이터를 붙이는 방법 (ex. <code class="highlighter-rouge">@Inject</code>) <br /> <a href="https://kotlinlang.org/docs/reference/annotations.html" target="_blank">Kotlin Reference - Annotations</a> <a href="#fnref:annotation" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:annotation" role="doc-endnote">
+      <p>코드에 메타데이터를 붙이는 방법 (ex. <code class="language-plaintext highlighter-rouge">@Inject</code>) <br /> <a href="https://kotlinlang.org/docs/reference/annotations.html" target="_blank">Kotlin Reference - Annotations</a> <a href="#fnref:annotation" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:visibility_modifiers">
-      <p>코틀린에는 4개의 접근 제한자가 있습니다 <br /> (ex.  <code class="highlighter-rouge">private</code> ,  <code class="highlighter-rouge">protected</code> ,  <code class="highlighter-rouge">internal</code> ,  <code class="highlighter-rouge">public</code> ) <br /> <a href="https://kotlinlang.org/docs/reference/visibility-modifiers.html" target="_blank">Kotlin Reference - Visibility Modifiers</a> <a href="#fnref:visibility_modifiers" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:visibility_modifiers" role="doc-endnote">
+      <p>코틀린에는 4개의 접근 제한자가 있습니다 <br /> (ex.  <code class="language-plaintext highlighter-rouge">private</code> ,  <code class="language-plaintext highlighter-rouge">protected</code> ,  <code class="language-plaintext highlighter-rouge">internal</code> ,  <code class="language-plaintext highlighter-rouge">public</code> ) <br /> <a href="https://kotlinlang.org/docs/reference/visibility-modifiers.html" target="_blank">Kotlin Reference - Visibility Modifiers</a> <a href="#fnref:visibility_modifiers" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:Defining_variables">
-      <p><code class="highlighter-rouge">var</code> :  수정이 가능한 변수<br /><code class="highlighter-rouge">val</code> : 수정이 불가능한 변수 <br /><a href="https://kotlinlang.org/docs/reference/basic-syntax.html#defining-variables" target="_blank">Kotlin Reference - Defining variables</a> <a href="#fnref:Defining_variables" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:Defining_variables" role="doc-endnote">
+      <p><code class="language-plaintext highlighter-rouge">var</code> :  수정이 가능한 변수<br /><code class="language-plaintext highlighter-rouge">val</code> : 수정이 불가능한 변수 <br /><a href="https://kotlinlang.org/docs/reference/basic-syntax.html#defining-variables" target="_blank">Kotlin Reference - Defining variables</a> <a href="#fnref:Defining_variables" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

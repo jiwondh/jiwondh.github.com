@@ -105,12 +105,12 @@
   <li><a href="#electron으로-데스크탑-앱-개발-시작하기" id="markdown-toc-electron으로-데스크탑-앱-개발-시작하기">Electron으로 데스크탑 앱 개발 시작하기</a>    <ul>
       <li><a href="#nodejs-설치" id="markdown-toc-nodejs-설치">NodeJS 설치</a></li>
       <li><a href="#프로젝트-폴더-생성" id="markdown-toc-프로젝트-폴더-생성">프로젝트 폴더 생성</a></li>
-      <li><a href="#packagejson-파일-생성하기" id="markdown-toc-packagejson-파일-생성하기"><code class="highlighter-rouge">package.json</code> 파일 생성하기</a></li>
+      <li><a href="#packagejson-파일-생성하기" id="markdown-toc-packagejson-파일-생성하기"><code class="language-plaintext highlighter-rouge">package.json</code> 파일 생성하기</a></li>
       <li><a href="#electron-설치" id="markdown-toc-electron-설치">electron 설치</a></li>
-      <li><a href="#indexjs-생성" id="markdown-toc-indexjs-생성"><code class="highlighter-rouge">index.js</code> 생성</a></li>
-      <li><a href="#indexhtml-생성" id="markdown-toc-indexhtml-생성"><code class="highlighter-rouge">index.html</code> 생성</a></li>
+      <li><a href="#indexjs-생성" id="markdown-toc-indexjs-생성"><code class="language-plaintext highlighter-rouge">index.js</code> 생성</a></li>
+      <li><a href="#indexhtml-생성" id="markdown-toc-indexhtml-생성"><code class="language-plaintext highlighter-rouge">index.html</code> 생성</a></li>
       <li><a href="#electron-앱-실행" id="markdown-toc-electron-앱-실행">Electron 앱 실행</a></li>
-      <li><a href="#npm-start로-앱-실행하기" id="markdown-toc-npm-start로-앱-실행하기"><code class="highlighter-rouge">npm start</code>로 앱 실행하기</a></li>
+      <li><a href="#npm-start로-앱-실행하기" id="markdown-toc-npm-start로-앱-실행하기"><code class="language-plaintext highlighter-rouge">npm start</code>로 앱 실행하기</a></li>
       <li><a href="#마침" id="markdown-toc-마침">마침</a></li>
     </ul>
   </li>
@@ -130,19 +130,19 @@
 
 <p>저는 /Users/ohjiwon/dev 경로에 /Users/ohjiwon/dev/ElectronPJ 폴더를 생성해주었어요.</p>
 
-<h3 id="packagejson-파일-생성하기"><code class="highlighter-rouge">package.json</code> 파일 생성하기</h3>
+<h3 id="packagejson-파일-생성하기"><code class="language-plaintext highlighter-rouge">package.json</code> 파일 생성하기</h3>
 
 <p>커맨드 창을 여시고 해당 경로로 이동해주세요.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd dev/ElectronPJ/
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd dev/ElectronPJ/
 </code></pre></div></div>
 
 <p>해당 폴더에서 아래 명령어를 입력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init
 </code></pre></div></div>
 
-<p>명령어를 입력하면 세부사항 정보를 입력하는 질문창이 뜨는데요, 저는 아래와 같이 간단히 입력해주었습니다. <code class="highlighter-rouge">package.json</code>에 대한 자세한 사항은 <a href="https://docs.npmjs.com/files/package.json">npm-package.json</a>을 참고해주세요!</p>
+<p>명령어를 입력하면 세부사항 정보를 입력하는 질문창이 뜨는데요, 저는 아래와 같이 간단히 입력해주었습니다. <code class="language-plaintext highlighter-rouge">package.json</code>에 대한 자세한 사항은 <a href="https://docs.npmjs.com/files/package.json">npm-package.json</a>을 참고해주세요!</p>
 
 <p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fgvmbd1ld8j318u0q8tju.jpg" alt="AD4B715B-D16D-4591-880E-4541A19AB9A9" /></p>
 
@@ -150,24 +150,24 @@
 
 <h3 id="electron-설치">electron 설치</h3>
 
-<p>electron을 <code class="highlighter-rouge">npm</code> 명령어로 설치해줍니다.</p>
+<p>electron을 <code class="language-plaintext highlighter-rouge">npm</code> 명령어로 설치해줍니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install electron -g
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install electron -g
 </code></pre></div></div>
 
 <p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fgvnit8n8pj31900a0djq.jpg" alt="CE4503F4-04CC-4040-9B4E-442AF91B8E39" /></p>
 
-<h3 id="indexjs-생성"><code class="highlighter-rouge">index.js</code> 생성</h3>
+<h3 id="indexjs-생성"><code class="language-plaintext highlighter-rouge">index.js</code> 생성</h3>
 
 <p>저는 코드 에디터로 Visual Studio Code를 사용하여 진행하도록 하겠습니다.</p>
 
-<p>코드 에디터에서 프로젝트 폴더를 열어 <code class="highlighter-rouge">index.js</code> 파일을 생성해주세요</p>
+<p>코드 에디터에서 프로젝트 폴더를 열어 <code class="language-plaintext highlighter-rouge">index.js</code> 파일을 생성해주세요</p>
 
 <p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fgvmk24izfj31kw0yuthr.jpg" alt="AA2B14C6-3820-44F9-9912-88E0A65B389E" /></p>
 
 <p>아래 코드들은 Electron 문서 코드 중 <a href="https://electron.atom.io/docs/tutorial/quick-start/">Quick-Start</a>에 해당하는 코드입니다.</p>
 
-<p><code class="highlighter-rouge">index.js</code>를 아래와 같이 작성해줍니다.</p>
+<p><code class="language-plaintext highlighter-rouge">index.js</code>를 아래와 같이 작성해줍니다.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span><span class="nx">app</span><span class="p">,</span> <span class="nx">BrowserWindow</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">electron</span><span class="dl">'</span><span class="p">)</span>
 <span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">)</span>
@@ -227,7 +227,7 @@
 <span class="c1">// 코드를 작성할 수도 있습니다.</span>
 </code></pre></div></div>
 
-<h3 id="indexhtml-생성"><code class="highlighter-rouge">index.html</code> 생성</h3>
+<h3 id="indexhtml-생성"><code class="language-plaintext highlighter-rouge">index.html</code> 생성</h3>
 
 <p>사용자에게 보여줄 index.html 파일을 생성해주고 아래와 같이 작성해줍니다.</p>
 
@@ -248,7 +248,7 @@
 
 <h3 id="electron-앱-실행">Electron 앱 실행</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>electron index.js
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>electron index.js
 </code></pre></div></div>
 
 <p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fgvnuaaca9j31kw0iuq5f.jpg" alt="C2DA4E2B-9AF4-46C0-896D-07904304FBDD" /></p>
@@ -257,20 +257,20 @@
 
 <p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fgvnmisjglj318c0x244q.jpg" alt="A45ED7AA-EBCF-4B68-9A32-70F499F0435E" /></p>
 
-<h3 id="npm-start로-앱-실행하기"><code class="highlighter-rouge">npm start</code>로 앱 실행하기</h3>
+<h3 id="npm-start로-앱-실행하기"><code class="language-plaintext highlighter-rouge">npm start</code>로 앱 실행하기</h3>
 
-<p><code class="highlighter-rouge">package.json</code> 파일에서 아래와 같이 <code class="highlighter-rouge">"start" : "electron index.js"</code>를 추가하여 수정해주면 <code class="highlighter-rouge">npm start</code> 명령어로 앱을 실행할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">package.json</code> 파일에서 아래와 같이 <code class="language-plaintext highlighter-rouge">"start" : "electron index.js"</code>를 추가하여 수정해주면 <code class="language-plaintext highlighter-rouge">npm start</code> 명령어로 앱을 실행할 수 있습니다.</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electrontutorial"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial for electron"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"start"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"electron index.js"</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electrontutorial"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tutorial for electron"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"start"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"electron index.js"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="w">
+  </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
