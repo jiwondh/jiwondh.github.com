@@ -1,0 +1,27 @@
+I"�	<h1 id="백준-boj-12100-2048-게임">[백준 BOJ] 12100 2048 게임</h1>
+
+<p>문제로 이동할려면 <a href="https://www.acmicpc.net/problem/12100" target="_blank">여기</a>를 클릭하세요.</p>
+
+<h2 id="풀이">풀이</h2>
+
+<ul>
+  <li>먼저 2048 게임에서 <strong><code class="language-plaintext highlighter-rouge">이동</code>기능</strong>을 완벽히 구현하는 것이 첫 번째 과제입니다. 이동 기능이 완벽히 구현되면 <u>최대 5번 이동시켜 가장 큰 블럭을 찾는 것</u>은 <code class="language-plaintext highlighter-rouge">재귀</code>를 이용해 간단하게 해결할 수 있습니다.</li>
+  <li>왼쪽, 오른쪽, 위, 아래 이동은 범위만 약간 다를 뿐 같은 맥락으로 풀 수 있습니다. 왼쪽을 예시로 들어보겠습니다.
+    <ul>
+      <li>새로운 숫자들을 저장할 <code class="language-plaintext highlighter-rouge">newBoard</code>벡터를 선언해줍니다.</li>
+      <li>각 행에 대해서 왼쪽 부터 검색을 합니다.</li>
+      <li><code class="language-plaintext highlighter-rouge">cnt</code>를 <code class="language-plaintext highlighter-rouge">0</code>으로 초기화 합니다.</li>
+      <li>숫자는 한번에 <code class="language-plaintext highlighter-rouge">2</code>개 씩 합쳐지므로 <code class="language-plaintext highlighter-rouge">first</code>와 <code class="language-plaintext highlighter-rouge">second</code> 변수를 만들어 비교를 시작합니다.</li>
+      <li>두 변수가 같을 때는 <code class="language-plaintext highlighter-rouge">newBoard[행][cnt]</code>에 변수의 2배 값을 삽입해주고 <code class="language-plaintext highlighter-rouge">cnt</code>를 증가시킵니다.</li>
+      <li>다를 때는 <code class="language-plaintext highlighter-rouge">first</code>만 삽입해주고 <code class="language-plaintext highlighter-rouge">first</code>에 <code class="language-plaintext highlighter-rouge">second</code>값을 옮긴 다음 비교를 반복합니다.</li>
+    </ul>
+  </li>
+  <li>위의 설명 이외에 가장자리 예외처리에 주의해야합니다.</li>
+  <li>재귀함수를 구현할 때는 함수가 종료하기 전에 <strong>배열이 복구</strong> 되어야 한다는 점을 꼭 주의하세요!(<code class="language-plaintext highlighter-rouge">203</code>행 참고)</li>
+</ul>
+
+<h2 id="코드">코드</h2>
+
+<script src="https://gist.github.com/jiwondh/60f156280f07de9635384140a0c4baf5.js"></script>
+
+:ET

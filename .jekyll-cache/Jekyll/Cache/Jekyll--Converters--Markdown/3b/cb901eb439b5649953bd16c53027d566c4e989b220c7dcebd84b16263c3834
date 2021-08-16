@@ -1,0 +1,8 @@
+I"Q<h2 id="vi-에디터에서-encoding-전환하기">vi 에디터에서 encoding 전환하기</h2>
+
+<p>예시로 utf-8로 encoding을 전환하여 저장하는 명령어입니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:set fileencoding=utf-8
+:w
+</code></pre></div></div>
+:ET
