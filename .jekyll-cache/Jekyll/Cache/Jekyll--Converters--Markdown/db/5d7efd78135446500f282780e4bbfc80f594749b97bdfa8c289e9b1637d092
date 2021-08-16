@@ -1,0 +1,106 @@
+I"}<h1 id="백준-boj-11947-이런반전이">[백준 BOJ] 11947 이런반전이</h1>
+
+<p>문제로 이동할려면 <a href="https://www.acmicpc.net/problem/11947" target="_blank">여기</a>를 클릭하세요.</p>
+
+<h2 id="풀이">풀이</h2>
+
+<ul>
+  <li>1 이상 N 이하인 수들의 ‘사랑스러움’ 중 최댓값
+    <ul>
+      <li>N의 자릿수를 기준으로 해당 자릿수에서 중간값 이하이면 해당 값과 그 반전값의 곱</li>
+      <li>중간값 이상이면 중간값과 그 반전 값의 곱</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">string</code>을 <code class="language-plaintext highlighter-rouge">int</code>로 변환해주는 <code class="language-plaintext highlighter-rouge">stoi()</code>를 사용하면 범위초과로 <strong>런타임 에러</strong>가 날 수 있음 =&gt; <code class="language-plaintext highlighter-rouge">stol()</code>을 사용하자!</li>
+</ul>
+
+<h3 id="예제">예제</h3>
+
+<ul>
+  <li>입력값이 77일 때 2자리 수의 중앙값인 49와 50의 곲이 최대값</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1X8=8
+2X7=14
+3X6=18
+4X5=20
+5X4=20
+6X3=18
+7X2=14
+8X1=8
+9X0=0
+10X89=890
+11X88=968
+12X87=1044
+13X86=1118
+14X85=1190
+15X84=1260
+16X83=1328
+17X82=1394
+18X81=1458
+19X80=1520
+20X79=1580
+21X78=1638
+22X77=1694
+23X76=1748
+24X75=1800
+25X74=1850
+26X73=1898
+27X72=1944
+28X71=1988
+29X70=2030
+30X69=2070
+31X68=2108
+32X67=2144
+33X66=2178
+34X65=2210
+35X64=2240
+36X63=2268
+37X62=2294
+38X61=2318
+39X60=2340
+40X59=2360
+41X58=2378
+42X57=2394
+43X56=2408
+44X55=2420
+45X54=2430
+46X53=2438
+47X52=2444
+48X51=2448
+49X50=2450  =&gt; 최대값
+50X49=2450  =&gt; 최대값
+51X48=2448
+52X47=2444
+53X46=2438
+54X45=2430
+55X44=2420
+56X43=2408
+57X42=2394
+58X41=2378
+59X40=2360
+60X39=2340
+61X38=2318
+62X37=2294
+63X36=2268
+64X35=2240
+65X34=2210
+66X33=2178
+67X32=2144
+68X31=2108
+69X30=2070
+70X29=2030
+71X28=1988
+72X27=1944
+73X26=1898
+74X25=1850
+75X24=1800
+76X23=1748
+77X22=1694
+</code></pre></div></div>
+
+<h2 id="코드">코드</h2>
+
+<script src="https://gist.github.com/jiwondh/b55a8b1951840bf9801863d7632e0de0.js"></script>
+
+:ET

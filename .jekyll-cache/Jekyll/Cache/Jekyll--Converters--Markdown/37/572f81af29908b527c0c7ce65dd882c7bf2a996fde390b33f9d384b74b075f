@@ -1,0 +1,16 @@
+I"�<h1 id="백준-boj-1076-저항">[백준 BOJ] 1076 저항</h1>
+
+<p>문제로 이동할려면 <a href="https://www.acmicpc.net/problem/1076" target="_blank">여기</a>를 클릭하세요.</p>
+
+<h2 id="풀이">풀이</h2>
+
+<ul>
+  <li>STL map을 이용해서 계산하면 해당 색깔의 값과 곱에 바로 접근할 수 있습니다.</li>
+  <li>값이 <code class="language-plaintext highlighter-rouge">int</code>범위를 넘어가므로 <code class="language-plaintext highlighter-rouge">long long</code>을 사용하세요</li>
+</ul>
+
+<h2 id="코드">코드</h2>
+
+<script src="https://gist.github.com/jiwondh/d24d221a26c1ce2ec34de18584c28de8.js"></script>
+
+:ET

@@ -1,0 +1,59 @@
+I"�
+<ul id="markdown-toc">
+  <li><a href="#c-문자열-공백-포함-입력-받기" id="markdown-toc-c-문자열-공백-포함-입력-받기">[C++] 문자열 공백 포함 입력 받기</a>    <ul>
+      <li><a href="#cingetline" id="markdown-toc-cingetline"><code class="language-plaintext highlighter-rouge">cin.getline</code></a>        <ul>
+          <li><a href="#인자값" id="markdown-toc-인자값">인자값</a></li>
+          <li><a href="#예제" id="markdown-toc-예제">예제</a></li>
+          <li><a href="#실행-결과" id="markdown-toc-실행-결과">실행 결과</a></li>
+        </ul>
+      </li>
+      <li><a href="#scanfn-str" id="markdown-toc-scanfn-str"><code class="language-plaintext highlighter-rouge">scanf("%[^\n]", str)</code></a>        <ul>
+          <li><a href="#예제-1" id="markdown-toc-예제-1">예제</a></li>
+          <li><a href="#실행-결과-1" id="markdown-toc-실행-결과-1">실행 결과</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="c-문자열-공백-포함-입력-받기">[C++] 문자열 공백 포함 입력 받기</h1>
+
+<h2 id="cingetline"><code class="language-plaintext highlighter-rouge">cin.getline</code></h2>
+
+<ul>
+  <li>공백과 종료<code class="language-plaintext highlighter-rouge">null</code> 문자를 포함해서 <code class="language-plaintext highlighter-rouge">n</code>개의 문자를 <code class="language-plaintext highlighter-rouge">s</code>에 저장</li>
+  <li><code class="language-plaintext highlighter-rouge">delim</code> 문자가 나타나면 입력 종료</li>
+</ul>
+
+<h3 id="인자값">인자값</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">s</code> : 문자열 배열</li>
+  <li><code class="language-plaintext highlighter-rouge">n</code> : <code class="language-plaintext highlighter-rouge">s</code>에 입력받을 최대 문자 수(종료 <code class="language-plaintext highlighter-rouge">null</code> 문자 포함)</li>
+  <li><code class="language-plaintext highlighter-rouge">delim</code> : 해당 문자가 나타나면 입력받기를 종료</li>
+</ul>
+
+<h3 id="예제">예제</h3>
+
+<script src="https://gist.github.com/jiwondh/623d372110d5255ae5c3b23648331abb.js"></script>
+
+<h3 id="실행-결과">실행 결과</h3>
+
+<p><img src="https://farm5.staticflickr.com/4498/37450671950_9798fb0a74_o.png" alt="3BD33863-25EF-488E-B8EB-B7A3310FD64B" /></p>
+
+<h2 id="scanfn-str"><code class="language-plaintext highlighter-rouge">scanf("%[^\n]", str)</code></h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">\n</code> 문자 입력받을 때까지 <code class="language-plaintext highlighter-rouge">str</code> 문자열에 저장</li>
+  <li><strong>for문</strong>에서 사용 불가</li>
+</ul>
+
+<h3 id="예제-1">예제</h3>
+
+<script src="https://gist.github.com/jiwondh/94ecc3672ad3a6dce9007154cd638bd1.js"></script>
+
+<h3 id="실행-결과-1">실행 결과</h3>
+
+<p><img src="https://farm5.staticflickr.com/4463/37708224091_890dc474c4_o.png" alt="7A90CCC6-8B86-4B23-A0ED-2FBFAC0EDE24" /></p>
+
+:ET
