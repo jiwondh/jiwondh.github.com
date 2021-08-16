@@ -1,0 +1,135 @@
+I"�
+<ul id="markdown-toc">
+  <li><a href="#트리tree" id="markdown-toc-트리tree">트리(Tree)</a>    <ul>
+      <li><a href="#1-트리tree" id="markdown-toc-1-트리tree">(1) 트리(Tree)</a>        <ul>
+          <li><a href="#1-개념" id="markdown-toc-1-개념">1) 개념</a></li>
+          <li><a href="#2-용어" id="markdown-toc-2-용어">2) 용어</a></li>
+          <li><a href="#3-트리의-기본적인-성질" id="markdown-toc-3-트리의-기본적인-성질">3) 트리의 기본적인 성질</a></li>
+        </ul>
+      </li>
+      <li><a href="#2-이진트리binary-tree" id="markdown-toc-2-이진트리binary-tree">(2) 이진트리(Binary Tree)</a>        <ul>
+          <li><a href="#1-개념-1" id="markdown-toc-1-개념-1">1) 개념</a></li>
+          <li><a href="#2-이진-트리-종류" id="markdown-toc-2-이진-트리-종류">2) 이진 트리 종류</a></li>
+          <li><a href="#3-이진트리-특징" id="markdown-toc-3-이진트리-특징">3) 이진트리 특징</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="트리tree">트리(Tree)</h1>
+
+<h2 id="1-트리tree">(1) 트리(Tree)</h2>
+
+<h3 id="1-개념">1) 개념</h3>
+
+<ul>
+  <li>계층적인 구조를 표현
+    <ul>
+      <li>조직도</li>
+      <li>디렉토리와 서브디렉토리 구조</li>
+      <li>가계도</li>
+    </ul>
+  </li>
+  <li>트리는 <code class="language-plaintext highlighter-rouge">노드(node)</code>들과 노드들을 연결하는 <code class="language-plaintext highlighter-rouge">링크(link)</code>들로 구성됨</li>
+</ul>
+
+<h3 id="2-용어">2) 용어</h3>
+
+<ul>
+  <li><strong>루트 노드</strong>(root node) : 부모가 없는 노드. 트리는 하나의 루트 노드만을 가진다.</li>
+  <li><strong>단말 노드</strong>(leaf node) : 자식이 없는 노드이다.</li>
+  <li><strong>내부(internal) 노드</strong> : 리프 노드가 아닌 노드.</li>
+  <li><strong>링크(link)</strong> : 노드를 연결하는 선 (edge, branch 라고도 부름).</li>
+  <li><strong>형제</strong>(sibling) : 같은 부모를 가지는 노드.</li>
+</ul>
+
+<p><img src="https://farm5.staticflickr.com/4482/36997131684_89ddd642cf_o.png" alt="03B65E65-8752-4D4E-9E43-48CA9D04F85C" /></p>
+
+<ul>
+  <li>노드의 <strong>크기</strong>(size) : 자신을 포함한 모든 자손 노드의 개수.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">C</code>의 크기 : <code class="language-plaintext highlighter-rouge">6</code></li>
+    </ul>
+  </li>
+  <li>노드의 <strong>깊이</strong>(depth) : 루트에서 어떤 노드에 도달하기 위해 거쳐야 하는 간선의 수
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">D</code>의 깊이 : <code class="language-plaintext highlighter-rouge">2</code></li>
+      <li><code class="language-plaintext highlighter-rouge">L</code>의 깊이 : <code class="language-plaintext highlighter-rouge">3</code></li>
+    </ul>
+  </li>
+  <li>노드의 <strong>레벨</strong>(level) : 트리의 특정 깊이를 가지는 노드의 집합
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">A</code>의 레벨 : <code class="language-plaintext highlighter-rouge">1</code></li>
+      <li><code class="language-plaintext highlighter-rouge">B</code>, <code class="language-plaintext highlighter-rouge">C</code>의 레벨 : <code class="language-plaintext highlighter-rouge">2</code></li>
+      <li><code class="language-plaintext highlighter-rouge">D</code>, <code class="language-plaintext highlighter-rouge">E</code>, <code class="language-plaintext highlighter-rouge">F</code>, <code class="language-plaintext highlighter-rouge">G</code>, <code class="language-plaintext highlighter-rouge">H</code>의 레벨 : <code class="language-plaintext highlighter-rouge">3</code></li>
+    </ul>
+  </li>
+  <li>노드의 <strong>차수</strong>(degree) : 부(하위) 트리 갯수/간선수 (degree) = 각 노드가 지닌 가지의 수
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">A</code>의 차수 = <code class="language-plaintext highlighter-rouge">2</code></li>
+      <li><code class="language-plaintext highlighter-rouge">B</code>의 차수 = <code class="language-plaintext highlighter-rouge">3</code></li>
+      <li><code class="language-plaintext highlighter-rouge">C</code>의 차수 = <code class="language-plaintext highlighter-rouge">2</code></li>
+    </ul>
+  </li>
+  <li>트리의 <strong>차수</strong>(degree of tree) : 트리의 최대 차수
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">B</code>가 최대 차수를 가짐 =&gt; <code class="language-plaintext highlighter-rouge">3</code></li>
+    </ul>
+  </li>
+  <li>트리의 <strong>높이</strong>(height) : 루트 노드에서 가장 깊숙히 있는 노드의 깊이
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">3</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-트리의-기본적인-성질">3) 트리의 기본적인 성질</h3>
+
+<ul>
+  <li>노드가 <code class="language-plaintext highlighter-rouge">N</code>개인 트리는 항상 <code class="language-plaintext highlighter-rouge">N-1</code>개의 링크(link)를 가진다</li>
+  <li>트리에서, 루트에서 어떤 노드로 가는 경로는 유일하다. 또한 임의의 두 노드 간의 경로도 유일하다 (같은 노드를 두 번 이상 방문하지 않는 다는 조건 하에)</li>
+</ul>
+
+<h2 id="2-이진트리binary-tree">(2) 이진트리(Binary Tree)</h2>
+
+<h3 id="1-개념-1">1) 개념</h3>
+
+<ul>
+  <li>이진 트리에서 각 노드는 <strong>최대 2개의 자식</strong>을 가진다.</li>
+  <li>각각의 자식 노드는 자신이 부모의 왼쪽 자식인지 오른쪽 자식인지가 지정된다.
+    <ul>
+      <li>자식이 한 명인 경우에도 적용</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://farm5.staticflickr.com/4462/23854059978_8b32e6598c_o.png" alt="5D78C6AA-63E2-44D9-8B5E-C6EAC820157A" /></p>
+
+<h3 id="2-이진-트리-종류">2) 이진 트리 종류</h3>
+
+<ul>
+  <li><strong>포화 이진 트리</strong>(full binary tree) : 모든 레벨에서 노드들이 모두 채워져 있는 트리</li>
+  <li><strong>완전 이진트리(complete binary tree)</strong>
+    <ul>
+      <li>마지막 레벨을 제외하고 노드가 모두 채워져 있는 트리
+        <ul>
+          <li>마지막 레벨도 다 채워져 있을 수도 있음</li>
+        </ul>
+      </li>
+      <li>마지막 레벨도 오른쪽으로 연속된 몇개의 노드만 비어있을 수 있음</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://farm5.staticflickr.com/4456/23854064708_945beebd1a_o.png" alt="880D3E9F-A9BC-4C3D-A4D5-B6041E311646" /></p>
+
+<h3 id="3-이진트리-특징">3) 이진트리 특징</h3>
+
+<ul>
+  <li>높이가 <code class="language-plaintext highlighter-rouge">h</code>인 <strong>포화 이진 트리</strong>(full binary tree)는 \(2^h-1\)개의 노드를 가진다</li>
+  <li>노드가 <code class="language-plaintext highlighter-rouge">N</code>개인 <strong>포화</strong>(full) 혹은 <strong>완전</strong>(complete) 이진 트리의 <em>높이</em>는 \(O(logN)\)이다.</li>
+  <li>노드가 <code class="language-plaintext highlighter-rouge">N</code>개인 이진트리의 <em>높이</em>는 최악의 경우 \(O(N)\)이 될 수 있다.</li>
+</ul>
+
+:ET
