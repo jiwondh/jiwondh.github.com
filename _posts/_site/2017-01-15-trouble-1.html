@@ -1,0 +1,31 @@
+<h2 id="section">코드 내용</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">sql</span> <span class="o">=</span> <span class="s1">'SELECT * FROM user WHERE name=?'</span><span class="p">;</span>
+<span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="p">[</span><span class="nx">writerName</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">fields</span><span class="p">){</span>
+	<span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">user</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h2 id="section-1">에러 내용</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>express deprecated res.send(status):    
+Use res.sendStatus(status) instead app.js:70:7
+</code></pre>
+</div>
+
+<h2 id="section-2">원인</h2>
+<p><a href="http://expressjs.com/en/4x/api.html#res.send">Express api reference</a>에 의하면
+<strong><code class="highlighter-rouge">res.send([body])</code></strong>의 인자값으론 Buffer object, String, object, Array만 가능한데
+위의 코드에선 인자값으로 Integer 값이 들어갔기 대문에 오류 발생.</p>
+
+<h2 id="section-3">해결법</h2>
+
+<p><strong><code class="highlighter-rouge">toString()</code></strong>을 이용하여 해결 가능하다.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">sql</span> <span class="o">=</span> <span class="s1">'SELECT * FROM user WHERE name=?'</span><span class="p">;</span>
+<span class="nx">conn</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="p">[</span><span class="nx">writerName</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">fields</span><span class="p">){</span>
+	<span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">user</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">id</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+<span class="p">});</span>
+</code></pre>
+</div>

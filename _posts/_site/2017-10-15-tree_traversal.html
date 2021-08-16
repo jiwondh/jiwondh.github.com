@@ -1,0 +1,133 @@
+
+<ul id="markdown-toc">
+  <li><a href="#traversal" id="markdown-toc-traversal">이진트리의 순회(traversal)</a>    <ul>
+      <li><a href="#section" id="markdown-toc-section">순회를 위한 작업 3가지</a></li>
+      <li><a href="#section-1" id="markdown-toc-section-1">순회 종류 4가지 (노드 방문 순서에 따라)</a>        <ul>
+          <li><a href="#preorder-traversal" id="markdown-toc-preorder-traversal">① 전위 순회 (Preorder Traversal)</a></li>
+          <li><a href="#inorder-traversal" id="markdown-toc-inorder-traversal">② 중위 순회 (Inorder Traversal)</a></li>
+          <li><a href="#postorder-traversal" id="markdown-toc-postorder-traversal">③ 후위 순회 (Postorder Traversal)</a></li>
+          <li><a href="#level-order-traversal" id="markdown-toc-level-order-traversal">③ 레벨 오더 순회(level-order Traversal)</a></li>
+          <li><a href="#section-2" id="markdown-toc-section-2">❗️문제</a>            <ul>
+              <li><a href="#section-3" id="markdown-toc-section-3">답</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="traversal">이진트리의 순회(traversal)</h1>
+
+<ul>
+  <li>순회 : 이진 트리의 모든 노드를 방문하는 일</li>
+</ul>
+
+<h2 id="section">순회를 위한 작업 3가지</h2>
+
+<ol>
+  <li><strong><code class="highlighter-rouge">D</code></strong> : 현재 노드를 방문하여 <strong>데이터</strong>를 읽는 작업</li>
+  <li><strong><code class="highlighter-rouge">L</code></strong> : 현재 노드의 <strong>==왼쪽== 서브트리</strong>로 이동하는 작업</li>
+  <li><strong><code class="highlighter-rouge">R</code></strong> : 현재 노드의 <strong>==오른쪽== 서브트리</strong>로 이동하는 작업</li>
+</ol>
+
+<h2 id="section-1">순회 종류 4가지 (노드 방문 순서에 따라)</h2>
+
+<ul>
+  <li><strong>전위 순회 (Preorder Traversal)</strong></li>
+  <li><strong>중위 순회 (Inorder Traversal)</strong></li>
+  <li><strong>후위 순회 (Postorder Traversal)</strong></li>
+  <li><strong>레벨 오더 순회(level-order Traversal)</strong></li>
+</ul>
+
+<h3 id="preorder-traversal">① 전위 순회 (Preorder Traversal)</h3>
+
+<ul>
+  <li>현재 노드를 방문하여 <strong>데이터</strong>를 읽는 작업 <strong><code class="highlighter-rouge">D</code></strong> 을 <em>가장 먼저</em> 수행하여 <strong><code class="highlighter-rouge">DLR</code></strong> 의 순서로 순회하는 방법</li>
+</ul>
+
+<p><img src="https://farm5.staticflickr.com/4471/36997203284_83c0782bbc_o.png" alt="5933062B-210F-42B2-9598-48A93C29E100" /></p>
+
+<figure class="highlight"><pre><code class="language-vb" data-lang="vb"><span class="n">PREORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">if</span> <span class="n">x</span> <span class="p">!</span><span class="o">=</span> <span class="n">NIL</span>
+  	<span class="n">print</span> <span class="n">key</span><span class="err">[</span><span class="n">x</span><span class="err">]</span> <span class="o">//</span> <span class="n">D</span>
+  	<span class="n">PREORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">left</span><span class="err">[</span><span class="n">x</span><span class="err">]</span><span class="p">)</span>  <span class="o">//</span> <span class="n">L</span>
+  	<span class="n">PREORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">right</span><span class="err">[</span><span class="n">x</span><span class="err">]</span><span class="p">)</span> <span class="o">//</span> <span class="n">R</span></code></pre></figure>
+
+<h3 id="inorder-traversal">② 중위 순회 (Inorder Traversal)</h3>
+
+<ul>
+  <li>현재 노드를 방문하여 <strong>데이터</strong>를 읽는 작업 <strong><code class="highlighter-rouge">D</code></strong> 을 <code class="highlighter-rouge">L</code>과 <code class="highlighter-rouge">R</code>의 사이에 수행하여 <strong><code class="highlighter-rouge">LDR</code></strong> 의 순서로 순회하는 방법</li>
+</ul>
+
+<p><img src="https://farm5.staticflickr.com/4490/36997208484_0a685c7771_o.png" alt="C879F19B-4D48-4E1A-B758-DA221FF7DEC6" /></p>
+
+<figure class="highlight"><pre><code class="language-vb" data-lang="vb"><span class="n">INORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">if</span> <span class="n">x</span> <span class="p">!</span><span class="o">=</span> <span class="n">NIL</span>
+  	<span class="n">INORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">left</span><span class="err">[</span><span class="n">x</span><span class="err">]</span><span class="p">)</span>  <span class="o">//</span> <span class="n">L</span>
+  	<span class="n">print</span> <span class="n">key</span><span class="err">[</span><span class="n">x</span><span class="err">]</span> <span class="o">//</span> <span class="n">D</span>
+  	<span class="n">INORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">right</span><span class="err">[</span><span class="n">x</span><span class="err">]</span><span class="p">)</span> <span class="o">//</span> <span class="n">R</span></code></pre></figure>
+
+<h3 id="postorder-traversal">③ 후위 순회 (Postorder Traversal)</h3>
+
+<ul>
+  <li>현재 노드를 방문하여 <strong>데이터</strong>를 읽는 작업 <strong><code class="highlighter-rouge">D</code></strong> 을 <em>가장 나중에</em> 수행하여 <strong><code class="highlighter-rouge">LRD</code></strong> 의 순서로 순회하는 방법</li>
+</ul>
+
+<p><img src="https://farm5.staticflickr.com/4445/36997213604_d6b2faa386_o.png" alt="94A0694C-FC49-438C-9E7B-4C065871A231" /></p>
+
+<figure class="highlight"><pre><code class="language-vb" data-lang="vb"><span class="n">POSTORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">if</span> <span class="n">x</span> <span class="p">!</span><span class="o">=</span> <span class="n">NIL</span>
+  	<span class="n">PREORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">left</span><span class="err">[</span><span class="n">x</span><span class="err">]</span><span class="p">)</span>  <span class="o">//</span> <span class="n">L</span>
+  	<span class="n">PREORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">right</span><span class="err">[</span><span class="n">x</span><span class="err">]</span><span class="p">)</span> <span class="o">//</span> <span class="n">R</span>
+  	<span class="n">print</span> <span class="n">key</span><span class="err">[</span><span class="n">x</span><span class="err">]</span> <span class="o">//</span> <span class="n">D</span></code></pre></figure>
+
+<h3 id="level-order-traversal">③ 레벨 오더 순회(level-order Traversal)</h3>
+
+<ul>
+  <li>레벨 순으로 방문, 동일 레벨에서는 왼쪽에서 오른쪽 순서로</li>
+  <li>큐(queue)를 이용하여 구현</li>
+</ul>
+
+<p><img src="https://farm5.staticflickr.com/4489/36997217194_110aa6c398_o.png" alt="4A70D534-5BF2-41A7-9034-C4A042DB978B" /></p>
+
+<figure class="highlight"><pre><code class="language-vb" data-lang="vb"><span class="n">LEVEL</span><span class="o">-</span><span class="n">ORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">TRAVERSAL</span><span class="p">()</span>
+<span class="err">​</span>	<span class="n">visit</span> <span class="n">the</span> <span class="n">root</span><span class="p">:</span>
+<span class="err">​</span>	<span class="n">Q</span> <span class="o">&lt;-</span> <span class="n">root</span>	<span class="o">//</span><span class="n">Q</span> <span class="n">is</span> <span class="n">a</span> <span class="n">queue</span>
+<span class="err">​</span>	<span class="n">while</span> <span class="n">Q</span> <span class="n">is</span> <span class="n">not</span> <span class="n">empty</span> <span class="n">do</span>
+   		<span class="n">v</span> <span class="o">&lt;-</span> <span class="n">dequeue</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span><span class="err">;</span>
+<span class="err">​</span>    	<span class="n">visit</span> <span class="n">children</span> <span class="n">of</span> <span class="n">v</span><span class="err">;</span>
+<span class="err">​</span>    	<span class="n">enqueue</span> <span class="n">childrenn</span> <span class="n">of</span> <span class="n">v</span> <span class="n">into</span> <span class="n">Q</span><span class="err">;</span></code></pre></figure>
+
+<h3 id="section-2">❗️문제</h3>
+
+<ul>
+  <li>전위, 중위, 후위, 레벨 오더 순회 경로 구하기</li>
+</ul>
+
+<p><img src="https://farm5.staticflickr.com/4453/37658441246_056ca3ddd8_o.png" alt="F6EE0838-0312-4738-AF51-12C893B731BE" /></p>
+
+<h4 id="section-3">답</h4>
+
+<ul>
+  <li>전위 순회 (Preorder Traversal)
+    <ul>
+      <li>A - B - D - H - I - E - J - K - C - F - L - G</li>
+    </ul>
+  </li>
+  <li>중위 순회 (Inorder Traversal)
+    <ul>
+      <li>H - D - I - B - J - E - K - A - L - F - C - G</li>
+    </ul>
+  </li>
+  <li>후위 순회 (Postorder Traversal)
+    <ul>
+      <li>H - I - D - J - K - E - B - L - F - G - C - A</li>
+    </ul>
+  </li>
+  <li>레벨 오더 순회(level-order Traversal)
+    <ul>
+      <li>A - B - C - D - E - F - G - H - I - J - K - L</li>
+    </ul>
+  </li>
+</ul>
