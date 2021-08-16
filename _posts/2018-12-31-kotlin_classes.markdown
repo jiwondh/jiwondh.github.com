@@ -188,7 +188,6 @@ class Person(val name: String) {
 
 
 
-
 ---
 
 [^annotation]: 코드에 메타데이터를 붙이는 방법 (ex. `@Inject`) <br> [Kotlin Reference - Annotations](https://kotlinlang.org/docs/reference/annotations.html){: target="_blank" }
