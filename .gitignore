@@ -4,6 +4,7 @@
 .sass-cache
 node_modules
 package.json
+.idea
 
 ## Jekyll stuff
 /_site/
@@ -11,5 +12,6 @@ _site/
 .sass-cache/
 .jekyll-metadata
 .jekyll
+.jekyll-cache
 Gemfile
 Gemfile.lock
