@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>[백준 BOJ] 12100 2048 | Jiwon Blog</title>
+  <meta name="author" content="Jiwon Oh">
+  <meta name="description" content="">
+  <meta property="og:title" content="[백준 BOJ] 12100 2048 | Jiwon Blog">
+  <meta property="og:url" content="http://localhost:4000/2017/10/17/BAEKJOON_12100/">
+  <meta property="og:site_name" content="Jiwon Blog">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="/assets/images/ade1.jpg">
+  <meta property="og:type" content="blog">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:title" content="[백준 BOJ] 12100 2048 | Jiwon Blog">
+  <meta name="twitter:url" content="http://localhost:4000/2017/10/17/BAEKJOON_12100/">
+  <meta name="twitter:site" content="Jiwon Blog">
+  <meta name="twitter:creator" content="@">
+  <meta name="twitter:domain" content="http://localhost:4000">
+  <meta property="twitter:image" content="/assets/images/ade1.jpg">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Lora|Space+Mono:700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejugothic.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <link rel="stylesheet" href="/assets/css/disqus.css">
+  <link rel="stylesheet" href="https://yandex.st/highlightjs/7.5/styles/default.min.css">
+  <script src="https://yandex.st/highlightjs/7.5/highlight.min.js"></script>
+
+
+  <link rel="alternate" type="application/rss+xml" title="Jiwon Blog" href="http://localhost:4000/feed.xml">
+  <link rel="canonical" href="http://localhost:4000/2017/10/17/BAEKJOON_12100/">
+
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90322354-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  <script type="text/javascript" src="/assets/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/assets/js/plugins/bigfoot.min.js"></script>
+  <script type="text/javascript">
+        var bigfoot = $.bigfoot(
+				{
+					actionOriginalFN: "ignore",
+					positionContent: "false",
+					allowMultipleFN: "true",
+					activateOnHover: "true", 
+					deleteOnUnhover: "true"        
+				}
+		);
+  </script>
+</head>
+
+
+  <body>
+
+    <main>
+      <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="section-padding--lg mast">
+    <a class="nav nav--white" href="/">
+      <i class="fa fa-lg fa-arrow-left"></i>
+      <span>Back to Posts</span>
+    </a> 
+    <a class="nav nav--white" id="search" href="/search">
+      <span>search</span>
+      <i class="fa fa-lg fa-search"></i>
+    </a>
+    <figure class="absolute-bg mast__img" style="background-image: url('/assets/images/ade1.jpg');"></figure>
+    <div class="mast__container">
+      <span><time datetime="2017-10-17T00:00:00+09:00" itemprop="datePublished">Oct 17, 2017</time></span>
+      <h1 itemprop="name headline">[백준 BOJ] 12100 2048</h1>
+      
+        <span>
+          Posted in Algorithm Problem
+        </span>
+      
+      <span></span>
+    </div>
+    
+  </header>
+
+  <article class="post-content">
+
+    <section class="section-padding post" itemprop="articleBody">
+      <h1 id="백준-boj-12100-2048-게임">[백준 BOJ] 12100 2048 게임</h1>
+
+<p>문제로 이동할려면 <a href="https://www.acmicpc.net/problem/12100" target="_blank">여기</a>를 클릭하세요.</p>
+
+<h2 id="풀이">풀이</h2>
+
+<ul>
+  <li>먼저 2048 게임에서 <strong><code class="language-plaintext highlighter-rouge">이동</code>기능</strong>을 완벽히 구현하는 것이 첫 번째 과제입니다. 이동 기능이 완벽히 구현되면 <u>최대 5번 이동시켜 가장 큰 블럭을 찾는 것</u>은 <code class="language-plaintext highlighter-rouge">재귀</code>를 이용해 간단하게 해결할 수 있습니다.</li>
+  <li>왼쪽, 오른쪽, 위, 아래 이동은 범위만 약간 다를 뿐 같은 맥락으로 풀 수 있습니다. 왼쪽을 예시로 들어보겠습니다.
+    <ul>
+      <li>새로운 숫자들을 저장할 <code class="language-plaintext highlighter-rouge">newBoard</code>벡터를 선언해줍니다.</li>
+      <li>각 행에 대해서 왼쪽 부터 검색을 합니다.</li>
+      <li><code class="language-plaintext highlighter-rouge">cnt</code>를 <code class="language-plaintext highlighter-rouge">0</code>으로 초기화 합니다.</li>
+      <li>숫자는 한번에 <code class="language-plaintext highlighter-rouge">2</code>개 씩 합쳐지므로 <code class="language-plaintext highlighter-rouge">first</code>와 <code class="language-plaintext highlighter-rouge">second</code> 변수를 만들어 비교를 시작합니다.</li>
+      <li>두 변수가 같을 때는 <code class="language-plaintext highlighter-rouge">newBoard[행][cnt]</code>에 변수의 2배 값을 삽입해주고 <code class="language-plaintext highlighter-rouge">cnt</code>를 증가시킵니다.</li>
+      <li>다를 때는 <code class="language-plaintext highlighter-rouge">first</code>만 삽입해주고 <code class="language-plaintext highlighter-rouge">first</code>에 <code class="language-plaintext highlighter-rouge">second</code>값을 옮긴 다음 비교를 반복합니다.</li>
+    </ul>
+  </li>
+  <li>위의 설명 이외에 가장자리 예외처리에 주의해야합니다.</li>
+  <li>재귀함수를 구현할 때는 함수가 종료하기 전에 <strong>배열이 복구</strong> 되어야 한다는 점을 꼭 주의하세요!(<code class="language-plaintext highlighter-rouge">203</code>행 참고)</li>
+</ul>
+
+<h2 id="코드">코드</h2>
+
+<script src="https://gist.github.com/jiwondh/60f156280f07de9635384140a0c4baf5.js"></script>
+
+
+    </section>
+  </article>
+
+  <section class="profile">
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- 광고1 -->
+	<ins class="adsbygoogle" style="display:block"
+		data-ad-client="ca-pub-8753021586186085"
+		data-ad-slot="1199566339" 
+		data-ad-format="auto"
+		data-full-width-responsive="true">
+	</ins>
+	<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+
+    <div class="profile__card">
+      <div class="profile__img">
+        <figure class="absolute-bg" style="background-image: url('/assets/images/ade1.jpg');"></figure>
+      </div>
+      <div class="profile__container">
+        <p>Jiwon Oh</p>
+        
+          <ul class="profile__social">
+            
+            
+              <li><a class="fa fa-lg fa-github" href="https://github.com/jiwondh" target="_blank"></a></li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!--disqus coding start-->
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = '//jiwondh.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>  
+  <!--disqus coding end-->  
+  
+</article>
+
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  <section class="next">
+    <a class="next__link" href="/2017/10/17/BAEKJOON_1149/" style="background-image: url('/assets/images/ade1.jpg');">
+      <div class="next__container">
+        <span>Read Next</span>
+        <h2>[백준 BOJ] 1149 RGB거리</h2>
+      </div>
+    </a>
+  </section>
+
+
+<!— Html Elements for Search -->
+<div id="search-container2" >
+    <div class="container-1">
+      <span class="icon"><i class="fa fa-search"></i></span>
+      <input type="text" id="search-input" placeholder="Search...">
+  </div>
+    <ul id="results-container"></ul>
+</div>
+
+<!-- Script pointing to jekyll-search.js -->
+<script src="/dest/jekyll-search.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+      SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search2.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 10,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+</script>
+
+
+
+    </main>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+
+
+  <body>
+
+</html>
