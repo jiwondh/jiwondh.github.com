@@ -1,0 +1,15 @@
+---
+layout: post
+title: "[Git] Git이란?"
+date: 2018-08-10
+categories:
+  - Git
+image: /assets/images/fw1.jpg
+image-sm: /assets/images/fw2.jpg
+---
+
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}  
+
