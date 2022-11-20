@@ -1,16 +1,17 @@
 ---
 layout: post
 title: "[백준 BOJ] 1076 저항"
+author: jiwon
 date: 2017-10-15
-categories:
-  - Algorithm Problem
-description: 
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
-typora-copy-images-to: ipic
+categories: [ Algorithm Problem ]
+image: assets/images/baekjoon.png
+toc: false
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-# [백준 BOJ] 1076 저항
+> 전자 제품에는 저항이 들어간다. 저항은 색 3개를 이용해서 그 저항이 몇 옴인지 나타낸다. 처음 색 2개는 저항의 값이고, 마지막 색은 곱해야 하는 값이다. 저항의 값은 다음 표를 이용해서 구한다..
 
 문제로 이동할려면 [여기](https://www.acmicpc.net/problem/1076){: target="_blank" }를 클릭하세요.
 

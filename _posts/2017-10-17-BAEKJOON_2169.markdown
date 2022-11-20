@@ -1,16 +1,17 @@
 ---
 layout: post
 title: "[백준 BOJ] 2169 로봇 조종하기"
+author: jiwon
 date: 2017-10-17
-categories:
-  - Algorithm Problem
-description: 
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
-typora-copy-images-to: ipic
+categories: [ Algorithm Problem ]
+image: assets/images/baekjoon.png
+toc: false
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-# [백준 BOJ] 2169 로봇 조종하기
+> NASA에서는 화성 탐사를 위해 화성에 무선 조종 로봇을 보냈다. 실제 화성의 모습은 굉장히 복잡하지만, 로봇의 메모리가 얼마 안 되기 때문에 지형을 N×M 배열로 단순화 하여 생각하기로 한다..
 
 문제로 이동할려면 [여기](https://www.acmicpc.net/problem/2169){: target="_blank" }를 클릭하세요.
 

@@ -1,13 +1,19 @@
 ---
 layout: post
 title: "Sql 기본적인 문법 정리"
+author: jiwon
 date: 2017-01-15
-categories:
-  - SQL
-description: 
-image: /assets/images/ch1.jpg
-image-sm: /assets/images/ch2.jpg
+categories: [ SQL ]
+image: assets/images/sql.png
+toc: true
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
+
+> SELECT, INSERT, UPDATE, DELETE
+
+<br/>
 
 ## 테이블 생성
 
@@ -26,6 +32,8 @@ CREATE TABLE student (
 | id    | INTEGER	|
 | name	| TEXT		|
 | age   | INTEGER |
+  
+<br/>
 
 ## 삽입
 
@@ -33,6 +41,8 @@ CREATE TABLE student (
 INSERT INTO student (id, name, age) VALUES (1, 'Jane', 20);
 INSERT INTO student (id, name, age) VALUES (2, 'Ami', 21);
 ```
+
+<br/>
 
 ## 조회
 
@@ -44,6 +54,8 @@ SELECT * FROM student;
 | :---: | :---: | :---: |
 | 1 | Jane | 20 |
 | 2 | Ami | 21 |
+
+<br/>
 
 ## 변경
 
@@ -60,6 +72,8 @@ SELECT * FROM student;
 | 1 | Jane | 22 |
 | 2 | Ami | 21|
 
+<br/>
+
 ## colume 추가
 
 ```sql
@@ -74,6 +88,8 @@ SELECT * FROM student;
 | 1 | Jane | 22 | NULL |
 | 2 | Ami | 21 | NULL |
 
+<br/>
+
 ```sql
 UPDATE student 
 SET major='Computer engineering'
@@ -87,6 +103,8 @@ SELECT * FROM student;
 | 1 | Jane | 22 | Computer engineering |
 | 2 | Ami | 21 | NULL |
 
+<br/>
+
 ## 삭제
 
 ```sql
@@ -99,3 +117,4 @@ SELECT * FROM student;
 | :---: | :---: | :---: | :---:|
 | 1 | Jane | 22 | Computer engineering |
 
+<br/>

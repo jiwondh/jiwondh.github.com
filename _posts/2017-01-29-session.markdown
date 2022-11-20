@@ -1,28 +1,32 @@
 ---
 layout: post
 title: "[Node.js] Session(세션) 사용법"
+author: jiwon
 date: 2017-01-29
-categories:
-  - Node.js
-description: session의 개념과 동작 방식을 이해하고 session 패키지를 설치하여 사용해봅시다!
-tags: session, nodeJS, cookie
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
+categories: [ Nodejs ]
+image: assets/images/nodejs.png
+toc: true
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-{:.no_toc}
+session의 개념과 동작 방식을 이해하고 session 패키지를 설치하여 사용해봅시다.
 
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}  
+<br/>
 
 # Session
 
 자세한 내용은 [생활코딩 Javascript(nodejs)](https://opentutorials.org/course/2136/12068)강좌를 참고하세요.
 
+<br/>
+
 ## Session이란
 
 쿠키를 개선한 방식으로 쿠키보다 좀더 안전하게 방대한 데이터를 저장가능하게 합니다.  
 즉, 사용자의 컴퓨터와 서버가 통신하는 과정에서 아이디나 비밀번호와 같은 중요한 정보가 오고 간다는 것은 굉장히 위험한 일이므로 이러한 문제를 개선하기 위해서 쿠키가 가지고 있는 기능과 서버쪽에서 데이터를 저장할 수 있는 공간을 잘 결합한 세션을 사용하는 것이 더 안전합니다.
+
+<br/>
 
 ## Session의 동작 방식
 
@@ -31,6 +35,8 @@ image-sm: /assets/images/ade2.jpg
 사용자의 컴퓨터에는 오직 식별자 값만 저장되어있고 해당 식별자 값에 해당하는 **실제 데이터는
 서버의 데이터베이스에 저장** 되어있는 것입니다. 사용자가 서버에 접속하여 요청으로 식별자를
 전송하면 그 식별자에 해당하는 실제 데이터를 서버의 데이터베이스에서 읽어와 사용할 수 있는 것 입니다.
+
+<br/>
 
 ## Express에 Session 패키지 설치
 
@@ -53,6 +59,8 @@ app.listen(3000, function(){
 ​	console.log('Connected 3000 port!!!');		
 });
 {% endhighlight %}
+
+<br/>
 
 ## Mysql을 Express의 Session store로 사용
 
@@ -97,6 +105,8 @@ app.listen(3000, function(){
 ​	console.log('Connected 3000 port!!!');		
 });
 {% endhighlight %}
+
+<br/>
 
 ## 사용 예
 

@@ -1,30 +1,31 @@
 ---
 layout: post
 title: "[Algorithm] 트리와 트리순회"
+author: jiwon
 date: 2017-10-15
-categories:
-  - Algorithm
-description: 트리의 개념과 트리순회
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
-typora-copy-images-to: ipic
+categories: [ Algorithm ]
+image: assets/images/tree.png
+toc: true
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-{:.no_toc}
-
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}  
-
+트리의 개념과 트리 순회에 대하여 알아봅시다.
 
 # 이진트리의 순회(traversal)
 
 - 순회 : 이진 트리의 모든 노드를 방문하는 일
+
+<br/>
 
 ## 순회를 위한 작업 3가지
 
 1. **`D`** : 현재 노드를 방문하여 **데이터**를 읽는 작업 
 2. **`L`** : 현재 노드의 **==왼쪽== 서브트리**로 이동하는 작업
 3. **`R`** : 현재 노드의 **==오른쪽== 서브트리**로 이동하는 작업 
+
+<br/>
 
 ## 순회 종류 4가지 (노드 방문 순서에 따라)
 
@@ -33,7 +34,9 @@ typora-copy-images-to: ipic
 - **후위 순회 (Postorder Traversal)**
 - **레벨 오더 순회(level-order Traversal)** 
 
-### ① 전위 순회 (Preorder Traversal)
+<br/>
+
+### 1. 전위 순회 (Preorder Traversal)
 
 - 현재 노드를 방문하여 **데이터**를 읽는 작업 **`D`** 을 *가장 먼저* 수행하여 **`DLR`** 의 순서로 순회하는 방법 
 
@@ -49,7 +52,9 @@ PREORDER-TREE-WALK(x)
 
 {% endhighlight %}
 
-### ② 중위 순회 (Inorder Traversal)
+<br/>
+
+### 2. 중위 순회 (Inorder Traversal)
 
 - 현재 노드를 방문하여 **데이터**를 읽는 작업 **`D`** 을 `L`과 `R`의 사이에 수행하여 **`LDR`** 의 순서로 순회하는 방법 
 
@@ -65,7 +70,9 @@ INORDER-TREE-WALK(x)
 
 {% endhighlight %}
 
-### ③ 후위 순회 (Postorder Traversal)
+<br/>
+
+### 3. 후위 순회 (Postorder Traversal)
 
 - 현재 노드를 방문하여 **데이터**를 읽는 작업 **`D`** 을 *가장 나중에* 수행하여 **`LRD`** 의 순서로 순회하는 방법
 
@@ -81,7 +88,9 @@ POSTORDER-TREE-WALK(x)
 
 {% endhighlight %}
 
-### ③ 레벨 오더 순회(level-order Traversal)
+<br/>
+
+### 4. 레벨 오더 순회(level-order Traversal)
 
 - 레벨 순으로 방문, 동일 레벨에서는 왼쪽에서 오른쪽 순서로
 - 큐(queue)를 이용하여 구현
@@ -100,6 +109,8 @@ LEVEL-ORDER-TREE-TRAVERSAL()
 
 {% endhighlight %}
 
+<br/>
+
 ### ❗️문제
 
 - 전위, 중위, 후위, 레벨 오더 순회 경로 구하기
@@ -107,14 +118,20 @@ LEVEL-ORDER-TREE-TRAVERSAL()
 ![F6EE0838-0312-4738-AF51-12C893B731BE](https://farm5.staticflickr.com/4453/37658441246_056ca3ddd8_o.png)
 
 
+<br/>
 
 #### 답
 
-- 전위 순회 (Preorder Traversal)
-  - A - B - D - H - I - E - J - K - C - F - L - G
-- 중위 순회 (Inorder Traversal)
-  - H - D - I - B - J - E - K - A - L - F - C - G
-- 후위 순회 (Postorder Traversal)
-  - H - I - D - J - K - E - B - L - F - G - C - A
-- 레벨 오더 순회(level-order Traversal)
-  - A - B - C - D - E - F - G - H - I - J - K - L
+<div class="spoiler">
+전위 순회 (Preorder Traversal) <br/>
+A - B - D - H - I - E - J - K - C - F - L - G <br/>
+<br/>
+중위 순회 (Inorder Traversal) <br/>
+H - D - I - B - J - E - K - A - L - F - C - G <br/>
+<br/>
+후위 순회 (Postorder Traversal) <br/>
+H - I - D - J - K - E - B - L - F - G - C - A <br/>
+<br/>
+레벨 오더 순회(level-order Traversal) <br/>
+A - B - C - D - E - F - G - H - I - J - K - L <br/>
+</div>

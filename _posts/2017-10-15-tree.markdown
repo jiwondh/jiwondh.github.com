@@ -1,20 +1,19 @@
 ---
 layout: post
 title: "[Algorithm] 트리의 개념과 용어정리"
+author: jiwon
 date: 2017-10-15
-categories:
-  - Algorithm
-description: 트리의 개념과 용어정리
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
-typora-copy-images-to: ipic
+categories: [ Algorithm ]
+image: assets/images/tree.png
+toc: true
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-{:.no_toc}
+트리의 개념과 용어를 정리해봅시다.
 
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}  
-
+<br/>
 
 # 트리(Tree)
 
@@ -27,6 +26,8 @@ typora-copy-images-to: ipic
   - 디렉토리와 서브디렉토리 구조
   - 가계도
 - 트리는 `노드(node)`들과 노드들을 연결하는 `링크(link)`들로 구성됨
+
+<br/>
 
 ### 2) 용어
 
@@ -56,10 +57,14 @@ typora-copy-images-to: ipic
 - 트리의 **높이**(height) : 루트 노드에서 가장 깊숙히 있는 노드의 깊이
   - `3`
 
+<br/>
+
 ### 3) 트리의 기본적인 성질
 
 - 노드가 `N`개인 트리는 항상 `N-1`개의 링크(link)를 가진다
 - 트리에서, 루트에서 어떤 노드로 가는 경로는 유일하다. 또한 임의의 두 노드 간의 경로도 유일하다 (같은 노드를 두 번 이상 방문하지 않는 다는 조건 하에)
+
+<br/>
 
 ## (2) 이진트리(Binary Tree)
 
@@ -71,6 +76,8 @@ typora-copy-images-to: ipic
 
 ![5D78C6AA-63E2-44D9-8B5E-C6EAC820157A](https://farm5.staticflickr.com/4462/23854059978_8b32e6598c_o.png)
 
+<br/>
+
 ### 2) 이진 트리 종류
 
 - **포화 이진 트리**(full binary tree) : 모든 레벨에서 노드들이 모두 채워져 있는 트리
@@ -80,6 +87,8 @@ typora-copy-images-to: ipic
   - 마지막 레벨도 오른쪽으로 연속된 몇개의 노드만 비어있을 수 있음
 
 ![880D3E9F-A9BC-4C3D-A4D5-B6041E311646](https://farm5.staticflickr.com/4456/23854064708_945beebd1a_o.png)
+
+<br/>
 
 ### 3) 이진트리 특징
 

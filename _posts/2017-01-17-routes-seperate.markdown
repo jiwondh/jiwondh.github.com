@@ -1,19 +1,20 @@
 ---
 layout: post
 title: "[Node.js] 라우터 분리하기"
+author: jiwon
 date: 2017-01-17
-categories:
-  - Node.js
-description: 라우터 분리하기
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
+categories: [ Nodejs ]
+image: assets/images/nodejs.png
+toc: true
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
-{:.no_toc}
 
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}  
+NodeJs 라우터 분리하는 방법을 알아봅시다.
 
-# 라우터 분리하기
+<br/>
+
 자세한 내용은 [생활코딩 Javascript(nodejs)](https://opentutorials.org/course/2136/12445)
 강좌와 [Express - Using middleware](http://expressjs.com/ko/guide/using-middleware.html)를 참고하세요.
 
@@ -21,6 +22,8 @@ image-sm: /assets/images/ade2.jpg
 라우팅 작업이 늘어남에 따라서 아래와 같이 라우팅을 **애플리케이션 레벨의 미들웨어** 로서 관리하기에는
 어려움이 생길 수 있습니다. 이에 따라 **서로 연관되어 있는 라우터끼리 쪼개서 파일로 분가** 시킬
 필요가 있습니다.
+
+<br/>
 
 ## 애플리케이션 레벨의 미들웨어
 
@@ -45,6 +48,8 @@ app.get('/p2/r2', function(req, res){
 	res.send('Hello /p2/r2');		
 });
 ```
+
+<br/>
 
 ## 라우터 레벨의 미들웨어
 

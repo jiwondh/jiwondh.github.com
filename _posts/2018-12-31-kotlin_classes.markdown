@@ -1,18 +1,19 @@
 ---
 layout: post
 title: "[Kotlin] 클래스(Class)와 생성자(Constructor)"
+author: jiwon
 date: 2018-12-31
-categories:
-  - Kotlin
-image: /assets/images/fw1.jpg
-image-sm: /assets/images/fw2.jpg
+categories: [ Kotlin ]
+image: assets/images/kotlin2.png
+toc: true
+featured: true
+hidden: true
+[//]: # (rating: .5)
 ---
 
-{:.no_toc}
+Kotlin의 클래스와 생성자에 대하여 알아보아요.
 
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}  
-
+<br/>
 
 # Kotlin 클래스와 생성자
 
@@ -35,7 +36,7 @@ class Person { ... }
 ```java
 class Empty
 ```
-
+<br/>
 ### Kotlin 클래스 생성하기
 
 - Intellij 상단 메뉴에서 `[File] - [New] - [Kotlin File/Class]` 클릭합니다.
@@ -54,7 +55,7 @@ class Person {
     
 }
 ```
-
+<br/>
 ## 생성자 
 
 ### `constructor`  키워드
@@ -90,6 +91,8 @@ class Person constructor(firstName: String) {
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+
+<br/>
 ### 기본 생성자(primary constructor)
 
 - 기본 생성자는 클래스 <u>헤더</u>의 한 부분으로, 클래스 이름 뒤(타입 파라미터 `<T>` 가 있다면 그 뒤)에 위치합니다.
@@ -130,7 +133,7 @@ class Person(val firstName: String, val lastName: String, var age: Int) {
     ... 
 }
 ```
-
+<br/>
 ### `init` 키워드
 
 - 코틀린에서는 **기본 생성자**가 클래스 선언부에 위치하므로 바디를 가질 수 없는 구조입니다.  
@@ -155,13 +158,13 @@ class InitOrderDemo(name: String) {
 
 **실행결과**
 
-```json
+```bash
 First property: hello
 First initializer block that prints hello
 Second property: 5
 Second initializer block that prints 5
 ```
-
+<br/>
 ### 보조 생성자(Secondary Constructors)
 
 - 클래스 바디 내부에 보조생성자를 생성할 수 있습니다.
