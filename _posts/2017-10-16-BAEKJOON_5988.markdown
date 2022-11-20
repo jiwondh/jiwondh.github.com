@@ -1,16 +1,17 @@
 ---
 layout: post
 title: "[백준 BOJ] 5988 홀수일까 짝수일까"
+author: jiwon
 date: 2017-10-16
-categories:
-  - Algorithm Problem
-description: 
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
-typora-copy-images-to: ipic
+categories: [ Algorithm Problem ]
+image: assets/images/baekjoon.png
+toc: false
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-# [백준 BOJ] 5988 홀수일까 짝수일까
+> 짝이 없는 경재는 매일 홀로 있다보니 홀수를 판별할 수 있는 능력이 생겼다. 창식이는 경재의 말이 사실인지 그 능력을 시험해보려 한다. 창식이의 의심이 끝이 없을 것 같아 N개만 확인하기로 정했다..
 
 문제로 이동할려면 [여기](https://www.acmicpc.net/problem/5988){: target="_blank" }를 클릭하세요.
 

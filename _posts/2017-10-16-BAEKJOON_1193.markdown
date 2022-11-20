@@ -1,16 +1,17 @@
 ---
 layout: post
 title: "[백준 BOJ] 1193 분수찾기"
+author: jiwon
 date: 2017-10-16
-categories:
-  - Algorithm Problem
-description: 
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
-typora-copy-images-to: ipic
+categories: [ Algorithm Problem ]
+image: assets/images/baekjoon.png
+toc: false
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-# [백준 BOJ] 1193 분수찾기
+> 무한히 큰 배열에 다음과 같이 분수들이 적혀있다..
 
 문제로 이동할려면 [여기](https://www.acmicpc.net/problem/1193){: target="_blank" }를 클릭하세요.
 

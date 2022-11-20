@@ -1,15 +1,20 @@
 ---
 layout: post
 title: "jade 문법 정리"
+author: jiwon
 date: 2017-01-14
-categories:
-  - Jade
-description: jade
-image: /assets/images/fw1.jpg
-image-sm: /assets/images/fw2.jpg
+categories: [ Jade ]
+image: assets/images/jade.png
+toc: true
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-## jade
+> Jade 문법에 대하여 알아봅시다.
+
+<br/>
+
 jade에 관한 자세한 문법은 [Jade Language Reference](http://jade-lang.com/){: target="_blank" }를 참고하세요.
 
 ## 조건문(conditionals)
@@ -39,6 +44,8 @@ jade에 관한 자세한 문법은 [Jade Language Reference](http://jade-lang.co
 	<p class="description">foo bar baz</p>
 </div>
 ```
+
+<br/>
 
 ## 부정문
 

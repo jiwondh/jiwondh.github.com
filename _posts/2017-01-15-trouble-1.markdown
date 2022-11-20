@@ -1,13 +1,19 @@
 ---
 layout: post
 title: "[Node.js] res.send([body]) 인자값 자료형 에러"
+author: jiwon
 date: 2017-01-15
-categories:
-  - Troubleshooting
-description:
-image: /assets/images/hk1.jpg
-image-sm: /assets/images/hk2.jpg
+categories: [ Nodejs ]
+image: assets/images/nodejs.png
+toc: false
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
+
+> **`res.send([body])`**의 인자값 관련 에러
+
+<br/>
 
 ## 코드 내용
 

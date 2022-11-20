@@ -1,16 +1,17 @@
 ---
 layout: post
 title: "[백준 BOJ] 1236 성 지키기"
+author: jiwon
 date: 2017-10-16
-categories:
-  - Algorithm Problem
-description: 
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
-typora-copy-images-to: ipic
+categories: [ Algorithm Problem ]
+image: assets/images/baekjoon.png
+toc: false
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-# [백준 BOJ] 1236 성 지키기
+> 영식이는 직사각형 모양의 성을 가지고 있다. 성의 1층은 몇 명의 경비원에 의해서 보호되고 있다. 영식이는 모든 행과 모든 열에 한 명 이상의 경비원이 있으면 좋겠다고 생각했다..
 
 문제로 이동할려면 [여기](https://www.acmicpc.net/problem/1236){: target="_blank" }를 클릭하세요.
 

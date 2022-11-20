@@ -1,16 +1,17 @@
 ---
 layout: post
 title: "[백준 BOJ] 1780 종이의 개수"
+author: jiwon
 date: 2017-10-16
-categories:
-  - Algorithm Problem
-description: 
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
-typora-copy-images-to: ipic
+categories: [ Algorithm Problem ]
+image: assets/images/baekjoon.png
+toc: false
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-# [백준 BOJ] 1780 종이의 개수
+> N×N크기의 행렬로 표현되는 종이가 있다. 종이의 각 칸에는 -1, 0, 1 중 하나가 저장되어 있다. 우리는 이 행렬을 다음과 같은 규칙에 따라 적절한 크기로 자르려고 한다..
 
 문제로 이동할려면 [여기](https://www.acmicpc.net/problem/1780){: target="_blank" }를 클릭하세요.
 

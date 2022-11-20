@@ -1,16 +1,17 @@
 ---
 layout: post
 title: "[백준 BOJ] 11947 이런반전이"
+author: jiwon
 date: 2017-10-16
-categories:
-  - Algorithm Problem
-description: 
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
-typora-copy-images-to: ipic
+categories: [ Algorithm Problem ]
+image: assets/images/baekjoon.png
+toc: false
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-# [백준 BOJ] 11947 이런반전이
+> 하나의 양의 정수 n에 대해서 n의 ‘반전’인 F(n)은 다음과 같이 정의됩니다..
 
 문제로 이동할려면 [여기](https://www.acmicpc.net/problem/11947){: target="_blank" }를 클릭하세요.
 

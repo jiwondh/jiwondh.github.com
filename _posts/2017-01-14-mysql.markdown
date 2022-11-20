@@ -1,13 +1,19 @@
 ---
 layout: post
-title: "Node.js에서 Mysql 주요 쿼리문 이용하기"
+title: "[Node.js] Mysql 주요 쿼리문 이용하기"
+author: jiwon
 date: 2017-01-14
-categories:
-  - Node.js
-description: SELECT, INSERT, UPDATE, DELETE
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
+categories: [ Nodejs ]
+image: assets/images/nodejs.png
+toc: true
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
+
+> SELECT, INSERT, UPDATE, DELETE
+
+<br/>
 
 Node.js에서의 Mysql의 자세한 사용법은 [github 페이지](https://github.com/mysqljs/mysql)를 참고하세요.
 

@@ -1,16 +1,17 @@
 ---
 layout: post
 title: "[백준 BOJ] 1181 단어 정렬"
+author: jiwon
 date: 2017-10-16
-categories:
-  - Algorithm Problem
-description: 
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
-typora-copy-images-to: ipic
+categories: [ Algorithm Problem ]
+image: assets/images/baekjoon.png
+toc: false
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-# [백준 BOJ] 1181 단어 정렬
+> 알파벳 소문자로 이루어진 N개의 단어가 들어오면 아래와 같은 조건에 따라 정렬하는 프로그램을 작성하시오..
 
 문제로 이동할려면 [여기](https://www.acmicpc.net/problem/1181){: target="_blank" }를 클릭하세요.
 

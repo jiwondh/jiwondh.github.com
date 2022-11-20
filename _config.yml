@@ -1,43 +1,63 @@
-# Site settings
-email:
-baseurl: ""
-paginate: 5
-paginate_path: "/blog/page-:num"
-google_analytics:
+# Site
+name: "Jiwon Blog"
+title: "Jiwon Blog"
+description: "개발 이야기"
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/logo.png'
+baseurl:
+google-analytics:
+  id: "UA-90322354-1"
+disqus: 'demowebsite'
+include: ["_pages"]
+permalink: /:year/:month/:day/:title/
 
-# SEO settings
-title: Jiwon Blog
-description:
-url: ""
-twitter_username:
-default_img:
+# Authors
+authors:
+  jiwon:
+    name: Jiwon
+    display_name: Jiwon
+    avatar: 'assets/images/jiwon.jpeg'
+    email: win6ter@gmail.com
 
-# Profile settings
-name: Jiwon Oh
-profile_img: /assets/images/ade1.jpg
-profile: Jiwon Oh
-social:
-    github: https://github.com/jiwondh
 
-# Build settings
-include: ["_categories"]
-exclude: ["_screenshots", "Gemfile", "Gemfile.lock"]
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+
+# Pagination
+paginate: 6
+paginate_path: /page:num/
+
+# Other
 markdown: kramdown
+
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
 encoding: utf-8
 
-##syntax-highlighting:
-    ##enabled : true
-    ##css: syntax.css
-permalink: /:year/:month/:day/:title/
-google-analytics:
-      id: "UA-90322354-1"
+# Lazy Images ("enabled" or "disabled")
+lazyimages: "disabled"
+
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
+
 url: https://jiwondh.github.io
+
 # Sass
 sass:
   style: compressed
-
-# Gems
-plugins: [jekyll-paginate, jekyll-gist, jekyll-sitemap, octopress-autoprefixer, rouge]

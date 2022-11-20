@@ -1,27 +1,28 @@
 ---
 layout: post
 title: "[Spring] 메이븐(Maven) 설치하기 (Windows)"
+author: jiwon
 date: 2018-08-08
-categories:
-  - Spring
-image: /assets/images/fw1.jpg
-image-sm: /assets/images/fw2.jpg
+categories: [ Spring ]
+image: assets/images/spring2.png
+toc: true
+featured: true
+hidden: true
+[//]: # (rating: .5)
 ---
 
-{:.no_toc}
+자바 프로젝트들을 위한 빌드 자동화 도구 아파치 메이븐을 설치해봅시다.
 
-* Will be replaced with the ToC, excluding the "Contents" header
-{:toc}  
-
+<br/>
 # 메이븐(Maven) 설치하기 (Windows)
-
-### 사전 준비
+<br>
+## 사전 준비
 
 - JDK 설치 (1.7 이상) 
 
 <br>
 
-### 1. 메이븐 다운로드
+## 1. Maven 다운로드
 
 - [여기](https://maven.apache.org/download.cgi#){: target="_blank" } 에서 최신 버전의 메이븐(zip파일)을 다운로드 해주세요.
 
@@ -29,7 +30,7 @@ image-sm: /assets/images/fw2.jpg
 
 <br>
 
-### 2. 적절한 위치에 압축 풀기
+## 2. 적절한 위치에 압축 풀기
 
 - 저는 `C:\Users\Jiwon\dev\tools\apache-maven-3.5.4-bin\apache-maven-3.5.4` 경로로 압축을 풀어주었습니다.
 
@@ -37,7 +38,7 @@ image-sm: /assets/images/fw2.jpg
 
 <br>
 
-### 3. 환경 변수 설정
+## 3. 환경 변수 설정
 
 - `제어판 > 시스템 > 고급 시스템 설정`에 들어가 `환경 변수`를 클릭하세요.
 
@@ -64,7 +65,7 @@ image-sm: /assets/images/fw2.jpg
 
 <br>
 
-### 3. 메이븐 설치 확인
+## 4. Maven 설치 확인
 
 - `cmd` 창을 켜주세요. (기존에 cmd 창이 켜져있었다면 끄고 다시 키세요.)
 - `mvn -version` 명령어를 입력했을 때 아래와 같이 뜨면 설치 성공

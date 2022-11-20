@@ -1,13 +1,19 @@
 ---
 layout: post
-title: "Node.js 시작하기"
+title: "[Node.js] Nodejs 시작하기"
+author: jiwon
 date: 2017-01-14
-categories:
-  - Node.js
-description: Node.js 세팅(Express, Jade, mysql)
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
+categories: [ Nodejs ]
+image: assets/images/nodejs.png
+toc: true
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
+
+> Node.js 세팅하기 (Express, Jade, mysql)
+
+<br/>
 
 ## Node.js 설치
 [**Node.js 홈페이지**](https://nodejs.org/en/)에서 운영체제에 맞는 

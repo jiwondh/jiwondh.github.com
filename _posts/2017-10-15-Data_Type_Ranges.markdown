@@ -1,18 +1,17 @@
 ---
 layout: post
 title: "[C++] 데이터 형식 범위"
+author: jiwon
 date: 2017-10-15
-categories:
-  - C++
-description: 
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
-typora-copy-images-to: ipic
+categories: [ Algorithm ]
+image: assets/images/c++.png
+toc: false
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-
-
-# [C++] 데이터 형식 범위
+c++ 데이터 형식 범위를 알아보아요.
 
 **MSDN 원문**으로 이동하려면 [여기](https://msdn.microsoft.com/ko-kr/library/s3f49ktz.aspx){: target="_blank" }를 클릭하세요.
 

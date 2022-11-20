@@ -1,137 +1,163 @@
 ---
 layout: default
+disqus: false
+archive: false
+post_class: post-template
 ---
 
-<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+<!-- Begin Article
+================================================== -->
+<div class="container">
+    <div class="row">
 
-  <header class="section-padding--lg mast">
-    <a class="nav nav--white" href="{{ site.baseurl }}/">
-      <i class="fa fa-lg fa-arrow-left"></i>
-      <span>Back to Posts</span>
-    </a> 
-    <a class="nav nav--white" id="search" href="{{ site.baseurl }}/search">
-      <span>search</span>
-      <i class="fa fa-lg fa-search"></i>
-    </a>
-    <figure class="absolute-bg mast__img" style="background-image: url('{{ page.image }}');"></figure>
-    <div class="mast__container">
-      <span><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></span>
-      <h1 itemprop="name headline">{{ page.title }}</h1>
-      {% if page.categories.size > 0 %}
-        <span>
-          Posted in {{ page.categories | join: ', ' }}
-        </span>
-      {% endif %}
-      <span></span>
-    </div>
-    
-  </header>
+        <!-- Post Share -->
+        <div class="col-md-2 pl-0">
+            {% include share.html %}
+        </div>
 
-  <article class="post-content">
+        <!-- Post -->
+        {% assign author = site.authors[page.author] %}
 
-    <section class="section-padding post" itemprop="articleBody">
-      {{ content }}
-    </section>
-  </article>
+        <div class="col-md-9 flex-first flex-md-unordered">
+            <div class="mainheading">
+                <!-- Post Title -->
+                <h1 class="posttitle">{{ page.title }}</h1>
 
-  <section class="profile">
+            </div>
 
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- 광고1 -->
-	<ins class="adsbygoogle" style="display:block"
-		data-ad-client="ca-pub-8753021586186085"
-		data-ad-slot="1199566339" 
-		data-ad-format="auto"
-		data-full-width-responsive="true">
-	</ins>
-	<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-
-    <div class="profile__card">
-      <div class="profile__img">
-        <figure class="absolute-bg" style="background-image: url('{{ site.profile_img }}');"></figure>
-      </div>
-      <div class="profile__container">
-        <p>{{ site.profile }}</p>
-        {% if site.email or site.social %}
-          <ul class="profile__social">
-            {% if site.email %}
-              <li><a class="fa fa-lg fa-envelope-o" href="mailto:{{ site.email }}"></a></li>
+            <!-- Adsense if enabled from _config.yml (change your pub id and slot) -->
+            {% if site.adsense == "enabled" %}
+                {% include adsense-under-header.html %}
             {% endif %}
-            {% for social in site.social %}
-              <li><a class="fa fa-lg fa-{{ social[0] }}" href="{{ social[1] }}" target="_blank"></a></li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </div>
+            <!-- End Adsense -->
+
+            <!-- Post Featured Image -->
+            {% if page.image %}
+
+            {% if site.lazyimages == "enabled" %}
+            <img class="featured-image img-fluid lazyimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAQAAAA3fa6RAAAADklEQVR42mNkAANGCAUAACMAA2w/AMgAAAAASUVORK5CYII=" data-src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
+            {% else %}
+            <img class="featured-image img-fluid" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
+            {% endif %}
+
+            {% endif %}
+            <!-- End Featured Image -->
+
+            <!-- Post Content -->
+            <div class="article-post">
+                <!-- Toc if any -->
+                {% if page.toc %}
+                    {% if page.beforetoc %}
+                        <p><em>{{page.beforetoc}}</em></p>
+                    {% endif %}
+                    <div class="toc mt-4 mb-5 lead">
+                        <h3 class="font-weight-bold">Summary</h3>
+                        {% include toc.html html=content %}
+                    </div>
+                {% endif %}
+                <!-- End Toc -->
+                {{content}}
+            </div>
+
+            <!-- Rating -->
+            {% if page.rating %}
+            <div class="rating mb-4 d-flex align-items-center">
+                <strong class="mr-1">Rating:</strong> {% include star_rating.html %}
+            </div>
+            {% endif %}
+
+            <!-- Post Date -->
+            <p>
+            <small>
+                <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
+                {% if page.last_modified_at %}
+                (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
+                {% endif %}
+                </small>
+            </p>
+
+            <!-- Post Categories -->
+            <div class="after-post-cats">
+                <ul class="tags mb-4">
+                    {% assign sortedCategories = page.categories | sort %}
+                    {% for category in sortedCategories %}
+                    <li>
+                        <a class="smoothscroll" href="{{site.baseurl}}/categories#{{ category | replace: " ","-" }}">{{ category }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- End Categories -->
+
+            <!-- Post Tags -->
+            <div class="after-post-tags">
+                <ul class="tags">
+                    {% assign sortedTags = page.tags | sort %}
+                    {% for tag in sortedTags %}
+                    <li>
+                        <a class="smoothscroll" href="{{site.baseurl}}/tags#{{ tag | replace: " ","-" }}">#{{ tag }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- End Tags -->
+
+            <!-- Prev/Next -->
+            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+            {% if page.previous.url %}
+            <a class="prev d-block col-md-6" href="{{ site.baseurl }}{{page.previous.url}}"> &laquo; {{page.previous.title}}</a>
+            {% endif %}
+            {% if page.next.url %}
+            <a class="next d-block col-md-6 text-lg-right" href="{{ site.baseurl }}{{page.next.url}}">{{page.next.title}} &raquo; </a>
+            {% endif %}
+            <div class="clearfix"></div>
+            </div>
+            <!-- End Categories -->
+
+        </div>
+        <!-- End Post -->
+
     </div>
-  </section>
-  
-  <!--disqus coding start-->
-  <div id="disqus_thread"></div>
-  <script>
-
-  /**
-  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-  /*
-  var disqus_config = function () {
-  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-  */
-  (function() { // DON'T EDIT BELOW THIS LINE
-  var d = document, s = d.createElement('script');
-  s.src = '//jiwondh.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-  })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>  
-  <!--disqus coding end-->  
-  
-</article>
-
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-{% if page.previous.url %}
-  <section class="next">
-    <a class="next__link" href="{{page.previous.url | prepend: site.baseurl }}" style="background-image: url('{{ page.previous.image }}');">
-      <div class="next__container">
-        <span>Read Next</span>
-        <h2>{{page.previous.title}}</h2>
-      </div>
-    </a>
-  </section>
-{% endif %}
-
-<!— Html Elements for Search -->
-<div id="search-container2" >
-    <div class="container-1">
-      <span class="icon"><i class="fa fa-search"></i></span>
-      <input type="text" id="search-input" placeholder="Search...">
-  </div>
-    <ul id="results-container"></ul>
 </div>
+<!-- End Article
+================================================== -->
 
-<!-- Script pointing to jekyll-search.js -->
-<script src="{{site.baseurl}}/dest/jekyll-search.js" type="text/javascript"></script>
+<!-- Begin Comments
+================================================== -->
+{% if page.comments != false %}
+    <div class="container">
+        <div id="comments" class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                {% include disqus.html %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+<!--End Comments
+================================================== -->
 
-
-<script type="text/javascript">
-      SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '{{ site.baseurl }}/search2.json',
-        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-        noResultsText: 'No results found',
-        limit: 10,
-        fuzzy: false,
-        exclude: ['Welcome']
-      })
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+{% if page.rating %}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Thing",
+    "name": "{{ page.title }}"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "{{ author.display_name }}"
+  },
+  "datePublished": "{{ page.date | date:"%Y-%m-%d" }}",
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "{{ page.rating }}",
+    "bestRating": "5"
+  }
+}
 </script>
-
-
+{% endif %}

@@ -1,16 +1,17 @@
 ---
 layout: post
 title: "[백준 BOJ] 1149 RGB거리"
+author: jiwon
 date: 2017-10-17
-categories:
-  - Algorithm Problem
-description: 
-image: /assets/images/ade1.jpg
-image-sm: /assets/images/ade2.jpg
-typora-copy-images-to: ipic
+categories: [ Algorithm Problem ]
+image: assets/images/baekjoon.png
+toc: false
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
 
-# [백준 BOJ] 1149 RGB거리
+> RGB거리에는 집이 N개 있다. 거리는 선분으로 나타낼 수 있고, 1번 집부터 N번 집이 순서대로 있다. 집은 빨강, 초록, 파랑 중 하나의 색으로 칠해야 한다..
 
 문제로 이동할려면 [여기](https://www.acmicpc.net/problem/1149){: target="_blank" }를 클릭하세요.
 

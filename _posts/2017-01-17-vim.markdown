@@ -1,13 +1,19 @@
 ---
 layout: post
 title: "[vim] 명령어"
+author: jiwon
 date: 2017-01-17
-categories:
-  - 기타
-description: vim 명령어
-image: /assets/images/fw1.jpg
-image-sm: /assets/images/fw2.jpg
+categories: [ vim ]
+image: assets/images/vim.png
+toc: false
+featured: false
+hidden: false
+[//]: # (rating: .5)
 ---
+
+> vi 에디터에서 encoding 전환하는 방법을 알아봅시다.
+
+<br/>
 
 ## vi 에디터에서 encoding 전환하기
 
