@@ -6,8 +6,8 @@ date: 2018-08-08
 categories: [ Spring ]
 image: assets/images/spring2.png
 toc: true
-featured: true
-hidden: true
+featured: false
+hidden: false
 [//]: # (rating: .5)
 ---
 
