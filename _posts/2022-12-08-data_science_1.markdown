@@ -5,7 +5,7 @@ author: jiwon
 date: 2022-12-08
 categories: [ Data Science ]
 image: assets/images/datascience.png
-toc: true
+toc: false
 featured: true
 hidden: true
 [//]: # (rating: .5)

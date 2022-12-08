@@ -899,3 +899,22 @@ iframe {
     opacity: 0;
     transition: opacity .25s;
 }
+
+
+@media (max-width: 500px) {
+   .h1, h1 {
+       font-size: 1.8rem !important;
+   }
+
+   .h2, h2 {
+        font-size: 1.5rem !important;
+   }
+
+   .h3, h3 {
+        font-size: 1.2rem !important;
+   }
+
+   a, li, p {
+        font-size: 1rem;
+   }
+}
