@@ -918,3 +918,7 @@ iframe {
         font-size: 1rem;
    }
 }
+
+table {
+    width: -webkit-fill-available;
+}
