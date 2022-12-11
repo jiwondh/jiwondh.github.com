@@ -6,8 +6,8 @@ date: 2018-12-31
 categories: [ Kotlin ]
 image: assets/images/kotlin2.png
 toc: true
-featured: true
-hidden: true
+featured: false
+hidden: false
 [//]: # (rating: .5)
 ---
 
