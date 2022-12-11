@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "모집단(Population), 모수 (Parameter), 표본(Sample), 통계량(Statistic) 뜻, 관계 설명"
+title: "[통계] 모집단(Population), 모수 (Parameter), 표본(Sample), 통계량(Statistic) 뜻, 관계 설명"
 author: jiwon
 date: 2022-12-08
 categories: [ Data Science ]
 image: assets/images/datascience.png
 toc: false
-featured: true
-hidden: true
+featured: false
+hidden: false
 [//]: # (rating: .5)
 ---
 

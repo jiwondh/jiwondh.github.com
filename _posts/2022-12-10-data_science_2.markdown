@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "모수 (Parameter)와 통계량 (Statistic)을 나타내는 기호 (그리스 문자, 영어 알파벳)"
+title: "[통계] 모수 (Parameter)와 통계량 (Statistic)을 나타내는 기호 (그리스 문자, 영어 알파벳)"
 author: jiwon
 date: 2022-12-10
 categories: [ Data Science ]
 image: assets/images/datascience.png
 toc: false
-featured: true
-hidden: true
+featured: false
+hidden: false
 [//]: # (rating: .5)
 ---
 

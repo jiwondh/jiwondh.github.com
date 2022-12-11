@@ -6,8 +6,8 @@ date: 2017-10-15
 categories: [ Algorithm ]
 image: assets/images/tree.png
 toc: true
-featured: false
-hidden: false
+featured: true
+hidden: true
 [//]: # (rating: .5)
 ---
 
