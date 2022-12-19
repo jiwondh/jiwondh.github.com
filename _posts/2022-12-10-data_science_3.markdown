@@ -47,7 +47,8 @@ data-ad-slot="8878745802">
 - 데이터 안에서 각각의 열 정보 (Feature, Attribute 라고도 부름)
 - 예) 키, 몸무게, 허리둘레, ...
 
-![relation](https://i.ibb.co/cDTJrKB/32-1.png)
+![relation](https://i.ibb.co/xYdgzyx/32.png)
+
 
 ### 범주형 변수과 연속형 변수
 - 범주형 (Categorical) : 문자형 데이터를 의미 (연산이 안되므로 **빈도**를 기반으로 접근)
